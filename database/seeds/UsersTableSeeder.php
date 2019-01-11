@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
             $admin->password = bcrypt('123456');
             $admin->save();
             $admin->roles()->attach($role_user); 
-		]);  
+		  
 
         User::create([
             'name'=>'Alberth Eduardo',
