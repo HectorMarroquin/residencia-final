@@ -23,19 +23,6 @@
 
         </div>
 
-        <div class="col-4">  
-              <div class="input-group">
-              <select class="custom-select" id="inputGroupSelect02">
-                <option selected>Selecciona...</option>
-                <option value="1">Agosto-Diciembre 2018</option>
-                <option value="2">Enero-Junio 2019</option>
-                <option value="3">Agosto-Diciembre 2019</option>
-              </select>
-              <div class="input-group-append">
-                <label class="input-group-text" for="inputGroupSelect02">Periodos</label>
-              </div>
-            </div>
-        </div>
 
         <div class="col-4">  
               <div class="btn-group dropright">
@@ -78,9 +65,9 @@
             <td>{{ $proyecto->CorreoEmp }}</td>
             <td><span class="badge badge-pill badge-success">Aprovado</span></td>
             <td><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></i></button>
-                <button class="btn btn-primary"><i class="fas fa-file-download"></i></button>
+                
                 <a href="{{ route('historial.show', $proyecto->id) }}">
-                    Descargar proyectos en PDF
+                    <i class="fas fa-file-download" style="font-size: 35px;"></i>
                 </a>
             </td>
         </tr>
@@ -90,33 +77,18 @@
           
        </tbody>
     </table>
-    <a href="{{ route('historial.create', $proyecto->id) }}">
-        Descargar proyectos en PDF
-    </a>
+    {!! $proyectos->links("pagination::bootstrap-4") !!}
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-4 mb-5">
+          <a href="{{ route('historial.create', $proyecto->id) }}">
+              <span class="text-danger h5">Descargar proyectos en PDF</span> 
+          </a>
+        </div>
+          
+      </div>
+    </div>
   </div>
-
-
-  <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-
 </div>
 
 </div>
