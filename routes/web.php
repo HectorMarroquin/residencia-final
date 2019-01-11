@@ -67,3 +67,8 @@ Route::get('/infoAlta',['as'=>'infoAlta', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/contacts', 'ContactsController@index');
+Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
+Route::post('/conversation/send', 'ContactsController@send');
