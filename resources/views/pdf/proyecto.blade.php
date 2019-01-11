@@ -20,31 +20,17 @@
 </head>
 <body>
     <div class="color">
-            <h1>Proyecto numero:</h1>
+            <h1>Proyecto numero: {{ $proyecto->id }}</h1>
     </div>
     
-    <table class="table table-bordered">
-        <thead class="cabecera">
-          <tr>
-              <th scope="col">Numero</th>
-              <th scope="col">Proyecto</th>
-              <th scope="col">Empresa</th>
-              <th scope="col">Telefono</th>
-              <th scope="col">Correo</th>
-         
-          </tr>
-      </thead>
-      <tbody>
+    <div><span>Proyecto realizado por: </span>{{ $proyecto->Emprendedor->Nombre }}</div>
+    <div><span>Nombre del proyecto: </span>{{ $proyecto->NombreProd }}</div>
+    <div><span>Actividad: </span> {{ $proyecto->Actividad }}</div>
+    <div><span>Telefono de la empresa: </span>{{ $proyecto->Telefonoemp }}</div>
+    <div><span>Correo empresarial: </span>{{ $proyecto->CorreoEmp }}</div>
+    
        
-        <tr>
-            <td>{{ $proyecto->id}}</td>
-            <td>{{ $proyecto->NombreProd }}</td>
-            <td>{{ $proyecto->Actividad }}</td>
-            <td>{{ $proyecto->Telefonoemp }}</td>
-            <td>{{ $proyecto->CorreoEmp }}</td>
-        </tr>
+         
  
-          
-       </tbody>
-    </table></body>
+</body>
 </html>
