@@ -26,7 +26,7 @@
                         @forelse ($proyectos as $proyecto)
                          <tr>
                             <td>{{ $proyecto->NombreProd }}</td>
-                            <td> </td>
+                            <td>{{ $proyecto->asignacion }} </td>
                             <td> </td>
                             <td><a href="{{ route('Entregas.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-check"></i></a></td> </td>
                             <td><a href="" class="btn btn-primary"><i class="far fa-comment-alt"></i></a></td>

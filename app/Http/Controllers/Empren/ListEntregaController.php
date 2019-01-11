@@ -23,9 +23,10 @@ class ListEntregaController extends Controller
     public function index()
     {
         $id = Auth()->user()->id;
-        $proyectos = Proyecto::where('emprendedor_id', $id)->get();
+        $empreId = Emprendedor::where('user_id', $id)->value('id');
+        $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();
         $emprendedores = Emprendedor::all();
-        $asignaciones = Asignacion::all();
+        $asignaciones = Asignacion::where('asesor_id', $proyectos)->get();
         $asesor = Asesor::all();
         return view ('Emprendedor.ListaEntregas', compact('asignaciones', 'asesor', 'emprendedores', 'proyectos'));
     }
