@@ -1,19 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
+
 use Illuminate\Http\Request;
+use App\User;
+use App\Message;
+use App\Events\NewMessage;
 
 class ContactsController extends Controller
 {
-    public function index()
+    public function get()
     {
         // get all users except the authenticated one
-        $contacts = User::all();  //where('id', '!=', auth()->id())->get();
+        $contacts = User::where('id', '!=', auth()->id())->get();
 
         // get a collection of items where sender_id is the user who sent us a message
         // and messages_count is the number of unread messages we have from him
-   /*     $unreadIds = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
+        $unreadIds = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
             ->where('to', auth()->id())
             ->where('read', false)
             ->groupBy('from')
@@ -27,25 +30,25 @@ class ContactsController extends Controller
 
             return $contact;
         });
-*/
+
 
         return response()->json($contacts);
     }
 
-      public function getMessagesFor($id)
+    public function getMessagesFor($id)
     {
         // mark all messages with the selected contact as read
-     $messages = Message::where('from', $id)->orWhere('to', $id)->get();
+        Message::where('from', $id)->where('to', auth()->id())->update(['read' => true]);
 
         // get all messages between the authenticated user and the selected user
-      /*  $messages = Message::where(function($q) use ($id) {
+        $messages = Message::where(function($q) use ($id) {
             $q->where('from', auth()->id());
             $q->where('to', $id);
         })->orWhere(function($q) use ($id) {
             $q->where('from', $id);
             $q->where('to', auth()->id());
         })
-        ->get(); */
+        ->get();
 
         return response()->json($messages);
     }
@@ -62,5 +65,4 @@ class ContactsController extends Controller
 
         return response()->json($message);
     }
-	
 }
