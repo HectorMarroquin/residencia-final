@@ -10,9 +10,10 @@
         
         <div class="col-4">
           
-          <form class="mb-4 pt-4">
+          <form class="mb-4 pt-4" method="GET" action="{{route('historial.index')}}">
+              {!! csrf_field() !!}
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Buscar proyectos">
+                <input name="Nombre" type="search" class="form-control" placeholder="Buscar proyectos">
                 <div class="input-group-btn">
                   <button class="btn btn-default" type="submit">
                     <i class="fas fa-search"></i>
@@ -48,7 +49,7 @@
           <tr>
               <th scope="col">Numero</th>
               <th scope="col">Proyecto</th>
-              <th scope="col">Empresa</th>
+              <th scope="col">Actividad</th>
               <th scope="col">Telefono</th>
               <th scope="col">Correo</th>
               <th scope="col">Status</th>
@@ -81,10 +82,14 @@
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-4 mb-5">
-          <a href="{{ route('historial.create', $proyecto->id) }}">
-              <span class="text-danger h5">Descargar proyectos en PDF</span> 
-          </a>
-        </div>
+            
+            <a href="{{ route('historial.create')}}">
+                <span class="text-danger h5">Descargar proyectos en PDF</span> 
+            </a>
+            
+          </div>
+       
+       
           
       </div>
     </div>

@@ -16,10 +16,15 @@ class AsignaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+    
     public function index()
     {
         $emprendedores = Emprendedor::paginate(5);
-        $asesores = Asesor::all();
+        $asesores = Asesor::with('asignaciones')->get();
         return view('Administrador.asignar', compact('emprendedores','asesores'));
     }
 
