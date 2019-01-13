@@ -37,7 +37,6 @@ Route::resource('Estado', 'Empren\EstatusController');
 /*Hector*/
 
 Route::get('/dashboard','Admin\AdminController@Admin')->name('HomeAdmin');
-Route::get('/Admin-historial','Admin\AdminController@Admin')->name('Ver_historial');
 Route::resource('actividades','Admin\ActiController');
 Route::resource('asesores','Admin\AsesorController'); 
 Route::resource('asignaciones','Admin\AsignaController'); 

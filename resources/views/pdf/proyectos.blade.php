@@ -9,6 +9,7 @@
     
     .color{
         background-color: aliceblue;
+        text-align: center;
     }
     .cabecera{
        background-color: slategrey; 
@@ -20,7 +21,7 @@
 </head>
 <body>
     <div class="color">
-            <h1>Proyecto numero:</h1>
+            <h1>Proyectos Registrados en el Sistema</h1>
     </div>
     
     <table class="table table-bordered">

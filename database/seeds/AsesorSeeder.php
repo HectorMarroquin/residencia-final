@@ -31,7 +31,7 @@ class AsesorSeeder extends Seeder
         	'FechaNacimiento' => '1995-12-23',
         	'EstadoCivil' => 'Soltero',
         	'Sexo' => 'Masculino',
-        	'Correo' => 'hector.coki@gmail.com',   	
+        	'Correo' => 'aldo@gmail.com',   	
         	'Contraseña' => bcrypt('123456'),
 
 
@@ -53,7 +53,7 @@ class AsesorSeeder extends Seeder
             'FechaNacimiento' => '1995-12-23',
             'EstadoCivil' => 'Soltero',
             'Sexo' => 'Masculino',
-            'Correo' => 'eaz@gmail.com',    
+            'Correo' => 'wil@gmail.com',    
             'Contraseña' => bcrypt('123456'),
 
 
@@ -75,7 +75,7 @@ class AsesorSeeder extends Seeder
             'FechaNacimiento' => '1995-12-23',
             'EstadoCivil' => 'Soltero',
             'Sexo' => 'Masculino',
-            'Correo' => 'alberth@gmail.com',    
+            'Correo' => 'alan@gmail.com',    
             'Contraseña' => bcrypt('123456'),
 
 

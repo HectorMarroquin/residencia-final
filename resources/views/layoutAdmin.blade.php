@@ -111,7 +111,15 @@
                         <li><a href="{{ route('historial.index') }}">Historial de Proyectos</a></li>
                         <li><a href="{{ route('actividades.index') }}">Actividades</a></li>
                         <li><a href="#">Chat</a></li>
-                        <li><a href="#">Cerrar Sesion</a></li>
+                        <li><a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                                      Cerrar Sesión</a>
+
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                        </li>
             </ul>
         </nav>
  <!--FIN DEL SIDEBAR-->      

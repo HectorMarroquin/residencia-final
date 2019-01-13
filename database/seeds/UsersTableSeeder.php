@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
 
             $admin = new User();
             $admin->name = "Hector De Jesus";
-            $admin->email = "hector.coki@gmail.com";
+            $admin->email = "hector.cokito@gmail.com";
             $admin->password = bcrypt('123456');
             $admin->save();
             $admin->roles()->attach($role_admin); 
@@ -29,21 +29,6 @@ class UsersTableSeeder extends Seeder
             $admin->password = bcrypt('123456');
             $admin->save();
             $admin->roles()->attach($role_user); 
-		  
-
-        User::create([
-            'name'=>'Alberth Eduardo',
-            'email'=> 'alberth3216@gmail.com',
-            'password'=>bcrypt('123123'),
-
-        ]);
-
-         User::create([
-            'name'=>'Yair',
-            'email'=> 'yair@gmail.com',
-            'password'=>bcrypt('123123'),
-
-        ]);
 
     }
 }

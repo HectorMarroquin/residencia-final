@@ -15,10 +15,16 @@ class HistoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+    
+    public function index(Request $request)
     {
-        $proyectos = Proyecto::paginate(5);
-       
+        //$proyectos = Proyecto::paginate(5);
+        $proyectos = Proyecto::Nombre($request->Nombre)->paginate(5);
+
         return view('Administrador.Historial', compact('proyectos'));
     }
 
@@ -61,7 +67,7 @@ class HistoController extends Controller
     {
         $proyecto = Proyecto::findOrFail($id);
 
-        // $pdf = PDF::loadView('pdf.proyecto', compact('proyectos'));
+        // $pdf = PDF::loadView('pdf.proyecto', compact('proyecto'));
 
         // return $pdf->download('proyecto.pdf');
 
