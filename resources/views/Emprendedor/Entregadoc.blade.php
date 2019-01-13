@@ -4,7 +4,7 @@
         <div id="page-content-wrapper" class="form-group" >
                <div class="container-fluid">
                 <form>
-                    {!! csrf_field() !!}
+                    @csrf
                     <div class="container">
                         <h2>Entrega de Actividades</h2>
                         <br>
@@ -40,19 +40,22 @@
                                                 <tr>
                                                     <td>{{ $proyectos->NombreProd }}</td>
                                                     <td>Juan carlos pimentel diaz</td>
-                                                    <td>Esdras de jesus marroquin gomez</td>
+                                                    <td>{{ $proyectos->emprendedor_id }}</td>
                                                 </tr>
 
                                                 <tr>
                                                     <td colspan="4">
-                                                        <div class="custom-file">
-                                                            <form action="/action_page.php">
-                                                            <div class="form-group">
-                                                                  <input type="file" class="form-control-file border" name="file">
-                                                            </div>
-                                                            <button type="submit" class="btn btn-primary">Enviar</button>
+                                                        <form class="form-group" method="POST" action="/trainers" enctype="multipart/form-data">
+                                                        <div class="form-group">
+                                                            <label for="">Nombre</label>
+                                                            <input type="text" name="name" class="form-control">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="">Documento</label>
+                                                            <input type="file" name="documento" class="form-control">
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Guardar</button>
                                                         </form>
-                                                    </div>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -84,11 +87,16 @@
 
                                                 <tr>
                                                     <td colspan="4">
-                                                        <form action="/action_page.php">
-                                                           <div class="form-group">
-                                                                  <input type="file" class="form-control-file border" name="file">
-                                                            </div>
-                                                            <button type="submit" class="btn btn-primary">Enviar</button>
+                                                         <form class="form-group" method="POST" action="{{ route('Archivo.store')}}" enctype="multipart/form-data">
+                                                        <div class="form-group">
+                                                            <label for="">Nombre</label>
+                                                            <input type="text" name="name" class="form-control">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="">Documento</label>
+                                                            <input type="file" name="documento1" class="form-control">
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Guardar</button>
                                                         </form>
                                                     </td>
                                                 </tr>
@@ -121,11 +129,16 @@
 
                                                 <tr>
                                                     <td colspan="4">
-                                                        <form action="/action_page.php">
-                                                            <div class="form-group">
-                                                                  <input type="file" class="form-control-file border" name="file">
-                                                            </div>
-                                                            <button type="submit" class="btn btn-primary">Enviar</button>
+                                                         <form class="form-group" method="POST" action="/trainers" enctype="multipart/form-data">
+                                                        <div class="form-group">
+                                                            <label for="">Nombre</label>
+                                                            <input type="text" name="name" class="form-control">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="">Documento</label>
+                                                            <input type="file" name="documento2" class="form-control">
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Guardar</button>
                                                         </form>
                                                     </td>
                                                 </tr>

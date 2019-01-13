@@ -28,4 +28,10 @@ class Proyecto extends Model
 
         return $this->belongsTo(Ideanegocio::class);
     }
+
+     public function avances(){
+
+        return $this->hasMany(Avance::class);
+
+    }
 }

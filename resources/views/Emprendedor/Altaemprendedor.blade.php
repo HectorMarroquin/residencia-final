@@ -6,7 +6,7 @@
                <div class="container-fluid">
                 <h2>Registro del Emprendedor</h2>
                 <form method="POST" action="{{ route ('Registro.store') }}">
-                    {!! csrf_field() !!}
+                    @csrf
                 <table class="table">
                 
                     <tbody>
@@ -440,7 +440,25 @@
                 
                     <table class="table">
                         <tr style=" text-align:center;">
-                            <input type="submit" value="Enviar" class="btn btn-outline-primary">
+                            <td>
+                                <input type="submit" value="Enviar" class="btn btn-outline-primary">
+                            </td>
+
+                            <td>
+                               
+                                    
+                                
+                                <div class="container">
+                                    <div class="row justify-content-md-center">
+                                        <div class="col-4 mb-5">
+                                            <a href="{{ route('Registro.index') }}">
+                                                <span class="btn btn-outline-primary">Descargar</span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </td>
                            <!-- Styles  <td>
                                 <button type="button" class="btn btn-outline-primary">Guardar</button>
                             </td>
