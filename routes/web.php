@@ -85,4 +85,8 @@ Route::get('/email2',['as'=>'email2', function () {
     return view('email/plantilla_correo');
 }]);
 
-Route::get('Email','EmailController');
+//Route::get('Email','EmailController');
+
+Route::get('/mensajes',['as'=>'mensajes', function () {
+    return view('Asesor/mensajes');
+}]);
