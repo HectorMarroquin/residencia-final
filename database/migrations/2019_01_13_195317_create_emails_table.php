@@ -17,7 +17,8 @@ class CreateEmailsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
-            $table->string('file');
+            $table->string('file')->nullable();
+            $table->integer('tipocorreo')->unsigned();
             $table->timestamps();
         });
     }

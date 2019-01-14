@@ -11,18 +11,19 @@
         <div class="card">
             <div class="card-header">Redactar Nuevo Correo</div>
                <div class="card-body">
-                  <form method="POST" action="{{ route('Email.store') }}">
-                    
+
+                  <form method="POST" action="{{ route('emails.store') }}" enctype="multipart/form-data">
+                    {!! csrf_field() !!}
                     <div class="form-group">
                       <label>Elegir Destinatario </label>
-                        <select class='form-control' name="tipousuarios">
+                        <select class='form-control' name="tipocorreo">
                           <option value="1">Emprendedores</option>
                           <option value="2">Asesores</option>
                         </select>
                     </div>  
 
                     <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Asunto" name="tittle" id="asunto">
+                    <input type="text" class="form-control" placeholder="Asunto" name="title" id="title">
                     </div>
 
                     <div class="form-group">

@@ -86,6 +86,7 @@ Route::get('/email2',['as'=>'email2', function () {
 }]);
 
 //Route::get('Email','EmailController');
+Route::resource('emails','EmailController'); 
 
 Route::get('/mensajes',['as'=>'mensajes', function () {
     return view('Asesor/mensajes');
