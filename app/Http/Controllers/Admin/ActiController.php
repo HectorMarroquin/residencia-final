@@ -14,10 +14,10 @@ class ActiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $fases = Fase::with('actividades')->get();
@@ -56,7 +56,9 @@ class ActiController extends Controller
      */
     public function show($id)
     {
-        //
+         // $actividad = Actividad::findOrFail($id);
+
+        // return view('Administrador.actividades', compact('actividad'));
     }
 
     /**
@@ -78,8 +80,11 @@ class ActiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+      
+        $actividad = Actividad::findOrFail($id);
+        $actividad->update($request->all());
+        return redirect()->route('actividades.index');
     }
 
     /**

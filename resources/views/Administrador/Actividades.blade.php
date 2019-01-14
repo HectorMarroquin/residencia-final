@@ -92,81 +92,13 @@
 							</td>
 							@isset($actividad->id)
 							<td> 
-								 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalAct{{$actividad->id}}"><i class="fas fa-trash-alt"></i></button>
-						 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalUpdate{{$actividad->id}}"><i class="fas fa-pen-square"></i></button>
+								 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Delete{{$actividad->id}}"><i class="fas fa-trash-alt"></i></button>
+						 		 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Update{{$fase->id}}"><i class="fas fa-pen-square"></i></button>
 							</td>
 						</tr>
+						@include('Administrador.EliminarAct')					
+						@include('Administrador.EditarAct')
 						
-									
-							
-						<div class="modal fade" id="myModalAct{{$actividad->id}}">
-								<div class="modal-dialog">
-									<div class="modal-content">
-									
-										<!-- Modal Header -->
-										<div class="modal-header">
-											<h4 class="modal-title">Eliminar Actividad</h4>
-											<button type="button" class="close" data-dismiss="modal">&times;</button>
-										</div>
-										
-										<!-- Modal body -->
-										<div class="modal-body">
-										 ¿Estas seguro que deseas eliminar la actividad?
-										</div>
-										
-										<!-- Modal footer -->
-										<div class="modal-footer">
-											 <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-											 <form style="display: inline;" method="POST" action="{{ route('actividades.destroy', $actividad->id) }}">
-												{{ csrf_field() }}
-												{{ method_field('DELETE') }}
-											 <button type="submit" class="btn btn-secondary">Aceptar</button>
-										 </form>
-										</div>
-										
-									</div>
-								</div>
-						</div>		
-						
-						
-						
-						<div class="modal fade" id="myModalUpdate{{$actividad->id}}">
-								<div class="modal-dialog">
-									<div class="modal-content">
-									
-										<!-- Modal Header -->
-										<div class="modal-header">
-											<h4 class="modal-title">Actualizar Actividad</h4>
-											<button type="button" class="close" data-dismiss="modal">&times;</button>
-										</div>
-										
-										<!-- Modal body -->
-										<div class="modal-body">
-												<form>
-														<div class="form-group">
-															<label for="recipient-name" class="col-form-label">Nombre de Actividad:</label>
-															<input type="text" class="form-control" id="recipient-name" value="{{$actividad->Nombre}}">
-														</div>
-														<div class="form-group">
-															<label for="message-text" class="col-form-label">Descripcion:</label>
-															<textarea class="form-control" id="message-text"></textarea>
-														</div>
-													
-										</div>
-										
-										<!-- Modal footer -->
-										<div class="modal-footer">
-												<div class="modal-footer">
-														<button type="submit" class="btn btn-primary">Guardar Cambios</button>
-													
-														<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-													</div>
-										</div>
-									</form>
-									</div>
-								</div>
-						</div>
-
 						@endisset
 					  
 					</tr>
