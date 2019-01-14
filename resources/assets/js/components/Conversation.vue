@@ -1,19 +1,17 @@
 <template>
     <div class="conversation">
         <h1>{{ contact ? contact.name : 'Select a Contact' }}</h1>
-         <MessagesFeed :contact="contact" :messages="messages"/>
+        <MessagesFeed :contact="contact" :messages="messages"/>
         <MessageComposer @send="sendMessage"/>
     </div>
-
 </template>
 
-
 <script>
- import MessagesFeed from './MessagesFeed';
+    import MessagesFeed from './MessagesFeed';
     import MessageComposer from './MessageComposer';
 
-    export default{
-    	props: {
+    export default {
+        props: {
             contact: {
                 type: Object,
                 default: null
@@ -23,7 +21,6 @@
                 default: []
             }
         },
-
         methods: {
             sendMessage(text) {
                 if (!this.contact) {
@@ -34,12 +31,11 @@
                     contact_id: this.contact.id,
                     text: text
                 }).then((response) => {
-                    this.$emit('new', response.data); 
+                    this.$emit('new', response.data);
                 })
-            } console.log(text);
+            }
         },
-
-         components: {MessagesFeed, MessageComposer}
+        components: {MessagesFeed, MessageComposer}
     }
 </script>
 
