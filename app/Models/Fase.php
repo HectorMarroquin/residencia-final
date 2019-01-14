@@ -11,4 +11,10 @@ class Fase extends Model
     	return $this->hasMany(Actividad::class);
 
     }
+
+    public function avances(){
+
+    	return $this->hasMany(Avance::class);
+
+    }
 }

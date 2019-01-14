@@ -9,6 +9,7 @@ use App\User;
 use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 use App\Http\Requests\EmprenValidation;
 
 class EmprendedorRegisController extends Controller
@@ -20,8 +21,12 @@ class EmprendedorRegisController extends Controller
      */
     public function index()
     {
-        return view('Emprendedor.Altaproyecto');
+        $id = Auth()->user()->id;
+        $empreId = Emprendedor::where('user_id', $id)->get();
+        //$proyectos = Proyecto::where('emprendedor_id', $empreId)->get();
+        $pdf = PDF::loadView('pdf.Emprendedor', compact('empreId'));
 
+         return $pdf->stream('emprendedor.pdf');
     }
 
     /**

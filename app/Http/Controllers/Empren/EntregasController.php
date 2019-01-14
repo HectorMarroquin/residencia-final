@@ -50,9 +50,11 @@ class EntregasController extends Controller
     public function show($id)
     {
         $proyectos = Proyecto::findOrFail($id);
-        $fases = Fase::all();;
+        $fases = Fase::all();
         $actividades = Actividad::all();
-        return view ('Emprendedor.Entregas', compact('fases','actividades', 'proyectos'));
+
+        // $actividades = Actividad::where('fase_id', $fase)->get();
+        return view ('Emprendedor.Entregas', compact('fases','actividades', 'proyectos', 'fase'));
     }
 
     /**
