@@ -10,9 +10,10 @@
         
         <div class="col-4">
           
-          <form class="mb-4 pt-4">
+          <form class="mb-4 pt-4" method="GET" action="{{route('historial.index')}}">
+              {!! csrf_field() !!}
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Buscar proyectos">
+                <input name="Nombre" type="search" class="form-control" placeholder="Buscar proyectos">
                 <div class="input-group-btn">
                   <button class="btn btn-default" type="submit">
                     <i class="fas fa-search"></i>
@@ -23,19 +24,6 @@
 
         </div>
 
-        <div class="col-4">  
-              <div class="input-group">
-              <select class="custom-select" id="inputGroupSelect02">
-                <option selected>Selecciona...</option>
-                <option value="1">Agosto-Diciembre 2018</option>
-                <option value="2">Enero-Junio 2019</option>
-                <option value="3">Agosto-Diciembre 2019</option>
-              </select>
-              <div class="input-group-append">
-                <label class="input-group-text" for="inputGroupSelect02">Periodos</label>
-              </div>
-            </div>
-        </div>
 
         <div class="col-4">  
               <div class="btn-group dropright">
@@ -61,7 +49,7 @@
           <tr>
               <th scope="col">Numero</th>
               <th scope="col">Proyecto</th>
-              <th scope="col">Empresa</th>
+              <th scope="col">Actividad</th>
               <th scope="col">Telefono</th>
               <th scope="col">Correo</th>
               <th scope="col">Status</th>
@@ -78,9 +66,9 @@
             <td>{{ $proyecto->CorreoEmp }}</td>
             <td><span class="badge badge-pill badge-success">Aprovado</span></td>
             <td><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></i></button>
-                <button class="btn btn-primary"><i class="fas fa-file-download"></i></button>
+                
                 <a href="{{ route('historial.show', $proyecto->id) }}">
-                    Descargar proyectos en PDF
+                    <i class="fas fa-file-download" style="font-size: 35px;"></i>
                 </a>
             </td>
         </tr>
@@ -90,33 +78,22 @@
           
        </tbody>
     </table>
-    <a href="{{ route('historial.create', $proyecto->id) }}">
-        Descargar proyectos en PDF
-    </a>
+    {!! $proyectos->links("pagination::bootstrap-4") !!}
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-4 mb-5">
+            
+            <a href="{{ route('historial.create')}}">
+                <span class="text-danger h5">Descargar proyectos en PDF</span> 
+            </a>
+            
+          </div>
+       
+       
+          
+      </div>
+    </div>
   </div>
-
-
-  <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-
 </div>
 
 </div>

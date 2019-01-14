@@ -9,7 +9,7 @@
     <div class="card-body">
         <div class="table-responsive-md">
             <form>
-                {!! csrf_field() !!}
+                @csrf
                 <table class="table table-hover table-bordered">
                     <thead class="thead-light">
                         <tr>
@@ -23,10 +23,18 @@
 
                     <tbody>
                        
-                        @forelse ($proyectos as $proyecto)
+                        @forelse ($proyectos as $proyecto )
                          <tr>
                             <td>{{ $proyecto->NombreProd }}</td>
-                            <td> </td>
+                                @forelse  ($asignaciones as $aser)
+                            
+                            <td>
+                                {{ $aser->asesor->Nombre }} {{$aser->asesor->ApellidoP}} {{$aser->asesor->ApellidoM}} </td>
+                                @empty
+                                <td colspan="1" style="text-align: center;"><h4>No Hay Asesor Asignado</h4></td>
+                        @endforelse
+                            </td>
+                            
                             <td> </td>
                             <td><a href="{{ route('Entregas.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-check"></i></a></td> </td>
                             <td><a href="" class="btn btn-primary"><i class="far fa-comment-alt"></i></a></td>

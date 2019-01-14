@@ -26,7 +26,7 @@
 			    </tr>
 		  </thead>
 		  <tbody>
-				@foreach ($emprendedores as $emprendedor)
+				@forelse ($emprendedores as $emprendedor)
 			    <tr>
 					
 					
@@ -54,7 +54,9 @@
 							
 					 </td>
 				</tr>
-				@endforeach
+				@empty
+					<td colspan="6" style="text-align: center;"><h4>No Hay Asesores Registrados</h4></td>
+				@endforelse
 		   </tbody>
 		</table>
 		{!! $emprendedores->links("pagination::bootstrap-4") !!}

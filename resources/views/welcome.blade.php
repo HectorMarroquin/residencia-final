@@ -22,6 +22,10 @@
             height: 50vh;
             width: 100%;
           }
+          label{
+              color:  #18191a;
+
+          }
         </style>
             
     </head>
@@ -104,8 +108,17 @@
                             <div class="p-4 align-self-start">
                               <i class="fas fa-certificate"></i>
                             </div>
-                            <div class="p-4 align-self-end">
-                              Lorem ipsum dolor sit amet
+                            <div class=" align-self-end">
+                                Desarrollar modelos de negocio y planes de negocio
+                            </div>
+                          </div>
+            <!-- check -->
+                          <div class="d-flex flex-row">
+                            <div class="p-4 align-self-start">
+                              <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class=" align-self-end">
+                                Mejorar el índice de rentabilidad y crecimiento
                             </div>
                           </div>
             <!-- check -->
@@ -114,16 +127,7 @@
                               <i class="fas fa-certificate"></i>
                             </div>
                             <div class="p-4 align-self-end">
-                              Lorem ipsum dolor sit amet, 
-                            </div>
-                          </div>
-            <!-- check -->
-                          <div class="d-flex flex-row">
-                            <div class="p-4 align-self-start">
-                              <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="p-4 align-self-end">
-                              Lorem ipsum dolor sit amet, 
+                                Brindar capacitación 
                             </div>
                           </div>
                      </div>
@@ -158,7 +162,7 @@
                                             <form method="POST" action="{{ route('login') }}">
                                                 {{ csrf_field() }}
                                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                                    <label for="email" class="col-md-8 control-label">Correo Electronico</label>
                         
                                                     <div class="col-md-6">
                                                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -172,7 +176,7 @@
                                                 </div>
                         
                                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                                    <label for="password" class="col-md-4 control-label">Password</label>
+                                                    <label for="password" class="col-md-4 control-label">Contraseña</label>
                         
                                                     <div class="col-md-6">
                                                         <input id="password" type="password" class="form-control" name="password" required>
@@ -189,7 +193,7 @@
                                                     <div class="col-md-6 col-md-offset-4">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recuerdame
                                                             </label>
                                                         </div>
                                                     </div>
@@ -198,12 +202,8 @@
                                                 <div class="form-group">
                                                     <div class="col-md-8 col-md-offset-4">
                                                         <button type="submit" class="btn btn-primary">
-                                                            Login
+                                                            Entrar
                                                         </button>
-                        
-                                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                            Forgot Your Password?
-                                                        </a>
                                                     </div>
                                                 </div>
                                             </form>
@@ -216,7 +216,7 @@
                         <div class="modal-footer">
                           <!--<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>-->
                              <div class="col-12 text-center">
-                                 <a class="text-center" href="">¿Olvidaste tu Contrasena?</a>
+                                 <a class="btn btn-link" href="{{ route('password.request') }}">¿Olvidaste tu Contraseña?</a>
                         </div>
                         
                       </div> 
@@ -242,66 +242,66 @@
                           <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <form method="POST" action="{{ route('register') }}"">
-                                        {{ csrf_field() }}
-
-                                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                            <label for="name" class="col-md-4 control-label">Name</label>
+                                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                                        @csrf
+                
+                                        <div class="form-group row">
+                                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
                 
                                             <div class="col-md-6">
-                                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                 
                                                 @if ($errors->has('name'))
-                                                    <span class="help-block">
+                                                    <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $errors->first('name') }}</strong>
                                                     </span>
                                                 @endif
                                             </div>
                                         </div>
                 
-                                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                        <div class="form-group row">
+                                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
                 
                                             <div class="col-md-6">
-                                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
                 
                                                 @if ($errors->has('email'))
-                                                    <span class="help-block">
+                                                    <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $errors->first('email') }}</strong>
                                                     </span>
                                                 @endif
                                             </div>
                                         </div>
                 
-                                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                            <label for="password" class="col-md-4 control-label">Password</label>
+                                        <div class="form-group row">
+                                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
                 
                                             <div class="col-md-6">
-                                                <input id="password" type="password" class="form-control" name="password" required>
+                                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                 
                                                 @if ($errors->has('password'))
-                                                    <span class="help-block">
+                                                    <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $errors->first('password') }}</strong>
                                                     </span>
                                                 @endif
                                             </div>
                                         </div>
                 
-                                        <div class="form-group">
-                                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                                        <div class="form-group row">
+                                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
                 
                                             <div class="col-md-6">
                                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                             </div>
                                         </div>
                 
-                                        <div class="form-group">
-                                            <div class="col-md-6 col-md-offset-4">
+                                        <div class="form-group row mb-0">
+                                            <div class="col-md-6 offset-md-4">
                                                 <button type="submit" class="btn btn-primary">
-                                                    Register
+                                                    {{ __('Register') }}
                                                 </button>
                                             </div>
-                                        </div>                 
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -309,7 +309,7 @@
                         </div>             
                          <div class="modal-footer">
                              <div class="col-12 text-center">
-                                 <a class="text-center" href="">¿Olvidaste tu Contrasena?</a>
+                                 {{-- <a class="text-center" href="">¿Olvidaste tu Contrasena?</a> --}}
                              </div>
                          </div>   
                    </div>
