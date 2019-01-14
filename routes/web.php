@@ -90,3 +90,7 @@ Route::resource('emails','EmailController');
 Route::get('/mensajes',['as'=>'mensajes', function () {
     return view('Asesor/mensajes');
 }]);
+
+Route::get('/chat',['as'=>'chat', function () {
+    return view('chat');
+}]);
