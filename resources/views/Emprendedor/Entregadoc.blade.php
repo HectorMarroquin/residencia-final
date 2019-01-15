@@ -38,21 +38,22 @@
 
                                             <tbody>
                                                 <tr>
-                                                    <td>{{ $proyectos->NombreProd }}</td>
-                                                    <td>Juan carlos pimentel diaz</td>
-                                                    <td>{{ $proyectos->emprendedor_id }}</td>
+                                                     
+                                                    <td>{{$proyectos->NombreProd}}</td>
+                                                    <td></td>
+                                                    <td></td>
                                                 </tr>
 
                                                 <tr>
                                                     <td colspan="4">
-                                                        <form class="form-group" method="POST" action="/trainers" enctype="multipart/form-data">
+                                                        <form class="form-group" method="POST" action="{{ route('Archivo.store')}}" enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="">Nombre</label>
-                                                            <input type="text" name="name" class="form-control">
+                                                            <input type="text" name="nombre" class="form-control">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="">Documento</label>
-                                                            <input type="file" name="documento" class="form-control">
+                                                            <input type="file" name="avatar" class="form-control">
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                                         </form>
@@ -80,9 +81,9 @@
 
                                             <tbody>
                                                 <tr>
-                                                    <td>{{ $proyectos->NombreProd }}</td>
-                                                    <td>Juan carlos pimentel diaz</td>
-                                                    <td>Esdras de jesus marroquin gomez</td>
+                                                    <td>{{$proyectos->NombreProd}}</td>
+                                                    <td></td>
+                                                    <td></td>
                                                 </tr>
 
                                                 <tr>
@@ -90,7 +91,7 @@
                                                          <form class="form-group" method="POST" action="{{ route('Archivo.store')}}" enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="">Nombre</label>
-                                                            <input type="text" name="name" class="form-control">
+                                                            <input type="text" name="name1" class="form-control">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="">Documento</label>
@@ -122,17 +123,17 @@
 
                                             <tbody>
                                                 <tr>
-                                                    <td>{{ $proyectos->NombreProd }}</td>
-                                                    <td>Juan carlos pimentel diaz</td>
-                                                    <td>Esdras de jesus marroquin gomez</td>
+                                                    <td>{{$proyectos->NombreProd}}</td>
+                                                    <td></td>
+                                                    <td></td>
                                                 </tr>
 
                                                 <tr>
                                                     <td colspan="4">
-                                                         <form class="form-group" method="POST" action="/trainers" enctype="multipart/form-data">
+                                                         <form class="form-group" method="POST" action="{{ route('Archivo.store')}}" enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="">Nombre</label>
-                                                            <input type="text" name="name" class="form-control">
+                                                            <input type="text" name="name2" class="form-control">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="">Documento</label>

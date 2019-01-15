@@ -4,7 +4,7 @@
         <div id="page-content-wrapper" class="form-group" >
                <div class="container-fluid">
                 <h2>Alta del Proyecto</h2>
-                <form method="POST" action="{{ route ('AlProyecto.store') }}">
+                <form method="POST" action="{{ route ('AlProyecto.store') }}"  enctype="multipart/form-data">
                      {!! csrf_field() !!}
                 <table class="table">                
                     <tbody>
@@ -479,8 +479,10 @@
                             </td>
 
                             <td>
-                                <input type="text" name="croquis" value="{{ old('croquis') }}">
-                                {!! $errors->first('croquis', '<span class=errores>:message</span>') !!}
+                                <div class="form-group">
+                                    <label for="">Documento</label>
+                                        <input type="file" name="croquis" class="form-control">
+                                </div> 
                             </td>
 
                         
@@ -491,9 +493,7 @@
                                   <input type="submit" value="Enviar" class="btn btn-outline-primary">
                             </td>
 
-                             <td colspan="2">
-                                <button type="button" class="btn btn-outline-primary">Modificar</button>
-                            </td>
+                           
 
                              <td>
                                 <button type="button" class="btn btn-outline-primary">Cancelar</button>

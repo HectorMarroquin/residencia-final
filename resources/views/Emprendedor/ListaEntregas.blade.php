@@ -15,7 +15,6 @@
                         <tr>
                             <th scope="col">Nombre de Proyecto</th>
                             <th scope="col">Nombre del Asesor</th>
-                            <th scope="col">Fase</th>
                             <th scope="col">Entregas</th>
                             <th scope="col">Comentarios</th>
                         </tr>
@@ -26,16 +25,13 @@
                         @forelse ($proyectos as $proyecto )
                          <tr>
                             <td>{{ $proyecto->NombreProd }}</td>
-                                @forelse  ($asignaciones as $aser)
+                                @foreach  ($asignaciones as $aser)
                             
                             <td>
                                 {{ $aser->asesor->Nombre }} {{$aser->asesor->ApellidoP}} {{$aser->asesor->ApellidoM}} </td>
-                                @empty
-                                <td colspan="1" style="text-align: center;"><h4>No Hay Asesor Asignado</h4></td>
-                        @endforelse
+                                
+                                @endforeach
                             </td>
-                            
-                            <td> </td>
                             <td><a href="{{ route('Entregas.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-check"></i></a></td> </td>
                             <td><a href="" class="btn btn-primary"><i class="far fa-comment-alt"></i></a></td>
         

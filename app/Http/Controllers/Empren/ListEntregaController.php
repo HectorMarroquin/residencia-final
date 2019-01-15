@@ -27,10 +27,14 @@ class ListEntregaController extends Controller
         $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();
         $proyectoss = Proyecto::where('emprendedor_id', $empreId)->value('id');
         $asignaciones = Asignacion::where('proyecto_id', $proyectoss)->get();
-        //$asesor = DB::table('asignaciones')->select('asesor_id')->take(1)->value('id');
-        //$asesorva = Asesor::where('id', $asesor)->value('id');
-        //$asesor =Asignacion::where('asesor_id', $asignaciones)->get();
-        //$asesorva = Asesor::where('user_id', $id)->value('id');
+        $asignacioness = Asignacion::where('proyecto_id', $proyectoss)->value('id');
+
+        $asesores = Asignacion::join('asesores', 'asesores.id', '=', 'asignaciones.asesor_id')->select('Asignaciones.id', 'Asignaciones.asesor_id', 'Asignaciones.proyecto_id')->get();
+
+       
+                     //dd($asesores);
+    
+
         return view ('Emprendedor.ListaEntregas', compact('asignaciones', 'proyectos', 'asesor', 'proyectoss', 'asesorva'));
     }
 
