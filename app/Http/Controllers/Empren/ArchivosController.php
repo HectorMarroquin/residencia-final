@@ -11,6 +11,7 @@ use App\Models\Proyecto;
 use App\Models\Asignacion;
 use App\Models\Asesor;
 use App\Models\Fase;
+use App\Models\Avance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -45,30 +46,31 @@ class ArchivosController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('documento')) {
-            $file = $request->file('documento');
-            $name = time().$file->getClientOriginalName();
-            $file->move(public_path().'/PrimerEntrega/', $name);
-            
-        } 
-        if ($request->hasFile('documento1')) {
-            $file = $request->file('documento1');
-            $name = time().$file->getClientOriginalName();
-            $file->move(public_path().'/SegundaEntrega/', $name);
-           
-        } 
-        if ($request->hasFile('documento2')) {
-            $file = $request->file('documento2');
-            $name = time().$file->getClientOriginalName();
-            $file->move(public_path().'/TercerEntrega/', $name);
-           
-        }
-
+        if ($request->hasFile('avatar')) {
+            $request->file('avatar')->store('public/primerentrega');       
+             }
+       
+        //$file = $request->file('documento');
+        /*
+        $request->file('documento');
+        $name = time().$file->getClientOriginalName();
+        $file->move(public_path().'/Primera/', $name);
+        return $name; */
+ /*
         $id = Auth()->user()->id;
         $empreId = Emprendedor::where('user_id', $id)->value('id');
-        $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();
+        $proyectos = Proyecto::where('emprendedor_id', $empreId)->value('id');
 
-        $avanse = new 
+        $avance = new Avance;
+        $avance->Documento = $request->input('documento');
+        $avance->Comentario = $request->input('name');
+        $avance->proyecto_id = $proyectos;
+        //$avance->fase_id = 
+        $avance->save(); */
+
+        
+        
+
 
     }
 
@@ -82,7 +84,8 @@ class ArchivosController extends Controller
     {
         
         $proyectos = Proyecto::findOrFail($id);
-        return view ('Emprendedor.Entregadoc', compact('proyectos'));
+        $fase = Fase::all();
+        return view ('Emprendedor.Entregadoc', compact('proyectos', 'fase'));
     }
 
     /**
