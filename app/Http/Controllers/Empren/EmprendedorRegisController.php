@@ -19,13 +19,13 @@ class EmprendedorRegisController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     
     public function index()
     {
         $id = Auth()->user()->id;
         $empreId = Emprendedor::where('user_id', $id)->get();
         //$proyectos = Proyecto::where('emprendedor_id', $empreId)->get();
         $pdf = PDF::loadView('pdf.Emprendedor', compact('empreId'));
-
          return $pdf->stream('emprendedor.pdf');
     }
 
@@ -89,9 +89,7 @@ class EmprendedorRegisController extends Controller
         $colaborador->emprendedor_id = $Emprendedor->id;
         $colaborador->save();
       //  Colaborador::create($request->all());
-        return redirect()->route('Registro.index');
-
-        
+        return redirect()->route('Registro.create');      
     
     }
 
@@ -141,4 +139,6 @@ class EmprendedorRegisController extends Controller
     {
         //
     }
+
+   
 }

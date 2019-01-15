@@ -445,9 +445,6 @@
                             </td>
 
                             <td>
-                               
-                                    
-                                
                                 <div class="container">
                                     <div class="row justify-content-md-center">
                                         <div class="col-4 mb-5">
@@ -459,18 +456,6 @@
                                 </div>
                                
                             </td>
-                           <!-- Styles  <td>
-                                <button type="button" class="btn btn-outline-primary">Guardar</button>
-                            </td>
-
-                            <td colspan="2">
-                                <button type="button" class="btn btn-outline-primary">Imprimir</button>
-                            </td>
-
-                            <td>
-                                <button type="button" class="btn btn-outline-primary">Salir</button>
-                            </td>
-                            --> 
                         </tr>
                     </table>
                 </form>
