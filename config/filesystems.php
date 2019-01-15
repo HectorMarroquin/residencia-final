@@ -43,6 +43,11 @@ return [
 
     'disks' => [
 
+         'correo' => [
+            'driver' => 'local',
+            'root' => public_path('correo'),
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

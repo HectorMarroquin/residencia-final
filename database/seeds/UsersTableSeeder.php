@@ -30,5 +30,6 @@ class UsersTableSeeder extends Seeder
             $admin->save();
             $admin->roles()->attach($role_user); 
 
+
     }
 }

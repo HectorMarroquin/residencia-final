@@ -66,3 +66,31 @@ Route::get('/infoAlta',['as'=>'infoAlta', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/contacts', 'ContactsController@get');
+Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
+Route::post('/conversation/send', 'ContactsController@send');
+
+Route::get('form_enviar_correo', 'CorreoController@crear');
+Route::post('enviar_correo', 'CorreoController@enviar');
+Route::post('cargar_archivo_correo', 'CorreoController@store');
+
+
+Route::get('/email1',['as'=>'email', function () {
+    return view('email/form_mail');
+}]);
+
+Route::get('/email2',['as'=>'email2', function () {
+    return view('email/plantilla_correo');
+}]);
+
+//Route::get('Email','EmailController');
+Route::resource('emails','EmailController'); 
+
+Route::get('/mensajes',['as'=>'mensajes', function () {
+    return view('Asesor/mensajes');
+}]);
+
+Route::get('/chat',['as'=>'chat', function () {
+    return view('chat');
+}]);
