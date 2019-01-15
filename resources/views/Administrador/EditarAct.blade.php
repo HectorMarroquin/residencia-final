@@ -1,4 +1,4 @@
-<div class="modal fade" id="Update{{$fase->id}}">
+<div class="modal fade" id="Update{{$actividad->id}}">
     <div class="modal-dialog">
         <div class="modal-content">
         
@@ -15,11 +15,11 @@
                         {{ method_field('PUT') }}
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Nombre de Actividad:</label>
-                                <input type="text" name="Nombre" class="form-control" id="recipient-name" value="{{$fase->NombreFase}}">
+                                <input type="text" name="Nombre" class="form-control" id="recipient-name" value="{{$actividad->Nombre}}">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="col-form-label">Descripcion:</label>
-                                <textarea class="form-control" name="Descripcion" id="message-text">{{ $fase->Estado }}</textarea>
+                                <textarea class="form-control" name="Descripcion" id="message-text">{{ $actividad->Descripcion }}</textarea>
                             </div>
                         
             </div>
