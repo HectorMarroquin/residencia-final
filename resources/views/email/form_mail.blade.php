@@ -16,9 +16,9 @@
                     {!! csrf_field() !!}
                     <div class="form-group">
                       <label>Elegir Destinatario </label>
-                        <select class='form-control' name="tipocorreo">
-                          <option value="1">Emprendedores</option>
-                          <option value="2">Asesores</option>
+                        <select  class='form-control' name="tipocorreo">
+                          <option value=1>Emprendedores</option>
+                          <option value=2>Asesores</option>
                         </select>
                     </div>  
 
