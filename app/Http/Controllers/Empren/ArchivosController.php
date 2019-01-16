@@ -46,32 +46,20 @@ class ArchivosController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('avatar')) {
-            $request->file('avatar')->store('public/primerentrega');       
-             }
-       
-        //$file = $request->file('documento');
-        /*
-        $request->file('documento');
-        $name = time().$file->getClientOriginalName();
-        $file->move(public_path().'/Primera/', $name);
-        return $name; */
- /*
-        $id = Auth()->user()->id;
-        $empreId = Emprendedor::where('user_id', $id)->value('id');
-        $proyectos = Proyecto::where('emprendedor_id', $empreId)->value('id');
-
-        $avance = new Avance;
-        $avance->Documento = $request->input('documento');
-        $avance->Comentario = $request->input('name');
-        $avance->proyecto_id = $proyectos;
-        //$avance->fase_id = 
-        $avance->save(); */
-
-        
-        
 
 
+         if ($request->hasFile('documento')) {
+            $file = $request->file('documento');
+            $name = time().$file->getClientOriginalName();
+            $file->move(public_path().'/Revisiones/', $name);
+        }
+            $avance = new Avance;
+            $avance->NumeroEntrega = $request->input('numeroentrega');
+            $avance->Documento = $name;
+            $avance->proyecto_id = $request->input('proyecto');
+            $avance->fase_id = $request->input('fase');
+            $avance->save();
+            return view ('LayoutsEmpren');
     }
 
     /**
@@ -81,10 +69,11 @@ class ArchivosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        
-        $proyectos = Proyecto::findOrFail($id);
-        $fase = Fase::all();
+    {   
+        $fase = Fase::findOrFail($id);
+         $id = Auth()->user()->id;
+        $empreId = Emprendedor::where('user_id', $id)->value('id');
+        $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();
         return view ('Emprendedor.Entregadoc', compact('proyectos', 'fase'));
     }
 

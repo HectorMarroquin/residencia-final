@@ -16,8 +16,8 @@ class CreateAvancesTable extends Migration
         Schema::create('avances', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('NumeroEntrega');
-            $table->string('Documento');
-            $table->text('Comentario');
+            $table->string('Documento')->nullable();
+            $table->text('Comentario')->nullable();
 
             $table->integer('proyecto_id')->unsigned();
             $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');

@@ -50,7 +50,6 @@ class ProyectoRegisController extends Controller
     
         
         $proyecto = new Proyecto;
-        $proyecto->Folio = $request->input('');
         $proyecto->Actividad = $request->input('Actividad');
         $proyecto->Razonsocial = $request->input('Razonsocial');
         $proyecto->RFC = $request->input('RFC');

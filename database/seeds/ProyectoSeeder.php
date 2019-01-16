@@ -24,7 +24,6 @@ class ProyectoSeeder extends Seeder
             $empreId = DB::table('emprendedores')->where('Nombre','Albert Eduardo')->value('id');
         
              Proyecto::create([
-        	'Folio' => '34567',
         	'Actividad' => 'Sector Extractivo',
         	'RazonSocial' => 'Mi razon de ser',
         	'RFC' => 'FG123456PQ3',
@@ -42,7 +41,6 @@ class ProyectoSeeder extends Seeder
 		]);
 		
 		Proyecto::create([
-        	'Folio' => '34565',
         	'Actividad' => 'Sector Agronomico',
         	'RazonSocial' => 'Mi razon de ser',
         	'RFC' => 'FG123456PQ3',
@@ -60,7 +58,6 @@ class ProyectoSeeder extends Seeder
         ]);
 
         factory(Proyecto::class, 20)->create([
-            'Folio' => '53245234',
             'TelefonoEmp' => '9876543212',
             'emprendedor_id' => $empreId
         ]);
