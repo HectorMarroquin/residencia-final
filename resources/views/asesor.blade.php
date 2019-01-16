@@ -5,7 +5,7 @@
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="{{ route('proyectos') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
@@ -33,16 +33,28 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Consultar proyectos</span></a>
         </li>
+
+         <li class="nav-item">
+          <a class="nav-link" href="{{ route('chat') }}">
+            <i class="far fa-comment-alt"></i>
+            <span>Chat</span></a>
+        </li>
+        
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
         </li>
       </ul>
 
-      <div id="content-wrapper">
+      <div class="container my-3">
+         @yield('contenido')
+      </div>
+<!--
+      <div class="row my-5">
+        <div id="content-wrapper my-3" >
 
-       <!-- <div class="container-fluid">
+       <!~~ <div class="container-fluid">
 
           <!~~ Breadcrumbs~~>
           <ol class="breadcrumb">
@@ -50,10 +62,10 @@
               <a href="#">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">Overview</li>
-          </ol>-->
+          </ol>~~>
 
-          <!-- Icon Cards-->
-          <!--<div class="row">
+          <!~~ Icon Cards~~>
+          <!~~<div class="row">
             <div class="col-xl-3 col-sm-6 mb-3">
               <div class="card text-white bg-primary o-hidden h-100">
                 <div class="card-body">
@@ -118,10 +130,10 @@
                 </a>
               </div>
             </div>
-          </div>-->
+          </div>~~>
 
-          <!-- Area Chart Example-->
-         <!-- <div class="card mb-3">
+          <!~~ Area Chart Example~~>
+         <!~~ <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-chart-area"></i>
               Area Chart Example</div>
@@ -142,10 +154,10 @@
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
 
-        </div>-->
-        <!-- /.container-fluid -->
+        </div>~~>
+        <!~~ /.container-fluid ~~>
 
-        <!-- Sticky Footer -->
+        <!~~ Sticky Footer ~~>
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
@@ -154,15 +166,16 @@
           </div>
         </footer>
 
-      </div>
+      </div>-->
       <!-- /.content-wrapper -->
 
-    </div>
+    
     <!-- /#wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <!--<a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
+      </div>-->
 
 @endsection

@@ -1,4 +1,4 @@
-@extends('layoutAs')
+@extends('asesor')
 
 @section('contenido')
 

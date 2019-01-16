@@ -1,15 +1,15 @@
-@extends('layoutAs')
+@extends('asesor')
 
 @section('contenido')
 	<div class="row">
 
 	<main class="main col">
-						<div class="row mt-3 d-flex justify-content-center">
+						<div class="row d-flex justify-content-center">
 							<div class="col-10 ">
 								
 									  <h2>Lista de Proyectos</h2>
-									  <p>Se muestran todos los proyectos que estan en asesorias</p> 
-									  <div class="form-group row">
+									  <p>Listado de proyectos que esta asesorando</p> 
+									<!--  <div class="form-group row">
 									  	<div class="col-12 col-md-6 mb-3">
 										  <label for="sel1">Seleccionar Periodo:</label>
 										  <select class="form-control" id="sel1">
@@ -23,7 +23,7 @@
 										 <label for="">Realizar busqueda:</label>
 									  	 <input class="form-control" id="myInput" type="text" placeholder=""> 
 										</div>	
-									</div>
+									</div>-->
 									 
 									  <br>
 									  <table class="table table-bordered table-hover table-reponsive">
@@ -48,39 +48,8 @@
 												<a href="{{ route('verproyectos') }}" class="btn btn-primary">ver</a>
 									  		</td>
 									      </tr>
-									      <tr>
-									      	<td>2</td>
-									        <td>Mary</td>
-									        <td>Perez Ramirez</td>
-									        <td>mary@mail.com</td>
-									        <td>Rockolas rentables en zonas turisticas</td>
-									    	<td><a href="{{ route('verproyectos') }}" class="btn btn-primary">ver</a></td>
-
-									      </tr>
-									      <tr>
-									      	<td>3</td>
-									        <td>Julya </td>
-									        <td>Dooley Doroti</td>
-									        <td>july@greatstuff.com</td>
-									      	<td>Venta de animales exoticos</td>
-									      	<td><a href="{{ route('verproyectos') }}" class="btn btn-primary">ver</a></td>
-									      </tr>
-									      <tr>
-									      	<td>4</td>
-									        <td>Anja</td>
-									        <td>Ravendale Arce</td>
-									        <td>a_r@test.com</td>
-									        <td>Productos de limpiezas naturales</td>
-									        <td><a href="{{ route('verproyectos') }}" class="btn btn-primary">ver</a> </td>
-									      </tr>
-									      <tr>
-									      	<td>5</td>
-									        <td>Naranja</td>
-									        <td>Manzana Arce</td>
-									        <td>a_rosa@test.com</td>
-									        <td>Productos de limpiezas naturales volumen 2</td>
-									        <td><a href="{{ route('verproyectos') }}" class="btn btn-primary">ver</a> </td>
-									      </tr>
+									      
+									    
 									    </tbody>
 									  </table>
 	  								
