@@ -7,17 +7,34 @@
   <div class="col-4">
     <div class="row">
       <div class="col">
-     <table class="table table-bordered table-hover table-reponsive mt-4">
-        
+     <table class="table table-bordered table-hover table-reponsive mt-5">
+         
         <thead>
           <th>Nombre del proyecto</th>
         </thead>
 
         <tbody>
-          <td>bla bla bla bla bla bla coco coco coco coco</td>
+          <td>{{ $ids->NombreProd }}</td>
         </tbody>
 
      </table>
+
+
+      <table class="table table-bordered table-hover table-reponsive mt-5">
+         
+        <thead>
+          <th>Nombre del proyecto</th>
+        </thead>
+
+        <tbody>
+          @foreach($files as $file)
+          <td> 
+              <a type="button" class="btn btn-primary" href="{{ route('projects.edit', $file->id) }}"><i class="far fa-eye"></i></a>              
+          @endforeach
+        </tbody>
+
+     </table>
+
       </div>
      </div>
 
@@ -36,15 +53,22 @@
    <div class="col-8">
      <table class="table table-bordered table-hover table-reponsive mt-4">
         
+        <h4>Tabla de Colaboradores</h4>
         <thead>
-          <th>Integrantes</th>
+          <th>Nombre Completo</th>
+          <th>Curp</th>
         </thead>
 
         <tbody>
-          <tr><td>bla bla bla</td></tr>
-           <tr><td>bla bla bla</td></tr>
-            <tr><td>bla bla bla</td></tr>
-             <tr><td>bla bla bla</td></tr>
+
+          @forelse($colaborador as $colaboradores)
+          
+            <tr><td>{{$colaboradores->NombreC}} {{ $colaboradores->ApellidoPC }} {{ $colaboradores->ApellidoMC }}</td>
+            <td>{{ $colaboradores->CURPC }}</td></tr>
+           
+             @empty
+          <td colspan="6" style="text-align: center;"><h4>No Hay Colaboradores Registrados</h4></td>
+          @endforelse
                
         </tbody>
 
@@ -85,33 +109,51 @@
                      <td></td>
                 <td>Entrega 1</td>
                  <td> 
+
+
+                  <form> 
                   <div class="form-group row">
                         <div class="col-12 col-md-10 mb-3">
-                             <textarea name="mensaje" id="mensaje" class="form-control"></textarea>
+                          <label for="exampleFormControlFile1">Elige un documento para enviar</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
                         </div>
                                                 
-                        <div class="col-12 col-md-2 mb-3">
-                            <button type="button" class="btn btn-primary xs" >enviar</button>
+                        <div class="col-12 col-md-2 my-2">
+                          <span></span>
+                            <button type="button" class="btn btn-primary xs" ><i class="fas fa-file-download">Descargar</i></button>
                           
                         </div>
-                       </div>
+                         </div>
+                  </form>
+
+
                  </td> 
                 </tr>
               
                  <tr>
                      <td></td>
-                <td>Entrega 2</td>
+                 
+                  <td>
+                  
+                      Entrega2
+                   
+                  </td>
+
                  <td> 
+                  <form> 
                   <div class="form-group row">
                         <div class="col-12 col-md-10 mb-3">
-                             <textarea name="mensaje" id="mensaje" class="form-control"></textarea>
+                          <label for="exampleFormControlFile1">Elige un documento para enviar</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
                         </div>
                                                 
-                        <div class="col-12 col-md-2 mb-3">
+                        <div class="col-12 col-md-2 my-2">
+                          <span></span>
                             <button type="button" class="btn btn-primary xs" >enviar</button>
                           
                         </div>
-                       </div>
+                         </div>
+                  </form>
                  </td> 
                 </tr>
   

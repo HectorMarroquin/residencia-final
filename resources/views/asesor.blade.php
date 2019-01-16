@@ -29,7 +29,7 @@
 
          
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('proyectos') }}">
+          <a class="nav-link" href="{{ route('projects.index') }} ">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Consultar proyectos</span></a>
         </li>
