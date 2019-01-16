@@ -15,7 +15,6 @@ class CreateProyectosTable extends Migration
     {
         Schema::create('proyectos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Folio')->nullable();
             $table->string('Actividad');
             $table->string('Razonsocial');
             $table->string('RFC');

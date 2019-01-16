@@ -33,17 +33,20 @@
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($actividades as $actividad)
+                                      
                                         <tr>
-                                            <td>
+                                            <td> 
                                                 <ol>
-                                                    <li>{{$actividad->Nombre}}</li>
+                                                     @foreach ($fase->actividades as $actividad)
+                                                    <li>{{ $actividad->Nombre }}</li>
+                                                     @endforeach
                                                 </ol>
+                                               
                                             </td>
                                         </tr>
-                                        @endforeach
+                                        
                                         <tr>
-                                            <td><a href="{{ route('Archivo.show', $proyectos->id) }}" class="btn btn-primary">Enviar</a></td>
+                                            <td><a href="{{ route('Archivo.show', $fase->id) }}" class="btn btn-primary">Enviar</a></td>
                                         </tr>
                                     </tbody>
                                 </table>

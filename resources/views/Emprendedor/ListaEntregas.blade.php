@@ -23,16 +23,15 @@
                     <tbody>
                        
                         @forelse ($proyectos as $proyecto )
-                         <tr>
+                         <tr> 
                             <td>{{ $proyecto->NombreProd }}</td>
-                                @foreach  ($asignaciones as $aser)
-                            
-                            <td>
-                                {{ $aser->asesor->Nombre }} {{$aser->asesor->ApellidoP}} {{$aser->asesor->ApellidoM}} </td>
-                                
-                                @endforeach
+                            @if ($proyecto->Asignacion)
+                            <td>{{ $proyecto->Asignacion->Asesor->Nombre }} {{ $proyecto->Asignacion->Asesor->ApellidoP }} {{ $proyecto->Asignacion->Asesor->ApellidoM }}</td> 
+                            @else
+                            <td><span style="font-weight:bold;">No hay asesor asignado por el momento</span></td>
+                            @endif
                             </td>
-                            <td><a href="{{ route('Entregas.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-check"></i></a></td> </td>
+                            <td><a href="{{ route('Entregas.index') }}" class="btn btn-primary"><i class="fas fa-check"></i></a></td> </td>
                             <td><a href="" class="btn btn-primary"><i class="far fa-comment-alt"></i></a></td>
         
                         

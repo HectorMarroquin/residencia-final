@@ -16,8 +16,7 @@ class CreateActividadesTable extends Migration
         Schema::create('actividades', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Nombre');
-            $table->string('Descripcion')->nullable();
-
+            $table->string('Descripcion');
             $table->integer('fase_id')->unsigned();
             $table->foreign('fase_id')->references('id')->on('fases')->onDelete('cascade');;
 
