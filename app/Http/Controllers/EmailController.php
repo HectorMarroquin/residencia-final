@@ -41,112 +41,52 @@ class EmailController extends Controller
      */
     public function store(Request $request)
     {
+    
         $input = $request->all();
         $file =$request->file('file');
-                   
+        $archivo='';
+        $asunto=$request->title;
+        $mensaje=$request->body;
+        $tipoCorreo=$request->tipocorreo;
+      
+        $users=DB::table('emprendedores')
+        ->join('users','emprendedores.user_id','=','users.id')
+        ->select('emprendedores.Nombre','emprendedores.ApellidoP','users.email')->get();
+
+        $asesors=DB::table('asesores')
+        ->join('users','asesores.user_id','=','users.id')
+        ->select('asesores.Nombre','asesores.ApellidoP','users.email')->get();
+
         if (!empty($file)) {
 
             $file_rute =$file->getClientOriginalName();
              $ruta=Storage::disk('correo')->put($file_rute, file_get_contents($file->getRealPath() ) );
              $input['file'] = $file_rute;
               Email::create($input);
+              $arfile=public_path('correo')."/".$file_rute; 
+
+              if($tipoCorreo=='1'){
+                $this->enviar_correo($users,$mensaje,$asunto,$arfile);
+             }
+
+             elseif ($tipoCorreo=='2') {
+                $this->enviar_correo($asesors,$mensaje,$asunto,$arfile);
+              } 
+
         }else{
            $email =Email::create($input);
+
+             if($tipoCorreo=='1'){
+                $this->enviar_correo($users,$mensaje,$asunto,$archivo);
+             }
+
+             elseif ($tipoCorreo=='2') {
+                $this->enviar_correo($asesors,$mensaje,$asunto,$archivo);
+              } 
         }
-                        
-        $id = 1;//$input['tipocorreo']; 
-
-        ini_set('max_execution_time', 300);
-        
-
-        
-        $users=DB::table('emprendedores')
-        ->join('users','emprendedores.user_id','=','users.id')
-        ->select('emprendedores.Nombre','emprendedores.ApellidoP','users.email')->get();
-        
-
-             //       if(empty($input->file)){
-                  //   $file=0;
-
-       //     }else{
-         //           $file=public_path('correo')."/".$input->file; 
-           //     }
-
-           // if($file==0)
-
-             // 
-           
-           /*
-         Mail::send('email.plantilla_correo', ['msg' => $user], function($mail) use ($user)
-                 {
-                    //$mail->from('vinculacionsistec@gmail.com','VINCULACION');
-                    $mail->to($user->email, $user->name)->subject('tu mensaje fue recibido');//($data['email']);
-                    //$mail->subject('Tenemos nuevas cosas para ti '. $data['name']);
-                });   
-*/  foreach ($users as $user) {
-  
-    //$data= array('message' =>$email->body,'email'=>$user->email,'name'=>$user->name,'title'=>$shipping->title);
-  
-    Mail::send('email.plantilla_correo', [], function($mail) use ($user)
-       {
-        //  $mail->from('vinculacionsistec@gmail.com','VINCULACION');
-          $mail->to($user->email,$user->name)->subject('Tenemos nuevas cosas para ti '. $user->name);
-       });
-   }
-   return "se ha enviado el imail";
-
-        /*
-                foreach ($users as $user) {
-
-                 //$data= array('name'=>$user->name,'email'=>$user->email);
-                  
-                  $envio=Mail::send('email.plantilla_correo', ['msj' => $user], function($mail) use ($user)
-                 {
-                   // $mail->from('vinculacionsistec@gmail.com','VINCULACION');
-                    $mail->to($user->email, $user->name)->subject('tu mensaje fue recibido');//($data['email']);
-                    //$mail->to($user->,$data['name'])->subject('Tenemos nuevas cosas para ti '. $data['name']);
-                });
-
-                } */
-            
-        
-     /*   
-         else{
-  
-
-            foreach ($users as $user) {
-  
-            $data= array('message' =>$input->body,'email'=>$user->email,'name'=>$user->name,'title'=>$input->title,'file'=>$file);
-            $envio=Mail::send('email.plantilla_correo', ['data' => $data], function($mail) use ($data,$archivo)
-            {
-                $mail->from('vinculacionsistec@gmail.com','VINCULACION');
-                $mail->to($data['email']);
-                $mail->subject('Tenemos nuevas cosas para ti '. $data['name']);
-                $mail->attach($archivo);
-            });
-            }
-
-            }
-
-        
-        if($envio){
-            
-            return redirect(route('home'));
-        
-        }else{
-            //Alert::error('Mensaje No enviado.');
-            return redirect(route('home'));
-
-        }
-
-
-    }*/
-
-
-     
+             
+     return "mensaje enviado con exito";     
     
-         
-
     }
 
     /**
@@ -193,4 +133,26 @@ class EmailController extends Controller
     {
         //
     }
+
+
+    protected function enviar_correo($users,$mensaje,$asunto,$archivo){
+         
+         foreach ($users as $user) {
+            
+            $data= array('mensaje'=>$mensaje,'email'=>$user->email,'name'=>$user->Nombre,'asunto'=>$asunto,'file'=>$archivo);
+
+            Mail::send('emails', ['data'=>$data], function($mail) use($data,$archivo){
+                $mail->to($data['email']);
+                $mail->subject($data['asunto']);
+                if (!empty($archivo)) {
+                    $mail->attach($archivo);  
+                 }
+                    
+                                
+            });
+        }
+    }
 }
+
+
+        
