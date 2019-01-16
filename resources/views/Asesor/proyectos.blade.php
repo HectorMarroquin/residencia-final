@@ -1,15 +1,15 @@
-@extends('layoutAs')
+@extends('asesor')
 
 @section('contenido')
 	<div class="row">
 
 	<main class="main col">
-						<div class="row mt-3 d-flex justify-content-center">
+						<div class="row d-flex justify-content-center">
 							<div class="col-10 ">
 								
 									  <h2>Lista de Proyectos</h2>
-									  <p>Se muestran todos los proyectos que estan en asesorias</p> 
-									  <div class="form-group row">
+									  <p>Listado de proyectos que esta asesorando</p> 
+									<!--  <div class="form-group row">
 									  	<div class="col-12 col-md-6 mb-3">
 										  <label for="sel1">Seleccionar Periodo:</label>
 										  <select class="form-control" id="sel1">
@@ -23,66 +23,39 @@
 										 <label for="">Realizar busqueda:</label>
 									  	 <input class="form-control" id="myInput" type="text" placeholder=""> 
 										</div>	
-									</div>
+									</div>-->
 									 
 									  <br>
-									  <table class="table table-bordered table-hover table-reponsive">
-									    <thead class="thead-dark">
-									      <tr>
-									      	<th>#</th>
-									        <th>Nombre</th>
-									        <th>Apellidos</th>
-									        <th>Email</th>
-									        <th>Nombre del Proyecto</th>
-									        <th>Funciones</th>
-									      </tr>
-									    </thead>
-									    <tbody id="myTable">
-									      <tr>
-									      	<td>1</td>
-									        <td>Albertano</td>
-									        <td>Marroquin Hernandez</td>
-									        <td>Marroque@example.com</td>
-									        <td>Drones para el riego de campo agricola</td>
-									  		<td>
-												<a href="{{ route('verproyectos') }}" class="btn btn-primary">ver</a>
-									  		</td>
-									      </tr>
-									      <tr>
-									      	<td>2</td>
-									        <td>Mary</td>
-									        <td>Perez Ramirez</td>
-									        <td>mary@mail.com</td>
-									        <td>Rockolas rentables en zonas turisticas</td>
-									    	<td><a href="{{ route('verproyectos') }}" class="btn btn-primary">ver</a></td>
+										 <table class="table table-hover table-bordered">
+			  					<thead class="thead-dark">
+			    					<tr>
+			      					<th scope="col">Nombre de Asesor</th>
+			      					<th scope="col">Apellidos</th>
+			      					<th scope="col">Proyecto</th>
+			      					<th scope="col">Informacion</th>
+			    					</tr>
+			  					</thead>
+			  					
+			  					<tbody>
 
-									      </tr>
-									      <tr>
-									      	<td>3</td>
-									        <td>Julya </td>
-									        <td>Dooley Doroti</td>
-									        <td>july@greatstuff.com</td>
-									      	<td>Venta de animales exoticos</td>
-									      	<td><a href="{{ route('verproyectos') }}" class="btn btn-primary">ver</a></td>
-									      </tr>
-									      <tr>
-									      	<td>4</td>
-									        <td>Anja</td>
-									        <td>Ravendale Arce</td>
-									        <td>a_r@test.com</td>
-									        <td>Productos de limpiezas naturales</td>
-									        <td><a href="{{ route('verproyectos') }}" class="btn btn-primary">ver</a> </td>
-									      </tr>
-									      <tr>
-									      	<td>5</td>
-									        <td>Naranja</td>
-									        <td>Manzana Arce</td>
-									        <td>a_rosa@test.com</td>
-									        <td>Productos de limpiezas naturales volumen 2</td>
-									        <td><a href="{{ route('verproyectos') }}" class="btn btn-primary">ver</a> </td>
-									      </tr>
-									    </tbody>
-									  </table>
+			  				@forelse($users as $user)
+
+			  					<tr>
+			  					<td>{{ $user->proyecto->emprendedor->Nombre }}</td>
+					  			<td>{{ $user->proyecto->emprendedor->ApellidoP }} {{ $user->proyecto->emprendedor->ApellidoM }}</td>
+					  			<td>{{ $user->proyecto->NombreProd }}</td>	
+		
+			  			<td>
+			  				<a type="button" class="btn btn-primary" href="{{ route('projects.show', $user->proyecto->id) }}"><i class="far fa-eye"></i></a>							
+			  			</td>
+			  		</tr>
+
+			  	@empty
+					<td colspan="6" style="text-align: center;"><h4>No Hay Asesores Registrados</h4></td>
+					@endforelse
+					
+			  </tbody>
+			</table>
 	  								
 	  								<nav class="d-flex justify-content-center">
 										<ul class="pagination pagination-sm">
