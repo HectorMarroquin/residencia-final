@@ -89,9 +89,7 @@ class EmprendedorRegisController extends Controller
         $colaborador->emprendedor_id = $Emprendedor->id;
         $colaborador->save();
       //  Colaborador::create($request->all());
-        return redirect()->route('Registro.create');
-
-        
+        return redirect()->route('Registro.create');      
     
     }
 

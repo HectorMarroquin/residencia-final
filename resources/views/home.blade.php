@@ -3,7 +3,22 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-12">
+        
+
+        @if (Auth::user()->hasRole('administrador'))
+
+        @include('administrador')
+
+        @elseif (Auth::user()->hasRole('asesor'))
+
+        @include('asesor')    
+
+        @elseif (Auth::user()->hasRole('emprendedor'))
+
+            I don't have any records!
+            
+        @endif
+        <!--<div class="col-sm-12">
             <div class="card">
                 <div class="card-header">We Code Messenger</div>
 
@@ -11,7 +26,7 @@
                     <chat-app :user="{{ auth()->user() }}"></chat-app>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 @endsection

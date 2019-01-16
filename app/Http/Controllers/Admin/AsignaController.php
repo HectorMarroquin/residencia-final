@@ -8,7 +8,7 @@ use App\Models\Proyecto;
 use App\Models\Emprendedor;
 use App\Models\Asignacion;
 use App\Models\Asesor;
-
+use App\Http\Requests\AsignacionValidation;
 class AsignaController extends Controller
 {
     /**
@@ -44,7 +44,7 @@ class AsignaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AsignacionValidation $request)
     {   
         
           Asignacion::create($request->all());

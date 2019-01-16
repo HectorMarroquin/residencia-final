@@ -26,19 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-       if(Auth::user()->hasRole('administrador')){
-
-            return view('Administrador/dashboard');
-        }
-
-        elseif(Auth::user()->hasRole('asesor')){
-
-            return view('Asesor/ver-proyecto');
-        }
-
-        elseif(Auth::user()->hasRole('emprendedor')){
-
-            return view('LayoutsEmpren');
-        }
+       return view('home');
     }
 }

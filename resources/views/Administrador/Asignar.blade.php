@@ -1,7 +1,6 @@
-@extends('layoutAdmin')
-
-@section('content')
-
+@extends('administrador')
+ 
+@section('admin')
 <div class="container">
 	<form class="form-inline mb-4 pt-4">
 			{{ csrf_field() }}
@@ -39,6 +38,7 @@
 										<option value="{{$proyecto->id}}">{{ $proyecto->NombreProd }}</option>
 									@endforeach
 							</select>
+							{!! $errors->first('proyecto_id', '<span class=errores>:message</span>') !!}
 						</td>
 						<td>
 								<select name="asesor_id" class="custom-select">

@@ -1,7 +1,6 @@
-@extends('layoutAdmin')
-
-@section('content')
-
+@extends('administrador')
+ 
+@section('admin')
 <div class="container">
   <h2>Panel De Actividades</h2>
   <br>
@@ -73,7 +72,7 @@
 		    <tr>
 		      <th scope="col">Nombre de Fase</th>
 		      <th scope="col">Actividad</th>
-		      <th scope="col">Funciones</th>
+		      {{-- <th scope="col">Funciones</th> --}}
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -83,18 +82,22 @@
 							<td>{{$fase->NombreFase}}</td>
 
 							<td>
-								<select name="" id="" class="custom-select">
-										<option disabled="disabled" selected>Actividades</option>
+								
 										@foreach ($fase->actividades as $actividad)
-												<option value="{{$actividad->id}}">{{ $actividad->Nombre }}</option>
-										@endforeach
-								</select>
+												{{ $actividad->Nombre }}
+												<button type="button" class="btn btn-primary " style="float: right;" data-toggle="modal" data-target="#Update{{$actividad->id}}"><i class="fas fa-pen-square"></i></button>
+												<button type="button" class="btn btn-danger" style="float: right;" data-toggle="modal" data-target="#Delete{{$actividad->id}}"><i class="fas fa-trash-alt"></i></button>
+												<hr>
+												@include('Administrador.EditarAct')
+												@include('Administrador.EliminarAct')	
+												@endforeach
+								
 							</td>
 							@isset($actividad->id)
-							<td> 
+							{{-- <td> 
 								 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Delete{{$actividad->id}}"><i class="fas fa-trash-alt"></i></button>
-						 		 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Update{{$fase->id}}"><i class="fas fa-pen-square"></i></button>
-							</td>
+						 		 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Update{{$actividad->id}}"><i class="fas fa-pen-square"></i></button>
+							</td> --}}
 						</tr>
 						@include('Administrador.EliminarAct')					
 						@include('Administrador.EditarAct')
