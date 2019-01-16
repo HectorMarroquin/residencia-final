@@ -1,6 +1,6 @@
-@extends('layoutAdmin')
-
-@section('content')
+@extends('administrador')
+ 
+@section('admin')
 <div class="espacio1"></div>
 <div class="container-fluid rounded" style="background-color: #f8f9f9;">
     

@@ -1,6 +1,6 @@
-@extends('layoutAdmin')
-
-@section('content')
+@extends('administrador')
+ 
+@section('admin')
 	<div class="espacio"></div>
   <div class="card bg-light text-dark">
     <div class="card-body">
