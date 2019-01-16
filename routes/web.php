@@ -101,3 +101,6 @@ Route::get('/mensajes',['as'=>'mensajes', function () {
 Route::get('/chat',['as'=>'chat', function () {
     return view('Asesor/chat');
 }]);
+Route::get('/chat1',['as'=>'chat1', function () {
+    return view('Administrador/chat1');
+}]);

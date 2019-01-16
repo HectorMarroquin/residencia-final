@@ -40,7 +40,7 @@
             <span>Actividades</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('chat1') }}">
                 <i class="fas fa-sms"></i>
             <span>Chat</span></a>
         </li>

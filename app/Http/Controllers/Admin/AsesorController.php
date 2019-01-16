@@ -78,9 +78,9 @@ class AsesorController extends Controller
      */
     public function show($id)
     {
-        //$asesor = Asesor::findOrFail($id);
+        Asesor::findOrFail($id)->delete();
 
-       // return view('Administrador.show-asesores', compact('asesor'));
+        return redirect()->route('asesores.index');
     }
 
     /**
