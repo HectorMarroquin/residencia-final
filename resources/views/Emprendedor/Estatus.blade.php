@@ -1,6 +1,7 @@
-@extends('LayoutsEmpren')
+@extends('emprendedor')
 
-@section('contenido')
+@section('empren')
+
         <div id="page-content-wrapper" class="form-group">
                <div class="container-fluid">
                 <h2> Estado del Proyecto </h2>

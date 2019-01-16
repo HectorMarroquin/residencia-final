@@ -1,6 +1,7 @@
-@extends('LayoutsEmpren')
+@extends('emprendedor')
 
-@section('contenido')
+@section('empren')
+
         <div id="page-content-wrapper" class="form-group" >
                <div class="container-fluid">
                 <form class="form-group" method="POST" action="{{ route('Archivo.store')}}" enctype="multipart/form-data">

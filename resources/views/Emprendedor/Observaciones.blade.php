@@ -1,6 +1,7 @@
-@extends('LayoutsEmpren')
+@extends('emprendedor')
 
-@section('contenido')
+@section('empren')
+
 <br>
 <br>
 <br>
