@@ -1,7 +1,6 @@
-@extends('layoutAdmin')
-
-@section('content')
-
+@extends('administrador')
+ 
+@section('admin')
 <div class="container">
 	<form class="form-inline mb-4 pt-4" method="GET" action="{{route('emprendedores.index')}}">
 			{!! csrf_field() !!}

@@ -1,7 +1,6 @@
-@extends('layoutAdmin')
-
-@section('content')
-
+@extends('administrador')
+ 
+@section('admin')
 <div class="container">
   <h2>Panel De Actividades</h2>
   <br>

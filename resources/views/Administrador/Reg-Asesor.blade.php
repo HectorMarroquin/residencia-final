@@ -1,6 +1,6 @@
-@extends('layoutAdmin')
-
-@section('content')
+@extends('administrador')
+ 
+@section('admin')
 
 <div class="espacio"></div>
 <div class="container-fluid borde">

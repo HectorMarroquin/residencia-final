@@ -7,11 +7,11 @@
 
         @if (Auth::user()->hasRole('administrador'))
 
-             
+        @include('administrador')
 
         @elseif (Auth::user()->hasRole('asesor'))
 
-            @include('asesor')
+        @include('asesor')    
 
         @elseif (Auth::user()->hasRole('emprendedor'))
 
