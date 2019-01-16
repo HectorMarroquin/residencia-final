@@ -35,7 +35,7 @@
         </li>
 
          <li class="nav-item">
-          <a class="nav-link" href="{{ route('chat') }}">
+          <a class="nav-link" href="{{ route('chat.index') }}">
             <i class="far fa-comment-alt"></i>
             <span>Chat</span></a>
         </li>

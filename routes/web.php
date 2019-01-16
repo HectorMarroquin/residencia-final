@@ -93,11 +93,15 @@ Route::get('/email2',['as'=>'email2', function () {
 
 //Route::get('Email','EmailController');
 Route::resource('emails','EmailController'); 
+Route::resource('chat', 'ChatViewController');
 
 Route::get('/mensajes',['as'=>'mensajes', function () {
     return view('Asesor/mensajes');
 }]);
 
-Route::get('/chat',['as'=>'chat', function () {
+/*Route::get('/chat',['as'=>'chat', function () {
     return view('Asesor/chat');
-}]);
+}]);*/
+
+
+

@@ -1,22 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Asesor;
-
-use App\User;
-use Auth;
-use App\Models\Role;
-use App\Models\Asesor;
-use App\Models\Asignacion;
-use App\Models\Proyecto;
-use App\Models\Colaborador;
-use App\Email;
-use DB;
-
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use User;
+use Role;
+use Auth;
 
-class ProjectController extends Controller
+class ChatViewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,18 +16,14 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //proyectos = User::where('id', '!=', auth()->id())->get();
-        $idd=Asesor::where('user_id', '=', auth()->id())->first();
+        if(Auth::user()->hasRole('asesor') ){
 
-        // $idd = 17
+             return view('Asesor/chat');
+         
+         }elseif (Auth::user()->hasRole('administrador')) {
+             return view('Administrador/chat');
+         }
         
-        $id=$idd->id;
-                
-        $users=Asignacion::where('asesor_id', $id)->get();    
-
-        $files=Email::get();
-
-        return view('Asesor.proyectos', compact('users','files'));  
     }
 
     /**
@@ -68,15 +55,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-          $ids = Proyecto::findOrFail($id); 
-
-          $files= Email::get();
-            
-          $idEmpred = $ids['emprendedor_id'];
-
-          $colaborador= Colaborador::where('emprendedor_id', $idEmpred)->get();
-
-        return view('Asesor.show-proyecto',compact('ids','colaborador','files'));    
+        //
     }
 
     /**
@@ -87,11 +66,7 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-          $archivo=Email::findOrFail($id);
-        $file_rute=$archivo->file;
-        $ruta=public_path('correo')."/".$file_rute; 
-        
-        return response()->download($ruta); 
+        //
     }
 
     /**
@@ -115,17 +90,5 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-    public function download($id)
-    {
-        $archivo=Email::findOrFail($id);
-        $file_rute=$archivo->file;
-        $ruta=public_path('correo')."/".$file_rute; 
-        
-        return response()->download($ruta); 
-
-
     }
 }
