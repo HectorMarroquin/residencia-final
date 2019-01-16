@@ -24,18 +24,9 @@ class ListEntregaController extends Controller
     {
         $id = Auth()->user()->id;
         $empreId = Emprendedor::where('user_id', $id)->value('id');
-        $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();
-        $proyectoss = Proyecto::where('emprendedor_id', $empreId)->value('id');
-        $asignaciones = Asignacion::where('proyecto_id', $proyectoss)->get();
-        $asignacioness = Asignacion::where('proyecto_id', $proyectoss)->value('id');
-
-        $asesores = Asignacion::join('asesores', 'asesores.id', '=', 'asignaciones.asesor_id')->select('Asignaciones.id', 'Asignaciones.asesor_id', 'Asignaciones.proyecto_id')->get();
-
-       
-                     //dd($asesores);
-    
-
-        return view ('Emprendedor.ListaEntregas', compact('asignaciones', 'proyectos', 'asesor', 'proyectoss', 'asesorva'));
+        $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();    
+        
+        return view ('Emprendedor.ListaEntregas', compact('proyectos'));
     }
 
     /**

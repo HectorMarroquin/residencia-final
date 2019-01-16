@@ -17,7 +17,11 @@ class EntregasController extends Controller
      */
     public function index()
     {
-        
+        $fases = Fase::all();
+        $actividades = Actividad::all();
+
+        // $actividades = Actividad::where('fase_id', $fase)->get();
+        return view ('Emprendedor.Entregas', compact('fases','actividades'));
     }
 
     /**
@@ -49,12 +53,7 @@ class EntregasController extends Controller
      */
     public function show($id)
     {
-        $proyectos = Proyecto::findOrFail($id);
-        $fases = Fase::all();
-        $actividades = Actividad::all();
-
-        // $actividades = Actividad::where('fase_id', $fase)->get();
-        return view ('Emprendedor.Entregas', compact('fases','actividades', 'proyectos', 'fase'));
+       
     }
 
     /**

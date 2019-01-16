@@ -9,7 +9,7 @@ class Proyecto extends Model
 
     public $table ="proyectos";
 
-    protected $fillable = ['Folio','Actividad','Razonsocial', 'RFC', 'NombreDirector', 'Telefonoemp', 'CorreoEmp', 'Propuesta', 'PropuestaOtra', 'NombreProd', 'Descripcion', 'Organizacion', 'Cual', 'asesor_id', 'emprendedor_id', 'created_at', 'updated_at'];
+    protected $fillable = ['Actividad','Razonsocial', 'RFC', 'NombreDirector', 'Telefonoemp', 'CorreoEmp', 'Propuesta', 'PropuestaOtra', 'NombreProd', 'Descripcion', 'Organizacion', 'Cual', 'asesor_id', 'emprendedor_id', 'created_at', 'updated_at'];
 
     protected $hidden = [
         'NombreProd', 'remember_token',

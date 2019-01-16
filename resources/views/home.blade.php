@@ -15,7 +15,7 @@
 
         @elseif (Auth::user()->hasRole('emprendedor'))
 
-            I don't have any records!
+        @include('emprendedor')
             
         @endif
        
