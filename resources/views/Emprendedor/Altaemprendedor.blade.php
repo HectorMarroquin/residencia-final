@@ -1,6 +1,6 @@
-@extends('LayoutsEmpren')
+@extends('emprendedor')
 
-@section('contenido')
+@section('empren')
         <div id="page-content-wrapper" class="container-fluid form-group" >
                <br>
                <div class="container-fluid">

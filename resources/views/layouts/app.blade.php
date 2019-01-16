@@ -119,5 +119,10 @@
             @yield('content')
         </main>
     </div>
+<script src="{{ asset('js/Emprendedorbarraopciones.js')}}"></script>
+<script src="{{ asset('js/Agregarcolumnas.js')}}"></script>
+<script src="{{ asset('js/muestratipodepersonas.js')}}"></script>
+<script src="{{ asset('js/Agregarcolumnasempre.js')}}"></script>
+<script src="{{ asset('js/Agregarcolumnascompe.js')}}"></script>
 </body>
 </html>

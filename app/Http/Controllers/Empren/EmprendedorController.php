@@ -17,50 +17,9 @@ class EmprendedorController extends Controller
 	//}
 	public function Home()
 	{
-		return view('LayoutsEmpren');
+		return view('emprendedor');
 	}
 
-	public function RegisEmpre()
-	{
-		return view('Emprendedor/Altaemprendedor');
-	}
-
-	public function RegisProy()
-	{
-		return view('Emprendedor/Altaproyecto');
-	}
-
-	public function Entreproy()
-	{
-		return view('Emprendedor/Entregas');
-	}
-
-	public function Estadproy()
-	{
-		return view('Emprendedor/Estatus');
-	}
-
-	public function ListEntre()
-	{
-		return view('Emprendedor/ListaEntregas');	
-	}
-
-	public function ListEsta()
-	{
-		return view('Emprendedor/ListaEstatus');
-	}
-
-	public function Entregadoc() 
-	{
-		return view('Emprendedor/Entregadoc');
-
-	}
-
-	public function Obervacion() 
-	{
-		return view('Emprendedor/Observaciones');
-
-	}
 	public function Validar(CreateEmprenValidation $request) 
 	{
 		$data = $request->all();
