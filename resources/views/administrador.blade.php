@@ -12,7 +12,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
+              <i class="fas fa-users-cog"></i>
             <span>Asesores</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -26,7 +26,7 @@
          
         <li class="nav-item">
             <a class="nav-link" href="{{ route('emprendedores.index') }}">
-            <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-user-tie"></i>
             <span>Ver Emprendedores</span></a>
         </li>
         <li class="nav-item">
@@ -36,12 +36,12 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('actividades.index') }}">
-            <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-chart-line"></i>
             <span>Actividades</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-sms"></i>
             <span>Chat</span></a>
         </li>
       </ul>
