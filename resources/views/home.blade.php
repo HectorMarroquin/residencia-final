@@ -7,7 +7,7 @@
 
         @if (Auth::user()->hasRole('administrador'))
 
-        @include('administrador')
+        @include('Administrador/dashboard')
 
         @elseif (Auth::user()->hasRole('asesor'))
 
