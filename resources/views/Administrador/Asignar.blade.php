@@ -39,6 +39,7 @@
 										<option value="{{$proyecto->id}}">{{ $proyecto->NombreProd }}</option>
 									@endforeach
 							</select>
+							{!! $errors->first('proyecto_id', '<span class=errores>:message</span>') !!}
 						</td>
 						<td>
 								<select name="asesor_id" class="custom-select">

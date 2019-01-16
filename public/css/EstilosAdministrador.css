@@ -115,3 +115,8 @@ li.dropdown:last-child .dropdown-menu {
 .borde1{
   background-color:rgba(161, 160, 159 ,0.5);   
 }
+
+.errores {
+  color: red;
+  font-size: 12px;
+}
