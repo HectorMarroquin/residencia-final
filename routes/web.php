@@ -99,5 +99,5 @@ Route::get('/mensajes',['as'=>'mensajes', function () {
 }]);
 
 Route::get('/chat',['as'=>'chat', function () {
-    return view('chat');
+    return view('Asesor/chat');
 }]);
