@@ -29,7 +29,10 @@
                     <td> {{ $avance->Proyecto->NombreProd}} </td>
                     <td> {{ $avance->Fase->NombreFase }} </td>
                     @if ($avance->NumeroEntrega)
-                    <td> {{ $avance->Comentario}} </td>
+                    <td> 
+                      <a type="button" class="btn btn-primary" href="{{ route('Archivo.edit', $avance->id) }}">
+                            <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                       </td>
                     @else
                       <td><span style="font-weight:bold;">No existe retroalimentacion por el momento</span></td>
                     @endif
