@@ -108,6 +108,7 @@ class HistoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Proyecto::findOrFail($id)->delete();
+        return redirect()->route('historial.index');
     }
 }

@@ -65,8 +65,13 @@
             <td>{{ $proyecto->Telefonoemp }}</td>
             <td>{{ $proyecto->CorreoEmp }}</td>
             <td><span class="badge badge-pill badge-success">Aprovado</span></td>
-            <td><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></i></button>
-                
+            <td>
+              
+             
+              <a href="{{ route('historial.destroy', $proyecto->id) }}">
+                  <i class="fas fa-trash-alt" style="font-size: 35px;"></i></i>
+                  
+              </a>  
                 <a href="{{ route('historial.show', $proyecto->id) }}">
                     <i class="fas fa-file-download" style="font-size: 35px;"></i>
                 </a>
