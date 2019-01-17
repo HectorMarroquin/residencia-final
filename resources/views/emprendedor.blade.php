@@ -42,8 +42,12 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Estatus de los Proyectos</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('chat.index') }}">
+                <i class="fas fa-sms"></i>
+            <span>Chat</span></a>
+        </li>
         @endif
-
       </ul>
 
        <div class ="container my-3">

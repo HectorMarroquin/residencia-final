@@ -3,6 +3,12 @@
 namespace App\Http\Controllers\Empren;
 
 use App\Models\Emprendedor;
+use App\Models\Fase;
+use App\Models\Avance;
+use App\Models\Proyecto;
+use DB;
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +23,15 @@ class EstatusController extends Controller
     {
         $id = Auth()->user()->id;
         $empre = Emprendedor::where('user_id', $id)->value('id');
-        return view ('Emprendedor.ListaEstatus', compact('empre'));
+
+        $empreId = Emprendedor::where('user_id', $id)->value('id');
+        $proyectos = Proyecto::where('emprendedor_id', $empreId)->value('id');
+
+        $avances = Avance::where('proyecto_id', $proyectos)->get();
+        //$fase = Fase::all();
+        //$avances = Avance::all();
+        
+        return view ('Emprendedor.ListaEstatus', compact('empre', 'fase', 'avances'));
     }
 
     /**

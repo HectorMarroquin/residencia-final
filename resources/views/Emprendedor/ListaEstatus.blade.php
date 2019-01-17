@@ -14,27 +14,37 @@
         <table class="table table-hover table-bordered">
             <thead class="thead-light">
                 <tr>
-                      <th scope="col">Nombre de Proyecto</th>
-                      <th scope="col">Nombre del Asesor</th>
+                      <th scope="col">Nombre del proyecto</th>
                       <th scope="col">Fase</th>
-                      <th scope="col">Estado</th>
+                      <th scope="col">Retroalimentacion 1</th>
+                      <th scope="col">Retroalimentacion 2</th>
+                     
                 </tr>
           </thead>
           <tbody>
+              @forelse ($avances as $avance )
                 <tr>
-                      <td>Plataforma dijital para la consulta de actas de matrimono</td>
-                      <td>Juan carlos pimentel diaz</td>
-                      <td>1</td>
-                      <td><span class="badge badge-pill badge-danger">Reprovado</span></td></td> 
+                    <td> {{ $avance->Proyecto->NombreProd}} </td>
+                    <td> {{ $avance->Fase->NombreFase }} </td>
+                    @if ($avance->NumeroEntrega == 1)
+                    <td> {{ $avance->Comentario}} </td>
+                    @else
+                      <td><span style="font-weight:bold;">No existe retroalimentacion por el momento</span></td>
+                    @endif
 
-                </tr>
+                     @if ($avance->NumeroEntrega == 2)
+                    <td> {{ $avance->Comentario}} </td>
+                    @else
+                      <td><span style="font-weight:bold;">No existe retroalimentacion por el momento</span></td>
+                    @endif
+                    
 
-                <tr>
-                    <td>Seguridad para las casa habitacion</td>
-                    <td>Maria Guadalupe Monjaras Velazco</td>
-                    <td>3</td>
-                    <td><span class="badge badge-pill badge-success">Aprovado</span></td></td>
-                </tr>
+                    @empty
+                        <td colspan="6" style="text-align: center;"><h4>No Hay Proyectos Registrados</h4></td>
+                         </tr>
+
+                        @endforelse
+
            </tbody>
         </table>
     </div>

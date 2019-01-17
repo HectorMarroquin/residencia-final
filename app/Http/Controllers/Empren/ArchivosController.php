@@ -72,11 +72,10 @@ class ArchivosController extends Controller
     public function show($id)
     {   
         $fase = Fase::findOrFail($id);
-         $id = Auth()->user()->id;
+        $id = Auth()->user()->id;
         $empreId = Emprendedor::where('user_id', $id)->value('id');
         $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();
 
-        $id = Auth()->user()->id;
         $empre = Emprendedor::where('user_id', $id)->value('id');
         return view ('Emprendedor.Entregadoc', compact('proyectos', 'fase', 'empre'));
     }
