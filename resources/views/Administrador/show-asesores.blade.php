@@ -32,12 +32,12 @@
 											@endforeach
 									</select>
 							</td>
-			  			<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#update{{$asesor->id}}"><i class="fas fa-pen-square"></i></button>
-							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$asesor->id}}"><i class="fas fa-trash-alt"></i></button>
+			  			<td><a href="{{route('asesores.edit',$asesor->id)}}"> <i class="fas fa-pen-square" style="font-size: 40px;"></i></a>
+							<button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-target="#myModal{{$asesor->id}}"><i class="fas fa-trash-alt"></i></button>
 			  			</td>
 			  		</tr>
 					@include('Administrador.Eliminar')
-					@include('Administrador.Editar')
+					{{-- @include('Administrador.Editar') --}}
 			  	@empty
 					<td colspan="6" style="text-align: center;"><h4>No Hay Asesores Registrados</h4></td>
 					@endforelse

@@ -40,7 +40,7 @@
             <span>Actividades</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('actividades.index') }}">
+            <a class="nav-link" href="{{ route('email') }}">
                 <i class="fas fa-envelope"></i>
             <span>Correos Masivos</span></a>
         </li>

@@ -70,7 +70,7 @@
               
              
               <a href="{{ route('historial.edit', $proyecto->id) }}">
-                  <i class="fas fa-trash-alt" style="font-size: 35px; color: red;"></i></i>
+                  <i class="fas fa-trash-alt" style="font-size: 35px; color: red;"></i>
                   
               </a>  
                
