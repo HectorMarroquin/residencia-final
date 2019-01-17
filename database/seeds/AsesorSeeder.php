@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\Asesor;
-
+use App\User;
 class AsesorSeeder extends Seeder
 {
     /**
@@ -14,6 +14,9 @@ class AsesorSeeder extends Seeder
     public function run()
     {
         
+            $users1 = User::where('name','Aldo Fabian')->value('id');
+            $user2 = User::where('name','Wilder Adan')->value('id');
+            $user3 = User::where('name','Alan Josue')->value('id');
 
             Asesor::create([
         	'Nombre' => 'Aldo Fabian',
@@ -33,7 +36,7 @@ class AsesorSeeder extends Seeder
         	'Sexo' => 'Masculino',
         	'Correo' => 'aldo@gmail.com',   	
         	'Contraseña' => bcrypt('123456'),
-
+            'user_id' => $users1,
 
         ]);
 
@@ -55,7 +58,7 @@ class AsesorSeeder extends Seeder
             'Sexo' => 'Masculino',
             'Correo' => 'wil@gmail.com',    
             'Contraseña' => bcrypt('123456'),
-
+            'user_id' => $user2,
 
         ]);
 
@@ -77,11 +80,11 @@ class AsesorSeeder extends Seeder
             'Sexo' => 'Masculino',
             'Correo' => 'alan@gmail.com',    
             'Contraseña' => bcrypt('123456'),
-
+            'user_id' => $user3,
 
         ]);
 
-        factory(Asesor::class, 25)->create();
+        //factory(Asesor::class, 25)->create();
 
 
 
