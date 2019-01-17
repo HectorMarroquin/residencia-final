@@ -93,18 +93,7 @@
 												@endforeach
 								
 							</td>
-							@isset($actividad->id)
-							{{-- <td> 
-								 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Delete{{$actividad->id}}"><i class="fas fa-trash-alt"></i></button>
-						 		 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Update{{$actividad->id}}"><i class="fas fa-pen-square"></i></button>
-							</td> --}}
-						</tr>
-						@include('Administrador.EliminarAct')					
-						@include('Administrador.EditarAct')
-						
-						@endisset
-					  
-					</tr>
+				</tr>
 					@empty
 					<td colspan="3" style="text-align: center;"><h4>No Hay Fases Registrados</h4></td>
 					@endforelse

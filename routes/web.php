@@ -98,3 +98,7 @@ Route::resource('chat', 'ChatViewController');
 Route::get('/mensajes',['as'=>'mensajes', function () {
     return view('Asesor/mensajes');
 }]);
+
+
+
+

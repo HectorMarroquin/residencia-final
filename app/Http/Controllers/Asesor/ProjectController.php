@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Asesor;
 
 use App\User;
 use Auth;
-use App\Models\Role;
+use App\Models\Actividad;
 use App\Models\Asesor;
 use App\Models\Asignacion;
 use App\Models\Proyecto;
 use App\Models\Colaborador;
-use App\Email;
+use App\Models\Avance;
+use App\Models\Revision;
 use DB;
 
 
@@ -27,14 +28,12 @@ class ProjectController extends Controller
     {
         //proyectos = User::where('id', '!=', auth()->id())->get();
         $idd=Asesor::where('user_id', '=', auth()->id())->first();
-
-        // $idd = 17
         
         $id=$idd->id;
                 
         $users=Asignacion::where('asesor_id', $id)->get();    
 
-        $files=Email::get();
+    
 
         return view('Asesor.proyectos', compact('users','files'));  
     }
@@ -57,7 +56,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -68,15 +67,19 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
+          $actividades=Actividad::get();  
+
           $ids = Proyecto::findOrFail($id); 
 
-          $files= Email::get();
+          $id_project = $ids->id;  
+
+          $files=Avance::where('proyecto_id', $id_project)->get();         
             
           $idEmpred = $ids['emprendedor_id'];
 
           $colaborador= Colaborador::where('emprendedor_id', $idEmpred)->get();
 
-        return view('Asesor.show-proyecto',compact('ids','colaborador','files'));    
+        return view('Asesor.show-proyecto',compact('ids','colaborador','files','actividades'));    
     }
 
     /**
@@ -85,13 +88,15 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id)// metodo para descargar
     {
-          $archivo=Email::findOrFail($id);
-        $file_rute=$archivo->file;
-        $ruta=public_path('correo')."/".$file_rute; 
-        
+       
+        $archivo=Avance::findOrFail($id);
+        $file_rute=$archivo->Documento;
+        $ruta=public_path('Revisiones')."/".$file_rute; 
+
         return response()->download($ruta); 
+        
     }
 
     /**
@@ -101,9 +106,28 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) //metodo para guardar lso archivos que envio como asesor
     {
-        //
+            if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $name = time().$file->getClientOriginalName();
+            $file->move(public_path().'/Revisiones/', $name);
+        }
+
+        /*   $avance = new Revision;
+            $avance->Documento = $name;
+            $avance->avance_id = $;
+            $avance->save(); */
+
+            Revision::create([
+            'Documento' => $name,
+            'avance_id' => $ids,
+
+            ]);
+            
+            return back();
+
+       
     }
 
     /**

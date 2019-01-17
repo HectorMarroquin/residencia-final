@@ -24,7 +24,7 @@
 				      <th scope="col">Proyectos</th>
 				      <th scope="col">Telefono</th>
 				      <th scope="col">RFC</th>
-				      <th scope="col">Fase</th>
+				      <th scope="col">CURP</th>
 				      <th scope="col">Funciones</th>
 			    </tr>
 		  </thead>

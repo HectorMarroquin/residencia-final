@@ -1,5 +1,5 @@
 <!-- Modal para Editar Asesor -->
-<div class="modal fade" id="exampleModalLong{{ $asesor->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="update{{ $asesor->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -71,7 +71,7 @@
 			         <option value="Queretaro">Querétaro</option>
 			         <option value="Quintana">Quintana Roo</option>
 			         <option value="San Luis Potosi">San Luis Potosí</option>
-			         <option value=Sinaloa"">Sinaloa</option>
+			         <option value="Sinaloa">Sinaloa</option>
 			         <option value="Sonora">Sonora</option>
 			         <option value="Tabasco">Tabasco</option>
 			         <option value="Tamaulipas">Tamaulipas</option>
@@ -164,13 +164,11 @@
 		    </div>
 		  </div>
 			
-	 
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			<button type="submit" class="btn btn-primary">Guardar Cambios</button>
+		</form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-      </div>
-    </form>
+      
     </div>
   </div>
 </div>

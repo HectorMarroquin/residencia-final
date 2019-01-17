@@ -15,5 +15,10 @@ class Avance extends Model
 
     return $this->belongsTo(Proyecto::class);
     }
+
+     public function revicion(){
+
+    return $this->hasOne(Revision::class);
+    }
 }
  
