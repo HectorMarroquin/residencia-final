@@ -121,7 +121,7 @@ class ProjectController extends Controller
 
             Revision::create([
             'Documento' => $name,
-            'avance_id' => $ids,
+            'avance_id' => $id,
 
             ]);
             
