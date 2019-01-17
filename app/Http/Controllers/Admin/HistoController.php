@@ -67,10 +67,6 @@ class HistoController extends Controller
     {
         $proyecto = Proyecto::findOrFail($id);
 
-        // $pdf = PDF::loadView('pdf.proyecto', compact('proyecto'));
-
-        // return $pdf->download('proyecto.pdf');
-
         $view = view('pdf.proyecto', compact('proyecto'));
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
@@ -85,7 +81,8 @@ class HistoController extends Controller
      */
     public function edit($id)
     {
-        //
+        Proyecto::findOrFail($id)->delete();
+        return redirect()->route('historial.index');
     }
 
     /**
@@ -108,6 +105,7 @@ class HistoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Proyecto::findOrFail($id)->delete();
+        return redirect()->route('historial.index');
     }
 }

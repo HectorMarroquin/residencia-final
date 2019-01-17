@@ -54,6 +54,7 @@
               <th scope="col">Correo</th>
               <th scope="col">Status</th>
               <th scope="col">Funciones</th>
+              
           </tr>
       </thead>
       <tbody>
@@ -65,15 +66,22 @@
             <td>{{ $proyecto->Telefonoemp }}</td>
             <td>{{ $proyecto->CorreoEmp }}</td>
             <td><span class="badge badge-pill badge-success">Aprovado</span></td>
-            <td><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></i></button>
-                
+            <td>
+              
+             
+              <a href="{{ route('historial.edit', $proyecto->id) }}">
+                  <i class="fas fa-trash-alt" style="font-size: 35px; color: red;"></i>
+                  
+              </a>  
+               
+        
                 <a href="{{ route('historial.show', $proyecto->id) }}">
                     <i class="fas fa-file-download" style="font-size: 35px;"></i>
                 </a>
             </td>
         </tr>
         @empty
-        <td colspan="8" style="text-align: center;"><h4>No Hay Emprendedores Registrados</h4></td>
+        <td colspan="8" style="text-align: center;"><h4>No hay proyectos Registrados</h4></td>
         @endforelse
           
        </tbody>

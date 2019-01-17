@@ -56,9 +56,9 @@ class ActiController extends Controller
      */
     public function show($id)
     {
-         // $actividad = Actividad::findOrFail($id);
+        Actividad::findOrFail($id)->delete();
 
-        // return view('Administrador.actividades', compact('actividad'));
+        return redirect()->route('actividades.index');
     }
 
     /**

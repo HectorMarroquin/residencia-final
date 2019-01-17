@@ -24,7 +24,7 @@
 				      <th scope="col">Proyectos</th>
 				      <th scope="col">Telefono</th>
 				      <th scope="col">RFC</th>
-				      <th scope="col">Fase</th>
+				      <th scope="col">CURP</th>
 				      <th scope="col">Funciones</th>
 			    </tr>
 		  </thead>
@@ -65,11 +65,12 @@
 									<!-- Modal footer -->
 									<div class="modal-footer">
 										 <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-										 <form style="display: inline;" method="POST" action="{{ route('emprendedores.destroy', $emprendedor->id) }}">
+										 {{-- <form style="display: inline;" method="POST" action="{{ route('emprendedores.destroy', $emprendedor->id) }}">
 											{{ csrf_field() }}
 											{{ method_field('DELETE') }}
 										 <button type="submit" class="btn btn-secondary">Aceptar</button>
-									 </form>
+									 </form> --}}
+									 <a class="btn btn-primary" href="{{ route('emprendedores.destroy', $emprendedor->id) }}">Eliminar</a>
 									</div>
 									
 								</div>

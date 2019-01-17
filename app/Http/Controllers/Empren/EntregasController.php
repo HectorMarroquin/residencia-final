@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Fase;
 use App\Models\Actividad;
 use App\Models\Proyecto;
+use App\Models\Emprendedor;
 use App\Http\Controllers\Controller;
 
 class EntregasController extends Controller
@@ -21,7 +22,10 @@ class EntregasController extends Controller
         $actividades = Actividad::all();
 
         // $actividades = Actividad::where('fase_id', $fase)->get();
-        return view ('Emprendedor.Entregas', compact('fases','actividades'));
+
+         $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+        return view ('Emprendedor.Entregas', compact('fases','actividades', 'empre'));
     }
 
     /**

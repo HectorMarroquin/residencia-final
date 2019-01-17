@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->truncateTables([
 
              'asesores',   
-             'admins',
              'proyectos',
              'emprendedores',
              'fases',
@@ -32,7 +31,7 @@ class DatabaseSeeder extends Seeder
              'role_user'
         ]);
         
-           $this->call(AdminSeeder::class);
+           
            $this->call(AsesorSeeder::class);
            $this->call(EmprendedorSeeder::class);
            $this->call(ProyectoSeeder::class);

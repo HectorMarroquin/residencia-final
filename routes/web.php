@@ -99,10 +99,6 @@ Route::get('/mensajes',['as'=>'mensajes', function () {
     return view('Asesor/mensajes');
 }]);
 
-/*Route::get('/chat',['as'=>'chat', function () {
-    return view('Asesor/chat');
-}]);*/
 
 
 
-Route::get('/revision', 'RevisionController@guardar')->name('revision');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Empren;
 
+use App\Models\Emprendedor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,9 @@ class EstatusController extends Controller
      */
     public function index()
     {
-        return view ('Emprendedor.ListaEstatus');
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+        return view ('Emprendedor.ListaEstatus', compact('empre'));
     }
 
     /**

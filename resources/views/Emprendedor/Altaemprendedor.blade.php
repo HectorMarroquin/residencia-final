@@ -440,9 +440,11 @@
                 
                     <table class="table">
                         <tr style=" text-align:center;">
+                            @if (empty($empre))
                             <td>
                                 <input type="submit" value="Enviar" class="btn btn-outline-primary">
                             </td>
+                            @endif
 
                             <td>
                                 <div class="container">
