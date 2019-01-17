@@ -15,11 +15,11 @@ use App\Http\Requests\CreateEmprenValidation;
 
 class EmprendedorController extends Controller
 {
-	//public function __construct()
-	//{
-	//	$this->middleware('registro', ['only' => ['Home']]);
-
-	//}
+	 public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
 	public function Home()
 	{
 		$id = Auth()->user()->id;
