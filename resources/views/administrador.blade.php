@@ -40,6 +40,11 @@
             <span>Actividades</span></a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('actividades.index') }}">
+                <i class="fas fa-envelope"></i>
+            <span>Correos Masivos</span></a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('chat.index') }}">
                 <i class="fas fa-sms"></i>
             <span>Chat</span></a>

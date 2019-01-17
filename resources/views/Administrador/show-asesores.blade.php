@@ -32,7 +32,7 @@
 											@endforeach
 									</select>
 							</td>
-			  			<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong{{$asesor->id}}"><i class="fas fa-pen-square"></i></button>
+			  			<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#update{{$asesor->id}}"><i class="fas fa-pen-square"></i></button>
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$asesor->id}}"><i class="fas fa-trash-alt"></i></button>
 			  			</td>
 			  		</tr>

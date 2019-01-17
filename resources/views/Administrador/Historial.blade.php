@@ -54,6 +54,7 @@
               <th scope="col">Correo</th>
               <th scope="col">Status</th>
               <th scope="col">Funciones</th>
+              
           </tr>
       </thead>
       <tbody>
@@ -68,10 +69,12 @@
             <td>
               
              
-              <a href="{{ route('historial.destroy', $proyecto->id) }}">
-                  <i class="fas fa-trash-alt" style="font-size: 35px;"></i></i>
+              <a href="{{ route('historial.edit', $proyecto->id) }}">
+                  <i class="fas fa-trash-alt" style="font-size: 35px; color: red;"></i></i>
                   
               </a>  
+               
+        
                 <a href="{{ route('historial.show', $proyecto->id) }}">
                     <i class="fas fa-file-download" style="font-size: 35px;"></i>
                 </a>
