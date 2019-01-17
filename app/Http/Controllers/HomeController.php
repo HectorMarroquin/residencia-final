@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Role;
 use App\User;
+use App\Models\Emprendedor;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,6 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-       return view('home');
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+       return view('home', compact('empre'));
     }
 }

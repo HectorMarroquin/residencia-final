@@ -25,7 +25,9 @@ class ArchivosController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+        return view ('Emprendedor.Altaemprendedor', compact('empre'));
     }
 
     /**
@@ -46,8 +48,6 @@ class ArchivosController extends Controller
      */
     public function store(Request $request)
     {
-
-
          if ($request->hasFile('documento')) {
             $file = $request->file('documento');
             $name = time().$file->getClientOriginalName();
@@ -59,7 +59,8 @@ class ArchivosController extends Controller
             $avance->proyecto_id = $request->input('proyecto');
             $avance->fase_id = $request->input('fase');
             $avance->save();
-            return view ('LayoutsEmpren');
+            return redirect()->route('Archivo.index');
+            
     }
 
     /**
@@ -74,7 +75,10 @@ class ArchivosController extends Controller
          $id = Auth()->user()->id;
         $empreId = Emprendedor::where('user_id', $id)->value('id');
         $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();
-        return view ('Emprendedor.Entregadoc', compact('proyectos', 'fase'));
+
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+        return view ('Emprendedor.Entregadoc', compact('proyectos', 'fase', 'empre'));
     }
 
     /**

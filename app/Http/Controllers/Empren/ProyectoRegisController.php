@@ -22,7 +22,9 @@ class ProyectoRegisController extends Controller
      */
     public function index()
     {
-        return view('Emprendedor.Altaproyecto');
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+        return view('Emprendedor.Altaproyecto', compact('empre'));
     }
 
     /**
@@ -35,8 +37,9 @@ class ProyectoRegisController extends Controller
     	//$proyectos = Proyecto::all();
     	//$emprendedores = Emprendedor::all();
     	//$asesores = Asesor::all();
-
-        return view ('Emprendedor.Altaproyecto');
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+        return view ('Emprendedor.Altaproyecto', compact('empre'));
     }
 
     /**

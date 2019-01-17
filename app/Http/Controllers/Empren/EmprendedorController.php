@@ -3,6 +3,11 @@
 namespace App\Http\Controllers\Empren;
 
 use App\Http\Controllers\Controller;
+use DB;
+use Carbon\Carbon;
+use App\Models\Emprendedor;
+use App\User;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -17,7 +22,9 @@ class EmprendedorController extends Controller
 	//}
 	public function Home()
 	{
-		return view('emprendedor');
+		$id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+		return view('emprendedor', compact('empre'));
 	}
 
 	public function Validar(CreateEmprenValidation $request) 
