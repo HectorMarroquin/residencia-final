@@ -107,7 +107,17 @@
               </thead>
                 <tr>
                      <td></td>
-                <td>Entrega 1</td>
+                <td>
+                    @forelse($files as $file)
+                     @if( ($file->NumeroEntrega===2) && ($file->fase_id===1) ) 
+                          <a type="button" class="btn btn-primary" href="{{ route('projects.edit', $file->id) }}">
+                            <i class="fas fa-file-download">Descargar Archivo</i></a>    
+                       @endif          
+                                                 
+                           @empty
+                        <td colspan="6" style="text-align: center;"><h4>No Hay Colaboradores Registrados</h4></td>
+                        @endforelse
+                </td>
                  <td> 
 
 

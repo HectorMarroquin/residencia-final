@@ -9,7 +9,7 @@ use App\Models\Asesor;
 use App\Models\Asignacion;
 use App\Models\Proyecto;
 use App\Models\Colaborador;
-use App\Email;
+use App\Models\Avance;
 use DB;
 
 
@@ -27,14 +27,12 @@ class ProjectController extends Controller
     {
         //proyectos = User::where('id', '!=', auth()->id())->get();
         $idd=Asesor::where('user_id', '=', auth()->id())->first();
-
-        // $idd = 17
         
         $id=$idd->id;
                 
         $users=Asignacion::where('asesor_id', $id)->get();    
 
-        $files=Email::get();
+    
 
         return view('Asesor.proyectos', compact('users','files'));  
     }
@@ -70,7 +68,9 @@ class ProjectController extends Controller
     {
           $ids = Proyecto::findOrFail($id); 
 
-          $files= Email::get();
+          $id_project = $ids->id;  
+
+          $files=Avance::where('proyecto_id', $id_project)->get();         
             
           $idEmpred = $ids['emprendedor_id'];
 
@@ -87,11 +87,13 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-          $archivo=Email::findOrFail($id);
-        $file_rute=$archivo->file;
-        $ruta=public_path('correo')."/".$file_rute; 
+       
+        $archivo=Avance::findOrFail($id);
+        $file_rute=$archivo->Documento;
+        $ruta=public_path('Revisiones')."/".$file_rute; 
         
         return response()->download($ruta); 
+        
     }
 
     /**
