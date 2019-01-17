@@ -3,6 +3,7 @@
 <div id="wrapper">
 
       <!-- Sidebar -->
+      
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="{{ route('Empren-home') }}">
@@ -16,7 +17,9 @@
             <i class="fas fa-users"></i>
             <span>Registrar Emprendedor</span></a>
         </li>
-
+         
+      
+        @if (!empty($empre))
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
@@ -39,6 +42,8 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Estatus de los Proyectos</span></a>
         </li>
+        @endif
+
       </ul>
 
        <div class ="container my-3">

@@ -36,7 +36,9 @@ class EmprendedorRegisController extends Controller
      */
     public function create()
     {
-        return view ('Emprendedor.Altaemprendedor');
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+        return view ('Emprendedor.Altaemprendedor', compact('empre'));
     }
 
     /**

@@ -26,7 +26,8 @@ class ListEntregaController extends Controller
         $empreId = Emprendedor::where('user_id', $id)->value('id');
         $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();    
         
-        return view ('Emprendedor.ListaEntregas', compact('proyectos'));
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+        return view ('Emprendedor.ListaEntregas', compact('proyectos' ,'empre'));
     }
 
     /**
