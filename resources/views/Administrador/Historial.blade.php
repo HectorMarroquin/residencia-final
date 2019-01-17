@@ -73,7 +73,7 @@
             </td>
         </tr>
         @empty
-        <td colspan="8" style="text-align: center;"><h4>No Hay Emprendedores Registrados</h4></td>
+        <td colspan="8" style="text-align: center;"><h4>No hay proyectos Registrados</h4></td>
         @endforelse
           
        </tbody>

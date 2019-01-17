@@ -21,6 +21,7 @@
                     {{ method_field('DELETE') }}
                  <button type="submit" class="btn btn-secondary">Aceptar</button>
              </form>
+             
             </div>
             
         </div>

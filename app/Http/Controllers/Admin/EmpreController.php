@@ -55,7 +55,8 @@ class EmpreController extends Controller
      */
     public function show($id)
     {
-        //
+        Emprendedor::findOrFail($id)->delete();
+        return redirect()->route('emprendedores.index');
     }
 
     /**
