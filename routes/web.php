@@ -105,3 +105,4 @@ Route::get('/mensajes',['as'=>'mensajes', function () {
 
 
 
+Route::get('/revision', 'RevisionController@guardar')->name('revision');
