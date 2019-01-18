@@ -27,20 +27,19 @@
               
                 <tr>
                   <td>{{ $proyectos->NombreProd}}</td>
-                   @forelse($revisiones as $revision)
-                  <td>
+                   
+                  <td>@forelse($revisiones as $revision)
                      @if($revision->avance_id===1) 
-                          <a type="button" class="btn btn-primary" href="">
+                          <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $revision->id ) }}">
                             <i class="fas fa-file-download"> Descargar Archivo</i></a>
-
-                            <p> {{ $revision->Documento, $revision->id }}</p>    
                        @endif          
                                                  
                         @empty
                         <td colspan="6" style="text-align: center;"><h4>No Hay Archivos</h4></td>
                         @endforelse
-                      
                   </td>
+
+                  <td></td>
 
 
             

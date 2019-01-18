@@ -49,6 +49,7 @@ Route::resource('historial','Admin\HistoController');
 
 /*Eaz*/ 
 //Rutas optimisadas 
+
 Route::resource('projects','Asesor\ProjectController'); 
 
 
