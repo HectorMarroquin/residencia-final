@@ -35,12 +35,35 @@ class AsesorValidacion extends FormRequest
             'RFC' => 'required',
             'Escolaridad' => 'required',
             'CURP' => 'required',
-            'Telefono' => 'required',
-            'FechaNacimiento' => 'required|Date',
+            'Telefono' => 'required|numeric',
+            'FechaNacimiento' => 'required|date',
             'EstadoCivil' => 'required',
             'Sexo' => 'required',
             'Correo' => 'required|email',
-            'Contraseña' => 'required'
+            'Contraseña' => 'required',
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'Nombre' => 'Nombre',
+            'ApellidoP' => 'Apellido Paterno',
+            'ApellidoM' => 'Apellido Materno',
+            'Direccion' => 'Direccion',
+            'Ciudad' => 'Ciudad',
+            'Estado' => 'Estado',
+            'Colonia' => 'Colonia',
+            'CP' => 'Codigo Postal',
+            'RFC' => 'RFC',
+            'Escolaridad' => 'Escolaridad',
+            'CURP' => 'Curp',
+            'Telefono' => 'Telefono',
+            'FechaNacimiento' => 'Fecha de Nacimiento',
+            'EstadoCivil' => 'Estado Civil',
+            'Sexo' => 'Sexo',
+            'Correo' => 'Correo Electronico',
+            'Contraseña' => 'Contraseña',
+    ];
+}
 }
