@@ -17,7 +17,7 @@
                             <th scope="col">Nombre de Proyecto</th>
                             <th scope="col">Nombre del Asesor</th>
                             <th scope="col">Entregas</th>
-                            <th scope="col">Comentarios</th>
+                            <th scope="col">Información</th>
                         </tr>
                     </thead>
 
@@ -33,7 +33,7 @@
                             @endif
                             </td>
                             <td><a href="{{ route('Entregas.index') }}" class="btn btn-primary"><i class="fas fa-check"></i></a></td> </td>
-                            <td><a href="" class="btn btn-primary"><i class="far fa-comment-alt"></i></a></td>
+                            <td><a href="{{ route('Estado.show', $proyecto->id) }}" class="btn btn-primary"><i class="far fa-comment-alt"></i></a></td>
         
                         
                         @empty

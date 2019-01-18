@@ -6,6 +6,7 @@ use App\Models\Emprendedor;
 use App\Models\Fase;
 use App\Models\Avance;
 use App\Models\Proyecto;
+use App\Models\Revision;
 use DB;
 use App\User;
 use Auth;
@@ -27,17 +28,7 @@ class EstatusController extends Controller
     
     public function index()
     {
-        $id = Auth()->user()->id;
-        $empre = Emprendedor::where('user_id', $id)->value('id');
-
-        $empreId = Emprendedor::where('user_id', $id)->value('id');
-        $proyectos = Proyecto::where('emprendedor_id', $empreId)->value('id');
-
-        $avances = Avance::where('proyecto_id', $proyectos)->get();
-        //$fase = Fase::all();
-        //$avances = Avance::all();
         
-        return view ('Emprendedor.ListaEstatus', compact('empre', 'fase', 'avances'));
     }
 
     /**
@@ -69,7 +60,21 @@ class EstatusController extends Controller
      */
     public function show($id)
     {
-        //
+        $proyectos = Proyecto::findOrFail($id);
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+
+        $idpro = $proyectos->id;
+        //$empreId = Emprendedor::where('user_id', $id)->value('id');
+        //$avancess = Avance::where('proyecto_id', $idpro)->value('fase_id');
+        $avances = Avance::where('proyecto_id', $proyectos)->get();
+        $avancess = Avance::where('proyecto_id', $idpro)->value('id');
+        $revisiones = Revision::where('avance_id', $avancess)->get();
+        //$fase = Fase::all();
+        //$avances = Avance::where('proyecto_id', $idpro)->get();
+        //$avances = Avance::all();
+         
+        return view ('Emprendedor.ListaEstatus', compact('proyectos', 'empre', 'revisiones'));
     }
 
     /**
