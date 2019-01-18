@@ -2,12 +2,11 @@
  
 @section('admin')
 
-<div class="espacio"></div>
-<div class="container-fluid borde">
+<div class="container-fluid borde mt-3">
 	 <form class="needs-validation" method="POST" action="{{ route('asesores.store') }}" novalidate>
 		{{ csrf_field() }}
 		<div class="row justify-content-center">
-				<div class="col borde1"><h3>Registro de Asesoreres</h3></div>
+				<div class="col borde1 p-3"><h3>Registro de Asesor</h3></div>
 			</div>
 			
 			<div class="form-row justify-content-center">
@@ -136,21 +135,28 @@
 			    </div>
 			    <div class="form-group col-md-5">
 				      <label for="inputFecha">Fecha De Nacimiento</label>
-					  <input type="text" name="FechaNacimiento" class="form-control" id="inputFecha" value="{{ old('FechaNacimiento') }}">
+					  <input type="date" name="FechaNacimiento" class="form-control" id="inputFecha" value="{{ old('FechaNacimiento') }}">
 					  {!! $errors->first('FechaNacimiento', '<span class=errores>:message</span>') !!}
 			    </div>
 		  </div>
 
 		  <div class="form-row justify-content-md-center">
 			  	<div class="form-group col-md-5">
-				  	<label for="inputCivil">Estado Civil</label>
-					<input type="text" name="EstadoCivil" class="form-control" id="inputCivil" value="{{ old('EstadoCivil') }}">
-					{!! $errors->first('EstadoCivil', '<span class=errores>:message</span>') !!}
-					
+								<label for="inputCivil">Estado civil</label>
+								<select id="inputCivil" name="EstadoCivil" class="form-control" value="{{ old('EstadoCivil') }}">
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="Soltero(a)">Soltero(a)</option>
+                                        <option value="Casado(a)">Casado(a)</option>
+                                        <option value="Divorsiado(a)">Divorsiado(a)</option>
+                                        <option value="Viudo(a)">Viudo(a)</option>
+                                        <option value="Unión libre">Unión libre</option>
+                                        <option value="Separado(a)">Separado(a)</option>
+                                    </select>
+								{!! $errors->first('EstadoCivil', '<span class=errores>:message</span>') !!}
 			  </div>
 			  	<div class="form-group col-md-5">
 				  	<label for="inputEmail">Correo Electronico</label>
-					<input type="text" name="Correo" class="form-control" id="inputEmail">
+					<input type="email" name="Correo" class="form-control" id="inputEmail">
 					{!! $errors->first('Correo', '<span class=errores>:message</span>') !!}
 			  </div>
 		  </div>
@@ -175,6 +181,7 @@
 		    <div class="form-group col-md-5">
 			      <label for="inputContra2">Confirmar Contraseña</label>
 				  <input type="password" class="form-control" id="inputContra2">
+				  {!! $errors->first('Contraseña', '<span class=errores>:message</span>') !!}
 		    </div>
 		  </div>
 		  <div class="form-row justify-content-md-center">

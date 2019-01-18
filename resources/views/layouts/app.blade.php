@@ -22,8 +22,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('app/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-     <link href="{{asset('app/css/sb-admin.css') }}" rel="stylesheet">
-
+    <link href="{{asset('app/css/sb-admin.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/EstilosAdministrador.css')}}">
 
     
 </head>
@@ -48,10 +48,10 @@
                     <ul class="navbar-nav ml-auto ml-md-0">
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                             </li>
                          @else
 
@@ -64,7 +64,7 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Cerrar Sesion') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

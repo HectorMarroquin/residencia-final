@@ -6,11 +6,14 @@
         <form class="needs-validation" method="POST" action="{{ route('asesores.update', $asesor->id) }}" novalidate>
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
-                
+                <div class="row justify-content-center">
+				<div class="col borde1 p-3"><h3>Actualizar a {{ $asesor->Nombre }}</h3></div>
+			</div>
                 <div class="form-row justify-content-center">
                     <div class="form-group col-10">
                           <label for="inputName1">Nombre Completo</label>
                           <input type="text" name="Nombre" class="form-control" id="inputName1" value="{{$asesor->Nombre }}">
+                          {!! $errors->first('Nombre', '<span class=errores>:message</span>') !!}
                     </div>
                 </div>
     
@@ -18,10 +21,12 @@
                     <div class="form-group col-md-5">
                           <label for="inputName1">Apellido Paterno</label>
                           <input type="text" name="ApellidoP" class="form-control" id="inputName1" value="{{ $asesor->ApellidoP }}">
+                          {!! $errors->first('ApellidoP', '<span class=errores>:message</span>') !!}
                     </div>
                     <div class="form-group col-md-5">
                           <label for="inputApellido">Apellido Materno</label>
                           <input type="text" name="ApellidoM" class="form-control" id="inputApellido" value="{{ $asesor->ApellidoM }}">
+                          {!! $errors->first('ApellidoM', '<span class=errores>:message</span>') !!}
                     </div>
                 </div>
     
@@ -29,10 +34,12 @@
                     <div class="form-group col-md-5">
                           <label for="inputDireccion">Dirección</label>
                           <input type="text" name="Direccion" class="form-control" id="inputDireccion" value="{{ $asesor->Direccion }}">
+                          {!! $errors->first('Direccion', '<span class=errores>:message</span>') !!}
                     </div>
                     <div class="form-group col-md-5">
                           <label for="inputCiudad">Ciudad</label>
                           <input type="text" name="Ciudad" class="form-control" id="inputCiudad" value="{{ $asesor->Ciudad }}">
+                          {!! $errors->first('Ciudad', '<span class=errores>:message</span>') !!}
                     </div>
                 </div>
     
@@ -75,10 +82,12 @@
                          <option value="Zacatecas">Zacatecas</option>
     
                       </select>
+                      {!! $errors->first('Estado', '<span class=errores>:message</span>') !!}
                     </div>
                     <div class="form-group col-md-5">
                           <label for="inputColonia">Colonia</label>
                           <input type="text" name="Colonia" class="form-control" id="inputColonia" value="{{ $asesor->Colonia }}">
+                          {!! $errors->first('Colonia', '<span class=errores>:message</span>') !!}
                     </div>
               </div>
     
@@ -86,10 +95,12 @@
                 <div class="form-group col-md-5">
                       <label for="inputCP">Codigo Postal</label>
                       <input type="text" name="CP" class="form-control" id="inputCP" value="{{ $asesor->CP }}">
+                      {!! $errors->first('CP', '<span class=errores>:message</span>') !!}
                 </div>
                 <div class="form-group col-md-5">
                       <label for="inputRFC">RFC</label>
                       <input type="text" name="RFC" class="form-control" id="inputRFC" value="{{ $asesor->RFC }}">
+                      {!! $errors->first('RFC', '<span class=errores>:message</span>') !!}
                 </div>
               </div>
     
@@ -107,10 +118,12 @@
                                 <option value="Primaria">Primaria</option>
                                 <option value="Secundaria">Secundaria</option>
                           </select>
+                          {!! $errors->first('Escolaridad', '<span class=errores>:message</span>') !!}
                     </div>
                     <div class="form-group col-md-5">
                           <label for="inputCURP">CURP</label>
                           <input type="text" name="CURP" class="form-control" id="inputCURP" value="{{ $asesor->CURP }}">
+                          {!! $errors->first('CURP', '<span class=errores>:message</span>') !!}
                     </div>
               </div>
     
@@ -118,23 +131,35 @@
                     <div class="form-group col-md-5">
                           <label for="inputTel">Telefono</label>
                           <input type="text" name="Telefono" class="form-control" id="inputTel" value="{{ $asesor->Telefono }}">
+                          {!! $errors->first('Telefono', '<span class=errores>:message</span>') !!}
                     </div>
                     <div class="form-group col-md-5">
                           <label for="inputFecha">Fecha De Nacimiento</label>
-                          <input type="text" name="FechaNacimiento" class="form-control" id="inputFecha" value="{{ $asesor->FechaNacimiento }}">
+                          <input type="date" name="FechaNacimiento" class="form-control" id="inputFecha" value="{{ $asesor->FechaNacimiento }}">
+                          {!! $errors->first('FechaNacimiento', '<span class=errores>:message</span>') !!}
                     </div>
               </div>
     
               <div class="form-row justify-content-md-center">
-                      <div class="form-group col-md-5">
-                          <label for="inputCivil">Estado Civil</label>
-                        <input type="text" name="EstadoCivil" class="form-control" id="inputCivil" value="{{ $asesor->EstadoCivil }}">
+                        <div class="form-group col-md-5">
+                              <label for="inputCivil">Estado civil</label>
+                                   <select id="inputCivil" name="EstadoCivil" class="form-control" value="{{ $asesor->EstadoCivil }}">
+                                      <option value="">Selecciona una opción</option>
+                                      <option value="Soltero(a)">Soltero(a)</option>
+                                      <option value="Casado(a)">Casado(a)</option>
+                                      <option value="Divorsiado(a)">Divorsiado(a)</option>
+                                      <option value="Viudo(a)">Viudo(a)</option>
+                                      <option value="Unión libre">Unión libre</option>
+                                      <option value="Separado(a)">Separado(a)</option>
+                                  </select>
+                        {!! $errors->first('EstadoCivil', '<span class=errores>:message</span>') !!}
                   </div>
-                      <div class="form-group col-md-5">
-                          <label for="inputEmail">Correo Electronico</label>
-                        <input type="text" name="Correo" class="form-control" id="inputEmail" value="{{ $asesor->Correo }}">
+                        <div class="form-group col-md-5">
+                              <label for="inputEmail">Correo Electronico</label>
+                            <input type="email" name="Correo" class="form-control" id="inputEmail" value="{{ $asesor->Correo }}">
+                            {!! $errors->first('Correo', '<span class=errores>:message</span>') !!}
                   </div>
-              </div>
+            </div>
     
               <div class="form-row justify-content-md-center mt">
                   <div class="custom-control custom-radio custom-control-inline">
@@ -151,15 +176,18 @@
                 <div class="form-group col-md-5">
                       <label for="inputContra1">Contraseña</label>
                       <input type="password" name="Contraseña" class="form-control" id="inputContra1">
+                      {!! $errors->first('Contraseña', '<span class=errores>:message</span>') !!}
                 </div>
                 <div class="form-group col-md-5">
                       <label for="inputContra2">Confirmar Contraseña</label>
                       <input type="password" class="form-control" id="inputContra2">
+                      {!! $errors->first('Contraseña', '<span class=errores>:message</span>') !!}
                 </div>
               </div>
+                <div class="form-row justify-content-md-center">
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </div>
                 
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
             </form>
    </div>
 @endsection
