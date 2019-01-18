@@ -29,7 +29,7 @@
 										 <table class="table table-hover table-bordered">
 			  					<thead class="thead-dark">
 			    					<tr>
-			      					<th scope="col">Nombre de Asesor</th>
+			      					<th scope="col">Nombre de Emprendedor</th>
 			      					<th scope="col">Apellidos</th>
 			      					<th scope="col">Proyecto</th>
 			      					<th scope="col">Informacion</th>
