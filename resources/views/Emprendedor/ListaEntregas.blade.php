@@ -24,22 +24,31 @@
                     <tbody>
                        
                         @forelse ($proyectos as $proyecto )
-                         <tr> 
-                            <td>{{ $proyecto->NombreProd }}</td>
-                            @if ($proyecto->Asignacion)
-                            <td>{{ $proyecto->Asignacion->Asesor->Nombre }} {{ $proyecto->Asignacion->Asesor->ApellidoP }} {{ $proyecto->Asignacion->Asesor->ApellidoM }}</td> 
-                            @else
-                            <td><span style="font-weight:bold;">No hay asesor asignado por el momento</span></td>
-                            @endif
-                            </td>
-                            <td><a href="{{ route('Entregas.index') }}" class="btn btn-primary"><i class="fas fa-check"></i></a></td> </td>
-                            <td><a href="{{ route('Estado.show', $proyecto->id) }}" class="btn btn-primary"><i class="far fa-comment-alt"></i></a></td>
-        
-                        
-                        @empty
-                        <td colspan="6" style="text-align: center;"><h4>No Hay Proyectos Registrados</h4></td>
+                            <tr> 
+                                <td>{{ $proyecto->NombreProd }}</td>
+                                    @if ($proyecto->Asignacion)
+                                <td>{{ $proyecto->Asignacion->Asesor->Nombre }} {{ $proyecto->Asignacion->Asesor->ApellidoP }} {{ $proyecto->Asignacion->Asesor->ApellidoM }}</td> 
+                                    @else
+                                <td><span style="font-weight:bold;">No hay asesor asignado por el momento espera a que se te asigne un asesor para poder continuar</span></td>
+                                    @endif
 
-                         </tr>
+                                    @if($proyecto->Asignacion)
+                                <td>
+                                    <a href="{{ route('Entregas.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-chalkboard-teacher"></i></a>
+                                </td> 
+
+                                <td>
+                                    <a href="{{ route('Estado.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-file-signature"></i></a>
+                                </td>
+                                    @else
+                                <td>Espere que se asigne un asesor para continuar</td> 
+                                <td>Espere que se asigne un asesor para continuar</td>
+                                    @endif
+                                    @empty
+                                <td colspan="6" style="text-align: center;">
+                                <h4>No Hay Proyectos Registrados</h4>
+                                </td>
+                            </tr>
 
                         @endforelse
 

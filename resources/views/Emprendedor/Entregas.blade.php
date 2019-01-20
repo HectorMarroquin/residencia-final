@@ -47,7 +47,7 @@
                                         </tr>
                                         
                                         <tr>
-                                            <td><a href="{{ route('Archivo.show', $fase->id) }}" class="btn btn-primary">Enviar</a></td>
+                                            <td><a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
