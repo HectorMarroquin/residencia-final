@@ -66,6 +66,7 @@ Route::resource('historial','Admin\HistoController');
 //Rutas optimisadas 
 
 Route::resource('projects','Asesor\ProjectController'); 
+Route::resource('asesor','Asesor\AsesorController');
 
 
 

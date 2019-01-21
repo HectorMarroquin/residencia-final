@@ -28,10 +28,10 @@
 									  <br>
 										 <table class="table table-hover table-bordered">
 			  					<thead class="thead-dark">
-			    					<tr>
+			    					<tr style="text-align: center">
 			      					<th scope="col">Nombre de Emprendedor</th>
 			      					<th scope="col">Apellidos</th>
-			      					<th scope="col">Proyecto</th>
+			      					<th colspan="2" scope="col">Proyecto</th>
 			      					<th scope="col">Informacion</th>
 			    					</tr>
 			  					</thead>
@@ -46,12 +46,16 @@
 					  			<td>{{ $user->proyecto->NombreProd }}</td>	
 		
 			  			<td>
-			  				<a type="button" class="btn btn-primary" href="{{ route('projects.show', $user->proyecto->id) }}"><i class="far fa-eye"></i></a>							
+			  				<a type="button" class="btn btn-info" href="{{ route('projects.show', $user->proyecto->id) }}"><i class="fas fa-eye"> Consultar Avances</i></a>							
+			  			</td>
+
+			  			<td>
+			  				<a type="button" class="btn btn-info" href="{{ route('asesor.show', $user->proyecto->emprendedor->id) }}"><i class="fas fa-eye"> Alta de Emprendedor</i></a>							
 			  			</td>
 			  		</tr>
 
 			  	@empty
-					<td colspan="6" style="text-align: center;"><h4>No Hay Asesores Registrados</h4></td>
+					<td colspan="6" style="text-align: center;"><h4>No Hay Proyectos Registrados</h4></td>
 					@endforelse
 					
 			  </tbody>

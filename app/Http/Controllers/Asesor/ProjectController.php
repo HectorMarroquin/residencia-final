@@ -19,6 +19,11 @@ use App\Http\Controllers\Controller;
 
 class ProjectController extends Controller
 {
+    function __construct() {
+        $this->middleware('auth');
+        $this->middleware('roles:asesor');
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -71,9 +76,9 @@ class ProjectController extends Controller
 
           $ids = Proyecto::findOrFail($id); 
 
-          $id_project = $ids->id;  
+         // $id_project = $ids->id;  
 
-          $files=Avance::where('proyecto_id', $id_project)->get();         
+          $files=Avance::where('proyecto_id', $ids->id)->get();         
             
           $idEmpred = $ids['emprendedor_id'];
 
