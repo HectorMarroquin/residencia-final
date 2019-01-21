@@ -14,6 +14,12 @@ use App\Http\Requests\AsesorValidacion;
 
 class AsesorController extends Controller
 {
+
+    function __construct() {
+        $this->middleware('auth');
+        $this->middleware('roles:asesor');
+
+    }
     /**
      * Display a listing of the resource.
      *
