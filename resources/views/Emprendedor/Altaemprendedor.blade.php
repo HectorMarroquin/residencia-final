@@ -8,7 +8,7 @@
                 <form method="POST" action="{{ route ('Registro.store') }}">
                    {{ csrf_field() }}
                 <table class="table">
-                    @foreach ($emprendedores as $emprendedor)
+                   
                     <tbody>
                         <tr>
                             <td>
@@ -16,7 +16,7 @@
                             </td>
 
                             <td colspan="3">
-                                 <input type="text" name="Nombre" class="form-control infoemprendedor"  value="{{$emprendedor->Nombre}}">
+                                 <input type="text" name="Nombre" class="form-control infoemprendedor"  value="">
                                  {!! $errors->first('Nombre', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -29,7 +29,7 @@
                             </td>
 
                             <td>
-                                <input type="text" name="ApellidoP" class="form-control infoemprendedor" value="{{$emprendedor->ApellidoP}}">
+                                <input type="text" name="ApellidoP" class="form-control infoemprendedor" value="">
                                 {!! $errors->first('ApellidoP', '<span class=errores>:message</span>') !!}
                             </td>
                             </td>
@@ -39,7 +39,7 @@
                             </td>
 
                             <td>
-                                <input type="text" name="ApellidoM" class="form-control infoemprendedor" value="{{$emprendedor->ApellidoM}}">
+                                <input type="text" name="ApellidoM" class="form-control infoemprendedor" value="">
                                 {!! $errors->first('ApellidoM', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -51,7 +51,7 @@
                             </td>
 
                             <td>
-                                  <input type="date" name="FechaNaci" class="form-control infoemprendedor" value="{{$emprendedor->FechaNaci}}">
+                                  <input type="date" name="FechaNaci" class="form-control infoemprendedor" value="">
                                   {!! $errors->first('FechaNaci', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -60,7 +60,7 @@
                             </td>
 
                             <td>
-                                <input type="text" name="Edad"  class="form-control " value="{{$emprendedor->Edad}}">
+                                <input type="text" name="Edad"  class="form-control " value="">
                                 {!! $errors->first('Edad', '<span class=errores>:message</span>') !!}
                             </td>
                             
@@ -77,7 +77,7 @@
 
                             <td colspan="3">
                                <div class="form-group ">
-                                    <select class="form-control col-sm-5" id="" name="Sexo" value="{{$emprendedor->Sexo}}">
+                                    <select class="form-control col-sm-5" id="" name="Sexo" value="">
                                         
                                         <option value="Hombre">Hombre</option>
                                         <option value="Mujer">Mujer</option> 
@@ -94,7 +94,7 @@
 
                             <td colspan="3">
                                   <div class="form-group ">
-                                    <select class="form-control col-sm-5" id="" name="EstadoCivil" value="{{$emprendedor->EstadoCivil}}">
+                                    <select class="form-control col-sm-5" id="" name="EstadoCivil" value="">
                                        
                                         <option value="Soltero(a)">Soltero(a)</option>
                                         <option value="Casado(a)">Casado(a)</option>
@@ -114,7 +114,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="Direccion"  class="form-control infoemprendedor" value="{{$emprendedor->Direccion}}">
+                                 <input type="text" name="Direccion"  class="form-control infoemprendedor" value="">
                                   {!! $errors->first('Direccion', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -123,7 +123,7 @@
                             </td>
 
                             <td>
-                                  <input type="text" name="NumeroExterior" class="form-control infoemprendedor" value="{{$emprendedor->NumeroExterior}}">
+                                  <input type="text" name="NumeroExterior" class="form-control infoemprendedor" value="">
                                    {!! $errors->first('NumeroExterior', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -137,7 +137,7 @@
                             </td>
 
                             <td>
-                                <input type="text" name="NumeroInterior" class="form-control infoemprendedor" value="{{$emprendedor->NumeroInterior}}">
+                                <input type="text" name="NumeroInterior" class="form-control infoemprendedor" value="">
                                   {!! $errors->first('NumeroInterior', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -146,7 +146,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="Colonia" class="form-control infoemprendedor" value="{{$emprendedor->Colonia}}">
+                                 <input type="text" name="Colonia" class="form-control infoemprendedor" value="">
                                   {!! $errors->first('Colonia', '<span class=errores>:message</span>') !!}
                             </td>
                             
@@ -158,7 +158,7 @@
                             </td>
 
                             <td>
-                                  <input type="text" name="Ciudad" class="form-control infoemprendedor" value="{{$emprendedor->Colonia}}">
+                                  <input type="text" name="Ciudad" class="form-control infoemprendedor" value="">
                                   {!! $errors->first('Ciudad', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -167,7 +167,7 @@
                             </td>
 
                             <td>
-                                <input type="text" name="Municipio" class="form-control infoemprendedor" value="{{$emprendedor->Municipio}}">
+                                <input type="text" name="Municipio" class="form-control infoemprendedor" value="">
                                    {!! $errors->first('Municipio', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -178,7 +178,7 @@
                             </td>
 
                             <td colspan="3">
-                                <input type="text" name="CodigoPostal" class="form-control infoemprendedor col-sm-5" value="{{$emprendedor->CodigoPostal}}">
+                                <input type="text" name="CodigoPostal" class="form-control infoemprendedor col-sm-5" value="">
                                 {!! $errors->first('CodigoPostal', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -189,7 +189,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="TelefonoCel" class="form-control infoemprendedor" value="{{$emprendedor->TelefonoCel}}">
+                                 <input type="text" name="TelefonoCel" class="form-control infoemprendedor" value="">
                                  {!! $errors->first('TelefonoCel', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -198,7 +198,7 @@
                             </td>
 
                             <td>
-                                  <input type="text" name="TelefonoCasa" class="form-control infoemprendedor" value="{{$emprendedor->TelefonoCasa}}">
+                                  <input type="text" name="TelefonoCasa" class="form-control infoemprendedor" value="">
                                    {!! $errors->first('TelefonoCasa', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -209,7 +209,7 @@
                             </td>
 
                             <td colspan="3">
-                                <input type="text" name="TelefonoOfi" class="form-control infoemprendedor col-sm-5" value="{{$emprendedor->TelefonoOfi}}">
+                                <input type="text" name="TelefonoOfi" class="form-control infoemprendedor col-sm-5" value="">
                                 {!! $errors->first('TelefonoOfi', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -220,7 +220,7 @@
                             </td>
 
                             <td>
-                                 <input type="email" name="Correo" class="form-control infoemprendedor" value="{{$emprendedor->Correo}}">
+                                 <input type="email" name="Correo" class="form-control infoemprendedor" value="">
                                   {!! $errors->first('Correo', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -232,7 +232,7 @@
 
                             <td colspan="3">
                                 <div class="form-group ">
-                                    <select class="form-control col-sm-5" name="Escolaridad" value="{{$emprendedor->Escolaridad}}" >
+                                    <select class="form-control col-sm-5" name="Escolaridad" value="" >
                                         <option value="">Selecciona una escolaridad</option>
                                         <option value="Primaria">Primaria</option>
                                         <option value="Secundaria">Secundaria</option>
@@ -253,7 +253,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="CURP" class="form-control infoemprendedor" value="{{$emprendedor->CURP}}">
+                                 <input type="text" name="CURP" class="form-control infoemprendedor" value="">
                                  {!! $errors->first('CURP', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -262,7 +262,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="INE" class="form-control infoemprendedor" value="{{$emprendedor->INE}}">
+                                 <input type="text" name="INE" class="form-control infoemprendedor" value="">
                                  {!! $errors->first('INE', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -274,7 +274,7 @@
 
                             <td>
                                 <div class="form-group">
-                                    <select class="form-control" name="TipoEmpresa" value="{{$emprendedor->TipoEmpresa}}">
+                                    <select class="form-control" name="TipoEmpresa" value="">
                                         <option value="">Selecciona una opcion</option>
                                         <option value="Sociedad en nombre colectivo">Sociedad en nombre colectivo</option>
                                         <option value="Sociedad en comandita simple">Sociedad en comandita simple</option>
@@ -293,7 +293,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="TipoOtra" class="form-control infoemprendedor" value="{{$emprendedor->Otra}}">
+                                 <input type="text" name="TipoOtra" class="form-control infoemprendedor" value="">
                             </td>
 
                         </tr>
@@ -304,7 +304,7 @@
 
                             <td colspan="3">
                                   <div class="form-group ">
-                                    <select class="form-control col-sm-5" id="TipoPersona" name="TipoPersona" value="{{$emprendedor->TipoPersona}}">
+                                    <select class="form-control col-sm-5" id="TipoPersona" name="TipoPersona" value="">
                                         <option>Selecciona una opcion</option>
                                         <option value="1">Persona Fisica</option>
                                         <option value="2">Persona Moral</option>
@@ -334,7 +334,7 @@
                                 </td>
 
                                 <td>
-                                    <input type="text" name="RFC" class="form-control infoemprendedor col-sm-5" value="{{$emprendedor->RFC}}">
+                                    <input type="text" name="RFC" class="form-control infoemprendedor col-sm-5" value="">
                                 </td>
                             </tr>                    
                         </tbody>
@@ -356,7 +356,7 @@
                                 </td>
                                 
                                 <td>
-                                    <input type="text" name="RazonSocial" class="form-control infoemprendedor" value="{{$emprendedor->RazonSocial}}">
+                                    <input type="text" name="RazonSocial" class="form-control infoemprendedor" value="">
                                 </td>
 
                                 <td>
@@ -364,7 +364,7 @@
                                 </td>
 
                                 <td>
-                                    <input type="text" name="RFCM"  class="form-control infoemprendedor" value="{{$emprendedor->RFCM}}">
+                                    <input type="text" name="RFCM"  class="form-control infoemprendedor" value="">
                                 </td>
 
                             </tr>
@@ -375,7 +375,7 @@
                                 </td>
 
                                 <td colspan="3">
-                                    <input type="text" name="ObjetoSocial" class="form-control infoemprendedor col-sm-5" value="{{$emprendedor->ObjetivoSocial}}">
+                                    <input type="text" name="ObjetoSocial" class="form-control infoemprendedor col-sm-5" value="">
                                 </td>
                             </tr>
 
@@ -464,7 +464,7 @@
                             </td>
                         </tr>
                     </table>
-                    @endforeach
+                 
                 </form>
             </div>
         </div>
