@@ -37,11 +37,7 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Entregas</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('Estado.index') }}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Estatus de los Proyectos</span></a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link" href="{{ route('chat.index') }}">
                 <i class="fas fa-sms"></i>

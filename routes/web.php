@@ -17,6 +17,21 @@ Route::get('/', function () {
 
 /*AQUI INICIA LAS RUTAS DE ALBERT*/ 
 Route::get('/Home', ['as' => 'Empren-home', 'uses' => 'Empren\EmprendedorController@Home']);
+/* Rutas Para el controlador de enviar */ 
+Route::get('Enviar', ['as' => 'Enviar.index', 'uses' => 'Empren\EnvioController@index']);
+
+Route::get('Enviar/create', ['as' => 'Enviar.create', 'uses' => 'Empren\EnvioController@create']);
+
+Route::post('Enviar', ['as' => 'Enviar.store', 'uses' => 'Empren\EnvioController@store']);
+Route::post('Enviars', ['as' => 'Enviar.entregados', 'uses' => 'Empren\EnvioController@entregados']);
+
+Route::post('Enviarss', ['as' => 'Enviar.entregatres', 'uses' => 'Empren\EnvioController@entregatres']);
+
+Route::get('Enviar/{pro}/{fase}', ['as' => 'Enviar.show', 'uses' => 'Empren\EnvioController@show']);
+Route::get('Enviar/{id}/edit', ['as' => 'Enviar.edit', 'uses' => 'Empren\EnvioController@edit']);
+Route::put('Enviar/{id}', ['as' => 'Enviar.update', 'uses' => 'Empren\EnvioController@update']);
+Route::delete('Enviar/{id}', ['as' => 'Enviar.destroy', 'uses' => 'Empren\EnvioController@destroy']);
+
    
 
 Route::get('/Observaciones', ['as' => 'Emprend-observa', 'uses' => 'Empren\EmprendedorController@Obervacion' ]); 
@@ -49,6 +64,7 @@ Route::resource('historial','Admin\HistoController');
 
 /*Eaz*/ 
 //Rutas optimisadas 
+
 Route::resource('projects','Asesor\ProjectController'); 
 
 

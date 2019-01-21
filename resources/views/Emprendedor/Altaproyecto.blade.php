@@ -479,7 +479,7 @@
                                 <label>Croquis de la localizacion del predio:</label>
                             </td>
 
-                            <td>
+                            <td colspan="4">
                                 <div class="form-group">
                                     <label for="">Documento</label>
                                         <input type="file" name="croquis" class="form-control">
@@ -490,14 +490,8 @@
                         </tr>
 
                         <tr style=" text-align:center;">
-                            <td>
-                                  <input type="submit" value="Enviar" class="btn btn-outline-primary">
-                            </td>
-
-                           
-
-                             <td>
-                                <button type="button" class="btn btn-outline-primary">Cancelar</button>
+                            <td colspan="4">
+                                  <input type="submit" value="Guardar" class="btn btn-outline-primary">
                             </td>
                         </tr>
 

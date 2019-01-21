@@ -17,3 +17,13 @@
 	
 
 });
+
+	$(document).ready(function(){
+		$("#btnEliminarintegrante").click(function(){
+			 $('tr').remove('#fila');
+			 return false;
+
+});
+
+
+});

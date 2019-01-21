@@ -85,7 +85,11 @@ class EstatusController extends Controller
      */
     public function edit($id)
     {
-        //
+         $archivo=Revision::findOrFail($id);
+        $file_rute=$archivo->Documento;
+        $ruta=public_path('Revisiones')."/".$file_rute; 
+
+        return response()->download($ruta);
     }
 
     /**
