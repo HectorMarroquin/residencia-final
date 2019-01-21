@@ -8,7 +8,7 @@
       <div class="col">
      <table class="table table-bordered table-hover table-reponsive mt-5">
          
-        <thead class="table-active">
+        <thead class="table-info">
           <th>Nombre del proyecto</th>
         </thead>
 
@@ -37,7 +37,7 @@
      <table class="table table-bordered table-hover table-reponsive mt-4">
         
         <h4>Tabla de Colaboradores</h4>
-        <thead class="table-active">
+        <thead class="table-info">
           <th>Nombre Completo</th>
           <th>Curp</th>
         </thead>
@@ -61,21 +61,21 @@
 
 <div class="row">
   <div class="col">
-    <ul class="nav nav-tabs mt-5 nav-justified">
+    <ul class="nav nav-tabs mt-5 nav-justified border table-dark ">
       <li class="nav-item">
-        <a href="#tab1" class="nav-link active" data-toggle="tab">Fase-1</a>
+        <a href="#tab1" class="nav-link active btn-outline-info" data-toggle="tab">Fase-1</a>
       </li>
       <li class="nav-item">
-          <a id="ea" href="#tab2" class="nav-link " data-toggle="tab">Fase-2</a>
+          <a id="ea" href="#tab2" class="nav-link btn-outline-info" data-toggle="tab">Fase-2</a>
       </li>
       <li class="nav-item">
-        <a href="#tab3" class="nav-link" data-toggle="tab">Fase-3</a>  
+        <a href="#tab3" class="nav-link btn-outline-info" data-toggle="tab">Fase-3</a>  
       </li>
         <li class="nav-item">
-        <a id="myDIV" href="#tab4" class="nav-link " data-toggle="tab">Fase-4</a>
+        <a id="myDIV" href="#tab4" class="nav-link btn-outline-info" data-toggle="tab">Fase-4</a>
       </li>
         <li class="nav-item">
-        <a href="#tab5" class="nav-link " data-toggle="tab">Fase-5</a>
+        <a href="#tab5" class="nav-link btn-outline-info" data-toggle="tab">Fase-5</a>
       </li>
   </ul>
 
@@ -89,7 +89,7 @@
                   <div class="col">
                      <table class="table table-bordered table-hover table-reponsive">
                          
-                        <thead class="table-active">
+                        <thead class="table-info">
                           <th>Listado de Actividades de la Fase-1</th>
                         </thead>
 
@@ -100,7 +100,7 @@
                                 <tr><td>{{$actividad->Nombre}}</td>
                                  @endif                             
                                  @empty
-                              <td colspan="6" style="text-align: center;"><h4>No Hay Colaboradores Registrados</h4></td>
+                              <td colspan="6" style="text-align: center;"><h4>No Hay Actividades Registrados</h4></td>
                               @endforelse
                                    
        
@@ -114,7 +114,7 @@
 
               <div class="col-8">
                 <table class="table table-bordered table-hover table-reponsive">
-              <thead class="table-active">
+              <thead class="table-info">
                 <th>Entregas</th>
                 <th>Retroalimentar</th>
               </thead>
@@ -124,7 +124,7 @@
                 <td>
                     @forelse($files as $file)
                      @if( ($file->NumeroEntrega===1) && ($file->fase_id===1) ) 
-                          <a type="button" class="btn btn-primary" href="{{ route('projects.edit', $file->id) }}">
+                          <a type="button" class="btn btn-dark" href="{{ route('projects.edit', $file->id) }}">
                             <i class="fas fa-file-download"> Descargar Archivo</i></a>
 
                             <p>Entrega Numero {{ $file->NumeroEntrega }}</p>    
@@ -172,7 +172,7 @@
                   <td>
                        @forelse($files as $file)
                      @if( ($file->NumeroEntrega===2) && ($file->fase_id===1) ) 
-                          <a type="button" class="btn btn-primary" href="{{ route('projects.edit', $file->id) }}">
+                          <a type="button" class="btn btn-dark" href="{{ route('projects.edit', $file->id) }}">
                             <i class="fas fa-file-download"> Descargar Archivo</i></a>
                             <p>Entrega Numero {{ $file->NumeroEntrega }}</p>       
                        @endif          
@@ -223,11 +223,16 @@
                           <a type="button" class="btn btn-primary" href="{{ route('projects.edit', $file->id) }}">
                             <i class="fas fa-file-download">Descargar Archivo</i></a>
                             <p>Entrega Numero {{ $file->NumeroEntrega }} Esta es la Ultima Entrega</p>       
-                       @endif          
+                      
+                    @endif          
                                                  
                            @empty
-                        <td colspan="6" style="text-align: center;"><h4>No Hay Archivos</h4></td>
+                             No Hay Archivos
                         @endforelse
+
+                     @if(!empty($files))
+                        Aun No Hay Entregas
+                      @endif     
                 </td>
                  <td> 
                     <div class="form-group row justify-content-center">
