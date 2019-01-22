@@ -126,5 +126,6 @@
 <script src="{{ asset('js/muestratipodepersonas.js')}}"></script>
 <script src="{{ asset('js/Agregarcolumnasempre.js')}}"></script>
 <script src="{{ asset('js/Agregarcolumnascompe.js')}}"></script>
+<script src="{{ asset('js/eliminarasesor.js')}}"></script>
 </body>
 </html>

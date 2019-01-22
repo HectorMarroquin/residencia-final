@@ -33,7 +33,15 @@
 									</select>
 							</td>
 			  			<td><a href="{{route('asesores.edit',$asesor->id)}}"> <i class="fas fa-pen-square" style="font-size: 40px;"></i></a>
-							<button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-target="#myModal{{$asesor->id}}"><i class="fas fa-trash-alt"></i></button>
+							{{-- <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-target="#myModal{{$asesor->id}}"><i class="fas fa-trash-alt"></i></button>
+							 --}}
+							 <form method="POST" action="{{ route('asesores.destroy', $asesor->id) }}">
+								{{ csrf_field() }}
+								{{ method_field('DELETE') }}
+								<a href=# class="btn-delete"><i class="fas fa-trash-alt" style="font-size: 40px;"></i></a>
+							
+							</form>
+							 
 			  			</td>
 			  		</tr>
 					@include('Administrador.Eliminar')
