@@ -16,7 +16,17 @@ $(document).ready(function(){
         $.post(url, form.serialize(), function(result){
             row.fadeOut();
             // $('#alert').html(result.message);
-            toastr.success('Eliminado Correctamente');
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+              });
+              
+              Toast.fire({
+                type: 'success',
+                title: 'Se elimino correctamente'
+              })
         }).fail(function(){
             $('#alert').html('Algo salio mal');
         });
