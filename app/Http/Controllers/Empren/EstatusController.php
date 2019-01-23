@@ -65,16 +65,12 @@ class EstatusController extends Controller
         $empre = Emprendedor::where('user_id', $id)->value('id');
 
         $idpro = $proyectos->id;
-        //$empreId = Emprendedor::where('user_id', $id)->value('id');
-        //$avancess = Avance::where('proyecto_id', $idpro)->value('fase_id');
-        $avances = Avance::where('proyecto_id', $proyectos)->get();
-        $avancess = Avance::where('proyecto_id', $idpro)->value('id');
-        $revisiones = Revision::where('avance_id', $avancess)->get();
-        //$fase = Fase::all();
-        //$avances = Avance::where('proyecto_id', $idpro)->get();
-        //$avances = Avance::all();
+        
+        $archivos = Avance::where('proyecto_id', $idpro)->where('NumeroEntrega', '=', 1)->get(); 
+        $archivoss = Avance::where('proyecto_id', $idpro)->where('NumeroEntrega', '=', 2)->get(); 
+        //dd($archivos);
          
-        return view ('Emprendedor.ListaEstatus', compact('proyectos', 'empre', 'revisiones'));
+        return view ('Emprendedor.ListaEstatus', compact('proyectos', 'empre', 'archivos', 'archivoss'));
     }
 
     /**
@@ -85,8 +81,8 @@ class EstatusController extends Controller
      */
     public function edit($id)
     {
-         $archivo=Revision::findOrFail($id);
-        $file_rute=$archivo->Documento;
+        $archivoss =Avance::findOrFail($id);
+        $file_rute=$archivoss->Documento;
         $ruta=public_path('Revisiones')."/".$file_rute; 
 
         return response()->download($ruta);

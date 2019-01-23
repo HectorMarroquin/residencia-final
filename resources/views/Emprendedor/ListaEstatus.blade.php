@@ -16,7 +16,6 @@
                 <tr>
                       
                       <th scope="col">Nombre del proyecto</th>
-                      
                       <th scope="col">Retroalimentacion 1</th>
                       <th scope="col">Retroalimentacion 2</th>
                     
@@ -27,19 +26,33 @@
               
                 <tr>
                   <td>{{ $proyectos->NombreProd}}</td>
-                   
-                  <td>@forelse($revisiones as $revision)
-                     @if($revision->avance_id===1) 
-                          <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $revision->id ) }}">
-                            <i class="fas fa-file-download"> Descargar Archivo</i></a>
-                       @endif          
-                                                 
-                        @empty
-                        <td colspan="6" style="text-align: center;"><h4>No Hay Archivos</h4></td>
-                        @endforelse
+                   @forelse($archivos as $archivo)
+                   @if(!empty($archivo->Comentario))
+                  <td>
+                    <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                    <i class="fas fa-file-download"> Descargar Archivo</i></a>                             
                   </td>
+                   @endif 
+                  @empty
+                           <td style="text-align: center;"><h4>No Hay Archivos</h4></td>
+                        @endforelse 
+                  
 
-                  <td></td>
+
+
+
+                   @forelse($archivoss as $archivos)
+                   @if(!empty($archivos->Comentario))
+                  <td>
+                    <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivos->id ) }}">
+                    <i class="fas fa-file-download"> Descargar Archivo</i></a>                             
+                  </td>
+                   @endif 
+                  @empty
+                           <td style="text-align: center;"><h4>No Hay Archivos</h4></td>
+                        @endforelse 
+
+                 
 
 
             
