@@ -159,24 +159,18 @@
                             
                       </tbody>
                     </table>
-
                     <div class="row justify-content-center">
-                      <div class="col">
-                        <button type="button" class="btn btn-success">Aprobar Fase</button>
-                       
-                      </div>
-
-                      <div class="col">
-                        
-                        <button type="button" class="btn btn-danger">Denegar Fase</button>
-                      </div>
+                        <div class="col text-center">
+                            <a type="button" class="btn btn-success" href="#">
+                                <i class=""> Aprobar Fase</i></a>
+                             <a type="button" class="btn btn-danger" href="#">
+                                <i class=""> No aprobar Fase</i></a>   
+                                 
+                         </div>
                     </div>
  
                 </div>
-
-                <div class="col-12 col-md-8">
-                    
-                </div>  
+  
             </div>
             
          </div>
