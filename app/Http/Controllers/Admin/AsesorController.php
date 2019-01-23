@@ -116,10 +116,23 @@ class AsesorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request ,$id)
     {
-        Asesor::findOrFail($id)->delete();
+        // Asesor::findOrFail($id)->delete();
 
-        return redirect()->route('asesores.index');
+        // return redirect()->route('asesores.index');
+
+        if($request->ajax()){
+
+            $asesor = Asesor::findOrFail($id);
+            $asesor->delete();
+            $asesor_total = Asesor::all()->count();
+            
+            return response()->json([
+
+                'message' => $asesor->Nombre . ' fue eliminado'
+
+            ]);
+        }
     }
 }

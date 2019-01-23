@@ -36,14 +36,20 @@
 					  <input type="text" name="Direccion" class="form-control" id="inputDireccion" value="{{ old('Direccion') }}">
 					  {!! $errors->first('Direccion', '<span class=errores>:message</span>') !!}
 			    </div>
-			    <div class="form-group col-md-5">
-				      <label for="inputCiudad">Ciudad</label>
-					  <input type="text" name="Ciudad" class="form-control" id="inputCiudad" value="{{ old('Ciudad') }}">
-					  {!! $errors->first('Ciudad', '<span class=errores>:message</span>') !!}
-			    </div>
+				<div class="form-group col-md-5">
+					<label for="inputColonia">Colonia</label>
+					<input type="text" name="Colonia" class="form-control" id="inputColonia" value="{{ old('Colonia') }}">
+					{!! $errors->first('Colonia', '<span class=errores>:message</span>') !!}
+			  </div>
 			</div>
 
 		    <div class="form-row justify-content-md-center">
+				<div class="form-group col-md-5">
+					<label for="inputCiudad">Ciudad</label>
+					<input type="text" name="Ciudad" class="form-control" id="inputCiudad" value="{{ old('Ciudad') }}">
+					{!! $errors->first('Ciudad', '<span class=errores>:message</span>') !!}
+				</div>
+
 			    <div class="form-group col-md-5">
 			      <label for="inputEstado">Entidad Federativa</label>
 			      <select id="inputEstado" name="Estado" class="form-control">
@@ -80,15 +86,10 @@
 			         <option value="Veracruz">Veracruz</option>
 			         <option value="Yucatan">Yucatán</option>
 			         <option value="Zacatecas">Zacatecas</option>
-
 				  </select>
 				  {!! $errors->first('Estado', '<span class=errores>:message</span>') !!}
 			    </div>
-			    <div class="form-group col-md-5">
-				      <label for="inputColonia">Colonia</label>
-					  <input type="text" name="Colonia" class="form-control" id="inputColonia" value="{{ old('Colonia') }}">
-					  {!! $errors->first('Colonia', '<span class=errores>:message</span>') !!}
-			    </div>
+			   
 		  </div>
 
 		  <div class="form-row justify-content-md-center">

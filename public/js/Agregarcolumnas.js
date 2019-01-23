@@ -1,13 +1,12 @@
 	var i = 0; 
-	function contador () {
-		i += 1;
-	}
+	var fila;
+
 	$(document).ready(function(){	
 		$("#btnNuevointegrante").click(function(){
-		contador();
-	
-		if (i < 5) {
-			var fila='<tr> <td><input type="text" name="ApellidoPC"  class="form-control infoemprendedor"></td> <td><input type="text" name="ApellidoMC"  class="form-control infoemprendedor"></td><td><input type="text" name="NombreC"  class="form-control infoemprendedor"></td> <td><input type="text" name="CURPC"  class="form-control infoemprendedor"> </td></tr>';
+		i += 1;
+
+		if (i < 6) {
+			fila='<tr id="fila'+i+'"> <td><input type="text" name="ApellidoPC'+i+'"  class="form-control infoemprendedor"></td> <td><input type="text" name="ApellidoMC'+i+'"  class="form-control infoemprendedor"></td><td><input type="text" name="NombreC'+i+'"  class="form-control infoemprendedor"></td> <td><input type="text" name="CURPC'+i+'"  class="form-control infoemprendedor"> </td></tr>';
 			$('#integrantes').append(fila);
 		} else {
 			alert('Los Integrantes Maximos Son 5 Personas');
@@ -20,10 +19,10 @@
 
 	$(document).ready(function(){
 		$("#btnEliminarintegrante").click(function(){
-			 $('tr').remove('#fila');
-			 return false;
-
-});
+			$('#fila'+i).remove();
+			return false;
+			i -= 1;
+	});
 
 
 });

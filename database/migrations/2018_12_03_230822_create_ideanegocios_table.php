@@ -15,20 +15,20 @@ class CreateIdeanegociosTable extends Migration
     {
         Schema::create('ideanegocios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('definicion');
+            $table->text('definicion');
             $table->string('croquis');
             $table->string('tipodomicilio');
             $table->string('tipoasentamiento');
             $table->string('tipoasenotro')->nullable();
             $table->string('nombreasentamiento');
-            $table->string('numerointerior');
+            $table->string('numerointerior')->nullable();
             $table->string('numeroexterior');
             $table->string('localidad');
             $table->string('municipio');
             $table->string('estado');
             $table->string('codigopostal');
             $table->string('superficie');
-            $table->string('refencia');
+            $table->text('refencia');
 
             $table->unsignedInteger('proyecto_id')->unsigned();
             $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
