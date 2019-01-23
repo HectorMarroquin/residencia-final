@@ -5,7 +5,7 @@
                <br>
                <div class="container-fluid">
                 <h2>Registro del Emprendedor</h2>
-                <form method="POST" action="{{ route ('Registro.store') }}">
+                <form method="POST" action="{{ route('Registro.store')}}">
                    {{ csrf_field() }}
                 <table class="table">
                    
@@ -78,7 +78,7 @@
                             <td colspan="3">
                                <div class="form-group ">
                                     <select class="form-control col-sm-5" id="" name="Sexo" value="">
-                                        
+                                        <option value="">Seleccione una Opcion</option>
                                         <option value="Hombre">Hombre</option>
                                         <option value="Mujer">Mujer</option> 
                                     </select>
@@ -95,7 +95,7 @@
                             <td colspan="3">
                                   <div class="form-group ">
                                     <select class="form-control col-sm-5" id="" name="EstadoCivil" value="">
-                                       
+                                        <option value="">Seleccione una Opcion</option>
                                         <option value="Soltero(a)">Soltero(a)</option>
                                         <option value="Casado(a)">Casado(a)</option>
                                         <option value="Divorsiado(a)">Divorsiado(a)</option>
@@ -142,25 +142,18 @@
                             </td>
 
                             <td>
-                                <label>Colonia:</label>
-                            </td>
-
-                            <td>
-                                 <input type="text" name="Colonia" class="form-control infoemprendedor" value="">
-                                  {!! $errors->first('Colonia', '<span class=errores>:message</span>') !!}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <td>
-                                 <label>Ciudad:</label>
+                                 <label>Estado:</label>
                             </td>
 
                             <td>
                                   <input type="text" name="Ciudad" class="form-control infoemprendedor" value="">
                                   {!! $errors->first('Ciudad', '<span class=errores>:message</span>') !!}
                             </td>
+                            
+                        </tr>
+
+                        <tr>
+                             
 
                             <td>
                                 <label>Municipio:</label>
@@ -170,6 +163,16 @@
                                 <input type="text" name="Municipio" class="form-control infoemprendedor" value="">
                                    {!! $errors->first('Municipio', '<span class=errores>:message</span>') !!}
                             </td>
+
+                            <td>
+                                <label>Colonia:</label>
+                            </td>
+
+                            <td>
+                                 <input type="text" name="Colonia" class="form-control infoemprendedor" value="">
+                                  {!! $errors->first('Colonia', '<span class=errores>:message</span>') !!}
+                            </td>
+                            
                         </tr>
 
                         <tr>
@@ -420,24 +423,6 @@
                             </tr>
                         </thead>
 
-                        <tr>
-                            <td>
-                                <input type="text" name="ApellidoPC"  class="form-control infoemprendedor" value="{{ old('ApellidoPC') }}">
-                            </td>
-
-                            <td>
-                                 <input type="text" name="ApellidoMC"  class="form-control infoemprendedor" value="{{ old('ApellidoMC') }}">
-                            </td>
-
-                            <td>
-                                 <input type="text" name="NombreC"  class="form-control infoemprendedor" value="{{ old('NombreC') }}">
-                            </td>
-
-                            <td>
-                                 <input type="text" name="CURPC"  class="form-control infoemprendedor"  value="{{ old('CURPC') }}">
-                            </td>
-                            
-                        </tr>
                     </table>
             
 

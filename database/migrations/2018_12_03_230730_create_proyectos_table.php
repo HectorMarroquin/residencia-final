@@ -27,6 +27,7 @@ class CreateProyectosTable extends Migration
             $table->text('Descripcion');
             $table->string('Organizacion');
             $table->string('Cual')->nullable();
+            $table->string('Estado')->nullable();
 
             $table->integer('emprendedor_id')->unsigned();
             $table->foreign('emprendedor_id')->references('id')->on('emprendedores')->onDelete('cascade');

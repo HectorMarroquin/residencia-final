@@ -44,8 +44,9 @@ class EmprendedorRegisController extends Controller
         $id = Auth()->user()->id;
         $emprendedores = Emprendedor::where('user_id', $id)->get();
         $empre = Emprendedor::where('user_id', $id)->value('id');
+        
        
-        return view ('Emprendedor.Altaemprendedor', compact( 'empre'));
+        return view ('Emprendedor.Altaemprendedor', compact('empre'));
     }
 
     /**
@@ -56,6 +57,7 @@ class EmprendedorRegisController extends Controller
      */
     public function store(EmprenValidation $request)
     {
+        $dato = 
         //dd($request->all());
         //Emprendedor::create($request->all());
         $Emprendedor = new Emprendedor;
@@ -89,14 +91,62 @@ class EmprendedorRegisController extends Controller
         $Emprendedor->TipoOtra = $request->input('TipoOtra');
         $Emprendedor->user_id = Auth::User()->id;
         $Emprendedor->save();
-    
-        $colaborador = new Colaborador;
-        $colaborador->NombreC = $request->input('NombreC');
-        $colaborador->ApellidoPC = $request->input('ApellidoPC');
-        $colaborador->ApellidoMC = $request->input('ApellidoMC');
-        $colaborador->CURPC = $request->input('CURPC');
-        $colaborador->emprendedor_id = $Emprendedor->id;
-        $colaborador->save();
+
+
+        $verificar1 = $request->input('NombreC1');
+        if(!empty($verificar1)) {
+            $colaborador = new Colaborador;
+            $colaborador->NombreC = $request->input('NombreC1');
+            $colaborador->ApellidoPC = $request->input('ApellidoPC1');
+            $colaborador->ApellidoMC = $request->input('ApellidoMC1');
+            $colaborador->CURPC = $request->input('CURPC1');
+            $colaborador->emprendedor_id = $Emprendedor->id;
+            $colaborador->save();
+        }
+
+        $verificar2 = $request->input('NombreC2');
+        if(!empty($verificar2)) {
+            $colaborador = new Colaborador;
+            $colaborador->NombreC = $request->input('NombreC2');
+            $colaborador->ApellidoPC = $request->input('ApellidoPC2');
+            $colaborador->ApellidoMC = $request->input('ApellidoMC2');
+            $colaborador->CURPC = $request->input('CURPC2');
+            $colaborador->emprendedor_id = $Emprendedor->id;
+            $colaborador->save();
+        }
+
+        $verificar = $request->input('NombreC3');
+        if(!empty($verificar)) {
+            $colaborador = new Colaborador;
+            $colaborador->NombreC = $request->input('NombreC3');
+            $colaborador->ApellidoPC = $request->input('ApellidoPC3');
+            $colaborador->ApellidoMC = $request->input('ApellidoMC3');
+            $colaborador->CURPC = $request->input('CURPC3');
+            $colaborador->emprendedor_id = $Emprendedor->id;
+            $colaborador->save();
+        }
+
+        $verificar4 = $request->input('NombreC4');
+        if(!empty($verificar4)) {
+            $colaborador = new Colaborador;
+            $colaborador->NombreC = $request->input('NombreC4');
+            $colaborador->ApellidoPC = $request->input('ApellidoPC4');
+            $colaborador->ApellidoMC = $request->input('ApellidoMC4');
+            $colaborador->CURPC = $request->input('CURPC4');
+            $colaborador->emprendedor_id = $Emprendedor->id;
+            $colaborador->save();
+         }
+
+         $verificar5 = $request->input('NombreC5');
+        if(!empty($verificar5)) {
+            $colaborador = new Colaborador;
+            $colaborador->NombreC = $request->input('NombreC5');
+            $colaborador->ApellidoPC = $request->input('ApellidoPC5');
+            $colaborador->ApellidoMC = $request->input('ApellidoMC5');
+            $colaborador->CURPC = $request->input('CURPC5');
+            $colaborador->emprendedor_id = $Emprendedor->id;
+            $colaborador->save();
+         }
       //  Colaborador::create($request->all());
         return redirect()->route('Registro.create');      
     

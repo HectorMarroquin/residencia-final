@@ -7,6 +7,9 @@ use App\User;
 use Carbon\Carbon;
 use App\Models\Proyecto;
 use App\Models\Emprendedor;
+use App\Models\Competencia;
+use App\Models\Colaborador;
+use App\Models\Cpotencial;
 use App\Models\Foda;
 use App\Models\Ideanegocio;
 use App\Http\Controllers\Controller;
@@ -111,8 +114,192 @@ class ProyectoRegisController extends Controller
         $idea->proyecto_id = $proyecto->id;
         $idea->save();
 
-        return redirect()->route('AlProyecto.index');
+        $competencia = new Competencia;
+        $competencia->Nombre = $request->input('nombrecompe');
+        $competencia->Giro = $request->input('giro');
+        $competencia->Descripcion = $request->input('direccioncompe');
+        $competencia->ideanegocio_id = $idea->id;
+        $competencia->save();
 
+        $verificar = $request->input('nombrecompe1');
+        if(!empty($verificar)) {
+            $competencia = new Competencia;
+            $competencia->Nombre = $request->input('nombrecompe1');
+            $competencia->Giro = $request->input('giro1');
+            $competencia->Descripcion = $request->input('direccioncompe1');
+            $competencia->ideanegocio_id = $idea->id;
+            $competencia->save();
+        }
+        $verificar2 = $request->input('nombrecompe2');
+        if(!empty($verificar2)) {
+            $competencia = new Competencia;
+            $competencia->Nombre = $request->input('nombrecompe2');
+            $competencia->Giro = $request->input('giro2');
+            $competencia->Descripcion  = $request->input('direccioncompe2');
+            $competencia->ideanegocio_id = $idea->id;
+            $competencia->save();
+        }
+        $verificar3 = $request->input('nombrecompe3');
+        if(!empty($verificar3)) {
+            $competencia = new Competencia;
+            $competencia->Nombre = $request->input('nombrecompe3');
+            $competencia->Giro = $request->input('giro3');
+            $competencia->Descripcion  = $request->input('direccioncompe3');
+            $competencia->ideanegocio_id = $idea->id;
+            $competencia->save();
+        }
+
+        $verificar4 = $request->input('nombrecompe4');
+        if(!empty($verificar4)) {
+            $competencia = new Competencia;
+            $competencia->Nombre = $request->input('nombrecompe4');
+            $competencia->Giro = $request->input('giro4');
+            $competencia->Descripcion  = $request->input('direccioncompe4');
+            $competencia->ideanegocio_id = $idea->id;
+            $competencia->save();
+        }
+
+        $verificar5 = $request->input('nombrecompe5');
+        if(!empty($verificar5)) {
+            $competencia = new Competencia;
+            $competencia->Nombre = $request->input('nombrecompe5');
+            $competencia->Giro = $request->input('giro5');
+            $competencia->Descripcion  = $request->input('direccioncompe5');
+            $competencia->ideanegocio_id = $idea->id;
+            $competencia->save();
+        }
+
+         $verificar6 = $request->input('nombrecompe6');
+        if(!empty($verificar6)) {
+            $competencia = new Competencia;
+            $competencia->Nombre = $request->input('nombrecompe6');
+            $competencia->Giro = $request->input('giro6');
+            $competencia->Descripcion  = $request->input('direccioncompe6');
+            $competencia->ideanegocio_id = $idea->id;
+            $competencia->save();
+        }
+
+         $verificar7 = $request->input('nombrecompe7');
+        if(!empty($verificar7)) {
+            $competencia = new Competencia;
+            $competencia->Nombre = $request->input('nombrecompe7');
+            $competencia->Giro = $request->input('giro7');
+            $competencia->Descripcion  = $request->input('direccioncompe7');
+            $competencia->ideanegocio_id = $idea->id;
+            $competencia->save();
+        }
+         $verificar8 = $request->input('nombrecompe8');
+        if(!empty($verificar8)) {
+            $competencia = new Competencia;
+            $competencia->Nombre = $request->input('nombrecompe8');
+            $competencia->Giro = $request->input('giro8');
+            $competencia->Descripcion  = $request->input('direccioncompe8');
+            $competencia->ideanegocio_id = $idea->id;
+            $competencia->save();
+        }
+         $verificar9 = $request->input('nombrecompe9');
+        if(!empty($verificar9)) {
+            $competencia = new Competencia;
+            $competencia->Nombre = $request->input('nombrecompe9');
+            $competencia->Giro = $request->input('giro9');
+            $competencia->Descripcion  = $request->input('direccioncompe9');
+            $competencia->ideanegocio_id = $idea->id;
+            $competencia->save();
+        }
+///////////////////////////////////////////////////////////////////////////////////////////
+        $copotencial = new Cpotencial;
+        $copotencial->Nombre = $request->input('nombreclien');
+        $copotencial->Giro = $request->input('giroclien');
+        $copotencial->Descripcion = $request->input('direccionclien');
+        $copotencial->ideanegocio_id = $idea->id;
+        $copotencial->save();
+
+        $verificar10 = $request->input('nombreclien1');
+        if(!empty($verificar10)) {
+            $copotencial = new Cpotencial;
+            $copotencial->Nombre = $request->input('nombreclien1');
+            $copotencial->Giro = $request->input('giroclien1');
+            $copotencial->Descripcion  = $request->input('direccionclien1');
+            $copotencial->ideanegocio_id = $idea->id;
+            $copotencial->save();
+        }
+        $verificar11 = $request->input('nombreclien2');
+        if(!empty($verificar11)) {
+            $copotencial = new Cpotencial;
+            $copotencial->Nombre = $request->input('nombreclien2');
+            $copotencial->Giro = $request->input('giroclien2');
+            $copotencial->Descripcion  = $request->input('direccionclien2');
+            $copotencial->ideanegocio_id = $idea->id;
+            $copotencial->save();
+        }
+        $verificar12 = $request->input('nombreclien3');
+        if(!empty($verificar12)) {
+            $copotencial = new Cpotencial;
+            $copotencial->Nombre = $request->input('nombreclien3');
+            $copotencial->Giro = $request->input('giroclien3');
+            $copotencial->Descripcion  = $request->input('direccionclien3');
+            $copotencial->ideanegocio_id = $idea->id;
+            $copotencial->save();
+        }
+
+        $verificar13 = $request->input('nombreclien4');
+        if(!empty($verificar13)) {
+            $copotencial = new Cpotencial;
+            $copotencial->Nombre = $request->input('nombreclien4');
+            $copotencial->Giro = $request->input('giroclien4');
+            $copotencial->Descripcion  = $request->input('direccionclien4');
+            $copotencial->ideanegocio_id = $idea->id;
+            $copotencial->save();
+        }
+
+        $verificar14 = $request->input('nombreclien5');
+        if(!empty($verificar14)) {
+            $copotencial = new Cpotencial;
+            $copotencial->Nombre = $request->input('nombreclien5');
+            $copotencial->Giro = $request->input('giroclien5');
+            $copotencial->Descripcion  = $request->input('direccionclien5');
+            $copotencial->ideanegocio_id = $idea->id;
+            $copotencial->save();
+        }
+
+         $verificar15 = $request->input('nombreclien6');
+        if(!empty($verificar15)) {
+            $copotencial = new Cpotencial;
+            $copotencial->Nombre = $request->input('nombreclien6');
+            $copotencial->Giro = $request->input('giroclien6');
+            $copotencial->Descripcion  = $request->input('direccionclien6');
+            $copotencial->ideanegocio_id = $idea->id;
+            $copotencial->save();
+        }
+
+         $verificar16 = $request->input('nombreclien7');
+        if(!empty($verificar16)) {
+            $copotencial = new Cpotencial;
+            $copotencial->Nombre = $request->input('nombreclien7');
+            $copotencial->Giro = $request->input('giroclien7');
+            $copotencial->Descripcion  = $request->input('direccionclien7');
+            $copotencial->ideanegocio_id = $idea->id;
+            $copotencial->save();
+        }
+         $verificar17 = $request->input('nombreclien8');
+        if(!empty($verificar17)) {
+            $copotencial = new Cpotencial;
+            $copotencial->Nombre = $request->input('nombreclien8');
+            $copotencial->Giro = $request->input('giroclien8');
+            $copotencial->Descripcion  = $request->input('direccionclien8');
+            $copotencial->ideanegocio_id = $idea->id;
+            $copotencial->save();
+        }
+         $verificar18 = $request->input('nombreclien9');
+        if(!empty($verificar18)) {
+            $copotencial = new Cpotencial;
+            $copotencial->Nombre = $request->input('nombreclien9');
+            $copotencial->Giro = $request->input('giroclien9');
+            $copotencial->Descripcion  = $request->input('direccionclien9');
+            $copotencial->ideanegocio_id = $idea->id;
+            $copotencial->save();
+        }
+     return redirect()->route('AlProyecto.index');
     }
 
     /**

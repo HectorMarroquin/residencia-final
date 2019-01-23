@@ -24,12 +24,12 @@ class CreateEmprendedoresTable extends Migration
             $table->string('EstadoCivil', 50);
             $table->string('Direccion');
             $table->string('NumeroExterior');
-            $table->string('NumeroInterior');
+            $table->string('NumeroInterior')->nullable();
             $table->string('Colonia');
             $table->string('Ciudad');
             $table->string('Municipio');
             $table->string('CodigoPostal');
-            $table->string('TelefonoCel');
+            $table->string('TelefonoCel')->nullable();
             $table->string('TelefonoOfi')->nullable();
             $table->string('TelefonoCasa')->nullable();
             $table->string('Correo')->unique();
