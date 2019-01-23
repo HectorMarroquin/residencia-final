@@ -96,6 +96,7 @@
                       <span class="sr-only">Siguiente</span>
                     </a>
                 </div>
+
               </div>
               <!-- SECOND COLUMN -->
               <div class="col-lg-4">

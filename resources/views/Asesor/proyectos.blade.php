@@ -4,43 +4,27 @@
 	<div class="row">
 
 	<main class="main col">
-						<div class="row d-flex justify-content-center">
-							<div class="col-10 ">
-								
-									  <h2>Lista de Proyectos</h2>
-									  <p>Listado de proyectos que esta asesorando</p> 
-									<!--  <div class="form-group row">
-									  	<div class="col-12 col-md-6 mb-3">
-										  <label for="sel1">Seleccionar Periodo:</label>
-										  <select class="form-control" id="sel1">
-										    <option>Agosto-Diciembre 2018</option>
-										    <option>Enero-Junio 2019</option>
-										    <option>Agosto-Diciembre 2019</option>
-										   </select>
-										</div>
+			<div class="row d-flex justify-content-center">
+				<div class="col-10 ">	
+				  <h2>Lista de Proyectos</h2>
+				  <p>Listado de proyectos que esta asesorando</p>
 
-										<div class="col-12 col-md-6 mb-3">
-										 <label for="">Realizar busqueda:</label>
-									  	 <input class="form-control" id="myInput" type="text" placeholder=""> 
-										</div>	
-									</div>-->
-									 
-									  <br>
-										 <table class="table table-hover table-bordered">
-			  					<thead class="thead-dark">
-			    					<tr style="text-align: center">
-			      					<th scope="col">Nombre de Emprendedor</th>
-			      					<th scope="col">Apellidos</th>
-			      					<th colspan="2" scope="col">Proyecto</th>
-			      					<th scope="col">Informacion</th>
-			    					</tr>
-			  					</thead>
+				  <br>
+				
+				 <table class="table table-hover table-bordered">
+			  		<thead class="thead-dark">
+			     		<tr style="text-align: center">
+			      			<th scope="col">Nombre de Emprendedor</th>
+			      			<th scope="col">Apellidos</th>
+			      			<th colspan="2" scope="col">Proyecto</th>
+			      			<th scope="col">Informacion</th>
+			    		</tr>
+			  		</thead>
 			  					
-			  					<tbody>
-
-			  				@forelse($users as $user)
-
-			  					<tr>
+			  		<tbody>
+							
+			  			@forelse($asesor->asignaciones as $user)
+			  				<tr>
 			  					<td>{{ $user->proyecto->emprendedor->Nombre }}</td>
 					  			<td>{{ $user->proyecto->emprendedor->ApellidoP }} {{ $user->proyecto->emprendedor->ApellidoM }}</td>
 					  			<td>{{ $user->proyecto->NombreProd }}</td>	

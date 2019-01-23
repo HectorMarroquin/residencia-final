@@ -32,15 +32,11 @@ class ProjectController extends Controller
     public function index()
     {
         //proyectos = User::where('id', '!=', auth()->id())->get();
-        $idd=Asesor::where('user_id', '=', auth()->id())->first();
-        
-        $id=$idd->id;
-                
-        $users=Asignacion::where('asesor_id', $id)->get();    
+        $asesor=Asesor::where('user_id', '=', auth()->id())->first();
+                        
+       // $users=Asignacion::where('asesor_id', $idd->id)->get();    
 
-    
-
-        return view('Asesor.proyectos', compact('users','files'));  
+        return view('Asesor.proyectos', compact('asesor'));  
     }
 
     /**
@@ -74,17 +70,13 @@ class ProjectController extends Controller
     {
           $actividades=Actividad::get();  
 
-          $ids = Proyecto::findOrFail($id); 
-
-         // $id_project = $ids->id;  
-
-          $files=Avance::where('proyecto_id', $ids->id)->get();         
+          $proyecto = Proyecto::findOrFail($id); 
+          
+          $files=Avance::where('proyecto_id', $proyecto->id)->get();        
             
-          $idEmpred = $ids['emprendedor_id'];
+         // $colaborador= Colaborador::where('emprendedor_id', $proyecto->emprendedor_id)->get();
 
-          $colaborador= Colaborador::where('emprendedor_id', $idEmpred)->get();
-
-        return view('Asesor.show-proyecto',compact('ids','colaborador','files','actividades'));    
+        return view('Asesor.show-proyecto',compact('proyecto','files','actividades'));    
     }
 
     /**
@@ -117,6 +109,18 @@ class ProjectController extends Controller
             $file = $request->file('file');
             $name = time().$file->getClientOriginalName();
             $file->move(public_path().'/Revisiones/', $name);
+
+            $avance=Avance::findOrFail($id);
+
+            $avance->Comentario=$name;
+
+             $avance->update();    
+
+            /* Revision::create([
+            'Documento' => $name,
+            'avance_id' => $id,
+            $asesor->update($request->all());
+            ]);*/
         }
 
         /*   $avance = new Revision;
@@ -124,11 +128,7 @@ class ProjectController extends Controller
             $avance->avance_id = $;
             $avance->save(); */
 
-            Revision::create([
-            'Documento' => $name,
-            'avance_id' => $id,
-
-            ]);
+           
             
             return back();
 
