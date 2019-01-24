@@ -63,14 +63,13 @@ class EstatusController extends Controller
         $proyectos = Proyecto::findOrFail($id);
         $id = Auth()->user()->id;
         $empre = Emprendedor::where('user_id', $id)->value('id');
-
         $idpro = $proyectos->id;
         
-        $archivos = Avance::where('proyecto_id', $idpro)->where('NumeroEntrega', '=', 1)->get(); 
-        $archivoss = Avance::where('proyecto_id', $idpro)->where('NumeroEntrega', '=', 2)->get(); 
+        $archivos = Avance::where('proyecto_id', $idpro)->get(); 
+        
         //dd($archivos);
          
-        return view ('Emprendedor.ListaEstatus', compact('proyectos', 'empre', 'archivos', 'archivoss'));
+        return view ('Emprendedor.ListaEstatus', compact('proyectos', 'empre', 'archivos'));
     }
 
     /**
