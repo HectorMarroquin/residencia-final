@@ -189,7 +189,7 @@
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                                         @else
-                                                        <p>Tienes que enviar la 1 y 2 entrega </p>
+                                                        <p>Tienes que enviar la 2 entrega </p>
                                                          @endif
                                                     </td>
                                                 </tr>

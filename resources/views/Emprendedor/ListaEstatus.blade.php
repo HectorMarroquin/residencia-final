@@ -1,92 +1,514 @@
 @extends('emprendedor')
 
 @section('empren')
-
 <br>
 <br>
 <br>
 <div class="card">
-<div class="card-header"><h5>Estado del Proyecto</h5></div>
-<div class="card-body">
-    
-<div class="table-responsive-md">  
-{!! csrf_field() !!} 
-        <table class="table table-hover table-bordered">
-            <thead class="thead-light">
-                <tr>
-                      
-                      <th scope="col">Nombre del proyecto</th>
-                      <th scope="col">Retroalimentacion 1</th>
-                      <th scope="col">Retroalimentacion 2</th>
-                    
-                     
-                </tr>
-          </thead>
-          <tbody>
+  <div class="card-header"><h5>Estado del Proyecto</h5></div>
+  <div class="card-body">
+    <div class="table-responsive-md">  
+      {!! csrf_field() !!} 
+      <div class="container">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#fase1">Resumen Ejecutivo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#fase2">Mercado </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#fase3">Tecnico</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#fase4">Diseño Organizacinal, Marco Legal y Fiscal  </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#fase5">Estudio Financiero</a>
+          </li>
+        </ul>
+
+       
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div id="fase1" class="container tab-pane active"><br>
+            
+            <div class="col-12 col-md-12">
+              <table class="table table-bordered table-reponsive mt-5">
+                <thead class="thead-light">
+                  <th>Nombre del proyecto</th>
+                  <th>Nombre de la fase</th>
+                </thead>
+
+                <tbody>
+                  <tr>
+                   
+                  <td>{{ $proyectos->NombreProd }}</td>
+
+                
+                   
+                  <td>
+                    Resumen Ejecutivo
+                  </td>
               
-                <tr>
-                  <td>{{ $proyectos->NombreProd}}</td>
-                   @forelse($archivos as $archivo)
-                   @if(!empty($archivo->Comentario))
-                  <td>
-                    <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
-                    <i class="fas fa-file-download"> Descargar Archivo</i></a>                             
-                  </td>
-                   @endif 
-                  @empty
-                           <td style="text-align: center;"><h4>No Hay Archivos</h4></td>
-                        @endforelse 
-                  
-
-
-
-
-                   @forelse($archivoss as $archivos)
-                   @if(!empty($archivos->Comentario))
-                  <td>
-                    <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivos->id ) }}">
-                    <i class="fas fa-file-download"> Descargar Archivo</i></a>                             
-                  </td>
-                   @endif 
-                  @empty
-                           <td style="text-align: center;"><h4>No Hay Archivos</h4></td>
-                        @endforelse 
+                   
 
                  
-
-
+                  
+                  </tr>
+                                 
+                  
+                </tbody>
+              </table>
+            </div>
+            <div class="col-12 col-md-12">
+            <table class="table table-hover table-bordered">
             
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Retroalimentacion 1</th>
+                    <th scope="col">Retroalimentacion 2</th>
+                    <th scope="col">Estado</th>
 
-            
                 </tr>
+            </thead>
 
-           </tbody>
-        </table>
+
+            <tbody>
+             
+              <tr>
+                
+                <td>
+                  @forelse($archivos as $archivo)
+                  @if ($archivo->fase_id === 1)
+                  @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===1)))
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                  @endif 
+                  @endif 
+                  @empty
+                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  @endforelse    
+                </td>
+
+                <td>
+                   @forelse($archivos as $archivo)
+                  @if ($archivo->fase_id === 1)
+                  @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===2)))
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                    @endif 
+                     @endif 
+                     @empty
+                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  @endforelse    
+                </td>
+
+                <td>
+                    @forelse($archivos as $archivo)
+                      @if ($archivo->fase_id === 1)
+                        @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
+                          <p> {{$archivo->Comentario}} </p>
+                        @endif
+                        @if( (empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
+                          <p> En espera </p>
+                         
+                        @endif
+                      @endif
+                    @empty
+                      <td style="text-align: center;"><h4>En Proceso</h4></td>
+                    @endforelse    
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+          
+          <div id="fase2" class="container tab-pane fade"><br>
+            <div class="col-12 col-md-12">
+              <table class="table table-bordered table-reponsive mt-5">
+                <thead class="thead-light">
+                  <th>Nombre del proyecto</th>
+                  <th>Nombre de la fase</th>
+                </thead>
+
+                <tbody>
+                  <tr>
+                   
+                  <td>{{ $proyectos->NombreProd }}</td>
+
+                
+                   
+                  <td>
+                    Mercado 
+                  </td>
+              
+                   
+
+                 
+                  
+                  </tr>
+                                 
+                  
+                </tbody>
+              </table>
+            </div>
+            <div class="col-12 col-md-12">
+            <table class="table table-hover table-bordered">
+            
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Retroalimentacion 1</th>
+                    <th scope="col">Retroalimentacion 2</th>
+                    <th scope="col">Estado</th>
+
+                </tr>
+            </thead>
+
+
+            <tbody>
+             
+              <tr>
+                
+                <td>
+                  @forelse($archivos as $archivo)
+                  @if ($archivo->fase_id === 2)
+                  @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===1)))
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                  @endif 
+                  @endif 
+                  @empty
+                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  @endforelse    
+                </td>
+
+                <td>
+                   @forelse($archivos as $archivo)
+                  @if ($archivo->fase_id === 2)
+                  @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===2)))
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                    @endif 
+                     @endif 
+                     @empty
+                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  @endforelse    
+                </td>
+
+                <td>
+                    @forelse($archivos as $archivo)
+                      @if ($archivo->fase_id === 2)
+                        @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
+                          <p> {{$archivo->Comentario}} </p>
+                        @endif
+                        @if( (empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
+                          <p> En espera </p>
+                         
+                        @endif
+                      @endif
+                    @empty
+                      <td style="text-align: center;"><h4>En Proceso</h4></td>
+                    @endforelse    
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+          
+  
+          <div id="fase3" class="container tab-pane fade"><br>
+            <div class="col-12 col-md-12">
+              <table class="table table-bordered table-reponsive mt-5">
+                <thead class="thead-light">
+                  <th>Nombre del proyecto</th>
+                  <th>Nombre de la fase</th>
+                </thead>
+
+                <tbody>
+                  <tr>
+                   
+                  <td>{{ $proyectos->NombreProd }}</td>
+
+                
+                   
+                  <td>
+                   Tecnico
+                  </td>
+              
+                   
+
+                 
+                  
+                  </tr>
+                                 
+                  
+                </tbody>
+              </table>
+            </div>
+            <div class="col-12 col-md-12">
+            <table class="table table-hover table-bordered">
+            
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Retroalimentacion 1</th>
+                    <th scope="col">Retroalimentacion 2</th>
+                    <th scope="col">Estado</th>
+
+                </tr>
+            </thead>
+
+
+            <tbody>
+             
+              <tr>
+                
+                <td>
+                  @forelse($archivos as $archivo)
+                  @if ($archivo->fase_id === 3)
+                  @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===1)))
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                  @endif 
+                  @endif 
+                  @empty
+                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  @endforelse    
+                </td>
+
+                <td>
+                   @forelse($archivos as $archivo)
+                  @if ($archivo->fase_id === 3)
+                  @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===2)))
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                    @endif 
+                     @endif 
+                     @empty
+                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  @endforelse    
+                </td>
+
+                <td>
+                    @forelse($archivos as $archivo)
+                      @if ($archivo->fase_id === 3)
+                        @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
+                          <p> {{$archivo->Comentario}} </p>
+                        @endif
+                        @if( (empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
+                          <p> En espera </p>
+                         
+                        @endif
+                      @endif
+                    @empty
+                      <td style="text-align: center;"><h4>En Proceso</h4></td>
+                    @endforelse    
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          </div>
+          
+          <div id="fase4" class="container tab-pane fade"><br>
+            <div class="col-12 col-md-12">
+              <table class="table table-bordered table-reponsive mt-5">
+                <thead class="thead-light">
+                  <th>Nombre del proyecto</th>
+                  <th>Nombre de la fase</th>
+                </thead>
+
+                <tbody>
+                  <tr>
+                   
+                  <td>{{ $proyectos->NombreProd }}</td>
+
+                
+                   
+                  <td>
+                    Diseño Organizacinal, Marco Legal y Fiscal
+                  </td>
+              
+                   
+
+                 
+                  
+                  </tr>
+                                 
+                  
+                </tbody>
+              </table>
+            </div>
+            <div class="col-12 col-md-12">
+            <table class="table table-hover table-bordered">
+            
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Retroalimentacion 1</th>
+                    <th scope="col">Retroalimentacion 2</th>
+                    <th scope="col">Estado</th>
+
+                </tr>
+            </thead>
+
+
+            <tbody>
+             
+              <tr>
+                
+                <td>
+                  @forelse($archivos as $archivo)
+                  @if ($archivo->fase_id === 4)
+                  @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===1)))
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                  @endif 
+                  @endif 
+                  @empty
+                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  @endforelse    
+                </td>
+
+                <td>
+                   @forelse($archivos as $archivo)
+                  @if ($archivo->fase_id === 4)
+                  @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===2)))
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                    @endif 
+                     @endif 
+                     @empty
+                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  @endforelse    
+                </td>
+
+                <td>
+                    @forelse($archivos as $archivo)
+                      @if ($archivo->fase_id === 4)
+                        @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
+                          <p> {{$archivo->Comentario}} </p>
+                        @endif
+                        @if( (empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
+                          <p> En espera </p>
+                         
+                        @endif
+                      @endif
+                    @empty
+                      <td style="text-align: center;"><h4>En Proceso</h4></td>
+                    @endforelse    
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+     
+          </div>
+          
+          <div id="fase5" class="container tab-pane fade"><br>
+            <div class="col-12 col-md-12">
+              <table class="table table-bordered table-reponsive mt-5">
+                <thead class="thead-light">
+                  <th>Nombre del proyecto</th>
+                  <th>Nombre de la fase</th>
+                </thead>
+
+                <tbody>
+                  <tr>
+                   
+                  <td>{{ $proyectos->NombreProd }}</td>
+
+                
+                   
+                  <td>
+                    Estudio Financiero 
+                  </td>
+              
+                   
+
+                 
+                  
+                  </tr>
+                                 
+                  
+                </tbody>
+              </table>
+            </div>
+            <div class="col-12 col-md-12">
+            <table class="table table-hover table-bordered">
+            
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Retroalimentacion 1</th>
+                    <th scope="col">Retroalimentacion 2</th>
+                    <th scope="col">Estado</th>
+
+                </tr>
+            </thead>
+
+
+            <tbody>
+             
+              <tr>
+                
+                <td>
+                  @forelse($archivos as $archivo)
+                  @if ($archivo->fase_id === 5)
+                  @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===1)))
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                  @endif 
+                  @endif 
+                  @empty
+                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  @endforelse    
+                </td>
+
+                <td>
+                   @forelse($archivos as $archivo)
+                  @if ($archivo->fase_id === 5)
+                  @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===2)))
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                    @endif 
+                     @endif 
+                     @empty
+                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  @endforelse    
+                </td>
+
+                <td>
+                    @forelse($archivos as $archivo)
+                      @if ($archivo->fase_id === 5)
+                        @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
+                          <p> {{$archivo->Comentario}} </p>
+                        @endif
+                        @if( (empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
+                          <p> En espera </p>
+                         
+                        @endif
+                      @endif
+                    @empty
+                      <td style="text-align: center;"><h4>En Proceso</h4></td>
+                    @endforelse    
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+     
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
   </div>
-
 </div>
 @endsection
