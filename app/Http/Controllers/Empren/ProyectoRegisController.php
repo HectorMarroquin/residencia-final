@@ -74,7 +74,7 @@ class ProyectoRegisController extends Controller
         $proyecto->Descripcion = $request->input('Descripcion');
         $proyecto->Organizacion = $request->input('Organizacion');
         $proyecto->Cual = $request->input('Cual');
-
+        $proyecto->Estado = 'Inicio';
         $id = Auth()->user()->id;
         $empreId = Emprendedor::where('user_id', $id)->value('id');
         $proyecto->emprendedor_id = $empreId;
@@ -206,7 +206,7 @@ class ProyectoRegisController extends Controller
             $competencia->ideanegocio_id = $idea->id;
             $competencia->save();
         }
-///////////////////////////////////////////////////////////////////////////////////////////
+
         $copotencial = new Cpotencial;
         $copotencial->Nombre = $request->input('nombreclien');
         $copotencial->Giro = $request->input('giroclien');
