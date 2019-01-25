@@ -403,7 +403,6 @@
 
                             <td>
                                   <input type="text" name="numerointerior" class="form-control infoemprendedor" value="{{ old('numerointerior') }}">
-                                  {!! $errors->first('numerointerior', '<span class=errores>:message</span>') !!}
                             </td>
 
                         </tr>

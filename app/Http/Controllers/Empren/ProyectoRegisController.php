@@ -74,7 +74,7 @@ class ProyectoRegisController extends Controller
         $proyecto->Descripcion = $request->input('Descripcion');
         $proyecto->Organizacion = $request->input('Organizacion');
         $proyecto->Cual = $request->input('Cual');
-        $proyecto->Estado = 'Inicio';
+        $proyecto->Estado = 'Iniciado';
         $id = Auth()->user()->id;
         $empreId = Emprendedor::where('user_id', $id)->value('id');
         $proyecto->emprendedor_id = $empreId;

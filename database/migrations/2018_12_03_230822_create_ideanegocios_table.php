@@ -16,7 +16,7 @@ class CreateIdeanegociosTable extends Migration
         Schema::create('ideanegocios', function (Blueprint $table) {
             $table->increments('id');
             $table->text('definicion');
-            $table->string('croquis');
+            $table->text('croquis');
             $table->string('tipodomicilio');
             $table->string('tipoasentamiento');
             $table->string('tipoasenotro')->nullable();

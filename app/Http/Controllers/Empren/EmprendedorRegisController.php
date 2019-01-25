@@ -57,7 +57,7 @@ class EmprendedorRegisController extends Controller
      */
     public function store(EmprenValidation $request)
     {
-        $dato = 
+    
         //dd($request->all());
         //Emprendedor::create($request->all());
         $Emprendedor = new Emprendedor;
