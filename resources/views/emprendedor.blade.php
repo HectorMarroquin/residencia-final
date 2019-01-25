@@ -42,7 +42,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('Lista.index') }}">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Entregas</span></a>
+            <span>Proyectos</span></a>
         </li>
 
         <li class="nav-item">

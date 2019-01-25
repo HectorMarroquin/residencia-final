@@ -89,7 +89,7 @@
                   @endif 
                   @endif 
                   @empty
-                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+
                   @endforelse    
                 </td>
 
@@ -102,7 +102,7 @@
                     @endif 
                      @endif 
                      @empty
-                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  
                   @endforelse    
                 </td>
 
@@ -112,13 +112,10 @@
                         @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
                           <p> {{$archivo->Comentario}} </p>
                         @endif
-                        @if( (empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
-                          <p> En espera </p>
-                         
+                        
                         @endif
-                      @endif
                     @empty
-                      <td style="text-align: center;"><h4>En Proceso</h4></td>
+                     
                     @endforelse    
                 </td>
                 
