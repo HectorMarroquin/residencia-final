@@ -24,7 +24,7 @@ class EmprenValidation extends FormRequest
     public function rules()
     {
         return [
-        
+            'Nombre' =>    'required',
             'ApellidoP' => 'required',
             'ApellidoM' => 'required',
             'FechaNaci' => 'required',
@@ -33,15 +33,10 @@ class EmprenValidation extends FormRequest
             'EstadoCivil' => 'required',
             'Direccion' => 'required',
             'NumeroExterior' => 'required',
-            'NumeroInterior' => 'required',
             'Colonia' => 'required',
             'Ciudad' => 'required',
             'Municipio' => 'required',
-            'CodigoPostal' => 'required',
-            'TelefonoCel' => 'required',
-            'TelefonoCasa' => 'required',
-            'TelefonoOfi' => 'required',
-            
+            'CodigoPostal' => 'required',  
             'Escolaridad' => 'required',
             'CURP' => 'required',
             'INE' => 'required',
@@ -62,14 +57,10 @@ class EmprenValidation extends FormRequest
             'EstadoCivil' => 'estado civil',
             'Direccion' => 'direccion',
             'NumeroExterior' => 'numero exterior',
-            'NumeroInterior' => 'numero interior',
             'Colonia' => 'colonia',
             'Ciudad' => 'ciudad',
             'Municipio' => 'municipio',
             'CodigoPostal' => 'codigo postal',
-            'TelefonoCel' => 'telefono celular',
-            'TelefonoCasa' => 'telefono de casa',
-            'TelefonoOfi' => 'telefono de oficina',
             'Correo' => 'correo eletronico',
             'Escolaridad' => 'escolaridad',
             'CURP' => 'CURP',
