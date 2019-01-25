@@ -11,7 +11,7 @@
 
         @elseif (Auth::user()->hasRole('asesor'))
 
-        @include('asesor')    
+         @include('Asesor/inicio')    
 
         @elseif (Auth::user()->hasRole('emprendedor'))
 

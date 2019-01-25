@@ -46,8 +46,9 @@
             @if (Route::has('login'))
           <ul class="navbar-nav ml-auto">
               @auth
+              
               <li class="nav-item">
-                  <a href="{{ url('/home') }}" class="nav-link btn" data-toggle="modal">Home</a>
+                  <a href="{{ route('home') }}" class="nav-link btn">Home</a>
                 </li>
               @else
               <li class="nav-item">

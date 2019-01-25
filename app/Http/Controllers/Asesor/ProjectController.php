@@ -12,6 +12,7 @@ use App\Models\Colaborador;
 use App\Models\Avance;
 use App\Models\Revision;
 use DB;
+use Barryvdh\DomPDF\Facade as PDF;
 
 
 use Illuminate\Http\Request;
@@ -46,7 +47,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+         
     }
 
     /**
@@ -123,6 +124,8 @@ class ProjectController extends Controller
             ]);*/
         }
 
+
+
         /*   $avance = new Revision;
             $avance->Documento = $name;
             $avance->avance_id = $;
@@ -141,7 +144,7 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id)// Actualizar Estado de las fases y del proyecto
     {
         //
     }
