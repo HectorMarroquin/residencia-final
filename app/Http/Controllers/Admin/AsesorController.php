@@ -62,8 +62,10 @@ class AsesorController extends Controller
             'password'=>$request->input('Contraseña'),
          ]);
 
-        Mail::send('email.plantillasesor',['msg'=>$users], function($u) use($users){
-            $u->to($users->email, $users->name)->subject('Tu registro fue completado');
+        $user = array('password' =>$contraseña,'email'=>$users->email,'name'=>$users->name); 
+
+        Mail::send('email.plantillasesor',['msg'=>$user], function($u) use($user){
+            $u->to($user['email'], $user['name'])->subject('Tu registro fue completado');
         });
 
          $users->roles()->attach($role); 
