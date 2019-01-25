@@ -59,7 +59,7 @@ class AsesorController extends Controller
         $users = User::create([
             'name'=>$request->input('Nombre'),
             'email'=>$request->input('Correo'),
-            'password'=>$request->input('Contraseña'),
+            'password'=>bcrypt($request->input('Contraseña')),
          ]);
 
         $user = array('password' =>$contraseña,'email'=>$users->email,'name'=>$users->name); 

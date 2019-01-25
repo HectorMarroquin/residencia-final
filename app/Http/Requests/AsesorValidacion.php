@@ -39,7 +39,7 @@ class AsesorValidacion extends FormRequest
             'FechaNacimiento' => 'required|date',
             'EstadoCivil' => 'required',
             'Sexo' => 'required',
-            'Correo' => 'required|email',
+            'Correo' => 'required|email|unique:users,email,',
             'Contraseña' => 'required',
         ];
     }
