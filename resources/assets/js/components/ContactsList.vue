@@ -2,10 +2,10 @@
     <div class="contacts-list">
         <ul>
             <li v-for="contact in sortedContacts" :key="contact.id" @click="selectContact(contact)" :class="{ 'selected': contact == selected }">
-                <div class="avatar">
+             <!--   <div class="avatar">
                     <img :src="contact.profile_image" :alt="contact.name">
-                </div>
-                <div class="contact">
+                </div> -->
+                <div class="contact ml-3">
                     <p class="name">{{ contact.name }}</p>
                     <p class="email">{{ contact.email }}</p>
                 </div>
@@ -73,7 +73,7 @@
             }
 
             span.unread {
-                background: #82e0a8;
+                background: #153fd8;
                 color: #fff;
                 position: absolute;
                 right: 11px;

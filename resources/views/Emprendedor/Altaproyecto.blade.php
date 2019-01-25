@@ -21,7 +21,7 @@
                                         <option value="Sector Extractivo">Sector Extractivo</option>
                                         <option value="Sector Servicio ó Orientado a Negocio">Sector Servicio ó Orientado a Negocio</option>
                                         <option value="Sector Transformación">Sector Transformación</option>
-                                        <option value="Sector Servicio ó Orientado a Cosumudores">Sector Servicio ó Orientado a Cosumudores</option>
+                                        <option value="Sector Servicio ó Orientado a Cosumudores">Sector Servicio ó Orientado a Cosumidores</option>
                                     </select>
                                     {!! $errors->first('Actividad', '<span class=errores>:message</span>') !!}
                                 </div>
