@@ -65,7 +65,7 @@
             <td>{{ $proyecto->Actividad }}</td>
             <td>{{ $proyecto->Telefonoemp }}</td>
             <td>{{ $proyecto->CorreoEmp }}</td>
-            <td><span class="badge badge-pill badge-success">Aprovado</span></td>
+            <td><span class="badge badge-pill badge-success">{{ $proyecto->Estado }}</span></td>
             <td>
               
              

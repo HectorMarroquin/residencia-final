@@ -127,5 +127,6 @@
 <script src="{{ asset('js/Agregarcolumnasempre.js')}}"></script>
 <script src="{{ asset('js/Agregarcolumnascompe.js')}}"></script>
 <script src="{{ asset('js/eliminarasesor.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </body>
 </html>
