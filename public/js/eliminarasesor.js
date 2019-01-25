@@ -33,7 +33,10 @@ $(document).ready(function(){
                         title: 'Se elimino correctamente'
                       })
                 }).fail(function(){
-                    $('#alert').html('Algo salio mal');
+                    Swal.fire(
+                        'Algo salio mal!',
+                        'error'
+                      )
                 })
               
             }

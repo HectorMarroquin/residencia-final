@@ -7,18 +7,18 @@
  		
  		<div class="row">
 
- 			<div class="col-8">
+ 			<div class="col-sm-8">
 
  				<h3>Bienvenido al Panel del Administrador</h3>
  					  
 			</div>
 				
-			<div class="col-2">
+			<div class="col-sm-2">
 
 				
 					<img src="{{ asset('imagenes/logo.jpg') }}" class="rounded" alt="Cinque Terre" width="100" height="100"> 
  			</div>
- 			<div class="col-2">
+ 			<div class="col-sm--2">
 
 				
 					<img src="{{ asset('imagenes/TecNM.png') }}" class="rounded" alt="Cinque Terre" width="150" height="100"> 
@@ -34,7 +34,7 @@
  					<li class="list-group-item">Preincubadora para planes de negocio</li>
  					<li class="list-group-item">Esta plataforma esta en su version Beta</li>
  					<li class="list-group-item">Favor de leer sus instrucciones para su uso correcto</li>
- 					<li class="list-group-item">Si hay algun error favor de reportar con support'@'gmail.com</li>
+ 					<li class="list-group-item">Si hay algun error favor de reportar con ittg.vinc'@'gmail.com</li>
  				</ul>
  			</div>
  			<div class="col-sm-4">
