@@ -161,9 +161,9 @@
                     </table>
                     <div class="row justify-content-center">
                         <div class="col text-center">
-                            <a type="button" class="btn btn-success" href="#">
+                            <a type="button" class="btn btn-success" href="{{ route('projects.destroy', $file->id)  }}">
                                 <i class=""> Aprobar Fase</i></a>
-                             <a type="button" class="btn btn-danger" href="#">
+                             <a type="button" class="btn btn-danger" href="{{ route('projects.update', $file->id)  }}">
                                 <i class=""> No aprobar Fase</i></a>   
                                  
                          </div>

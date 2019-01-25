@@ -11,7 +11,7 @@ use App\Models\Asesor;
 use App\Models\Emprendedor;
 use App\Models\Colaborador;
 use App\Http\Requests\AsesorValidacion;
-
+use Barryvdh\DomPDF\Facade as PDF;
 class AsesorController extends Controller
 {
 
@@ -69,9 +69,9 @@ class AsesorController extends Controller
     {
         $emprendedor = Emprendedor::findOrFail($id);
 
-        $ids = $emprendedor->id;    
+        //$ids = $emprendedor->id;    
 
-        $colaborador =Colaborador::where('emprendedor_id', $ids)->get();
+        $colaborador =Colaborador::where('emprendedor_id', $emprendedor->id)->get();
 
         return view('Asesor.show-AltaEmpre', compact('emprendedor','colaborador'));
 
@@ -84,10 +84,20 @@ class AsesorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id) //descargar los datos de alta emprendedor
     {
-        //
-    }
+         $emprendedor = Emprendedor::findOrFail($id);
+
+        //$ids = $emprendedor->id;    
+
+        $colaborador =Colaborador::where('emprendedor_id', $emprendedor->id)->get();
+       
+        $pdf = PDF::loadview('Asesor.pdf.infoAltaEmpre', compact('emprendedor','colaborador'));
+
+        return $pdf->download();
+
+
+      }
 
     /**
      * Update the specified resource in storage.

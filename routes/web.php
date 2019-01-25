@@ -68,33 +68,27 @@ Route::resource('historial','Admin\HistoController');
 
 Route::resource('projects','Asesor\ProjectController'); 
 Route::resource('asesor','Asesor\AsesorController');
+Route::get('/homeAsesor','Asesor\homeController@asesor')->name('HomeAsesor');
+
+
 
 
 
 
 //eaz
-Route::get('/proyectos',['as'=>'proyectos', function () {
-    return view('Asesor/proyectos');
-}]);
 
-Route::get('/verproyectos',[ 'as' => 'verproyectos', function () {
-    return view('Asesor/ver-proyecto');
-}]);
-
-Route::get('/emprendedoresAs',[ 'as' => 'emprendedoresAs', function () {
-    return view('Asesor/emprendedoresAs');
-}]);
-
-Route::get('/infoAlta',['as'=>'infoAlta', function () {
-    return view('Asesor/infoAltaProjecto');
-}]); 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/*chat*/
+
 Route::get('/contacts', 'ContactsController@get');
 Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
 Route::post('/conversation/send', 'ContactsController@send');
+/*/chat*/
+
+
 
 Route::get('/email1',['as'=>'email', function () {
     return view('email/form_mail');

@@ -6,15 +6,15 @@
       <ul class="sidebar navbar-nav">
         
         <li class="nav-item active">
-          <a class="nav-link" href="{{ route('proyectos') }}">
+          <a class="nav-link" href="{{ route('HomeAsesor') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
+            <span>Inicio</span>
           </a>
         </li>
 
          <li class="nav-item">
           <a class="nav-link" href="{{ route('asesor.index') }}">
-            <i class="fas fa-user-tie"></i>
+            <i class="fas fa-fw  fa-user-tie"></i>
             <span>Perfil</span></a>
         </li>
 
@@ -42,9 +42,9 @@
             <span>Consultar proyectos</span></a>
         </li>
 
-         <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="{{ route('chat.index') }}">
-            <i class="fas fa-comment"></i>
+            <i class="fas fa-fw fa-comment"></i>
             <span>Chat</span></a>
         </li>
         

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\User;
 use App\Models\Role;
 use App\Models\Asesor;
@@ -10,7 +11,7 @@ use App\Models\Proyecto;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\AsesorValidacion;
-
+use Illuminate\Support\Facades\Mail;
 class AsesorController extends Controller
 {
     /**
@@ -53,11 +54,17 @@ class AsesorController extends Controller
         $asesor = $request->all();
         $role = Role::where('name','asesor')->first();
         
+        $contraseña = $request->input('Contraseña');
+        
         $users = User::create([
             'name'=>$request->input('Nombre'),
             'email'=>$request->input('Correo'),
-            'password'=>bcrypt($request->input('Contraseña')),
+            'password'=>$request->input('Contraseña'),
          ]);
+
+        Mail::send('email.plantillasesor',['msg'=>$users], function($u) use($users){
+            $u->to($users->email, $users->name)->subject('Tu registro fue completado');
+        });
 
          $users->roles()->attach($role); 
         
@@ -118,10 +125,6 @@ class AsesorController extends Controller
      */
     public function destroy(Request $request ,$id)
     {
-        // Asesor::findOrFail($id)->delete();
-
-        // return redirect()->route('asesores.index');
-
         if($request->ajax()){
 
             $asesor = Asesor::findOrFail($id);
