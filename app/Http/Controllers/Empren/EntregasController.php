@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Empren;
 
 use Illuminate\Http\Request;
 use App\Models\Fase;
-use App\Models\Actividad;
+use App\Models\Avance;
 use App\Models\Proyecto;
 use App\Models\Emprendedor;
 use App\Http\Controllers\Controller;
@@ -58,13 +58,13 @@ class EntregasController extends Controller
     {
         $proyectos = Proyecto::findOrFail($id);
         $fases = Fase::all();
-        $actividades = Actividad::all();
-
-        // $actividades = Actividad::where('fase_id', $fase)->get();
-
-         $id = Auth()->user()->id;
+        $id = Auth()->user()->id;
         $empre = Emprendedor::where('user_id', $id)->value('id');
-        return view ('Emprendedor.Entregas', compact('fases','actividades', 'empre', 'proyectos'));
+        $avances = Avance::where('NumeroEntrega', '=', 3)->where('fase_id', '=', 1)->where('proyecto_id', $proyectos->id)->get();
+        $avancess = Avance::where('NumeroEntrega', '=', 3)->where('fase_id', '=', 2)->where('proyecto_id', $proyectos->id)->get();
+        $avancesss = Avance::where('NumeroEntrega', '=', 3)->where('fase_id', '=', 3)->where('proyecto_id', $proyectos->id)->get();
+        $avancessss = Avance::where('NumeroEntrega', '=', 3)->where('fase_id', '=', 4)->where('proyecto_id', $proyectos->id)->get();
+        return view ('Emprendedor.Entregas', compact('fases', 'empre', 'proyectos', 'avances', 'avancess', 'avancesss', 'avancessss'));
     }
 
     /**
