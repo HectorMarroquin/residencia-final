@@ -55,7 +55,7 @@
 					 </td>
 				</tr>
 				@empty
-					<td colspan="6" style="text-align: center;"><h4>No Hay Asesores Registrados</h4></td>
+					<td colspan="6" style="text-align: center;"><h4>No Hay Emprendedores Registrados</h4></td>
 				@endforelse
 		   </tbody>
 		</table>

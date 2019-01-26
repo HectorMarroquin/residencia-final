@@ -27,8 +27,6 @@ class AsesorController extends Controller
     public function index()
     {   
         $asesores = Asesor::paginate(5);
-        // $asignaciones = Asignacion::with('asesor');
-        // $proyectos = Proyecto::with('proyecto');
         return view('Administrador.show-asesores', compact('asesores'));
     }
 

@@ -14,7 +14,7 @@ $(document).ready(function(){
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             cancelButtonText: 'Cancelar!',
-            confirmButtonText: 'Si, Eliminarlo!'
+            confirmButtonText: 'Eliminarlo!'
           }).then((result) => {
             if (result.value) {
              
