@@ -31,8 +31,8 @@
                 Status
               </button>
              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Aprovado</a>
-              <a class="dropdown-item" href="#">Reprovado</a>
+              <a class="dropdown-item" href="#">Aprobado</a>
+              <a class="dropdown-item" href="#">No aprobado</a>
               <a class="dropdown-item" href="#">En curso</a>
             </div>
             </div>
