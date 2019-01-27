@@ -16,7 +16,7 @@
 
 	 					<td class="col-8" style="text-align: center">
 	 						<div>
-	 							<h3>Bienvenido Emprendedor:  {{$empre->Nombre}}</h3>
+	 							<h3>Bienvenido Emprendedor</h3>
 							</div>
 	 					</td>
 
