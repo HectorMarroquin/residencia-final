@@ -219,10 +219,10 @@
         <tbody>
 
           @forelse($colaborador as $colaboradores)
-          
+          <tr>
             <td>{{$colaboradores->NombreC}} {{ $colaboradores->ApellidoPC }} {{ $colaboradores->ApellidoMC }}</td>
             <td>{{ $colaboradores->CURPC }}</td>
-           
+          </tr> 
              @empty
           <td colspan="6" style="text-align: center;"><h4>No Hay Colaboradores Registrados</h4></td>
           @endforelse

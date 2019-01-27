@@ -115,10 +115,10 @@
                      <div class="form-group col-md-5">
                           <label for="inputEscola">Escolaridad</label>
                           <select id="inputEscola" name="Escolaridad" class="form-control">
-                                <option value>Seleccione una opcion</option>
+                                <option disable="true" selected="true" value ="">Seleccione una opcion</option>
                                 <option value="Carrera Tecnica" {{ old('Escolaridad', $asesor->Escolaridad)=='Carrera Tecnica' ? 'selected' : '' }}>Carrera Técnica</option>
-                                <option value="Doctorado" {{ old('Escolaridad') == 'Doctorado' ? 'selected' : '' }}>Doctorado</option>
-                                <option value="Licenciatura" @if(old('Escolaridad') == 'Doctorado') {{'selected'}} @endif>Licenciatura</option>
+                                <option value="Doctorado" {{ old('Escolaridad', $asesor->Escolaridad) == 'Doctorado' ? 'selected' : '' }}>Doctorado</option>
+                                <option value="Licenciatura" @if(old('Escolaridad',  $asesor->Escolaridad) == 'Licenciatura') {{'selected'}} @endif>Licenciatura</option>
                                 <option value="Maestria" @if(old('Escolaridad') == 'Doctorado') {{'selected'}} @endif>Maestria</option>
                                 <option value="Ninguno" @if(old('Escolaridad') == 'Doctorado') {{'selected'}} @endif>Ninguno</option>
                                 <option value="Preperatoria/Bachillerato" @if(old('Escolaridad') == 'Doctorado') {{'selected'}} @endif>Preparatoria/Bachillerato</option>
