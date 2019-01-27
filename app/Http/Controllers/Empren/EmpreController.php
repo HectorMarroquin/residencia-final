@@ -15,6 +15,8 @@ use App\Models\Avance;
 use App\Models\Colaborador;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EmprenValidation;
+
 
 class EmpreController extends Controller
 {
@@ -83,7 +85,7 @@ class EmpreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EmprenValidation $request, $id)
     {
         $emprendedores = Emprendedor::findOrFail($id);
         $emprendedores->update($request->all());
