@@ -40,7 +40,7 @@
                 <a class="nav-link btn" data-toggle="modal" data-target="#register">Registrarse</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#services">Beneficios</a>
+                    <a class="nav-link btn" href="#services">Beneficios</a>
             </li>
             @endauth  
           </ul>
