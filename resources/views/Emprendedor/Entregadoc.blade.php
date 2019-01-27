@@ -68,6 +68,7 @@
                                                         <div class="form-group">
                                                             <label for="">Documento</label>
                                                             <input type="file" name="documento1" class="form-control">
+                                                            {!! $errors->first('documento1', '<span class=errores>:message</span>') !!}
                                                         </div>
                                                         
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
@@ -127,6 +128,7 @@
                                                         <div class="form-group">
                                                             <label for="">Documento</label>
                                                             <input type="file" name="documento2" class="form-control">
+                                                             {!! $errors->first('documento2', '<span class=errores>:message</span>') !!}
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                                         @else
@@ -186,6 +188,7 @@
                                                         <div class="form-group">
                                                             <label for="">Documento</label>
                                                             <input type="file" name="documento3" class="form-control">
+                                                             {!! $errors->first('documento3', '<span class=errores>:message</span>') !!}
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                                         @else
