@@ -115,7 +115,7 @@ class ProjectController extends Controller
 
             $avance->Comentario=$name;
 
-             $avance->update();    
+            $avance->update();    
 
             /* Revision::create([
             'Documento' => $name,
@@ -125,7 +125,7 @@ class ProjectController extends Controller
         }
 
 
-
+      
         /*   $avance = new Revision;
             $avance->Documento = $name;
             $avance->avance_id = $;
@@ -146,7 +146,10 @@ class ProjectController extends Controller
      */
     public function destroy($id)// Actualizar Estado de las fases y del proyecto
     {
-        //
+        $avance=Avance::findOrFail($id);
+        $avance->Comentario='aprobado';
+        $avance->update();    
+
     }
 
 

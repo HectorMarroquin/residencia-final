@@ -114,16 +114,16 @@
               <div class="form-row justify-content-md-center">
                      <div class="form-group col-md-5">
                           <label for="inputEscola">Escolaridad</label>
-                          <select id="inputEscola" name="Escolaridad" class="form-control"  value="{{ $asesor->Escolaridad }}">
-                                <option disabled="true" selected="true" value>Seleccione una opcion</option>
-                                <option value="Carrera Tecnica">Carrera Técnica</option>
-                                <option value="Doctorado">Doctorado</option>
-                                <option value="Licenciatura">Licenciatura</option>
-                                <option value="Maestria">Maestria</option>
-                                <option value="Ninguno">Ninguno</option>
-                                <option value="Preperatoria/Bachillerato">Preparatoria/Bachillerato</option>
-                                <option value="Primaria">Primaria</option>
-                                <option value="Secundaria">Secundaria</option>
+                          <select id="inputEscola" name="Escolaridad" class="form-control">
+                                <option value>Seleccione una opcion</option>
+                                <option value="Carrera Tecnica" {{ old('Escolaridad', $asesor->Escolaridad)=='Carrera Tecnica' ? 'selected' : '' }}>Carrera Técnica</option>
+                                <option value="Doctorado" {{ old('Escolaridad') == 'Doctorado' ? 'selected' : '' }}>Doctorado</option>
+                                <option value="Licenciatura" @if(old('Escolaridad') == 'Doctorado') {{'selected'}} @endif>Licenciatura</option>
+                                <option value="Maestria" @if(old('Escolaridad') == 'Doctorado') {{'selected'}} @endif>Maestria</option>
+                                <option value="Ninguno" @if(old('Escolaridad') == 'Doctorado') {{'selected'}} @endif>Ninguno</option>
+                                <option value="Preperatoria/Bachillerato" @if(old('Escolaridad') == 'Doctorado') {{'selected'}} @endif>Preparatoria/Bachillerato</option>
+                                <option value="Primaria" @if(old('Escolaridad') == 'Doctorado') {{'selected'}} @endif>Primaria</option>
+                                <option value="Secundaria" @if(old('Escolaridad') == 'Doctorado') {{'selected'}} @endif>Secundaria</option>
                           </select>
                           {!! $errors->first('Escolaridad', '<span class=errores>:message</span>') !!}
                     </div>
@@ -163,18 +163,18 @@
                   </div>
                         <div class="form-group col-md-5">
                               <label for="inputEmail">Correo Electronico</label>
-                            <input type="email" name="Correo" class="form-control" id="inputEmail" value="{{ $asesor->Correo }}">
+                            <input type="email" name="Correo"  class="form-control" id="inputEmail" value="{{ $asesor->Correo }}">
                             {!! $errors->first('Correo', '<span class=errores>:message</span>') !!}
                   </div>
             </div>
     
               <div class="form-row justify-content-md-center mt">
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline1" name="Sexo" value="Femenino" class="custom-control-input">
+                      <input type="radio" id="customRadioInline1" name="Sexo" value="Femenino" @if(old('Sexo',$asesor->Sexo)=="Femenino") checked @endif class="custom-control-input">
                       <label class="custom-control-label" for="customRadioInline1">Femenino</label>
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline2" name="Sexo" value="Masculino" class="custom-control-input">
+                      <input type="radio" id="customRadioInline2" name="Sexo" value="Masculino" @if(old('Sexo',$asesor->Sexo)=="Masculino") checked @endif class="custom-control-input">
                       <label class="custom-control-label" for="customRadioInline2">Masculino</label>
                 </div>
 

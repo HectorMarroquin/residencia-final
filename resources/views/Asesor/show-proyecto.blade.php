@@ -114,7 +114,22 @@
                                       
                                   <td>
 
-                                   @if(empty($file->Comentario))  
+                                  
+                                    @if($file->NumeroEntrega == 3)
+                                        <div class="row justify-content-center">
+                          
+                                            <div class="col text-center">
+                                              <a type="button" class="btn btn-success" href="{{ route('projectFase', $file->id)  }}">
+                                                <i class=""> Aprobar Fase</i></a>
+                                              <a type="button" class="btn btn-danger" href="{{ route('projectFases', $file->id)  }}">
+                                                          <i class=""> No aprobar Fase</i></a>   
+                                 
+                                            </div>
+                                        </div>
+                            
+                                    @elseif(empty($file->Comentario))  
+
+
                                       <form method="POST" action="{{ route('projects.update', $file->id) }}" enctype="multipart/form-data"> @csrf {!! method_field('PUT') !!} 
 
                                         <div class="form-group row">
@@ -122,13 +137,13 @@
                                           <div class="row justify-content-center" id="{{ $file->id }}">
                                              <div class="col-12 text-center">
                                               <label for="fileEnvio">Elije un archivo word para enviar</label>
-                                              <input type="file" name="file" class="form-control-file" id="fileEnvio">
+                                              <input type="file" name="file" class="form-control-file" id="fileEnvio"  onchange="validarExt()">
                                             </div> 
                                           </div>
                                             
                                           <div class="row justify-content-center">
                                             <div class="col-12 col-sm-7 col-md-5 mt-3">
-                                              <button type="submit" class="btn btn-primary btn-block" type="submit">Enviar</button>
+                                              <button type="submit" class="btn btn-primary btn-block btn-sm" type="submit">Enviar</button>
                                             </div>
                                           </div>
                                          </div>
@@ -137,7 +152,9 @@
                                         </div>
 
                                       </form>
-                                      @elseif(!empty($file->Comentario))
+                                      
+
+                                      @else(!empty($file->Comentario))
                                      
                                       <div class="row justify-content-center">
                                         <div class="col text-center">
@@ -148,28 +165,24 @@
                                        </div>
                                       </div>
                                           
-
+                                        @endif
                                     @endif  
                                   </td>
                               </tr>
-                             @endif                                  
+                                                               
                          @empty
                            <td style="text-align: center;"><h4>No Hay Archivos</h4></td>
                         @endforelse
                             
                       </tbody>
                     </table>
-                    <div class="row justify-content-center">
-                        <div class="col text-center">
-                            <a type="button" class="btn btn-success" href="{{ route('projects.destroy', $file->id)  }}">
-                                <i class=""> Aprobar Fase</i></a>
-                             <a type="button" class="btn btn-danger" href="{{ route('projects.update', $file->id)  }}">
-                                <i class=""> No aprobar Fase</i></a>   
-                                 
-                         </div>
-                    </div>
- 
+
+                
+                  
                 </div>
+
+
+  
   
             </div>
             
@@ -530,6 +543,24 @@
   </div>
 </div>
 
+<script type="text/javascript">
+  function validarExt() {
+    var archivoInput = document.getElementById('fileEnvio');
+    var archivoRuta = archivoInput.value;
+    var extPermitidas = /(.docx|.DOCX|.doc|.DOC|.Docx)$/i;
+
+      if (!extPermitidas.exec(archivoRuta))
+      {
+        alert('Elije una extencion de Word (.Docx)')
+        archivoInput.value='';
+        return false;
+      }
+  }
+
+</script>
 
 @endsection
 
+
+
+ 

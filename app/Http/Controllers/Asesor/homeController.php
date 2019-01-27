@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Asesor;
 
+use App\Models\Avance;
+
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,8 +21,21 @@ class homeController extends Controller
    		 return view('Asesor.inicio');
 	}
 
-	public function update(){
+	public function update($id){
 
-   		 return view('Asesor.inicio');
+   		$avance=Avance::findOrFail($id);
+      $avance->Comentario='aprobado';
+      $avance->update();    
+
+       return back();
 	}
+
+    public function update1($id){
+
+      $avance=Avance::findOrFail($id);
+      $avance->Comentario='noaprobado';
+      $avance->update();    
+
+       return back();
+  }
 }

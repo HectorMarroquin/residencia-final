@@ -69,11 +69,8 @@ Route::resource('historial','Admin\HistoController');
 Route::resource('projects','Asesor\ProjectController'); 
 Route::resource('asesor','Asesor\AsesorController');
 Route::get('/homeAsesor','Asesor\homeController@asesor')->name('HomeAsesor');
-
-
-
-
-
+Route::get('/projectFase/{id}','Asesor\homeController@update')->name('projectFase');
+Route::get('/projectFases/{id}','Asesor\homeController@update1')->name('projectFases');
 
 //eaz
 
