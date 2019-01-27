@@ -23,6 +23,8 @@
 			  					
 			  		<tbody>
 							
+					@if(!empty($asesor->asignaciones))		
+
 			  			@forelse($asesor->asignaciones as $user)
 			  				<tr>
 			  					<td>{{ $user->proyecto->emprendedor->Nombre }}</td>
@@ -41,6 +43,10 @@
 			  	@empty
 					<td colspan="6" style="text-align: center;"><h4>No Hay Proyectos Registrados</h4></td>
 					@endforelse
+				@else
+					<td colspan="6" style="text-align: center;"><h4>No Hay Proyectos Registrados</h4></td>
+				
+				@endif
 					
 			  </tbody>
 			</table>
@@ -73,15 +79,5 @@
 			</main>
 
 		</div>
-
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>			
+			
 @stop

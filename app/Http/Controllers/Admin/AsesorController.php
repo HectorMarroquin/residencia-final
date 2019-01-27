@@ -27,8 +27,6 @@ class AsesorController extends Controller
     public function index()
     {   
         $asesores = Asesor::paginate(5);
-        // $asignaciones = Asignacion::with('asesor');
-        // $proyectos = Proyecto::with('proyecto');
         return view('Administrador.show-asesores', compact('asesores'));
     }
 
@@ -113,10 +111,22 @@ class AsesorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(AsesorValidacion $request, $id)
-    {
+    {   
+        $nombre = $request->input('Nombre');
+
         $asesor = Asesor::findOrFail($id);
+        $user = User::findOrFail($id);
+        
         $asesor->update($request->all());
+
+        $user->name = $nombre;
+        $user->update();
+
         return redirect()->route('asesores.index');
+
+
+        
+        
     }
 
     /**

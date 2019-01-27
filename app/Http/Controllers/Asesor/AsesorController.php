@@ -42,6 +42,7 @@ class AsesorController extends Controller
      */
     public function create() //redirecciona para ser editado
     {
+        
         $id = auth()->user()->id;
         $asesor = Asesor::where('user_id', $id)->first();
 
@@ -86,7 +87,7 @@ class AsesorController extends Controller
      */
     public function edit($id) //descargar los datos de alta emprendedor
     {
-         $emprendedor = Emprendedor::findOrFail($id);
+        $emprendedor = Emprendedor::findOrFail($id);
 
         //$ids = $emprendedor->id;    
 
@@ -98,7 +99,6 @@ class AsesorController extends Controller
 
 
       }
-
     /**
      * Update the specified resource in storage.
      *
@@ -108,9 +108,18 @@ class AsesorController extends Controller
      */
     public function update(AsesorValidacion $request, $id)
     {
-      $asesor = Asesor::findOrFail($id);
-        $asesor->update($request->all());
-        return redirect()->route('asesor.index');   
+
+      $asesor = Asesor::findOrFail($id); 
+      $user = User::where('id', $asesor->user_id)->first();
+      
+      $user->name =$request->Nombre; 
+      //$user->email = $request->Correo;
+      $user->password=$request->Contraseña;
+
+      $user->update();
+      $asesor->update($request->all());
+
+      return redirect()->route('asesor.index');   
     }
 
     /**

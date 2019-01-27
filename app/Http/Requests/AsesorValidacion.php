@@ -23,6 +23,7 @@ class AsesorValidacion extends FormRequest
      */
     public function rules()
     {
+        // dd($this->route('asesore'));
         return [
             'Nombre' => 'required',
             'ApellidoP' => 'required',
@@ -31,7 +32,7 @@ class AsesorValidacion extends FormRequest
             'Ciudad' => 'required',
             'Estado' => 'required',
             'Colonia' => 'required',
-            'CP' => 'required',
+            'CP' => 'required|numeric',
             'RFC' => 'required',
             'Escolaridad' => 'required',
             'CURP' => 'required|min:18|max:18',
@@ -39,8 +40,8 @@ class AsesorValidacion extends FormRequest
             'FechaNacimiento' => 'required|date',
             'EstadoCivil' => 'required',
             'Sexo' => 'required',
-            'Correo' => 'required|email|unique:users,email,',
-            'Contraseña' => 'required',
+            'Correo' => 'required|email|unique:asesores,Correo,'.$this->route('asesore')
+            // 'Contraseña' => 'required',
         ];
     }
 

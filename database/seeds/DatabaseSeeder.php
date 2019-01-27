@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->truncateTables([
 
             //  'asesores',   
-            //  'proyectos',
-            //  'emprendedores',
+             'proyectos',
+             'emprendedores',
              'fases',
             //  'ideanegocios',
             //  'fodas',
@@ -33,8 +33,8 @@ class DatabaseSeeder extends Seeder
         
            
         //    $this->call(AsesorSeeder::class);
-        //    $this->call(EmprendedorSeeder::class);
-        //    $this->call(ProyectoSeeder::class);
+           $this->call(EmprendedorSeeder::class);
+           $this->call(ProyectoSeeder::class);
            $this->call(FaseSeeder::class);
         //    $this->call(IdeanegocioSeeder::class);
         //    $this->call(FodaSeeder::class);

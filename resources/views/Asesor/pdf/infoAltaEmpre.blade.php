@@ -1,17 +1,15 @@
-
-	<div class="container"> 
+<div class="container"> 
     
     <div class="row">
         <div class="col">
-             <div class="row justify-content-center mb-2" style="background: #e8e8e8">
-        <div class="row">
-            <div class=" col-md-12">
-                <h4>{{ $emprendedor->Nombre }}</h4>              
+            
+        <div class="row justify-content-md-center">
+            <div class=" col-md-10" style="background-color:#0066CC">
+                <h4 class="text-center">{{ $emprendedor->Nombre }} {{ $emprendedor->ApellidoP }} {{ $emprendedor->ApellidoM }}</h4>              
             </div>
         </div>
 
-    </div>
-    
+     
 
     <div class="row justify-content-center">
         <div class="form-group col-md-10">
@@ -51,7 +49,7 @@
                 <label>{{ $emprendedor->Sexo }}</label>
           </div>
      
-     	<div class="form-group col-md-5">
+      <div class="form-group col-md-5">
              <label><b>Estado civil:</b> </label>
              <label>{{ $emprendedor->EstadoCivil }}</label>
         </div>                
@@ -141,10 +139,10 @@
     </div>
 
         <div class="row justify-content-md-center">
-            	<div class="form-group col-md-5">
-                	<label><b>INE:</b> </label>
-                	<label>{{ $emprendedor->INE }}</label>     
-        		</div>
+              <div class="form-group col-md-5">
+                  <label><b>INE:</b> </label>
+                  <label>{{ $emprendedor->INE }}</label>     
+            </div>
 
                 <div class="form-group col-md-5">
                     <label><b>Curp:</b> </label>
@@ -153,9 +151,9 @@
         </div>
 
         <div class="row justify-content-md-center">
-        	    <div class="form-group col-md-5">
-            	    <label><b>Tipo de Empresa:</b> </label>
-                	 <label>{{ $emprendedor->TipoEmpresa }}</label>
+              <div class="form-group col-md-5">
+                  <label><b>Tipo de Empresa:</b> </label>
+                   <label>{{ $emprendedor->TipoEmpresa }}</label>
                 </div>
                     <div class="form-group col-md-5">
                         <label><b>Otra:</b> </label>
@@ -184,10 +182,10 @@
                         <div class="form-group col-md-5">
                             <label><b>Razon social:</b> </label>
                             <label>{{ $emprendedor->RazonSocial }}</label>
-						</div>
+            </div>
                         
                         <div class="form-group col-md-5">
-                        	<label><b>Objetivo Social:</b> </label>
+                          <label><b>Objetivo Social:</b> </label>
                             <label>{{ $emprendedor->ObjetivoSocial}}</label>
                         </div>
         </div>
@@ -195,7 +193,7 @@
     @else
                        <div class="form-group col-md-5">
                              <label><b>RFC:</b> </label>
-            	             <label>{{ $emprendedor->RFC}}</label> 
+                           <label>{{ $emprendedor->RFC}}</label> 
                         </div>
         </div>            
     @endif 
@@ -208,14 +206,14 @@
    
    <div class="row  justify-content-md-center mt-3">
         <div class="col text-aling-center col-md-10">
-        	 <h1 class="text-center">Tabla de Colaboradores</h1>
+           <h1 class="text-center">Tabla de Colaboradores</h1>
      <table class="table table-bordered table-hover table-reponsive mt-4">
                
         <thead class="table-info">
-        	<tr>	
-          		<th>Nombre Completo</th>
-          		<th>Curp</th>
-         	</tr> 
+          <tr>  
+              <th>Nombre Completo</th>
+              <th>Curp</th>
+          </tr> 
         </thead>
 
         <tbody>

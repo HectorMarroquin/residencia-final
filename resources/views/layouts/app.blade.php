@@ -123,7 +123,7 @@
 
 <script src="{{ asset('bootstrap/js/jquery-3.2.1.slim.min.js')}}"></script>
 <script src="{{ asset('js/Emprendedorbarraopciones.js')}}"></script>
-<script src="{{ asset('js/Agregarcolumnas.js')}}"></script>
+<script src="{{ asset('js/Agregarcolumnas.js')}}">s</script>
 <script src="{{ asset('js/muestratipodepersonas.js')}}"></script>
 <script src="{{ asset('js/Agregarcolumnasempre.js')}}"></script>
 <script src="{{ asset('js/Agregarcolumnascompe.js')}}"></script>
