@@ -69,10 +69,12 @@
             <td>
               
              
-              <a href="{{ route('historial.edit', $proyecto->id) }}">
-                  <i class="fas fa-trash-alt" style="font-size: 35px; color: red;"></i>
+                <form style="display: inline;" method="POST" action="{{ route('historial.destroy', $proyecto->id) }}">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <a href=# class="btn-dele"><i class="fas fa-trash-alt" style="font-size: 35px; color: red;"></i></a>
                   
-              </a>  
+                </form> 
                
         
                 <a href="{{ route('historial.show', $proyecto->id) }}">

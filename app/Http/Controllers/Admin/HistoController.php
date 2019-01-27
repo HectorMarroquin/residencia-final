@@ -103,9 +103,19 @@ class HistoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        Proyecto::findOrFail($id)->delete();
-        return redirect()->route('historial.index');
+        if($request->ajax()){
+
+            $historial = Proyecto::findOrFail($id);
+            $historial->delete();
+            $historial_total = Proyecto::all()->count();
+            
+            return response()->json([
+
+             
+
+            ]);
+        }
     }
 }

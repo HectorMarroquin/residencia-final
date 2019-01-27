@@ -5,7 +5,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css"  href="css/EstilosHome.csss">
+        <link rel="stylesheet" type="text/css"  href="css/EstilosHome.css">
         <title>Bienvenido</title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -83,7 +83,7 @@
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
               <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 class="service-heading">Diseño Resposivo</h4>
+            <h4 class="service-heading">Diseño Responsivo</h4>
             <p class="text-muted">Este sistema esta pensado para poder utilizarlo en tu computadora y hasta desde cualquier dispositivo movil.</p>
           </div>
           <div class="col-md-4">

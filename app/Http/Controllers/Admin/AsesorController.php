@@ -111,10 +111,22 @@ class AsesorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(AsesorValidacion $request, $id)
-    {
+    {   
+        $nombre = $request->input('Nombre');
+
         $asesor = Asesor::findOrFail($id);
+        $user = User::findOrFail($id);
+        
         $asesor->update($request->all());
+
+        $user->name = $nombre;
+        $user->update();
+
         return redirect()->route('asesores.index');
+
+
+        
+        
     }
 
     /**
