@@ -18,23 +18,16 @@ Route::get('/', function () {
 /*AQUI INICIA LAS RUTAS DE ALBERT*/ 
 Route::get('/Home', ['as' => 'Empren-home', 'uses' => 'Empren\EmprendedorController@Home']);
 /* Rutas Para el controlador de enviar */ 
-Route::get('Enviar', ['as' => 'Enviar.index', 'uses' => 'Empren\EnvioController@index']);
-
-Route::get('Enviar/create', ['as' => 'Enviar.create', 'uses' => 'Empren\EnvioController@create']);
-
-Route::post('Enviar', ['as' => 'Enviar.store', 'uses' => 'Empren\EnvioController@store']);
-Route::post('Enviars', ['as' => 'Enviar.entregados', 'uses' => 'Empren\EnvioController@entregados']);
-
-Route::post('Enviarss', ['as' => 'Enviar.entregatres', 'uses' => 'Empren\EnvioController@entregatres']);
-
-Route::get('Enviar/{pro}/{fase}', ['as' => 'Enviar.show', 'uses' => 'Empren\EnvioController@show']);
-Route::get('Enviar/{id}/edit', ['as' => 'Enviar.edit', 'uses' => 'Empren\EnvioController@edit']);
-Route::put('Enviar/{id}', ['as' => 'Enviar.update', 'uses' => 'Empren\EnvioController@update']);
-Route::delete('Enviar/{id}', ['as' => 'Enviar.destroy', 'uses' => 'Empren\EnvioController@destroy']);
-
-   
-
-Route::get('/Observaciones', ['as' => 'Emprend-observa', 'uses' => 'Empren\EmprendedorController@Obervacion' ]); 
+Route::get('Enviar', 'Empren\EnvioController@index')->name('Enviar.index');
+Route::get('Enviar/create', 'Empren\EnvioController@create')->name('Enviar.create');
+Route::post('Enviar', 'Empren\EnvioController@store')->name('Enviar.store');
+Route::post('Enviars', 'Empren\EnvioController@entregados')->name('Enviar.entregados');
+Route::post('Enviarss', 'Empren\EnvioController@entregatres')->name('Enviar.entregatres');
+Route::get('Enviar/{pro}/{fase}', 'Empren\EnvioController@show')->name('Enviar.show');
+Route::get('Enviar/{id}/edit', 'Empren\EnvioController@edit')->name('Enviar.edit');
+Route::put('Enviar/{id}', 'Empren\EnvioController@update')->name('Enviar.update');
+Route::delete('Enviar/{id}', 'Empren\EnvioController@destroy')->name('Enviar.destroy');
+Route::get('/Observaciones', 'Empren\EmprendedorController@Obervacion')->name('Emprend-observa'); 
 
 /* valida la peticiones de registro de emprendedores */ 
 Route::post('registro', 'Empren\EmprendedorController@Validar' ); 

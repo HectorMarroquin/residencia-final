@@ -24,6 +24,7 @@
     <link href="{{ asset('app/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{asset('app/css/sb-admin.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/EstilosAdministrador.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/RegistroEmprendedor.css')}}">
 
     
 </head>

@@ -15,7 +15,7 @@
 
         @elseif (Auth::user()->hasRole('emprendedor'))
 
-        @include('emprendedor')
+        @include('Emprendedor/dashboard')
             
         @endif
        
