@@ -10,23 +10,25 @@
                 <form>
                     @csrf
                     <p>Las fases se deben subier para que el asesor pueda asignar una calificacion</p>
-                    <div id="accordion">
 
-                        @forelse ($fases as $fase )
-                        <br>
-                        <br>
+                     <div id="accordion">
                         <div class="card">
-                            <div class="card-header" class="card-link" data-toggle="collapse" href="{{$fase->NombreFase}}">
-                                <a >
-                                   {{$fase->NombreFase}}         
-                                </a>
+                           @forelse ($fases as $fase )
+                            @if($fase->id === 1)
+                        <div class="card-header" class="card-link" data-toggle="collapse" href="#Fase1">
+                             
+                            <a >
+                            {{$fase->NombreFase}}
+                            </a>
+                                                        
+                              
                             </div>
-                            <div id="collapseUno" class="collapse show" data-parent="#accordion">
-                                <div class="card-body">
-                                    <div class="alert alert-warning">
+                        <div id="Fase1" class="collapse show" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="alert alert-warning">
                                     <h5>En un documento colocar todas las actividades que se solicitan y enviarlo en un documento Word </h5>
                                     </div>
-                                   <table class="table table-bordered">
+                            <table class="table table-bordered">
                                     <thead class="thead-light">
                                         <tr>
                                             <th scope="col">Actividades</th>
@@ -39,7 +41,9 @@
                                             <td> 
                                                 <ol>
                                                      @foreach ($fase->actividades as $actividad)
+                                                      @if($actividad->fase_id === 1)
                                                     <li>{{ $actividad->Nombre }}</li>
+                                                    @endif
                                                      @endforeach
                                                 </ol>
                                                
@@ -51,18 +55,247 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
+                          </div>
                         </div>
-                        <br>
-                        <br>
-                    </div>
-                     @empty
-                        <td colspan="6" style="text-align: center;"><h4>Fases No Registrados</h4></td>
+                        @endif   
+                          @empty
+                           <td colspan="6" style="text-align: center;"><h4>No Hay fases Registrados</h4></td>
+                         @endforelse    
+                      </div>
 
-                         </tr>
+                      <div class="card">
+                        @forelse ($fases as $fase )
+                            @if($fase->id === 2)
+                        <div class="card-header" class="collapsed card-link" data-toggle="collapse" href="#fase2">
+                            
+                          <a >
+                            {{ $fase->NombreFase}}
+                          </a>
+                          
+                        </div>
+                        <div id="fase2" class="collapse" data-parent="#accordion">
+                          <div class="card-body">
+                            <div class="alert alert-warning">
+                                    <h5>En un documento colocar todas las actividades que se solicitan y enviarlo en un documento Word </h5>
+                                    </div>
+                            <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Actividades</th>
+                                        </tr>
+                                    </thead>
 
-                        @endforelse
-                </div>
+                                    <tbody>
+                                      
+                                        <tr>
+                                            <td> 
+                                                <ol>
+                                                     @foreach ($fase->actividades as $actividad)
+                                                      @if($actividad->fase_id === 2)
+                                                    <li>{{ $actividad->Nombre }}</li>
+                                                    @endif
+                                                     @endforeach
+                                                </ol>
+                                               
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>
+                                                @forelse($avances as $avance)
+                                              @if($avance->Comentario === 'aprobado')
+                                                <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
+                                                @endif                             
+                                                @empty
+                                                 <p>debes apronbar la primera fase</p>
+                                                @endforelse  
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                          </div>
+                        </div>
+                            @endif                             
+                            @empty
+                           <td colspan="6" style="text-align: center;"><h4>No Hay fases Registrados</h4></td>
+                        @endforelse  
+                      </div>
+
+                      <div class="card">
+                         @forelse ($fases as $fase )
+                            @if($fase->id === 3)
+                        <div class="card-header" class="collapsed card-link" data-toggle="collapse" href="#fase3">
+                          <a>
+                            {{ $fase->NombreFase}}
+                          </a>
+                        </div>
+                        <div id="fase3" class="collapse" data-parent="#accordion">
+                          <div class="card-body">
+                             <div class="alert alert-warning">
+                                    <h5>En un documento colocar todas las actividades que se solicitan y enviarlo en un documento Word </h5>
+                                    </div>
+                            <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Actividades</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                      
+                                        <tr>
+                                            <td> 
+                                                <ol>
+                                                     @foreach ($fase->actividades as $actividad)
+                                                      @if($actividad->fase_id === 3)
+                                                    <li>{{ $actividad->Nombre }}</li>
+                                                    @endif
+                                                     @endforeach
+                                                </ol>
+                                               
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            
+                                            <td>
+                                                 @forelse($avancess as $avance)
+                                              @if($avance->Comentario === 'aprobado')
+                                                <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
+                                                 @endif                             
+                                                @empty
+                                                 <p>debes apronbar la segunda fase</p>
+                                                @endforelse  
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                          </div>
+                        </div>
+                         @endif                             
+                            @empty
+                           <td colspan="6" style="text-align: center;"><h4>No Hay fases Registrados</h4></td>
+                        @endforelse  
+                      </div>
+
+                      <div class="card">
+                        @forelse ($fases as $fase )
+                            @if($fase->id === 4)
+                        <div class="card-header" class="card-link" data-toggle="collapse" href="#fase4">
+                          <a >
+                             {{ $fase->NombreFase}}
+                          </a>
+                        </div>
+                        <div id="fase4" class="collapse" data-parent="#accordion">
+                          <div class="card-body">
+                           <div class="alert alert-warning">
+                                    <h5>En un documento colocar todas las actividades que se solicitan y enviarlo en un documento Word </h5>
+                                    </div>
+                            <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Actividades</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                      
+                                        <tr>
+                                            <td> 
+                                                <ol>
+                                                     @foreach ($fase->actividades as $actividad)
+                                                      @if($actividad->fase_id === 4)
+                                                    <li>{{ $actividad->Nombre }}</li>
+                                                    @endif
+                                                     @endforeach
+                                                </ol>
+                                               
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>
+                                                @forelse($avancesss as $avancess)
+                                              @if($avancess->Comentario === 'aprobado')
+                                                <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
+                                                @endif                             
+                                                @empty
+                                                 <p>debes apronbar la tercera fase fase</p>
+                                                @endforelse  
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                          </div>
+                        </div>
+                         @endif                             
+                            @empty
+                           <td colspan="6" style="text-align: center;"><h4>No Hay fases Registrados</h4></td>
+                        @endforelse  
+                      </div>
+
+                      <div class="card">
+                         @forelse ($fases as $fase )
+                            @if($fase->id === 5)
+                        <div class="card-header"  class="card-link" data-toggle="collapse" href="#fase5">
+                          <a>
+                             {{ $fase->NombreFase}}
+                          </a>
+                        </div>
+                        <div id="fase5" class="collapse" data-parent="#accordion">
+                          <div class="card-body">
+                             <div class="alert alert-warning">
+                                    <h5>En un documento colocar todas las actividades que se solicitan y enviarlo en un documento Word </h5>
+                                    </div>
+                            <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Actividades</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                      
+                                        <tr>
+                                            <td> 
+                                                <ol>
+                                                     @foreach ($fase->actividades as $actividad)
+                                                      @if($actividad->fase_id === 5)
+                                                    <li>{{ $actividad->Nombre }}</li>
+                                                    @endif
+                                                     @endforeach
+                                                </ol>
+                                               
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>
+                                                @forelse($avancessss as $avancesss)
+                                              @if($avancesss->Comentario === 'aprobado')
+                                                <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
+                                                 @endif                             
+                                                @empty
+                                                 <p>debes apronbar la cuarta fase</p>
+                                                @endforelse 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                          </div>
+                        </div>
+                        @endif                             
+                            @empty
+                           <td colspan="6" style="text-align: center;"><h4>No Hay fases Registrados</h4></td>
+                        @endforelse 
+                      </div>
+
+
+                    </div> 
+                   
             </form>
         </div>
     </div>

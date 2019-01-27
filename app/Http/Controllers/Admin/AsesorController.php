@@ -27,8 +27,6 @@ class AsesorController extends Controller
     public function index()
     {   
         $asesores = Asesor::paginate(5);
-        // $asignaciones = Asignacion::with('asesor');
-        // $proyectos = Proyecto::with('proyecto');
         return view('Administrador.show-asesores', compact('asesores'));
     }
 
@@ -59,11 +57,13 @@ class AsesorController extends Controller
         $users = User::create([
             'name'=>$request->input('Nombre'),
             'email'=>$request->input('Correo'),
-            'password'=>$request->input('Contraseña'),
+            'password'=>bcrypt($request->input('Contraseña')),
          ]);
 
-        Mail::send('email.plantillasesor',['msg'=>$users], function($u) use($users){
-            $u->to($users->email, $users->name)->subject('Tu registro fue completado');
+        $user = array('password' =>$contraseña,'email'=>$users->email,'name'=>$users->name); 
+
+        Mail::send('email.plantillasesor',['msg'=>$user], function($u) use($user){
+            $u->to($user['email'], $user['name'])->subject('Tu registro fue completado');
         });
 
          $users->roles()->attach($role); 
@@ -111,10 +111,22 @@ class AsesorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(AsesorValidacion $request, $id)
-    {
+    {   
+        $nombre = $request->input('Nombre');
+
         $asesor = Asesor::findOrFail($id);
+        $user = User::findOrFail($id);
+        
         $asesor->update($request->all());
+
+        $user->name = $nombre;
+        $user->update();
+
         return redirect()->route('asesores.index');
+
+
+        
+        
     }
 
     /**

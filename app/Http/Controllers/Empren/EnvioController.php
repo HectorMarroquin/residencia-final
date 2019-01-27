@@ -24,8 +24,8 @@ class EnvioController extends Controller
     public function index()
     {
         $id = Auth()->user()->id;
-        $empre = Emprendedor::where('user_id', $id)->value('id');
-        return view ('emprendedor', compact('empre'));
+        $empre = Emprendedor::where('user_id', $id)->first();
+        return view ('Emprendedor/dashboard', compact('empre'));
     }
 
 

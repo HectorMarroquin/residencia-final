@@ -81,7 +81,7 @@ class EstatusController extends Controller
     public function edit($id)
     {
         $archivoss =Avance::findOrFail($id);
-        $file_rute=$archivoss->Documento;
+        $file_rute=$archivoss->Comentario;
         $ruta=public_path('Revisiones')."/".$file_rute; 
 
         return response()->download($ruta);

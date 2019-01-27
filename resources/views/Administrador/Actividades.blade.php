@@ -95,7 +95,7 @@
 							</td>
 				</tr>
 					@empty
-					<td colspan="3" style="text-align: center;"><h4>No Hay Fases Registrados</h4></td>
+					<td colspan="3" style="text-align: center;"><h4>No Hay Fases Registradas</h4></td>
 					@endforelse
 		    </tbody>
 	   	 </table>

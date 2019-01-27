@@ -24,6 +24,7 @@
     <link href="{{ asset('app/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{asset('app/css/sb-admin.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/EstilosAdministrador.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/RegistroEmprendedor.css')}}">
 
     
 </head>
@@ -122,7 +123,7 @@
 
 <script src="{{ asset('bootstrap/js/jquery-3.2.1.slim.min.js')}}"></script>
 <script src="{{ asset('js/Emprendedorbarraopciones.js')}}"></script>
-<script src="{{ asset('js/Agregarcolumnas.js')}}"></script>
+<script src="{{ asset('js/Agregarcolumnas.js')}}">s</script>
 <script src="{{ asset('js/muestratipodepersonas.js')}}"></script>
 <script src="{{ asset('js/Agregarcolumnasempre.js')}}"></script>
 <script src="{{ asset('js/Agregarcolumnascompe.js')}}"></script>
