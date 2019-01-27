@@ -28,7 +28,7 @@ class ProyectoValidacion extends FormRequest
             'Razonsocial' => 'required',
             'RFC' => 'required',
             'NombreDirector'=> 'required',
-            'Telefonoemp'=> 'required',
+            'Telefonoemp'=> 'required|numeric',
             'CorreoEmp'=> 'required',
             'NombreProd'=> 'required',
             'Descripcion'=> 'required',
@@ -40,14 +40,14 @@ class ProyectoValidacion extends FormRequest
             'definicion'=> 'required',
             'tipodomicilio'=> 'required',
             'nombreasentamiento'=> 'required',
-            'numeroexterior'=> 'required',
+            'numeroexterior'=> 'required|numeric',
             'localidad'=> 'required',
             'municipio'=> 'required',
             'estado'=> 'required',
-            'codigopostal'=> 'required',
+            'codigopostal'=> 'required|numeric',
             'superficie'=> 'required',
             'refencia'=> 'required',
-            'croquis'=> 'required',
+            'croquis'=> 'required|mimes:pdf',
         ];
     }
 

@@ -7,7 +7,7 @@
                 <h2>Editar Emprendedor</h2>
                 <form method="POST" action="{{ route('Emprendedor.update', $empre->id)}}">
                     {!! method_field('PUT') !!}
-                   {{ csrf_field() }}
+                    {{ csrf_field() }}
             
             
                 <table class="table">
@@ -80,10 +80,10 @@
 
                             <td colspan="3">
                                <div class="form-group ">
-                                    <select class="form-control col-sm-5" id="" name="Sexo" value="{{$empre->Sexo}}">
+                                    <select class="form-control col-sm-5" id="" name="Sexo" value="">
                                         <option value="">Seleccione una Opcion</option>
-                                        <option value="Hombre">Hombre</option>
-                                        <option value="Mujer">Mujer</option> 
+                                        <option value="Masculino"{{old('Sexo', $empre->Sexo) == 'Masculino' ? 'selected' : ''}}>Masculino</option>
+                                        <option value="Femenino" {{old('Sexo', $empre->Sexo) == 'Femenino' ? 'selected' : ''}}>Femenino</option> 
                                     </select>
                                      {!! $errors->first('Sexo', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -97,14 +97,14 @@
 
                             <td colspan="3">
                                   <div class="form-group ">
-                                    <select class="form-control col-sm-5" id="" name="EstadoCivil" value="{{$empre->EstadoCivil}}">
+                                    <select class="form-control col-sm-5" id="" name="EstadoCivil" value="">
                                         <option value="">Seleccione una Opcion</option>
-                                        <option value="Soltero(a)">Soltero(a)</option>
-                                        <option value="Casado(a)">Casado(a)</option>
-                                        <option value="Divorsiado(a)">Divorsiado(a)</option>
-                                        <option value="Viudo(a)">Viudo(a)</option>
-                                        <option value="Unión libre">Unión libre</option>
-                                        <option value="Separado(a)">Separado(a)</option>
+                                        <option value="Soltero(a)" {{old('EstadoCivil', $empre->EstadoCivil) == 'Soltero(a)' ? 'selected' : ''}}>Soltero(a)</option>
+                                        <option value="Casado(a)" {{old('EstadoCivil', $empre->EstadoCivil) == 'Casado(a)' ? 'selected' : ''}}>Casado(a)</option>
+                                        <option value="Divorsiado(a)" {{old('EstadoCivil', $empre->EstadoCivil) == 'Divorsiado(a)' ? 'selected' : ''}}>Divorsiado(a)</option>
+                                        <option value="Viudo(a)" {{old('EstadoCivil', $empre->EstadoCivil) == 'Viudo(a)' ? 'selected' : ''}}>Viudo(a)</option>
+                                        <option value="Unión libre" {{old('EstadoCivil', $empre->EstadoCivil) == 'Unión libre' ? 'selected' : ''}}>Unión libre</option>
+                                        <option value="Separado(a)" {{old('EstadoCivil', $empre->EstadoCivil) == 'Separado(a)' ? 'selected' : ''}}>Separado(a)</option>
                                     </select>
                                      {!! $errors->first('EstadoCivil', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -235,15 +235,15 @@
 
                             <td colspan="3">
                                 <div class="form-group ">
-                                    <select class="form-control col-sm-5" name="Escolaridad" value="{{$empre->Escolaridad}}" >
+                                    <select class="form-control col-sm-5" name="Escolaridad" value="" >
                                         <option value="">Selecciona una escolaridad</option>
-                                        <option value="Primaria">Primaria</option>
-                                        <option value="Secundaria">Secundaria</option>
-                                        <option value="Preparatoria/Bachillerato">Preparatoria/Bachillerato</option>
-                                        <option value="Carrera Tecnica">Carrera Tecnica</option>
-                                        <option value="Licenciatura">Licenciatura</option>
-                                        <option value="Maestria">Maestria</option>
-                                        <option value="Doctorado">Doctorado</option>
+                                        <option value="Primaria" {{old('EstadoCivil', $empre->Escolaridad) == 'Primaria' ? 'selected' : ''}}>Primaria</option>
+                                        <option value="Secundaria" {{old('EstadoCivil', $empre->Escolaridad) == 'Secundaria' ? 'selected' : ''}}>Secundaria</option>
+                                        <option value="Preparatoria/Bachillerato" {{old('EstadoCivil', $empre->Escolaridad) == 'Preparatoria/Bachillerato' ? 'selected' : ''}}>Preparatoria/Bachillerato</option>
+                                        <option value="Carrera Tecnica" {{old('EstadoCivil', $empre->Escolaridad) == 'CarreraTecnica' ? 'selected' : ''}}>Carrera Tecnica</option>
+                                        <option value="Licenciatura" {{old('EstadoCivil', $empre->Escolaridad) == 'Licenciatura' ? 'selected' : ''}}>Licenciatura</option>
+                                        <option value="Maestria" {{old('EstadoCivil', $empre->Escolaridad) == 'Maestria' ? 'selected' : ''}}>Maestria</option>
+                                        <option value="Doctorado" {{old('EstadoCivil', $empre->Escolaridad) == 'Doctorado' ? 'selected' : ''}}>Doctorado</option>
                                     </select>
                                 </div>
                                   {!! $errors->first('Escolaridad', '<span class=errores>:message</span>') !!}
@@ -277,15 +277,15 @@
 
                             <td>
                                 <div class="form-group">
-                                    <select class="form-control" name="TipoEmpresa" value="{{$empre->TipoEmpresa}}">
+                                    <select class="form-control" name="TipoEmpresa" value="">
                                         <option value="">Selecciona una opcion</option>
-                                        <option value="Sociedad en nombre colectivo">Sociedad en nombre colectivo</option>
-                                        <option value="Sociedad en comandita simple">Sociedad en comandita simple</option>
-                                        <option value="Sociedad en comandita por acciones">Sociedad en comandita por acciones</option>
-                                        <option value="Sociedad en responsabilidad limitada">Sociedad en responsabilidad limitada</option>
-                                        <option value="Sociedad anonima">Sociedad anonima</option>
-                                        <option value="Sociedad coorporativa">Sociedad coorporativa</option>
-                                        <option value="Sociedad civil">Sociedad civil</option>
+                                        <option value="Sociedad en nombre colectivo" {{old('TipoEmpresa', $empre->TipoEmpresa) == 'Sociedad en nombre colectivo' ? 'selected' : ''}}>Sociedad en nombre colectivo</option>
+                                        <option value="Sociedad en comandita simple" {{old('TipoEmpresa', $empre->TipoEmpresa) == 'Sociedad en comandita simple' ? 'selected' : ''}}>Sociedad en comandita simple</option>
+                                        <option value="Sociedad en comandita por acciones" {{old('TipoEmpresa', $empre->TipoEmpresa) == 'Sociedad en comandita por acciones' ? 'selected' : ''}}>Sociedad en comandita por acciones</option>
+                                        <option value="Sociedad en responsabilidad limitada" {{old('TipoEmpresa', $empre->TipoEmpresa) == 'Sociedad en responsabilidad limitada' ? 'selected' : ''}}>Sociedad en responsabilidad limitada</option>
+                                        <option value="Sociedad anonima" {{old('TipoEmpresa', $empre->TipoEmpresa) == 'Sociedad anonima' ? 'selected' : ''}}>Sociedad anonima</option>
+                                        <option value="Sociedad coorporativa" {{old('TipoEmpresa', $empre->TipoEmpresa) == 'Sociedad coorporativa' ? 'selected' : ''}}>Sociedad coorporativa</option>
+                                        <option value="Sociedad civil" {{old('TipoEmpresa', $empre->TipoEmpresa) == 'Sociedad civil' ? 'selected' : ''}}>Sociedad civil</option>
                                     </select>
                                 </div>
                                 {!! $errors->first('TipoEmpresa', '<span class=errores>:message</span>') !!}
@@ -320,8 +320,6 @@
                     </tbody>
                 </table>
                 
-
-
                 <div id="persona-fisica" style="display: none;">
                     <table class="table">
                         <tbody>
@@ -419,8 +417,6 @@
                         <tbody>
                             @forelse ($colaboradores as $Colaborador )
                             <tr>
-                                
-                                
                                 <td>
                                     <input type="text" name="{{$Colaborador->id}}" value="{{$Colaborador->ApellidoPC}}"  class="form-control infoemprendedor">
                                 </td>

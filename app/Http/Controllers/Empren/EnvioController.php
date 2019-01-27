@@ -13,6 +13,9 @@ use App\Models\Fase;
 use App\Models\Avance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EnviarDocValidation;
+use App\Http\Requests\EnviarDoc2Validation;
+use App\Http\Requests\EnviarDoc3Validation;
 
 class EnvioController extends Controller
 {
@@ -36,7 +39,7 @@ class EnvioController extends Controller
 
 
 
-     public function store(Request $request)
+     public function store(EnviarDocValidation $request)
     {
          if ($request->hasFile('documento1')) {
             $file = $request->file('documento1');
@@ -52,7 +55,7 @@ class EnvioController extends Controller
              return redirect()->route('Enviar.index');  
     }
 
-    public function entregados(Request $request)
+    public function entregados(EnviarDoc2Validation $request)
     {
     	  if ($request->hasFile('documento2')) {
             $files = $request->file('documento2');
@@ -68,7 +71,7 @@ class EnvioController extends Controller
              return redirect()->route('Enviar.index');
     }
 
-    public function entregatres(Request $request)
+    public function entregatres(EnviarDoc3Validation $request)
     {
     	 if ($request->hasFile('documento3')) {
             $filess = $request->file('documento3');
