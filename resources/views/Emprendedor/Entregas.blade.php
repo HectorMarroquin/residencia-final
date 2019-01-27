@@ -103,7 +103,7 @@
                                         <tr>
                                             <td>
                                                 @forelse($avances as $avance)
-                                              @if($avance->Comentario === 'aprobado')
+                                              @if($avance->Comentario === 'Aprobado')
                                                 <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
                                                 @endif                             
                                                 @empty
@@ -161,7 +161,7 @@
                                             
                                             <td>
                                                  @forelse($avancess as $avance)
-                                              @if($avance->Comentario === 'aprobado')
+                                              @if($avance->Comentario === 'Aprobado')
                                                 <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
                                                  @endif                             
                                                 @empty
@@ -218,7 +218,7 @@
                                         <tr>
                                             <td>
                                                 @forelse($avancesss as $avancess)
-                                              @if($avancess->Comentario === 'aprobado')
+                                              @if($avancess->Comentario === 'Aprobado')
                                                 <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
                                                 @endif                             
                                                 @empty
@@ -275,7 +275,7 @@
                                         <tr>
                                             <td>
                                                 @forelse($avancessss as $avancesss)
-                                              @if($avancesss->Comentario === 'aprobado')
+                                              @if($avancesss->Comentario === 'Aprobado')
                                                 <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
                                                  @endif                             
                                                 @empty
