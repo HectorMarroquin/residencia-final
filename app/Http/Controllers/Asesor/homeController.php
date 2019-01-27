@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Asesor;
 
 use App\Models\Avance;
+use App\Models\Proyecto;
 
 
 use Illuminate\Http\Request;
@@ -24,7 +25,7 @@ class homeController extends Controller
 	public function update($id){
 
    		$avance=Avance::findOrFail($id);
-      $avance->Comentario='aprobado';
+      $avance->Comentario='Aprobado';
       $avance->update();    
 
        return back();
@@ -33,7 +34,11 @@ class homeController extends Controller
     public function update1($id){
 
       $avance=Avance::findOrFail($id);
-      $avance->Comentario='noaprobado';
+      $proyecto = Proyecto::where('id', $avance->proyecto_id)->first();
+      $avance->Comentario='No Aprobado';
+      $proyecto->Estado='No Aprobado';
+
+      $proyecto->update();
       $avance->update();    
 
        return back();
