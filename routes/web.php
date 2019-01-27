@@ -25,7 +25,7 @@ Route::post('Enviars', 'Empren\EnvioController@entregados')->name('Enviar.entreg
 Route::post('Enviarss', 'Empren\EnvioController@entregatres')->name('Enviar.entregatres');
 Route::get('Enviar/{pro}/{fase}', 'Empren\EnvioController@show')->name('Enviar.show');
 Route::get('Enviar/{id}/edit', 'Empren\EnvioController@edit')->name('Enviar.edit');
-Route::put('Enviar/{emp}/{col}', 'Empren\EnvioController@update')->name('Enviar.update');
+Route::put('Enviar/{id}', 'Empren\EnvioController@update')->name('Enviar.update');
 Route::delete('Enviar/{id}', 'Empren\EnvioController@destroy')->name('Enviar.destroy');
 Route::get('/Observaciones', 'Empren\EmprendedorController@Obervacion')->name('Emprend-observa'); 
 
