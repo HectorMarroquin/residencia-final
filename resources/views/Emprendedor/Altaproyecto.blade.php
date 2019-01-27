@@ -16,12 +16,12 @@
 
                             <td colspan="3">
                                   <div class="form-group ">
-                                    <select class="form-control col-sm-5" name="Actividad"  value="{{ old('Actividad') }}">
+                                    <select class="form-control col-sm-5" name="Actividad"  value="">
                                         <option value="">Selecciona una opcion</option>
-                                        <option value="Sector Extractivo">Sector Extractivo</option>
-                                        <option value="Sector Servicio ó Orientado a Negocio">Sector Servicio ó Orientado a Negocio</option>
-                                        <option value="Sector Transformación">Sector Transformación</option>
-                                        <option value="Sector Servicio ó Orientado a Cosumudores">Sector Servicio ó Orientado a Cosumidores</option>
+                                        <option value="Sector Extractivo" {{old('Actividad') == 'Sector Extractivo' ? 'selected' : ''}}>Sector Extractivo</option>
+                                        <option value="Sector Servicio ó Orientado a Negocio" {{old('Actividad') == 'Sector Servicio ó Orientado a Negocio' ? 'selected' : ''}}>Sector Servicio ó Orientado a Negocio</option>
+                                        <option value="Sector Transformación" {{old('Actividad') == 'Sector Transformación' ? 'selected' : ''}}>Sector Transformación</option>
+                                        <option value="Sector Servicio ó Orientado a Cosumudores" {{old('Actividad') == 'Sector Servicio ó Orientado a Cosumudores' ? 'selected' : ''}}>Sector Servicio ó Orientado a Cosumidores</option>
                                     </select>
                                     {!! $errors->first('Actividad', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -93,8 +93,8 @@
                                <div class="form-group ">
                                     <select class="form-control" name="Propuesta" value="{{ old('Propuesta') }}">
                                         <option value="">Selecciona una opcion</option>
-                                        <option value="Producto">Producto</option>
-                                        <option value="Servicio">Servicio</option>
+                                        <option value="Producto" {{old('Propuesta') == 'Producto' ? 'selected' : ''}}>Producto</option>
+                                        <option value="Servicio" {{old('Propuesta') == 'Servicio' ? 'selected' : ''}}>Servicio</option>
                                     </select>
                                     {!! $errors->first('Propuesta', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -140,8 +140,8 @@
                                   <div class="form-group ">
                                     <select class="form-control " name="Organizacion" value="{{ old('Organizacion') }}">
                                         <option value="">Selecciona una opcion</option>
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
+                                        <option value="Si" {{old('Organizacion') == 'Si' ? 'selected' : ''}}>Si</option>
+                                        <option value="No" {{old('Organizacion') == 'No' ? 'selected' : ''}}>No</option>
                                     </select>
                                     {!! $errors->first('Organizacion', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -334,10 +334,10 @@
 
                             <td colspan="3">
                                <div class="form-group ">
-                                    <select class="form-control col-sm-5" name="tipodomicilio" value="{{ old('tipodomicilio') }}">
+                                    <select class="form-control col-sm-5" name="tipodomicilio" value="">
                                         <option value="">Selecciona una opcion de domicilio</option>
-                                        <option value="Urbano">Urbano</option>
-                                        <option value="Rural">Rural</option>
+                                        <option value="Urbano" {{old('tipodomicilio') == 'Urbano' ? 'selected' : ''}}>Urbano</option>
+                                        <option value="Rural" {{old('tipodomicilio') == 'Rural' ? 'selected' : ''}}>Rural</option>
                                     </select>
                                     {!! $errors->first('tipodomicilio', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -353,14 +353,14 @@
 
                             <td>
                                <div class="form-group ">
-                                    <select class="form-control" name="tipoasentamiento"  value="{{ old('tipoasentamiento') }}">
+                                    <select class="form-control" name="tipoasentamiento"  value="">
                                          <option value="">Selecciona una opcion</option>
-                                        <option value="Colonia">Colonia </option>
-                                        <option value="Pueblo">Pueblo</option>
-                                        <option value="Fraccionamiento">Fraccionamiento</option>
-                                        <option value="Rancho">Rancho</option>
-                                        <option value="Granja">Granja</option>
-                                        <option value="Ejido">Ejido</option>
+                                        <option value="Colonia" {{old('tipoasentamiento') == 'Colonia' ? 'selected' : ''}}>Colonia </option>
+                                        <option value="Pueblo" {{old('tipoasentamiento') == 'Pueblo' ? 'selected' : ''}}>Pueblo</option>
+                                        <option value="Fraccionamiento" {{old('tipoasentamiento') == 'Fraccionamiento' ? 'selected' : ''}}>Fraccionamiento</option>
+                                        <option value="Rancho" {{old('tipoasentamiento') == 'Rancho' ? 'selected' : ''}}>Rancho</option>
+                                        <option value="Granja" {{old('tipoasentamiento') == 'Granja' ? 'selected' : ''}}>Granja</option>
+                                        <option value="Ejido" {{old('tipoasentamiento') == 'Ejido' ? 'selected' : ''}}>Ejido</option>
                                     </select>
                                     {!! $errors->first('tipoasentamiento', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -482,6 +482,7 @@
                                 <div class="form-group">
                                     <label for="">Documento</label>
                                         <input type="file" name="croquis" class="form-control">
+                                        {!! $errors->first('croquis', '<span class=errores>:message</span>') !!}
                                 </div> 
                             </td>
 
