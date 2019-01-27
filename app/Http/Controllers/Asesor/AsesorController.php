@@ -42,6 +42,7 @@ class AsesorController extends Controller
      */
     public function create() //redirecciona para ser editado
     {
+        
         $id = auth()->user()->id;
         $asesor = Asesor::where('user_id', $id)->first();
 
