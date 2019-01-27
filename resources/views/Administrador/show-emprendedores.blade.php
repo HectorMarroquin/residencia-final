@@ -45,14 +45,7 @@
 				      <td>{{ $emprendedor->TelefonoCel}}</td>
 				      <td>{{ $emprendedor->RFC}}</td>
 				      <td>{{ $emprendedor->CURP }}</td>
-					  <td>
-						<form style="display: inline;" method="POST" action="{{ route('emprendedores.destroy', $emprendedor->id) }}">
-							{{ csrf_field() }}
-							{{ method_field('DELETE') }}
-							<a href=# class="btn-delet"><i class="fas fa-trash-alt" style="font-size: 35px; color: red;"></i></a>
-							
-						</form>
-					</td>
+			      	<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash-alt"></i></button></td>
 			    </tr>
 					<div class="modal fade" id="myModal">
 							<div class="modal-dialog">
@@ -77,12 +70,7 @@
 											{{ method_field('DELETE') }}
 										 <button type="submit" class="btn btn-secondary">Aceptar</button>
 									 </form> --}}
-									 <form style="display: inline;" method="POST" action="{{ route('emprendedores.destroy', $emprendedor->id) }}">
-											{{ csrf_field() }}
-											{{ method_field('DELETE') }}
-											<a href=# class="btn-delet"><i class="fas fa-trash-alt" style="font-size: 35px; color: red;"></i></a>
-										
-										</form>
+									 <a class="btn btn-primary" href="{{ route('emprendedores.destroy', $emprendedor->id) }}">Eliminar</a>
 									</div>
 									
 								</div>

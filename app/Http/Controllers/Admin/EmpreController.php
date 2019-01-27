@@ -55,7 +55,8 @@ class EmpreController extends Controller
      */
     public function show($id)
     {
-       
+        Emprendedor::findOrFail($id)->delete();
+        return redirect()->route('emprendedores.index');
     }
 
     /**
@@ -87,21 +88,9 @@ class EmpreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
+    public function destroy($id)
     {
-
-        if($request->ajax()){
-
-            $emprendedor = Emprendedor::findOrFail($id);
-            $emprendedor->delete();
-            $emprendedor_total = Emprendedor::all()->count();
-            
-            return response()->json([
-
-                'message' => $emprendedor->Nombre . ' fue eliminado'
-
-            ]);
-        }
-
+        Emprendedor::findOrFail($id)->delete();
+        return redirect()->route('emprendedores.index');
     }
 }
