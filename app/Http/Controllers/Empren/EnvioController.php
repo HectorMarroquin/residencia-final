@@ -7,6 +7,7 @@ use App\Models\Emprendedor;
 use App\User;
 use Auth;
 use App\Models\Proyecto;
+use App\Models\Colaborador;
 use App\Models\Asignacion;
 use App\Models\Asesor;
 use App\Models\Fase;
@@ -24,8 +25,8 @@ class EnvioController extends Controller
     public function index()
     {
         $id = Auth()->user()->id;
-        $empre = Emprendedor::where('user_id', $id)->value('id');
-        return view ('emprendedor', compact('empre'));
+        $empre = Emprendedor::where('user_id', $id)->first();
+        return view ('Emprendedor/dashboard', compact('empre'));
     }
 
 
@@ -114,9 +115,15 @@ class EnvioController extends Controller
     }
 
 
-	public function update(Request $request, $id)
+	public function update(Request $request, $emp, $col)
     {
-        //
+        $emprendedores = Emprendedor::findOrFail($emp);
+        $emprendedores->update($request->all());
+
+        $colaboradores = Colaborador::findOrFail($col)
+        $colaboradores = 
+        $avance->update(); 
+        return redirect()->route('Emprendedor.create');
     }
 
      public function destroy($id)
