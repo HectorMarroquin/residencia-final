@@ -24,6 +24,7 @@ class ListEntregaController extends Controller
      public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('roles:emprendedor');
     }
     
     public function index()
@@ -65,7 +66,11 @@ class ListEntregaController extends Controller
      */
     public function show($id)
     {
-        
+        $proyecto = Proyecto::findOrFail($id);
+        $view = view('pdf.proyecto', compact('proyecto'));
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('proyecto');
     }
 
     /**

@@ -22,6 +22,7 @@ class EnvioController extends Controller
 	 public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('roles:emprendedor');
     }
 
     public function index()
@@ -52,7 +53,7 @@ class EnvioController extends Controller
             $avance->proyecto_id = $request->input('proyecto');
             $avance->fase_id = $request->input('fase');
             $avance->save();
-             return redirect()->route('Enviar.index');  
+            return back()->with('infor1', 'Entrega Uno Realizada');  
     }
 
     public function entregados(EnviarDoc2Validation $request)
@@ -68,7 +69,7 @@ class EnvioController extends Controller
             $avance->proyecto_id = $request->input('proyecto2');
             $avance->fase_id = $request->input('fase2');
             $avance->save();
-             return redirect()->route('Enviar.index');
+             return back()->with('infor2', 'Entrega Dos Realizada');
     }
 
     public function entregatres(EnviarDoc3Validation $request)
@@ -85,7 +86,7 @@ class EnvioController extends Controller
             $avance->fase_id = $request->input('fase3');
             $avance->save();
 
-            return redirect()->route('Enviar.index');
+            return back()->with('infor3', 'Entrega tres Realizada');
     }
 
 

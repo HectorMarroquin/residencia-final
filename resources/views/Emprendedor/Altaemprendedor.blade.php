@@ -5,6 +5,9 @@
                <br>
                <div class="container-fluid">
                 <h2>Registro del Emprendedor</h2>
+                @if (session()->has('info'))
+                    <div class="alert alert-success">{{ session('info')}}</div>
+                @endif
                 <form method="POST" action="{{ route('Registro.store')}}">
                    {{ csrf_field() }}
                 <table class="table">
@@ -431,7 +434,7 @@
                         <tr style=" text-align:center;">
                             @if (empty($empre))
                             <td>
-                                <input type="submit" value="Enviar" class="btn btn-outline-primary">
+                                <input type="submit" value="Guardar" class="btn btn-outline-primary">
                             </td>
                             @endif
 

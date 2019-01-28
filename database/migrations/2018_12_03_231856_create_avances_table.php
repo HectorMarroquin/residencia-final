@@ -16,7 +16,7 @@ class CreateAvancesTable extends Migration
         Schema::create('avances', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('NumeroEntrega');
-            $table->string('Documento')->nullable();
+            $table->text('Documento')->nullable();
             $table->text('Comentario')->nullable();
 
             $table->integer('proyecto_id')->unsigned();

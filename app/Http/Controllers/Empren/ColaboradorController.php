@@ -12,29 +12,20 @@ use App\Models\Asignacion;
 use App\Models\Asesor;
 use App\Models\Fase;
 use App\Models\Avance;
+use App\Models\Colaborador;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
-class ArchivosController extends Controller
+class ColaboradorController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-     
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('roles:emprendedor');
-    }
-
     public function index()
     {
-        $id = Auth()->user()->id;
-        $empre = Emprendedor::where('user_id', $id)->value('id');
-        return view ('Emprendedor.Altaemprendedor', compact('empre'));
+        //
     }
 
     /**
@@ -44,7 +35,7 @@ class ArchivosController extends Controller
      */
     public function create()
     {
-       
+        //
     }
 
     /**
@@ -55,19 +46,7 @@ class ArchivosController extends Controller
      */
     public function store(Request $request)
     {
-         if ($request->hasFile('documento')) {
-            $file = $request->file('documento');
-            $name = time().$file->getClientOriginalName();
-            $file->move(public_path().'/Revisiones/', $name);
-        }
-            $avance = new Avance;
-            $avance->NumeroEntrega = $request->input('numeroentrega');
-            $avance->Documento = $name;
-            $avance->proyecto_id = $request->input('proyecto');
-            $avance->fase_id = $request->input('fase');
-            $avance->save();
-            return redirect()->route('Archivo.index');
-            
+        //
     }
 
     /**
@@ -77,14 +56,8 @@ class ArchivosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
-        $fase = Fase::findOrFail($id);
-        $id = Auth()->user()->id;
-        $empreId = Emprendedor::where('user_id', $id)->value('id');
-        $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();
-
-        $empre = Emprendedor::where('user_id', $id)->value('id');
-        return view ('Emprendedor.Entregadoc', compact('proyectos', 'fase', 'empre'));
+    {
+        //
     }
 
     /**
@@ -95,11 +68,11 @@ class ArchivosController extends Controller
      */
     public function edit($id)
     {
-          $avance = Avance::findOrFail($id);
-         $name=$avance->Comentario;
-         $doc=public_path('Revisiones')."/".$name; 
-
-        return response()->download($doc); 
+        $Colaborador = Colaborador::findOrFail($id);
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+        //dd($Colaborador);
+        return view ('Emprendedor.EditColaborador', compact('Colaborador', 'empre'));
     }
 
     /**
@@ -111,7 +84,12 @@ class ArchivosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Colaborador = Colaborador::findOrFail($id);
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->value('id');
+        $Colaborador->emprendedor_id=$empre;
+        $Colaborador->update($request->all());
+        return back()->with('in', 'Colaborador Actualizado');
     }
 
     /**
