@@ -20,6 +20,12 @@ use App\Http\Requests\EmprenValidation;
 
 class EmpreController extends Controller
 {
+
+    function __construct() {
+        $this->middleware('auth');
+        $this->middleware('roles:emprendedor');
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,6 +47,7 @@ class EmpreController extends Controller
         $empre = Emprendedor::where('user_id', $id)->first();
         $empres = Emprendedor::where('user_id', $id)->value('id');
         $colaboradores = Colaborador::where('emprendedor_id', $empres)->get();
+        //dd($colaboradores);
     
         return view ('Emprendedor.Editarempren', compact('empre', 'colaboradores'));
     }
@@ -89,7 +96,7 @@ class EmpreController extends Controller
     {
         $emprendedores = Emprendedor::findOrFail($id);
         $emprendedores->update($request->all());
-        return redirect()->route('Emprendedor.create');   
+        return back()->with('aceptar', 'Emprendedor Actualizado');  
     }
 
     /**

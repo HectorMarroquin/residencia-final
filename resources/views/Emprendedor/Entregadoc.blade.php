@@ -25,6 +25,15 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div id="home" class="container tab-pane active"><br>
+                             @if (session()->has('infor1'))
+                            <div class="alert alert-success">{{ session('infor1')}}</div>
+                            @endif
+                            @if (session()->has('infor2'))
+                                <div class="alert alert-success">{{ session('infor2')}}</div>
+                                 @endif
+                              @if (session()->has('infor3'))
+                                <div class="alert alert-success">{{ session('infor3')}}</div>
+                                 @endif
                              <form class="form-group" method="post" action="{{ route('Enviar.store')}}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                             <h3>Entrega 1</h3>
@@ -85,6 +94,9 @@
                         <div id="menu1" class="container tab-pane fade"><br>
                             <h3>Entrega 2</h3>
                                 <p>Subir un archivo Word con las actividades solicitas en en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
+                                @if (session()->has('infor2'))
+                                <div class="alert alert-success">{{ session('infor2')}}</div>
+                                @endif
                                  <form class="form-group" method="post" action="{{ route('Enviar.entregados')}}
                                  " enctype="multipart/form-data">
                                 {{ csrf_field() }}
@@ -144,6 +156,9 @@
                         <div id="menu2" class="container tab-pane fade"><br>
                            <h3>Entrega 3</h3>
                                 <p>Subir un archivo Word con las actividades solicitas en en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
+                                @if (session()->has('infor3'))
+                                <div class="alert alert-success">{{ session('infor3')}}</div>
+                                 @endif
                                  <form class="form-group" method="post" action="{{ route('Enviar.entregatres')}}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                         <table class="table table-bordered">

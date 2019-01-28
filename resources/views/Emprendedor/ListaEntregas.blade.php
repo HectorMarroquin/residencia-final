@@ -18,6 +18,7 @@
                             <th scope="col">Nombre del Asesor</th>
                             <th scope="col">Entregas</th>
                             <th scope="col">Retroalimentacion</th>
+                            <th scope="col">Descargars</th>
                         </tr>
                     </thead>
 
@@ -27,22 +28,28 @@
                             <tr> 
                                 <td>{{ $proyecto->NombreProd }}</td>
                                     @if ($proyecto->Asignacion)
-                                <td>{{ $proyecto->Asignacion->Asesor->Nombre }} {{ $proyecto->Asignacion->Asesor->ApellidoP }} {{ $proyecto->Asignacion->Asesor->ApellidoM }}</td> 
+                                <td style="text-align: center;">
+                                    {{ $proyecto->Asignacion->Asesor->Nombre }} {{ $proyecto->Asignacion->Asesor->ApellidoP }} {{ $proyecto->Asignacion->Asesor->ApellidoM }}</td> 
                                     @else
-                                <td><span style="font-weight:bold;">No hay asesor asignado por el momento espera a que se te asigne un asesor para poder continuar</span></td>
+                                <td style="text-align: center;">
+                                    <span style="font-weight:bold;">No hay asesor asignado por el momento.</span></td>
                                     @endif
 
                                     @if($proyecto->Asignacion)
-                                <td>
+                                <td style="text-align: center;">
                                     <a href="{{ route('Entregas.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-chalkboard-teacher"></i></a>
                                 </td> 
 
-                                <td>
+                                <td style="text-align: center;">
                                     <a href="{{ route('Estado.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-file-signature"></i></a>
                                 </td>
+                                <td style="text-align: center;">
+                                    <a href="{{ route('Lista.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+                                </td>
                                     @else
-                                <td>Espere que se asigne un asesor para continuar</td> 
-                                <td>Espere que se asigne un asesor para continuar</td>
+                                    <td colspan="6" style="text-align: center;">
+                                        No hay asesor asignado 
+                                   </td>
                                     @endif
                                     @empty
                                 <td colspan="6" style="text-align: center;">
@@ -58,26 +65,7 @@
                 </table>
             </form>
         </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+       
     </div>
 </div>
 

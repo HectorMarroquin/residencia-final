@@ -40,6 +40,7 @@ Route::resource('Entregas', 'Empren\EntregasController');
 Route::resource('Archivo', 'Empren\ArchivosController');
 Route::resource('Estado', 'Empren\EstatusController');
 Route::resource('Emprendedor', 'Empren\EmpreController');
+Route::resource('Colaborador', 'Empren\ColaboradorController');
 /*AQUI TERMINA LAS RUTAS DE ALBERT*/
 
 
