@@ -5,6 +5,12 @@
                <br>
                <div class="container-fluid">
                 <h2>Editar Emprendedor</h2>
+                @if (session()->has('aceptar'))
+                    <div class="alert alert-success">{{ session('aceptar')}}</div>
+                @endif
+                @if (session()->has('agregar'))
+                    <div class="alert alert-success">{{ session('agregar')}}</div>
+                @endif
                 <form method="POST" action="{{ route('Emprendedor.update', $empre->id)}}">
                     {!! method_field('PUT') !!}
                     {{ csrf_field() }}
@@ -226,6 +232,9 @@
                                  <input type="email" name="Correo" class="form-control infoemprendedor" value="{{$empre->Correo}}">
                                   {!! $errors->first('Correo', '<span class=errores>:message</span>') !!}
                             </td>
+                            <td></td>
+                            <td></td>
+
                         </tr>
 
                         <tr>
@@ -389,8 +398,8 @@
                     <table  class="table" id="integrantes">
                         <thead>
                             <tr style=" text-align:center;">
-                                <td colspan="2">
-                                    <h3>Ingrese Colaboradores</h3>
+                                <td colspan="5">
+                                    <h3> Colaboradores</h3>
                                 </td>
                             </tr>
                       
@@ -411,30 +420,37 @@
                                 <th>
                                     <label>CURP:</label>
                                 </th>
+
+                                <th>
+                                    <label>Editar</label>
+                                </th>
                             </tr>
                         </thead>
 
                         <tbody>
+
                             @forelse ($colaboradores as $Colaborador )
                             <tr>
                                 <td>
-                                    <input type="text" name="{{$Colaborador->id}}" value="{{$Colaborador->ApellidoPC}}"  class="form-control infoemprendedor">
+                                    <input type="text" name="ApellidoPC" value="{{$Colaborador->ApellidoPC}}"  class="form-control infoemprendedor">
                                 </td>
                                  
                                 <td>
-                                     <input type="text" name="{{$Colaborador->id}}"  class="form-control infoemprendedor" value="{{$Colaborador->ApellidoPC}}" >
+                                     <input type="text" name="ApellidoMC"  class="form-control infoemprendedor" value="{{$Colaborador->ApellidoMC}}" >
                                 </td>
 
                                 <td>
-                                     <input type="text" name="{{$Colaborador->id}}"  class="form-control infoemprendedor" value="{{$Colaborador->ApellidoPC}}">
+                                     <input type="text" name="NombreC"  class="form-control infoemprendedor" value="{{$Colaborador->NombreC}}">
                                 </td>
 
                                 <td>
-                                     <input type="text" name="{{$Colaborador->id}}"  class="form-control infoemprendedor" value="{{$Colaborador->ApellidoPC}}">
+                                     <input type="text" name="CURPC"  class="form-control infoemprendedor" value="{{$Colaborador->CURPC}}">
                                 </td>
-                               
+
+                                <td>
+                                    <a href="{{ route('Colaborador.edit', $Colaborador->id) }}" class="btn btn-info btn-xs">Editar</a>
+                                </td>
                             </tr>
-
                             @empty
                                 <td colspan="6" style="text-align: center;">
                                 <h4>No Hay Colaboradores Registrados</h4>
@@ -450,7 +466,7 @@
                     <table class="table">
                         <tr style=" text-align:center;">
                             <td>
-                                <input type="submit" value="Enviar" class="btn btn-outline-primary">
+                                <input type="submit" value="Guardar" class="btn btn-outline-primary">
                             </td>
                             
 

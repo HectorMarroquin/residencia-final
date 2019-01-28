@@ -5,6 +5,9 @@
         <div id="page-content-wrapper" class="form-group" >
                <div class="container-fluid">
                 <h2>Alta del Proyecto</h2>
+                @if (session()->has('infor'))
+                    <div class="alert alert-success">{{ session('infor')}}</div>
+                @endif
                 <form method="POST" action="{{ route ('AlProyecto.store') }}"  enctype="multipart/form-data">
                      {!! csrf_field() !!}
                 <table class="table">                

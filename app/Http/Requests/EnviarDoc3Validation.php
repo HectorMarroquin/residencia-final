@@ -24,7 +24,7 @@ class EnviarDoc3Validation extends FormRequest
     public function rules()
     {
         return [
-             'documento3'=> 'required|mimes:docx',
+             'documento3'=> 'required|mimes:docx,doc',
         ];
     }
 

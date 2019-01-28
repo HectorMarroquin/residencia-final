@@ -27,6 +27,7 @@ class ProyectoRegisController extends Controller
      public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('roles:emprendedor');
     }
     
     public function index()
@@ -299,7 +300,7 @@ class ProyectoRegisController extends Controller
             $copotencial->ideanegocio_id = $idea->id;
             $copotencial->save();
         }
-     return redirect()->route('AlProyecto.index');
+     return back()->with('infor', 'Proyecto Agregado');
     }
 
     /**
