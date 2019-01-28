@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Asesor;
 
 use App\Models\Avance;
+use App\Models\Foda;
 use App\Models\Proyecto;
+use App\Models\Ideanegocio;
+use Barryvdh\DomPDF\Facade as PDF;
 
 
 use Illuminate\Http\Request;
@@ -43,4 +46,25 @@ class homeController extends Controller
 
        return back();
   }
+
+  public function show($id){
+      $proyecto = Proyecto::findOrFail($id);
+      $foda = Foda::where('proyecto_id', $proyecto->id)->first();
+      $ideaNegocio = Ideanegocio::where('proyecto_id', $proyecto->id)->first();
+
+      return view('Asesor.show-AltaProject', compact('proyecto','foda','ideaNegocio'));
+  }
+
+  public function download($id){
+     $proyecto = Proyecto::findOrFail($id);
+     $foda = Foda::where('proyecto_id', $proyecto->id)->first();
+     $ideaNegocio = Ideanegocio::where('proyecto_id', $proyecto->id)->first();
+
+       $pdf = PDF::loadview('Asesor.pdf.infoAltaProject', compact('proyecto','foda','ideaNegocio'));
+
+         return $pdf->download();
+
+
+  }
+
 }

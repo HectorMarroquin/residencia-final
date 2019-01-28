@@ -42,7 +42,7 @@ class AsesorController extends Controller
      */
     public function create() //redirecciona para ser editado
     {
-        
+
         $id = auth()->user()->id;
         $asesor = Asesor::where('user_id', $id)->first();
 
@@ -113,8 +113,8 @@ class AsesorController extends Controller
       $user = User::where('id', $asesor->user_id)->first();
       
       $user->name =$request->Nombre; 
-      //$user->email = $request->Correo;
-      $user->password=$request->Contraseña;
+      $user->email = $request->Correo;
+      $user->password=bcrypt($request->Contraseña);
 
       $user->update();
       $asesor->update($request->all());

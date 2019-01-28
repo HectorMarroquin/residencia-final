@@ -10,7 +10,7 @@ use App\Models\Asignacion;
 use App\Models\Proyecto;
 use App\Models\Colaborador;
 use App\Models\Avance;
-use App\Models\Revision;
+
 use DB;
 use Barryvdh\DomPDF\Facade as PDF;
 
@@ -152,15 +152,4 @@ class ProjectController extends Controller
 
     }
 
-
-    public function download($id)
-    {
-        $archivo=Email::findOrFail($id);
-        $file_rute=$archivo->file;
-        $ruta=public_path('correo')."/".$file_rute; 
-        
-        return response()->download($ruta); 
-
-
-    }
 }
