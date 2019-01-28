@@ -58,32 +58,20 @@ Route::resource('historial','Admin\HistoController');
 
 
 /*Eaz*/ 
-//Rutas optimisadas 
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('projects','Asesor\ProjectController'); 
 Route::resource('asesor','Asesor\AsesorController');
 Route::get('/homeAsesor','Asesor\homeController@asesor')->name('HomeAsesor');
 Route::get('/projectFase/{id}','Asesor\homeController@update')->name('projectFase');
 Route::get('/projectFases/{id}','Asesor\homeController@update1')->name('projectFases');
+/*Eaz*/ 
 
-//eaz
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-/*chat*/
-
+/*CHAT*/
 Route::get('/contacts', 'ContactsController@get');
 Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
 Route::post('/conversation/send', 'ContactsController@send');
-/*/chat*/
-
-
-
-// Route::get('/email1',['as'=>'email', function () {
-//     return view('email/form_mail');
-// }]);
+/*CHAT*/
 
 Route::get('/email2',['as'=>'email2', function () {
     return view('email/plantilla_correo');
@@ -98,5 +86,5 @@ Route::get('/mensajes',['as'=>'mensajes', function () {
 }]);
 
 
-
+Auth::routes();
 
