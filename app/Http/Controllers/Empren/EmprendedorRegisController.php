@@ -149,7 +149,7 @@ class EmprendedorRegisController extends Controller
             $colaborador->save();
          }
       //  Colaborador::create($request->all());
-        return redirect()->route('Registro.create');      
+        return back()->with('registroempre', 'Registro del Emprendedor Exitoso');     
     
     }
 

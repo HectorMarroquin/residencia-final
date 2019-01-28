@@ -5,8 +5,8 @@
                <br>
                <div class="container-fluid">
                 <h2>Registro del Emprendedor</h2>
-                @if (session()->has('info'))
-                    <div class="alert alert-success">{{ session('info')}}</div>
+                @if (session()->has('registroempre'))
+                    <div class="alert alert-success">{{ session('registroempre')}}</div>
                 @endif
                 <form method="POST" action="{{ route('Registro.store')}}">
                    {{ csrf_field() }}
