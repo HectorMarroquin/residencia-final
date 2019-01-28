@@ -6,7 +6,9 @@
   <div class="col">
     <div class="row">
       <div class="col-12 col-md-4">
-        <table class="table table-bordered table-hover table-reponsive mt-5">
+        <div class="row">
+          <div class="col">
+             <table class="table table-bordered table-hover table-reponsive mt-5">
          
         <thead class="table-info">
           <th>Nombre del proyecto</th>
@@ -17,6 +19,15 @@
         </tbody>
 
         </table>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <a class="btn btn-info form-control mb-2" href="{{ route('projectShow', $proyecto->id) }}">Consultar Alta de Proyecto</a>
+          </div>
+        </div>
+       
       </div>
 
       <div class="col-12 col-md-8">
@@ -116,16 +127,27 @@
 
                                   
                                     @if($file->NumeroEntrega == 3)
-                                        <div class="row justify-content-center">
+                                        
+
+                                          @empty($file->Comentario)
+                                            <div class="row justify-content-center">
                           
                                             <div class="col text-center">
-                                              <a type="button" class="btn btn-success" href="{{ route('projectFase', $file->id)  }}">
+                                              <a type="button" class="btn btn-success" onclick="validar({{ $file->id }})">
                                                 <i class=""> Aprobar Fase</i></a>
                                               <a type="button" class="btn btn-danger" href="{{ route('projectFases', $file->id)  }}">
                                                           <i class=""> No aprobar Fase</i></a>   
                                  
                                             </div>
-                                        </div>
+                                            </div>
+                                          @endempty
+
+                                           @isset($file->Comentario)
+                                            <div class="alert alert-success text-center">
+                                             <strong>Existo!</strong> Fase Aprobada.
+                                          </div>
+                                          @endisset 
+                                           
                             
                                     @elseif(empty($file->Comentario))  
 
@@ -544,6 +566,38 @@
 </div>
 
 <script type="text/javascript">
+  function validar(id){
+    var valor = id;
+
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+
+          var url = '{{ route('projectFase', ":id")  }}';
+           url = url.replace(':id',valor);
+          window.location.href= url ;
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+}
+        
+
+
+
+
+
+
   function validarExt() {
     var archivoInput = document.getElementById('fileEnvio');
     var archivoRuta = archivoInput.value;
@@ -551,7 +605,15 @@
 
       if (!extPermitidas.exec(archivoRuta))
       {
-        alert('Elije una extencion de Word (.Docx)')
+
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text:'Elije una extencion de Word (.Docx)',
+
+          })
+
+       // alert('Elije una extencion de Word (.Docx)')
         archivoInput.value='';
         return false;
       }
