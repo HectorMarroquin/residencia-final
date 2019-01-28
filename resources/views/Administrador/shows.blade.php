@@ -48,39 +48,37 @@
                       <label for="inputEstado">Entidad Federativa</label>
                       <select id="inputEstado" name="Estado" class="form-control">
                         <option selected>Seleccione...</option>
-                        <option value="Aguscalientes">Aguascalientes</option>
-                         <option value="Baja California">Baja California</option>
-                         <option value="Baja California Sur">Baja California Sur</option>
-                         <option value="Campeche">Campeche</option>
-                         <option value="Coahuila">Coahuila</option>
-                         <option value="Colima">Colima</option>
-                         <option value="Chiapas">Chiapas</option>
-                         <option value="Chihuahua">Chihuahua</option>
-                         <option value="Distrito Federal">DF</option>
-                         <option value="Durango">Durango</option>
-                         <option value="Guanajuato">Guanajuato</option>
-                         <option value="Guerrero">Guerrero</option>
-                         <option value="Hidalgo">Hidalgo</option>
-                         <option value="Jalisco">Jalisco</option>
-                         <option value="Mexico">México</option>
-                         <option value="Michoacan">Michoacán</option>
-                         <option value="Morelos">Morelos</option>
-                         <option value="Nayarit">Nayarit</option>
-                         <option value="Nuevo Leon">Nuevo León</option>
-                         <option value="Oaxaca">Oaxaca</option>
-                         <option value="Puebla">Puebla</option>
-                         <option value="Queretaro">Querétaro</option>
-                         <option value="Quintana">Quintana Roo</option>
-                         <option value="San Luis Potosi">San Luis Potosí</option>
-                         <option value="Sinaloa">Sinaloa</option>
-                         <option value="Sonora">Sonora</option>
-                         <option value="Tabasco">Tabasco</option>
-                         <option value="Tamaulipas">Tamaulipas</option>
-                         <option value="Tlaxcala">Tlaxcala</option>
-                         <option value="Veracruz">Veracruz</option>
-                         <option value="Yucatan">Yucatán</option>
-                         <option value="Zacatecas">Zacatecas</option>
-    
+                        <option value="Aguascalientes" {{old('Estado', $asesor->Estado) == 'Aguascalientes' ? 'selected' : ''}}>Aguascalientes</option>
+                         <option value="Baja California" {{old('Estado', $asesor->Estado) == 'Baja California' ? 'selected' : ''}}>Baja California</option>
+                         <option value="Baja California Sur" {{old('Estado', $asesor->Estado) == 'Baja California Sur' ? 'selected' : ''}}>Baja California Sur</option>
+                         <option value="Campeche" {{old('Estado', $asesor->Estado) == 'Campeche' ? 'selected' : ''}}>Campeche</option>
+                         <option value="Coahuila" {{old('Estado', $asesor->Estado) == 'Coahuila' ? 'selected' : ''}}>Coahuila</option>
+                         <option value="Colima" {{old('Estado', $asesor->Estado) == 'Colima' ? 'selected' : ''}}>Colima</option>
+                         <option value="Chiapas" {{old('Estado', $asesor->Estado) == 'Chiapas' ? 'selected' : ''}}>Chiapas</option>
+                         <option value="Chihuahua" {{old('Estado', $asesor->Estado) == 'Chihuahua' ? 'selected' : ''}}>Chihuahua</option>
+                         <option value="Durango" {{old('Estado', $asesor->Estado) == 'Durango' ? 'selected' : ''}}>Durango</option>
+                         <option value="Guanajuato" {{old('Estado', $asesor->Estado) == 'Guanajuato' ? 'selected' : ''}}>Guanajuato</option>
+                         <option value="Guerrero" {{old('Estado', $asesor->Estado) == 'Guerrero' ? 'selected' : ''}}>Guerrero</option>
+                         <option value="Hidalgo" {{old('Estado', $asesor->Estado) == 'Hidalgo' ? 'selected' : ''}}>Hidalgo</option>
+                         <option value="Jalisco" {{old('Estado', $asesor->Estado) == 'Jalisco' ? 'selected' : ''}}>Jalisco</option>
+                         <option value="Mexico" {{old('Estado', $asesor->Estado) == 'Mexico' ? 'selected' : ''}}>Mexico</option>
+                         <option value="Michoacan" {{old('Estado', $asesor->Estado) == 'Michoacan' ? 'selected' : ''}}>Michoacan</option>
+                         <option value="Morelos" {{old('Estado', $asesor->Estado) == 'Morelos' ? 'selected' : ''}}>Morelos</option>
+                         <option value="Nayarit" {{old('Estado', $asesor->Estado) == 'Nayarit' ? 'selected' : ''}}>Nayarit</option>
+                         <option value="Nuevo Leon" {{old('Estado', $asesor->Estado) == 'Nuevo Leon' ? 'selected' : ''}}></option>
+                         <option value="Oaxaca" {{old('Estado', $asesor->Estado) == 'Oaxaca' ? 'selected' : ''}}>Oaxaca</option>
+                         <option value="Puebla" {{old('Estado', $asesor->Estado) == 'Puebla' ? 'selected' : ''}}>Puebla</option>
+                         <option value="Queretaro" {{old('Estado', $asesor->Estado) == 'Queretaro' ? 'selected' : ''}}>Queretaro</option>
+                         <option value="Quintanaro" {{old('Estado', $asesor->Estado) == 'Quintanaro' ? 'selected' : ''}}>Quintanaro</option>
+                         <option value="San Luis Potosi" {{old('Estado', $asesor->Estado) == 'San Luis Potosi' ? 'selected' : ''}}>San Luis Potosi</option>
+                         <option value="Sinaloa" {{old('Estado', $asesor->Estado) == 'Sinaloa' ? 'selected' : ''}}>Sinaloa</option>
+                         <option value="Sonora" {{old('Estado', $asesor->Estado) == 'Sonora' ? 'selected' : ''}}>Sonora</option>
+                         <option value="Tabasco" {{old('Estado', $asesor->Estado) == 'Tabasco' ? 'selected' : ''}}>Tabasco</option>
+                         <option value="Tamaulipas" {{old('Estado', $asesor->Estado) == 'Tamaulipas' ? 'selected' : ''}}>Tamaulipas</option>
+                         <option value="Tlaxcala" {{old('Estado', $asesor->Estado) == 'Tlaxcala' ? 'selected' : ''}}>Tlaxcala</option>
+                         <option value="Veracruz" {{old('Estado', $asesor->Estado) == 'Veracruz' ? 'selected' : ''}}>Veracruz</option>
+                         <option value="Yucatan" {{old('Estado', $asesor->Estado) == 'Yucatan' ? 'selected' : ''}}>Yucatan</option>
+                         <option value="Zacatecas" {{old('Estado', $asesor->Estado) == 'Zacatecas' ? 'selected' : ''}}>Zacatecas</option>
                       </select>
                       {!! $errors->first('Estado', '<span class=errores>:message</span>') !!}
                     </div>
@@ -109,14 +107,13 @@
                           <label for="inputEscola">Escolaridad</label>
                           <select id="inputEscola" name="Escolaridad" class="form-control">
                                 <option selected>Seleccione...</option>
-                                <option value="Carrera Tecnica">Carrera Técnica</option>
-                                <option value="Doctorado">Doctorado</option>
-                                <option value="Licenciatura">Licenciatura</option>
-                                <option value="Maestria">Maestria</option>
-                                <option value="Ninguno">Ninguno</option>
-                                <option value="Preperatoria/Bachillerato">Preparatoria/Bachillerato</option>
-                                <option value="Primaria">Primaria</option>
-                                <option value="Secundaria">Secundaria</option>
+                                <option value="Primaria" {{old('EstadoCivil', $asesor->Escolaridad) == 'Primaria' ? 'selected' : ''}}>Primaria</option>
+                                <option value="Secundaria" {{old('EstadoCivil', $asesor->Escolaridad) == 'Secundaria' ? 'selected' : ''}}>Secundaria</option>
+                                <option value="Preparatoria/Bachillerato" {{old('EstadoCivil', $asesor->Escolaridad) == 'Preparatoria/Bachillerato' ? 'selected' : ''}}>Preparatoria/Bachillerato</option>
+                                <option value="Carrera Tecnica" {{old('EstadoCivil', $asesor->Escolaridad) == 'CarreraTecnica' ? 'selected' : ''}}>Carrera Tecnica</option>
+                                <option value="Licenciatura" {{old('EstadoCivil', $asesor->Escolaridad) == 'Licenciatura' ? 'selected' : ''}}>Licenciatura</option>
+                                <option value="Maestria" {{old('EstadoCivil', $asesor->Escolaridad) == 'Maestria' ? 'selected' : ''}}>Maestria</option>
+                                <option value="Doctorado" {{old('EstadoCivil', $asesor->Escolaridad) == 'Doctorado' ? 'selected' : ''}}>Doctorado</option>
                           </select>
                           {!! $errors->first('Escolaridad', '<span class=errores>:message</span>') !!}
                     </div>
@@ -144,13 +141,13 @@
                         <div class="form-group col-md-5">
                               <label for="inputCivil">Estado civil</label>
                                    <select id="inputCivil" name="EstadoCivil" class="form-control" value="{{ $asesor->EstadoCivil }}">
-                                      <option value="">Selecciona una opción</option>
-                                      <option value="Soltero(a)">Soltero(a)</option>
-                                      <option value="Casado(a)">Casado(a)</option>
-                                      <option value="Divorsiado(a)">Divorsiado(a)</option>
-                                      <option value="Viudo(a)">Viudo(a)</option>
-                                      <option value="Unión libre">Unión libre</option>
-                                      <option value="Separado(a)">Separado(a)</option>
+                                      {{-- <option value="">Selecciona una opción</option> --}}
+                                      <option value="Soltero(a)" {{old('EstadoCivil', $asesor->EstadoCivil) == 'Soltero(a)' ? 'selected' : ''}}>Soltero(a)</option>
+                                      <option value="Casado(a)" {{old('EstadoCivil', $asesor->EstadoCivil) == 'Casado(a)' ? 'selected' : ''}}>Casado(a)</option>
+                                      <option value="Divorsiado(a)" {{old('EstadoCivil', $asesor->EstadoCivil) == 'Divorsiado(a)' ? 'selected' : ''}}>Divorsiado(a)</option>
+                                      <option value="Viudo(a)" {{old('EstadoCivil', $asesor->EstadoCivil) == 'Viudo(a)' ? 'selected' : ''}}>Viudo(a)</option>
+                                      <option value="Unión libre" {{old('EstadoCivil', $asesor->EstadoCivil) == 'Unión libre' ? 'selected' : ''}}>Unión libre</option>
+                                      <option value="Separado(a)" {{old('EstadoCivil', $asesor->EstadoCivil) == 'Separado(a)' ? 'selected' : ''}}>Separado(a)</option>
                                   </select>
                         {!! $errors->first('EstadoCivil', '<span class=errores>:message</span>') !!}
                   </div>
@@ -161,15 +158,17 @@
                   </div>
             </div>
     
-              <div class="form-row justify-content-md-center mt">
+            <div class="form-row justify-content-md-center mt">
                   <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline1" name="Sexo" value="Femenino" class="custom-control-input">
+                      <input type="radio" id="customRadioInline1" name="Sexo" value="Femenino" @if(old('Sexo',$asesor->Sexo)=="Femenino") checked @endif class="custom-control-input">
                       <label class="custom-control-label" for="customRadioInline1">Femenino</label>
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline2" name="Sexo" value="Masculino" class="custom-control-input">
+                      <input type="radio" id="customRadioInline2" name="Sexo" value="Masculino" @if(old('Sexo',$asesor->Sexo)=="Masculino") checked @endif class="custom-control-input">
                       <label class="custom-control-label" for="customRadioInline2">Masculino</label>
                 </div>
+
+                      {!! $errors->first('Sexo', '<span class=errores>:message</span>') !!}
              </div>
     
               <div class="form-row justify-content-md-center mt-4">

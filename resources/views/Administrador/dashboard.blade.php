@@ -14,7 +14,6 @@
 			</div>
 				
 			<div class="col-sm-2">
-
 				
 					<img src="{{ asset('img/logo.jpg') }}" class="rounded" alt="Cinque Terre" width="100" height="100"> 
  			</div>

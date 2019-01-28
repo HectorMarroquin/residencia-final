@@ -80,9 +80,9 @@ Route::post('/conversation/send', 'ContactsController@send');
 
 
 
-Route::get('/email1',['as'=>'email', function () {
-    return view('email/form_mail');
-}]);
+// Route::get('/email1',['as'=>'email', function () {
+//     return view('email/form_mail');
+// }]);
 
 Route::get('/email2',['as'=>'email2', function () {
     return view('email/plantilla_correo');
