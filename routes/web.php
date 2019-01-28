@@ -65,7 +65,11 @@ Route::resource('asesor','Asesor\AsesorController');
 Route::get('/homeAsesor','Asesor\homeController@asesor')->name('HomeAsesor');
 Route::get('/projectFase/{id}','Asesor\homeController@update')->name('projectFase');
 Route::get('/projectFases/{id}','Asesor\homeController@update1')->name('projectFases');
+
 /*Eaz*/ 
+
+Route::get('/projectShow/{id}','Asesor\homeController@show')->name('projectShow');
+Route::get('/projectDownload/{id}','Asesor\homeController@download')->name('projectDownload');
 
 /*CHAT*/
 Route::get('/contacts', 'ContactsController@get');
