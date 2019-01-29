@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Emprendedor;
-
+use App\User;
 class EmpreController extends Controller
 {
     /**
@@ -16,6 +16,7 @@ class EmpreController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('roles:administrador');
     }
     
     public function index(Request $request)
@@ -53,10 +54,25 @@ class EmpreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        Emprendedor::findOrFail($id)->delete();
-        return redirect()->route('emprendedores.index');
+
+        if($request->ajax()){
+
+            $emprendedor = Emprendedor::findOrFail($id);
+            $user = User::where('id', $emprendedor->user_id)->first();
+            $user->delete();
+            $asesor_total = Emprendedor::all()->count();
+            
+            return response()->json([
+
+                'message' => $emprendedor->Nombre . ' fue eliminado'
+
+            ]);
+        }
+       
+        
+       
     }
 
     /**
@@ -88,9 +104,20 @@ class EmpreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        Emprendedor::findOrFail($id)->delete();
-        return redirect()->route('emprendedores.index');
+        if($request->ajax()){
+
+            $emprendedor = Emprendedor::findOrFail($id);
+            $user = User::where('id', $emprendedor->user_id)->first();
+            $user->delete();
+            $emprendedor_total = Emprendedor::all()->count();
+            
+            return response()->json([
+
+                'message' => $emprendedor->Nombre . ' fue eliminado'
+
+            ]);
+        }
     }
 }

@@ -133,8 +133,8 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
-  font-size: 90%;
-  font-weight: 400;
+  font-size: 100%;
+  font-weight: bold;
   padding: 0.75em 0;
   letter-spacing: 1px;
   color: white;
@@ -655,6 +655,7 @@ section#contact :-ms-input-placeholder {
 footer {
   padding: 25px 0;
   text-align: center;
+  background-color: rgb(151, 148, 148);
 }
 
 footer span.copyright {

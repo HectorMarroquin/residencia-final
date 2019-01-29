@@ -1,7 +1,15 @@
 @extends('administrador')
  
 @section('admin')
-	<div class="espacio"></div>
+
+	<div class="container">
+		<form class="form-inline mb-4 pt-4">
+				{{ csrf_field() }}
+					<input name="Nombre" class="form-control mr-sm-2" type="search" placeholder="Buscar asesor" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+			 </form>
+	</div>
+
   <div class="card bg-light text-dark">
     <div class="card-body">
 		<div class="container-fluid">

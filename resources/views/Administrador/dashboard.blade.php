@@ -14,7 +14,6 @@
 			</div>
 				
 			<div class="col-sm-2">
-
 				
 					<img src="{{ asset('img/logo.jpg') }}" class="rounded" alt="Cinque Terre" width="100" height="100"> 
  			</div>
@@ -31,9 +30,9 @@
 		<div class="row justify-content-around">
  			<div class="col-sm-4 list-group list-group-flush">
  				<ul>
- 					<li class="list-group-item">Preincubadora para planes de negocio</li>
+ 					<li class="list-group-item list-group-item-primary">Preincubadora para planes de negocio</li>
  					<li class="list-group-item">Esta plataforma esta en su version Beta</li>
- 					<li class="list-group-item">Favor de leer sus instrucciones para su uso correcto</li>
+ 					<li class="list-group-item list-group-item-danger">Favor de leer sus instrucciones para su uso correcto</li>
  					<li class="list-group-item">Si hay algun error favor de reportar con ittg.vinc'@'gmail.com</li>
  				</ul>
  			</div>

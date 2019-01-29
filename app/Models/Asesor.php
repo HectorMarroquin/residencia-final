@@ -16,4 +16,11 @@ class Asesor extends Model
 
     }
 
+    public function scopeNombre($query, $Nombre){
+
+        
+        return $query->where('Nombre','LIKE',"%$Nombre%");
+           
+    }
+
 }

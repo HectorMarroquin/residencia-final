@@ -15,9 +15,12 @@ class DatabaseSeeder extends Seeder
 
         $this->truncateTables([
 
+             'roles',
+             'users',
+             'role_user',
             //  'asesores',   
-             'proyectos',
-             'emprendedores',
+            //  'proyectos',
+            //  'emprendedores',
              'fases',
             //  'ideanegocios',
             //  'fodas',
@@ -25,16 +28,15 @@ class DatabaseSeeder extends Seeder
             //  'cpotenciales',
             //  'colaboradores',
             //  'asignaciones',
-             'actividades',
-             'roles',
-             'users',
-             'role_user'
+             'actividades'
+             
         ]);
         
-           
+           $this->call(RoleSeeders::class);
+           $this->call(UsersTableSeeder::class);
         //    $this->call(AsesorSeeder::class);
-           $this->call(EmprendedorSeeder::class);
-           $this->call(ProyectoSeeder::class);
+        //    $this->call(EmprendedorSeeder::class);
+        //    $this->call(ProyectoSeeder::class);
            $this->call(FaseSeeder::class);
         //    $this->call(IdeanegocioSeeder::class);
         //    $this->call(FodaSeeder::class);
@@ -43,8 +45,7 @@ class DatabaseSeeder extends Seeder
         //    $this->call(ColaboradorSeeder::class);
         //    $this->call(AsignacionSeeder::class);
            $this->call(ActividadSeeder::class);
-           $this->call(RoleSeeders::class);
-           $this->call(UsersTableSeeder::class);
+        
     }
 
 

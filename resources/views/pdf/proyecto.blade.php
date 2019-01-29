@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/boots.css">
     <style>
     
     .color{
@@ -29,7 +30,7 @@
     </style>
 </head>
 <body>
-    <div class="color">
+    <div class="bg-light text-center">
             <h2>Datos del Proyecto Numero: {{ $proyecto->id }}</h2>
     </div>
     <div class="proyecto">

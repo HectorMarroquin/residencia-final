@@ -19,6 +19,7 @@ class AsignaController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('roles:administrador');
     }
     
     public function index()
@@ -46,9 +47,15 @@ class AsignaController extends Controller
      */
     public function store(AsignacionValidation $request)
     {   
-        
-          Asignacion::create($request->all());
-          return redirect()->route('asesores.index');
+         $id = $request->input('proyecto_id');
+
+         $asignacion = Asignacion::create($request->all());
+           
+         $proyecto = Proyecto::where('id', $id)->first();
+         $proyecto->Estado = 'Cursando';
+         $proyecto->update();
+
+         return redirect()->route('asesores.index');
     }
 
     /**
