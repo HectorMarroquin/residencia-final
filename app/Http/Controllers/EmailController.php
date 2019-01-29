@@ -85,8 +85,9 @@ class EmailController extends Controller
               } 
         }
              
+         return back()->with('aceptar', 'Correo Enviado');  
          
-        return redirect()->route('emails.index');
+        // return redirect()->route('emails.index');
     }
 
     /**
