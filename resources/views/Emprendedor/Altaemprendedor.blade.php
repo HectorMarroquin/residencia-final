@@ -19,7 +19,7 @@
                             </td>
 
                             <td colspan="3">
-                                 <input type="text" name="Nombre" class="form-control infoemprendedor"  value="">
+                                 <input type="text" name="Nombre" class="form-control infoemprendedor"  value="{{ old('Nombre') }}">
                                  {!! $errors->first('Nombre', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -32,7 +32,7 @@
                             </td>
 
                             <td>
-                                <input type="text" name="ApellidoP" class="form-control infoemprendedor" value="">
+                                <input type="text" name="ApellidoP" class="form-control infoemprendedor" value="{{ old('ApellidoP') }}">
                                 {!! $errors->first('ApellidoP', '<span class=errores>:message</span>') !!}
                             </td>
                             </td>
@@ -42,7 +42,7 @@
                             </td>
 
                             <td>
-                                <input type="text" name="ApellidoM" class="form-control infoemprendedor" value="">
+                                <input type="text" name="ApellidoM" class="form-control infoemprendedor" value="{{ old('ApellidoM') }}">
                                 {!! $errors->first('ApellidoM', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -54,7 +54,7 @@
                             </td>
 
                             <td>
-                                  <input type="date" name="FechaNaci" class="form-control infoemprendedor" value="">
+                                  <input type="date" name="FechaNaci" class="form-control infoemprendedor" value="{{ old('FechaNaci') }}">
                                   {!! $errors->first('FechaNaci', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -63,7 +63,7 @@
                             </td>
 
                             <td>
-                                <input type="text" name="Edad"  class="form-control " value="">
+                                <input type="text" name="Edad"  class="form-control " value="{{ old('Edad') }}">
                                 {!! $errors->first('Edad', '<span class=errores>:message</span>') !!}
                             </td>
                             
@@ -117,7 +117,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="Direccion"  class="form-control infoemprendedor" value="">
+                                 <input type="text" name="Direccion"  class="form-control infoemprendedor" value="{{ old('Direccion') }}">
                                   {!! $errors->first('Direccion', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -126,7 +126,7 @@
                             </td>
 
                             <td>
-                                  <input type="text" name="NumeroExterior" class="form-control infoemprendedor" value="">
+                                  <input type="text" name="NumeroExterior" class="form-control infoemprendedor" value="{{ old('NumeroExterior') }}">
                                    {!! $errors->first('NumeroExterior', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -140,7 +140,7 @@
                             </td>
 
                             <td>
-                                <input type="text" name="NumeroInterior" class="form-control infoemprendedor" value="">
+                                <input type="text" name="NumeroInterior" class="form-control infoemprendedor" value="{{ old('NumeroInterior') }}">
                         
                             </td>
 
@@ -149,7 +149,7 @@
                             </td>
 
                             <td>
-                                  <input type="text" name="Ciudad" class="form-control infoemprendedor" value="">
+                                  <input type="text" name="Ciudad" class="form-control infoemprendedor" value="{{ old('Ciudad') }}">
                                   {!! $errors->first('Ciudad', '<span class=errores>:message</span>') !!}
                             </td>
                             
@@ -163,7 +163,7 @@
                             </td>
 
                             <td>
-                                <input type="text" name="Municipio" class="form-control infoemprendedor" value="">
+                                <input type="text" name="Municipio" class="form-control infoemprendedor" value="{{ old('Municipio') }}">
                                    {!! $errors->first('Municipio', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -172,7 +172,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="Colonia" class="form-control infoemprendedor" value="">
+                                 <input type="text" name="Colonia" class="form-control infoemprendedor" value="{{ old('Colonia') }}">
                                   {!! $errors->first('Colonia', '<span class=errores>:message</span>') !!}
                             </td>
                             
@@ -184,7 +184,7 @@
                             </td>
 
                             <td colspan="3">
-                                <input type="text" name="CodigoPostal" class="form-control infoemprendedor col-sm-5" value="">
+                                <input type="text" name="CodigoPostal" class="form-control infoemprendedor col-sm-5" value="{{ old('CodigoPostal') }}">
                                 {!! $errors->first('CodigoPostal', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -195,7 +195,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="TelefonoCel" class="form-control infoemprendedor" value="">
+                                 <input type="text" name="TelefonoCel" class="form-control infoemprendedor" value="{{ old('TelefonoCel') }}">
                 
                             </td>
 
@@ -204,7 +204,7 @@
                             </td>
 
                             <td>
-                                  <input type="text" name="TelefonoCasa" class="form-control infoemprendedor" value="">
+                                  <input type="text" name="TelefonoCasa" class="form-control infoemprendedor" value="{{ old('TelefonoCasa') }}">
                                    
                             </td>
                         </tr>
@@ -215,7 +215,7 @@
                             </td>
 
                             <td colspan="3">
-                                <input type="text" name="TelefonoOfi" class="form-control infoemprendedor col-sm-5" value="">
+                                <input type="text" name="TelefonoOfi" class="form-control infoemprendedor col-sm-5" value="{{ old('TelefonoOfi') }}">
                                 
                             </td>
                         </tr>
@@ -226,7 +226,7 @@
                             </td>
 
                             <td>
-                                 <input type="email" name="Correo" class="form-control infoemprendedor" value="">
+                                 <input type="email" name="Correo" class="form-control infoemprendedor" value="{{ old('Correo') }}">
                                   {!! $errors->first('Correo', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -259,7 +259,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="CURP" class="form-control infoemprendedor" value="">
+                                 <input type="text" name="CURP" class="form-control infoemprendedor" value="{{ old('CURP') }}">
                                  {!! $errors->first('CURP', '<span class=errores>:message</span>') !!}
                             </td>
 
@@ -268,7 +268,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="INE" class="form-control infoemprendedor" value="">
+                                 <input type="text" name="INE" class="form-control infoemprendedor" value="{{ old('INE') }}">
                                  {!! $errors->first('INE', '<span class=errores>:message</span>') !!}
                             </td>
                         </tr>
@@ -299,7 +299,7 @@
                             </td>
 
                             <td>
-                                 <input type="text" name="TipoOtra" class="form-control infoemprendedor" value="">
+                                 <input type="text" name="TipoOtra" class="form-control infoemprendedor" value="{{ old('TipoOtra') }}">
                             </td>
 
                         </tr>
@@ -340,7 +340,7 @@
                                 </td>
 
                                 <td>
-                                    <input type="text" name="RFC" class="form-control infoemprendedor col-sm-5" value="">
+                                    <input type="text" name="RFC" class="form-control infoemprendedor col-sm-5" value="{{ old('RFC') }}">
                                 </td>
                             </tr>                    
                         </tbody>
@@ -362,7 +362,7 @@
                                 </td>
                                 
                                 <td>
-                                    <input type="text" name="RazonSocial" class="form-control infoemprendedor" value="">
+                                    <input type="text" name="RazonSocial" class="form-control infoemprendedor" value="{{ old('RazonSocial') }}">
                                 </td>
 
                                 <td>
@@ -370,7 +370,7 @@
                                 </td>
 
                                 <td>
-                                    <input type="text" name="RFCM"  class="form-control infoemprendedor" value="">
+                                    <input type="text" name="RFCM"  class="form-control infoemprendedor" value="{{ old('RFCM') }}">
                                 </td>
 
                             </tr>

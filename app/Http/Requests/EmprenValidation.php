@@ -33,6 +33,7 @@ class EmprenValidation extends FormRequest
             'EstadoCivil' => 'required',
             'Direccion' => 'required',
             'NumeroExterior' => 'required|numeric',
+            'NumeroInterior' => 'numeric',
             'Colonia' => 'required',
             'Ciudad' => 'required',
             'Municipio' => 'required',
@@ -40,8 +41,9 @@ class EmprenValidation extends FormRequest
             'Escolaridad' => 'required',
             'CURP' => 'required|min:18|max:18',
             'INE' => 'required',
-            'TipoEmpresa' => 'required',
-            'TipoPersona' => 'required',
+            'TipoEmpresa' =>  'required',
+            'TipoPersona' =>  'required',
+          
 
         ];
     }
