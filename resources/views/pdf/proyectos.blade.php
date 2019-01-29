@@ -24,14 +24,14 @@
     </style>
 </head>
 <body>
-    <div class="mb-5">
+    <div class="text-center mb-5">
             <h1>Proyectos Registrados en el Sistema</h1>
     </div>
     
     <table class="table table-bordered table-sm">
         <thead class="cabecera" style="text-center">
           <tr>
-              <th scope="col">Numero</th>
+              <th scope="col">Numeroo</th>
               <th scope="col">Proyecto</th>
               <th scope="col">Empresa</th>
               <th scope="col">Telefono</th>

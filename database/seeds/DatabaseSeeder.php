@@ -15,36 +15,37 @@ class DatabaseSeeder extends Seeder
 
         $this->truncateTables([
 
-            //  'asesores',   
-            //  'proyectos',
-            //  'emprendedores',
-             'fases',
-            //  'ideanegocios',
-            //  'fodas',
-            //  'competencias',
-            //  'cpotenciales',
-            //  'colaboradores',
-            //  'asignaciones',
-             'actividades',
              'roles',
              'users',
-             'role_user'
+             'role_user',
+             'asesores',   
+             'proyectos',
+             'emprendedores',
+             'fases',
+             'ideanegocios',
+             'fodas',
+             'competencias',
+             'cpotenciales',
+             'colaboradores',
+             'asignaciones',
+             'actividades'
+             
         ]);
         
-           
-        //    $this->call(AsesorSeeder::class);
-        //    $this->call(EmprendedorSeeder::class);
-        //    $this->call(ProyectoSeeder::class);
-           $this->call(FaseSeeder::class);
-        //    $this->call(IdeanegocioSeeder::class);
-        //    $this->call(FodaSeeder::class);
-        //    $this->call(CompetenciaSeeder::class);
-        //    $this->call(CpotencialSeeder::class);
-        //    $this->call(ColaboradorSeeder::class);
-        //    $this->call(AsignacionSeeder::class);
-           $this->call(ActividadSeeder::class);
            $this->call(RoleSeeders::class);
            $this->call(UsersTableSeeder::class);
+           $this->call(AsesorSeeder::class);
+           $this->call(EmprendedorSeeder::class);
+           $this->call(ProyectoSeeder::class);
+           $this->call(FaseSeeder::class);
+           $this->call(IdeanegocioSeeder::class);
+           $this->call(FodaSeeder::class);
+           $this->call(CompetenciaSeeder::class);
+           $this->call(CpotencialSeeder::class);
+           $this->call(ColaboradorSeeder::class);
+           $this->call(AsignacionSeeder::class);
+           $this->call(ActividadSeeder::class);
+        
     }
 
 

@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-    <div class="bg-primary">
+    <div class="bg-light text-center">
             <h2>Datos del Proyecto Numero: {{ $proyecto->id }}</h2>
     </div>
     <div class="proyecto">

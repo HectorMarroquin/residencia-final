@@ -8,7 +8,7 @@
       
       <div class="row align-items-center">
         
-        <div class="col-4">
+        <div class="col-xs-4">
           
           <form class="mb-4 pt-4" method="GET" action="{{route('historial.index')}}">
               {!! csrf_field() !!}
@@ -25,7 +25,7 @@
         </div>
 
 
-        <div class="col-4">  
+        <div class="col-xs-4">  
               <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Status

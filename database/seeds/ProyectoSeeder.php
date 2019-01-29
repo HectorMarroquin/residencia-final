@@ -95,7 +95,7 @@ class ProyectoSeeder extends Seeder
         ]);
         // factory(Proyecto::class, 20)->create([
         //     'TelefonoEmp' => '9876543212',
-        //     'emprendedor_id' => $empreId
+        //     'emprendedor_id' => $empre2,
         // ]);
     }
 }

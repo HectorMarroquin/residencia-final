@@ -17,6 +17,7 @@ class ActiController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('roles:administrador');
     }
     public function index()
     {

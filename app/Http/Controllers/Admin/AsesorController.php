@@ -22,11 +22,12 @@ class AsesorController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('roles:administrador');
     }
     
-    public function index()
+    public function index(Request $request)
     {   
-        $asesores = Asesor::paginate(5);
+        $asesores = Asesor::Nombre($request->Nombre)->paginate(5);
         return view('Administrador.show-asesores', compact('asesores'));
     }
 

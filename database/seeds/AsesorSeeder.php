@@ -84,7 +84,7 @@ class AsesorSeeder extends Seeder
 
         ]);
 
-        //factory(Asesor::class, 25)->create();
+        // factory(Asesor::class, 25)->create();
 
 
 

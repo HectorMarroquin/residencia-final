@@ -80,7 +80,7 @@ class EmprendedorSeeder extends Seeder
             'user_id' => $user1,
         ]);
 
-        //factory(Emprendedor::class, 20)->create();
+        // factory(Emprendedor::class, 20)->create();
   
     }
 }
