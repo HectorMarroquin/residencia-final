@@ -67,7 +67,8 @@ Route::get('/projectFase/{id}','Asesor\homeController@update')->name('projectFas
 Route::get('/projectFases/{id}','Asesor\homeController@update1')->name('projectFases');
 Route::get('/projectShow/{id}','Asesor\homeController@show')->name('projectShow');
 Route::get('/projectDownload/{id}','Asesor\homeController@download')->name('projectDownload');
-
+Route::get('/historial-projects','Asesor\homeController@historial')->name('historial-projects');
+Route::get('/downloadFile/{id}','Asesor\homeController@downloadFile')->name('downloadFile');
 //eaz
 
 Auth::routes();

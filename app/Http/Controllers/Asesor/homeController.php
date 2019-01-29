@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Asesor;
 use App\Models\Avance;
 use App\Models\Foda;
 use App\Models\Proyecto;
+use auth;
+use App\Models\Asesor;
 use App\Models\Ideanegocio;
 use Barryvdh\DomPDF\Facade as PDF;
 
@@ -24,6 +26,16 @@ class homeController extends Controller
 
    		 return view('Asesor.inicio');
 	}
+
+  public function historial() {
+
+    $asesor=Asesor::where('user_id', '=', auth()->id())->first();
+;
+                        
+       // $users=Asignacion::where('asesor_id', $idd->id)->get();      
+    return view('Asesor.historial',compact('asesor'));
+  }
+
 
 	public function update($id){
 
@@ -65,6 +77,14 @@ class homeController extends Controller
          return $pdf->download();
 
 
+  }
+
+
+  public function downloadFile($id){
+       $avance = Avance::findOrFail($id);
+       $name=$avance->Comentario;
+       $doc=public_path('Revisiones')."/".$name; 
+       return response()->download($name); 
   }
 
 }
