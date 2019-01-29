@@ -24,43 +24,43 @@ class UsersTableSeeder extends Seeder
             $admin->save();
             $admin->roles()->attach($role_admin); 
 
-            $admin = new User();
-            $admin->name = "Alberth Eduardo";
-            $admin->email = "alberth@gmail.com";
-            $admin->password = bcrypt('123123');
-            $admin->save();
-            $admin->roles()->attach($role_user); 
+            // $admin = new User();
+            // $admin->name = "Alberth Eduardo";
+            // $admin->email = "alberth@gmail.com";
+            // $admin->password = bcrypt('123123');
+            // $admin->save();
+            // $admin->roles()->attach($role_user); 
 
-            $admin = new User();
-            $admin->name = "Esdras De Jesus";
-            $admin->email = "eaz@gmail.com";
-            $admin->password = bcrypt('123123');
-            $admin->save();
-            $admin->roles()->attach($role_asesor); 
-
-
+            // $admin = new User();
+            // $admin->name = "Esdras De Jesus";
+            // $admin->email = "eaz@gmail.com";
+            // $admin->password = bcrypt('123123');
+            // $admin->save();
+            // $admin->roles()->attach($role_asesor); 
 
 
-            $admin = new User();
-            $admin->name = "Aldo Fabian";
-            $admin->email = "aldo@gmail.com";
-            $admin->password = bcrypt('123123');
-            $admin->save();
-            $admin->roles()->attach($role_asesor);
 
-            $admin = new User();
-            $admin->name = "Wilder Adan";
-            $admin->email = "wil@gmail.com";
-            $admin->password = bcrypt('123123');
-            $admin->save();
-            $admin->roles()->attach($role_asesor);
 
-            $admin = new User();
-            $admin->name = "Alan Josue";
-            $admin->email = "alan@gmail.com";
-            $admin->password = bcrypt('123123');
-            $admin->save();
-            $admin->roles()->attach($role_asesor); 
+            // $admin = new User();
+            // $admin->name = "Aldo Fabian";
+            // $admin->email = "aldo@gmail.com";
+            // $admin->password = bcrypt('123123');
+            // $admin->save();
+            // $admin->roles()->attach($role_asesor);
+
+            // $admin = new User();
+            // $admin->name = "Wilder Adan";
+            // $admin->email = "wil@gmail.com";
+            // $admin->password = bcrypt('123123');
+            // $admin->save();
+            // $admin->roles()->attach($role_asesor);
+
+            // $admin = new User();
+            // $admin->name = "Alan Josue";
+            // $admin->email = "alan@gmail.com";
+            // $admin->password = bcrypt('123123');
+            // $admin->save();
+            // $admin->roles()->attach($role_asesor); 
 
     }
 }

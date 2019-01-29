@@ -18,32 +18,32 @@ class DatabaseSeeder extends Seeder
              'roles',
              'users',
              'role_user',
-             'asesores',   
-             'proyectos',
-             'emprendedores',
+            //  'asesores',   
+            //  'proyectos',
+            //  'emprendedores',
              'fases',
-             'ideanegocios',
-             'fodas',
-             'competencias',
-             'cpotenciales',
-             'colaboradores',
-             'asignaciones',
+            //  'ideanegocios',
+            //  'fodas',
+            //  'competencias',
+            //  'cpotenciales',
+            //  'colaboradores',
+            //  'asignaciones',
              'actividades'
              
         ]);
         
            $this->call(RoleSeeders::class);
            $this->call(UsersTableSeeder::class);
-           $this->call(AsesorSeeder::class);
-           $this->call(EmprendedorSeeder::class);
-           $this->call(ProyectoSeeder::class);
+        //    $this->call(AsesorSeeder::class);
+        //    $this->call(EmprendedorSeeder::class);
+        //    $this->call(ProyectoSeeder::class);
            $this->call(FaseSeeder::class);
-           $this->call(IdeanegocioSeeder::class);
-           $this->call(FodaSeeder::class);
-           $this->call(CompetenciaSeeder::class);
-           $this->call(CpotencialSeeder::class);
-           $this->call(ColaboradorSeeder::class);
-           $this->call(AsignacionSeeder::class);
+        //    $this->call(IdeanegocioSeeder::class);
+        //    $this->call(FodaSeeder::class);
+        //    $this->call(CompetenciaSeeder::class);
+        //    $this->call(CpotencialSeeder::class);
+        //    $this->call(ColaboradorSeeder::class);
+        //    $this->call(AsignacionSeeder::class);
            $this->call(ActividadSeeder::class);
         
     }
