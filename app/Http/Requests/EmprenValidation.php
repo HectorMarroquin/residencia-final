@@ -33,7 +33,6 @@ class EmprenValidation extends FormRequest
             'EstadoCivil' => 'required',
             'Direccion' => 'required',
             'NumeroExterior' => 'required|numeric',
-            'NumeroInterior' => 'numeric',
             'Colonia' => 'required',
             'Ciudad' => 'required',
             'Municipio' => 'required',

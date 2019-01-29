@@ -82,8 +82,8 @@
                                <div class="form-group ">
                                     <select class="form-control col-sm-5" id="" name="Sexo" value="">
                                         <option value="">Seleccione una Opcion</option>
-                                        <option value="Hombre">Hombre</option>
-                                        <option value="Mujer">Mujer</option> 
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option> 
                                     </select>
                                      {!! $errors->first('Sexo', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -381,7 +381,7 @@
                                 </td>
 
                                 <td colspan="3">
-                                    <input type="text" name="ObjetoSocial" class="form-control infoemprendedor col-sm-5" value="">
+                                    <input type="text" name="ObjetoSocial" class="form-control infoemprendedor col-sm-5" value="{{ old('ObjetoSocial') }}">
                                 </td>
                             </tr>
 
