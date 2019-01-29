@@ -14,7 +14,7 @@
    			<form method="POST" action="{{ route('actividades.store') }}">
    			{{ csrf_field() }}
    			<div class="row align-items-center">
-   				<div class="col-3">
+   				<div class="col-xs-3">
 					<div class="input-group">
 						 <select name="fase_id" class="custom-select">
 							<option disabled="disabled" selected>Seleccione Fase</option>
@@ -27,7 +27,7 @@
 					</div>
    				</div>
    				
-   				<div class="col-4">
+   				<div class="col-xs-4">
    					<div class="input-group input-group">
 					    <div class="input-group-prepend">
 					       <span class="input-group-text">Actividad</span>
@@ -36,7 +36,7 @@
 				  </div>
    				</div>
 
-   				<div class="col-5">
+   				<div class="col-xs-5">
    					
 					<div class="input-group">
 					  <div class="input-group-prepend">
@@ -50,7 +50,7 @@
    			</div>
    			
    			<div class="row justify-content-center text-center mt-3">
-   				<div class="col-4">
+   				<div class="col-xs-4">
    					<button type="submit" class="btn btn-success">Agregar</button>
    				</div>
    			</div>

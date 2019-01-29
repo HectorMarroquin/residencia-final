@@ -20,7 +20,7 @@ class EmailController extends Controller
      */
     public function index()
     {
-        //
+         return view('email/form_mail');
     }
 
     /**
@@ -85,8 +85,9 @@ class EmailController extends Controller
               } 
         }
              
-     return "mensaje enviado con exito";     
-    
+         return back()->with('aceptar', 'Correo Enviado');  
+         
+        // return redirect()->route('emails.index');
     }
 
     /**

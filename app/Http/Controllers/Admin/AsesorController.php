@@ -22,11 +22,12 @@ class AsesorController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('roles:administrador');
     }
     
-    public function index()
+    public function index(Request $request)
     {   
-        $asesores = Asesor::paginate(5);
+        $asesores = Asesor::Nombre($request->Nombre)->paginate(5);
         return view('Administrador.show-asesores', compact('asesores'));
     }
 
@@ -115,17 +116,25 @@ class AsesorController extends Controller
         $nombre = $request->input('Nombre');
 
         $asesor = Asesor::findOrFail($id);
-        $user = User::findOrFail($id);
-        
-        $asesor->update($request->all());
+        $user = User::where('id', $asesor->user_id)->first();
+      
+        $user->name =$request->Nombre; 
+        $user->email = $request->Correo;
+        $user->password=$request->Contraseña;
+            
+        $usuario = array('email'=>$user->email,'password'=>$user->password,'name'=>$user->name); 
 
-        $user->name = $nombre;
+        Mail::send('email.plantillasesor',['msg'=>$usuario], function($u) use($usuario){
+            $u->to($usuario['email'], $usuario['name'])->subject('Tu Actualizació fue completado');
+        });
+
+        $user->password=bcrypt($request->Contraseña);
         $user->update();
+        $asesor->update($request->all());
 
         return redirect()->route('asesores.index');
 
 
-        
         
     }
 
@@ -140,7 +149,8 @@ class AsesorController extends Controller
         if($request->ajax()){
 
             $asesor = Asesor::findOrFail($id);
-            $asesor->delete();
+            $user = User::where('id', $asesor->user_id)->first();
+            $user->delete();
             $asesor_total = Asesor::all()->count();
             
             return response()->json([

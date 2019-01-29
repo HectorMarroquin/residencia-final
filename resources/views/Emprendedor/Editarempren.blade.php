@@ -393,8 +393,8 @@
                    
                             </tbody>
                         </table>
+                        </form>
                     </div>
-
                     <table  class="table" id="integrantes">
                         <thead>
                             <tr style=" text-align:center;">
@@ -448,8 +448,10 @@
                                 </td>
 
                                 <td>
-                                    <a href="{{ route('Colaborador.edit', $Colaborador->id) }}" class="btn btn-info btn-xs">Editar</a>
+                                    <button type="button" class="btn btn-primary" style="float: right;" data-toggle="modal" data-target="#Update{{$Colaborador->id}}"><i class="fas fa-pen-square"></i></button>
+                                    @include('Emprendedor.EditColaborador')
                                 </td>
+                              
                             </tr>
                             @empty
                                 <td colspan="6" style="text-align: center;">
@@ -485,9 +487,10 @@
                         </tr>
                     </table>
                  
-                </form>
+                
             </div>
         </div>
+
 
        
 @endsection

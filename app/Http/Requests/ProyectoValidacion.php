@@ -28,7 +28,7 @@ class ProyectoValidacion extends FormRequest
             'Razonsocial' => 'required',
             'RFC' => 'required',
             'NombreDirector'=> 'required',
-            'Telefonoemp'=> 'required|numeric',
+            'Telefonoemp'=> 'required|numeric|min:10',
             'CorreoEmp'=> 'required',
             'NombreProd'=> 'required',
             'Descripcion'=> 'required',

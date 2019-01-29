@@ -37,7 +37,7 @@
                              <form class="form-group" method="post" action="{{ route('Enviar.store')}}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                             <h3>Entrega 1</h3>
-                                <p>Subir un archivo Word con las actividades solicitas en en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
+                                <p>Subir un archivo Word con las actividades solicitas en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
                                         <table class="table table-bordered">
                                             <thead class="thead-light">
                                                 <tr>
@@ -82,7 +82,8 @@
                                                         
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                                         @else
-                                                        <p>Ya realizaste la primera entrega</p>
+                                                        <div class="alert alert-success">   <p>Ya realizaste la primera entrega</p>
+                                                        </div>
                                                         @endif
                                                     </td>
                                                 </tr>
@@ -93,7 +94,7 @@
 
                         <div id="menu1" class="container tab-pane fade"><br>
                             <h3>Entrega 2</h3>
-                                <p>Subir un archivo Word con las actividades solicitas en en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
+                                <p>Subir un archivo Word con las actividades solicitas en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
                                 @if (session()->has('infor2'))
                                 <div class="alert alert-success">{{ session('infor2')}}</div>
                                 @endif
@@ -135,7 +136,8 @@
                                                 <tr>
                                                     <td colspan="4">
                                                         @if (!empty($avancedos))
-                                                        <p>Ya enviaste tu segundo avance</p>
+                                                        <div class="alert alert-success">   <p>Ya enviaste tu segunda entrega</p>
+                                                        </div>
                                                         @elseif (!empty($avance))
                                                         <div class="form-group">
                                                             <label for="">Documento</label>
@@ -144,8 +146,8 @@
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                                         @else
-                                                        <p>Envia tu primer entrega</p>
-                                                         
+                                                        <div class="alert alert-success">   <p>Envia tu primer entrega</p>
+                                                        </div>
                                                         @endif
                                                     </td>
                                                 </tr>
@@ -155,7 +157,7 @@
                         </div>
                         <div id="menu2" class="container tab-pane fade"><br>
                            <h3>Entrega 3</h3>
-                                <p>Subir un archivo Word con las actividades solicitas en en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
+                                <p>Subir un archivo Word con las actividades solicitas en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
                                 @if (session()->has('infor3'))
                                 <div class="alert alert-success">{{ session('infor3')}}</div>
                                  @endif
@@ -198,7 +200,9 @@
                                                         
                                                         
                                                        @if ( !empty($avancetres))
-                                                        <p>Ya enviaste tu 3 entrega</p>
+                                                       <div class="alert alert-success">    <p>Ya enviaste tu tercer entrega</p>
+                                                        </div>
+                                                       
                                                         @elseif ( (!empty($avance)) && (!empty($avancedos)) )
                                                         <div class="form-group">
                                                             <label for="">Documento</label>
@@ -207,7 +211,9 @@
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                                         @else
-                                                        <p>Tienes que enviar la 2 entrega </p>
+                                                        <div class="alert alert-success">    <p>Tienes que enviar la segunda entrega </p>
+                                                        </div>
+                                                        
                                                          @endif
                                                     </td>
                                                 </tr>

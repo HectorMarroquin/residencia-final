@@ -76,7 +76,7 @@
               <i class="fas fa-chart-line fa-stack-1x fa-inverse"></i>
             </span>
             <h4 class="service-heading">Crecimiento</h4>
-            <p class="text-muted">Esta plataforma ayuda a mejorar el índice de rentabilidad y crecimiento de tus proyectos, ademas te brinda capacitación con ayuda de asesores especializados</p>
+            <p class="text-muted" style="text-align : justify;">Esta plataforma ayuda a mejorar el índice de rentabilidad y crecimiento de tus proyectos, ademas te brinda capacitación con ayuda de asesores especializados</p>
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x">

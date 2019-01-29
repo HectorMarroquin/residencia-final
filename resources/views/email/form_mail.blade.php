@@ -5,10 +5,12 @@
   <div class="row">
     <div class="col-md-12">
       <div class="jumbotron">
+        @if (session()->has('aceptar'))
+        <div class="alert alert-danger">{{ session('aceptar')}}</div>
+        @endif
         <div class="card">
-            <div class="card-header">Redactar Nuevo Correo</div>
+            <div class="card-header">Redactar Nuevo Correo</div> 
                <div class="card-body">
-
                   <form method="POST" action="{{ route('emails.store') }}" enctype="multipart/form-data">
                     {!! csrf_field() !!}
                     <div class="form-group">

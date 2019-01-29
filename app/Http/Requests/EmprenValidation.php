@@ -40,8 +40,9 @@ class EmprenValidation extends FormRequest
             'Escolaridad' => 'required',
             'CURP' => 'required|min:18|max:18',
             'INE' => 'required',
-            'TipoEmpresa' => 'required',
-            'TipoPersona' => 'required',
+            'TipoEmpresa' =>  'required',
+            'TipoPersona' =>  'required',
+          
 
         ];
     }
