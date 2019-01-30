@@ -9,6 +9,7 @@ use App\User;
 use App\Models\Role;
 use App\Models\Asesor;
 use App\Models\Emprendedor;
+use App\Models\Proyecto;
 use App\Models\Colaborador;
 use App\Http\Requests\AsesorValidacion;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -70,11 +71,12 @@ class AsesorController extends Controller
     {
         $emprendedor = Emprendedor::findOrFail($id);
 
-        //$ids = $emprendedor->id;    
+        //$ids = $emprendedor->id;
+          $proyecto = Proyecto::findOrFail($id);    
 
         $colaborador =Colaborador::where('emprendedor_id', $emprendedor->id)->get();
 
-        return view('Asesor.show-AltaEmpre', compact('emprendedor','colaborador'));
+        return view('Asesor.show-AltaEmpre', compact('proyecto','emprendedor','colaborador'));
 
 
     }

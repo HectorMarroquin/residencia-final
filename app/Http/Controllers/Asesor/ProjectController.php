@@ -91,15 +91,18 @@ class ProjectController extends Controller
        
         $archivo=Avance::findOrFail($id);
         $file_rute=$archivo->Documento;
-        $ruta=public_path('Revisiones')."/".$file_rute; 
+        //$ruta=public_path('Revisiones')."/".$file_rute; 
 
-        return response()->download($ruta); 
+     
+        return Storage::download("files/$file_rute");
+
+        //return response()->download($file_rute); 
         
     }
 
     /**
      * Update the specified resource in storage.
-     *
+     *s
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -107,18 +110,23 @@ class ProjectController extends Controller
     public function update(Request $request, $id) //metodo para guardar lso archivos que envio como asesor
     {
             if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            $name = time().$file->getClientOriginalName();
-            $file->move(public_path().'/Revisiones/', $name);
+            
+             $file =time().request()->file->getClientOriginalName();     
+             $ruta=request()->file->storeAs('files',$file );
+
+
+//            $file = $request->file('file');
+           
+    //        $file->move(public_path().'/Revisiones/', $name);
 
             $avance=Avance::findOrFail($id);
 
-            $avance->Comentario=$name;
+            $avance->Comentario=$file;
 
             $avance->update();    
 
             /* Revision::create([
-            'Documento' => $name,
+         z   'Documento' => $name,
             'avance_id' => $id,
             $asesor->update($request->all());
             ]);*/
