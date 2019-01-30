@@ -3,20 +3,18 @@
 @section('contenido')
 	<div class="row">
 
-	<main class="main col">
+	<main class="main col mt-4">
 			<div class="row d-flex justify-content-center">
-				<div class="col-10 ">	
-				  <h2>Lista de Proyectos</h2>
-				  <p>Listado de proyectos que esta asesorando</p>
-
-				  <br>
-				
-				 <table class="table table-hover table-bordered">
-			  		<thead class="thead-dark">
-			     		<tr style="text-align: center">
+				<div class="col-12 table-responsive-md">	
+				  <h4>Lista de Proyectos</h4>
+				  <p>Listado de proyectos que esta asesorando</p>				
+				 <table class="table table-hover table-striped">
+			  		<thead>
+			     		<tr>
 			      			<th scope="col">Nombre de Emprendedor</th>
 			      			<th scope="col">Apellidos</th>
 			      			<th colspan="2" scope="col">Proyecto</th>
+			      			<th> Status</th>
 			      			<th scope="col">Informacion</th>
 			    		</tr>
 			  		</thead>
@@ -33,6 +31,16 @@
 		
 			  			<td>
 			  				<a type="button" class="btn btn-info" href="{{ route('projects.show', $user->proyecto->id) }}"><i class="fas fa-eye"> Consultar Avances</i></a>							
+			  			</td>
+
+			  			<td>
+			  				 @if($user->proyecto->Estado=='Aprobado')
+              <span class="badge badge-pill badge-success">{{ $user->proyecto->Estado }}</span>
+              @elseif($user->proyecto->Estado=='No Aprobado')
+              <span class="badge badge-pill badge-danger">{{ $user->proyecto->Estado }}</span>
+              @else
+              <span class="badge badge-pill badge-info">Cursando</span>
+              @endif
 			  			</td>
 
 			  			<td>
