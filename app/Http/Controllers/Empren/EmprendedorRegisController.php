@@ -58,9 +58,6 @@ class EmprendedorRegisController extends Controller
      */
     public function store(EmprenValidation $request)
     {
-    
-        //dd($request->all());
-        //Emprendedor::create($request->all());
         $Emprendedor = new Emprendedor;
         $Emprendedor->Nombre = $request->input('Nombre');
         $Emprendedor->ApellidoP = $request->input('ApellidoP');
@@ -148,8 +145,14 @@ class EmprendedorRegisController extends Controller
             $colaborador->emprendedor_id = $Emprendedor->id;
             $colaborador->save();
          }
-      //  Colaborador::create($request->all());
-        return back()->with('registroempre', 'Registro del Emprendedor Exitoso');     
+
+        $id = Auth()->user()->id;
+        $empre = Emprendedor::where('user_id', $id)->first();
+        $empres = Emprendedor::where('user_id', $id)->value('id');
+        $colaboradores = Colaborador::where('emprendedor_id', $empres)->get();
+    
+        return view ('Emprendedor.Editarempren', compact('empre', 'colaboradores'));
+        //return back()->with('registroempre', 'Registro del Emprendedor Exitoso');     
     
     }
 

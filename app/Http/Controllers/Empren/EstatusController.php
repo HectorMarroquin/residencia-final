@@ -9,6 +9,7 @@ use App\Models\Proyecto;
 use App\Models\Revision;
 use DB;
 use App\User;
+use Storage;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -82,10 +83,10 @@ class EstatusController extends Controller
     public function edit($id)
     {
         $archivoss =Avance::findOrFail($id);
-        $file_rute=$archivoss->Comentario;
-        $ruta=public_path('Revisiones')."/".$file_rute; 
+        $name=$archivoss->Comentario;
+        return Storage::download("files/$name");
 
-        return response()->download($ruta);
+        //return response()->download($ruta);
     }
 
     /**
