@@ -30,7 +30,7 @@ class CreateIdeanegociosTable extends Migration
             $table->string('superficie');
             $table->text('refencia');
 
-            $table->unsignedInteger('proyecto_id')->unsigned();
+            $table->integer('proyecto_id')->unsigned();
             $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
 
             $table->timestamps();

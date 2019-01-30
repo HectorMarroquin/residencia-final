@@ -59,9 +59,11 @@ class ResetPasswordNotification extends Notification
 
         return (new MailMessage)
             ->subject(Lang::getFromJson('Notificacion de restablecimiento de contraseña'))
+            ->greeting('Hola ' . $notifiable->name)
             ->line(Lang::getFromJson('Tu estas recibiendo este correo porque,nosotros recibimos una peticion de restablecimiento para tu cuenta.'))
             ->action(Lang::getFromJson('Restablecer contraseña'), url(config('app.url').route('password.reset', $this->token, false)))
-            ->line(Lang::getFromJson('Si no realizaste esta peticion, puedes ignorar este correo y nada habra cambiado.'));
+            ->line(Lang::getFromJson('Si no realizaste esta peticion, puedes ignorar este correo y nada habra cambiado.'))
+            ->salutation('¡Saludos!');
     }
 
     /**

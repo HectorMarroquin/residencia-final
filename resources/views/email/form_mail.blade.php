@@ -6,7 +6,7 @@
     <div class="col-md-12">
       <div class="jumbotron">
         @if (session()->has('aceptar'))
-        <div class="alert alert-danger">{{ session('aceptar')}}</div>
+        <div class="alert alert-success ">{{ session('aceptar')}}</div>
         @endif
         <div class="card">
             <div class="card-header">Redactar Nuevo Correo</div> 
