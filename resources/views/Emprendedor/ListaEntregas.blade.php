@@ -18,7 +18,7 @@
                             <th scope="col">Nombre del Asesor</th>
                             <th scope="col">Entregas</th>
                             <th scope="col">Retroalimentacion</th>
-                            <th scope="col">Descargars</th>
+                            <th scope="col">Descargas</th>
                         </tr>
                     </thead>
 

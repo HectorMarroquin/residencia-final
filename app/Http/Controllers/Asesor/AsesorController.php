@@ -130,6 +130,5 @@ class AsesorController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
 }

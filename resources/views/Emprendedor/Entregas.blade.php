@@ -9,7 +9,7 @@
                 <h2>Fases del Proyecto</h2> <br>
                 <form>
                     @csrf
-                    <p>Las fases se deben subier para que el asesor pueda asignar una calificacion</p>
+                    <p>Las fases se deben subir para que el asesor pueda asignar una calificación</p>
 
                      <div id="accordion">
                         <div class="card">
@@ -107,7 +107,7 @@
                                                 <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
                                                 @endif                             
                                                 @empty
-                                                 <p>debes apronbar la primera fase</p>
+                                                  <div class="alert alert-success"><p>debes aprobar la primera fase</p></div>
                                                 @endforelse  
 
                                             </td>
@@ -165,7 +165,8 @@
                                                 <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
                                                  @endif                             
                                                 @empty
-                                                 <p>debes apronbar la segunda fase</p>
+                                                <div class="alert alert-success"><p>debes aprobar la segunda fase</p>
+                                                </div>
                                                 @endforelse  
 
                                             </td>
@@ -222,7 +223,10 @@
                                                 <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
                                                 @endif                             
                                                 @empty
-                                                 <p>debes apronbar la tercera fase fase</p>
+                                                 <div class="alert alert-success"> 
+                                                  <p>debes aprobar la tercera fase.</p>
+                                                </div>
+                                                
                                                 @endforelse  
 
                                             </td>
@@ -279,7 +283,9 @@
                                                 <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
                                                  @endif                             
                                                 @empty
-                                                 <p>debes apronbar la cuarta fase</p>
+                                                <div class="alert alert-success"> 
+                                                  <p>debes aprobar la cuarta fase</p>
+                                                </div>
                                                 @endforelse 
                                             </td>
                                         </tr>
@@ -292,10 +298,7 @@
                            <td colspan="6" style="text-align: center;"><h4>No Hay fases Registrados</h4></td>
                         @endforelse 
                       </div>
-
-
                     </div> 
-                   
             </form>
         </div>
     </div>

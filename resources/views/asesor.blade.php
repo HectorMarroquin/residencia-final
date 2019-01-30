@@ -49,9 +49,9 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{{ route('historial-projects') }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+            <span>Historial de Proyectos</span></a>
         </li>
       </ul>
 

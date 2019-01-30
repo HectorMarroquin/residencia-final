@@ -95,9 +95,9 @@ class ArchivosController extends Controller
      */
     public function edit($id)
     {
-          $avance = Avance::findOrFail($id);
-         $name=$avance->Comentario;
-         $doc=public_path('Revisiones')."/".$name; 
+        $avance = Avance::findOrFail($id);
+        $name=$avance->Comentario;
+        $doc=public_path('Revisiones')."/".$name; 
 
         return response()->download($doc); 
     }
