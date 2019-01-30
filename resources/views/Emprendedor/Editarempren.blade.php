@@ -149,7 +149,19 @@
                                 <input type="text" name="NumeroInterior" class="form-control infoemprendedor" value="{{$empre->NumeroInterior}}">
                             </td>
 
+                             <td>
+                                <label>Municipio:</label>
+                            </td>
+
                             <td>
+                                <input type="text" name="Municipio" class="form-control infoemprendedor" value="{{$empre->Municipio}}">
+                                   {!! $errors->first('Municipio', '<span class=errores>:message</span>') !!}
+                            </td>                      
+                            
+                        </tr>
+
+                        <tr>
+                               <td>
                                  <label>Estado:</label>
                             </td>
 
@@ -157,21 +169,8 @@
                                   <input type="text" name="Ciudad" class="form-control infoemprendedor" value="{{$empre->Ciudad}}">
                                   {!! $errors->first('Ciudad', '<span class=errores>:message</span>') !!}
                             </td>
-                            
-                        </tr>
 
-                        <tr>
-                             
-
-                            <td>
-                                <label>Municipio:</label>
-                            </td>
-
-                            <td>
-                                <input type="text" name="Municipio" class="form-control infoemprendedor" value="{{$empre->Municipio}}">
-                                   {!! $errors->first('Municipio', '<span class=errores>:message</span>') !!}
-                            </td>
-
+                           
                             <td>
                                 <label>Colonia:</label>
                             </td>
@@ -326,6 +325,12 @@
                             </td> 
                         </tr>
 
+                        <tr  style=" text-align:center;">
+                            <td colspan="4">
+                                    <input type="submit" value="Guardar" class="btn btn-outline-primary">
+                            </td>
+                        </tr>
+
                     </tbody>
                 </table>
                 
@@ -387,10 +392,7 @@
                                 <td colspan="3">
                                     <input type="text" name="ObjetoSocial" class="form-control infoemprendedor col-sm-5" value="{{$empre->ObjetoSocial}}">
                                 </td>
-                            </tr>
-
-                               
-                   
+                            </tr>                    
                             </tbody>
                         </table>
                         </form>
@@ -466,12 +468,7 @@
 
                 
                     <table class="table">
-                        <tr style=" text-align:center;">
-                            <td>
-                                <input type="submit" value="Guardar" class="btn btn-outline-primary">
-                            </td>
-                            
-
+                        <tr style=" text-align:center;">  
                             <td>
                                 <div class="container">
                                     <div class="row justify-content-md-center">
@@ -482,12 +479,9 @@
                                         </div>
                                     </div>
                                 </div>
-                               
                             </td>
                         </tr>
                     </table>
-                 
-                
             </div>
         </div>
 

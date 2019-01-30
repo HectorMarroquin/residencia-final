@@ -110,7 +110,11 @@
                     @forelse($archivos as $archivo)
                       @if ($archivo->fase_id === 1)
                         @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
-                          <p> {{$archivo->Comentario}} </p>
+                          @if($archivo->Comentario ==='Aprobado')
+                           <span class="badge badge-pill badge-success">{{$archivo->Comentario}} </span>
+                           @else
+                           <h5><span class="badge badge-danger">{{$archivo->Comentario}} </span></h5>
+                          @endif
                         @endif
                         
                         @endif
