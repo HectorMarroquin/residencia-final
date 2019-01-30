@@ -42,16 +42,17 @@
           </tr>
       </thead>
       <tbody>
-        @forelse ($proyectos as $proyecto)
+        @forelse ($ideas as $idea)
         <tr>
-            <td>{{ $proyecto->id}}</td>
-            <td>{{ $proyecto->NombreProd }}</td>
-            <td>{{ $proyecto->Organizacion }}</td>
-            <td>{{ $proyecto->Actividad }}</td>
-            <td>{{ $proyecto->Telefonoemp }}</td>
-            <td>{{ $proyecto->Emprendedor->Municipio }}</td>
-            <td>{{ $proyecto->NombreDirector }}</td>
-            <td>{{ $proyecto->Descripcion }}</td>
+            <td>{{ $idea->proyecto->id}}</td>
+            <td>{{ $idea->proyecto->NombreProd}}</td>
+            <td>{{ $idea->proyecto->Organizacion}}</td>
+            <td>{{ $idea->proyecto->Actividad}}</td>
+            <td>{{ $idea->proyecto->Telefonoemp}}</td>
+            <td>{{ $idea->nombreasentamiento}}</td>
+            <td>{{ $idea->proyecto->NombreDirector}}</td>
+            <td>{{ $idea->proyecto->Descripcion}}</td>
+        
         </tr>
         @empty
         <td colspan="8" style="text-align: center;"><h4>No Hay Emprendedores Registrados</h4></td>

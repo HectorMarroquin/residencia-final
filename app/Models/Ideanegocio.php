@@ -10,7 +10,7 @@ class Ideanegocio extends Model
 
     public function proyecto(){
 
-        return $this->hasOne(Proyecto::class);
+        return $this->belongsTo('App\Models\Proyecto');
     }
 
     public function cpotenciales(){

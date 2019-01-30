@@ -32,7 +32,7 @@ class Proyecto extends Model
 
     public function ideanegocio(){
 
-        return $this->belongsTo(Ideanegocio::class);
+        return $this->hasOne('App\Models\Ideanegocio','proyecto_id','id');
     }
 
 
