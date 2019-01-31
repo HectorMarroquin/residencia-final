@@ -26,16 +26,12 @@
 
 
         <div class="col-xs-4">  
-              <div class="btn-group dropright">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Status
-              </button>
-             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Aprobado</a>
-              <a class="dropdown-item" href="#">No aprobado</a>
-              <a class="dropdown-item" href="#">En curso</a>
-            </div>
-            </div>
+          <select id="searchInput" class="custom-select">
+            <option value="all">Todo</option>
+            <option value="Iniciado">Iniciado</option>
+            <option value="Aprobado">Aprobado</option>
+            <option value="Cursando">Cursando</option>
+            </select>
         </div>
 
       </div>
@@ -57,7 +53,7 @@
               
           </tr>
       </thead>
-      <tbody>
+      <tbody id="fbody">
         @forelse ($proyectos as $proyecto)
         <tr>
             <td>{{ $proyecto->id}}</td>
@@ -117,5 +113,7 @@
 </div>
 
 </div>
+
+
 
 @endsection
