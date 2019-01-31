@@ -69,9 +69,11 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
+          $ids=decrypt($id);
+
           $actividades=Actividad::get();  
 
-          $proyecto = Proyecto::findOrFail($id); 
+          $proyecto = Proyecto::findOrFail($ids); 
           
           $files=Avance::where('proyecto_id', $proyecto->id)->get();        
             
