@@ -107,13 +107,13 @@
                           <label for="inputEscola">Escolaridad</label>
                           <select id="inputEscola" name="Escolaridad" class="form-control">
                                 <option selected>Seleccione...</option>
-                                <option value="Primaria" {{old('EstadoCivil', $asesor->Escolaridad) == 'Primaria' ? 'selected' : ''}}>Primaria</option>
-                                <option value="Secundaria" {{old('EstadoCivil', $asesor->Escolaridad) == 'Secundaria' ? 'selected' : ''}}>Secundaria</option>
-                                <option value="Preparatoria/Bachillerato" {{old('EstadoCivil', $asesor->Escolaridad) == 'Preparatoria/Bachillerato' ? 'selected' : ''}}>Preparatoria/Bachillerato</option>
-                                <option value="Carrera Tecnica" {{old('EstadoCivil', $asesor->Escolaridad) == 'CarreraTecnica' ? 'selected' : ''}}>Carrera Tecnica</option>
-                                <option value="Licenciatura" {{old('EstadoCivil', $asesor->Escolaridad) == 'Licenciatura' ? 'selected' : ''}}>Licenciatura</option>
-                                <option value="Maestria" {{old('EstadoCivil', $asesor->Escolaridad) == 'Maestria' ? 'selected' : ''}}>Maestria</option>
-                                <option value="Doctorado" {{old('EstadoCivil', $asesor->Escolaridad) == 'Doctorado' ? 'selected' : ''}}>Doctorado</option>
+                                <option value="Primaria" {{old('Escolaridad', $asesor->Escolaridad) == 'Primaria' ? 'selected' : ''}}>Primaria</option>
+                                <option value="Secundaria" {{old('Escolaridad', $asesor->Escolaridad) == 'Secundaria' ? 'selected' : ''}}>Secundaria</option>
+                                <option value="Preparatoria/Bachillerato" {{old('Escolaridad', $asesor->Escolaridad) == 'Preparatoria/Bachillerato' ? 'selected' : ''}}>Preparatoria/Bachillerato</option>
+                                <option value="Carrera Tecnica" {{old('Escolaridad', $asesor->Escolaridad) == 'CarreraTecnica' ? 'selected' : ''}}>Carrera Tecnica</option>
+                                <option value="Licenciatura" {{old('Escolaridad', $asesor->Escolaridad) == 'Licenciatura' ? 'selected' : ''}}>Licenciatura</option>
+                                <option value="Maestria" {{old('Escolaridad', $asesor->Escolaridad) == 'Maestria' ? 'selected' : ''}}>Maestria</option>
+                                <option value="Doctorado" {{old('Escolaridad', $asesor->Escolaridad) == 'Doctorado' ? 'selected' : ''}}>Doctorado</option>
                           </select>
                           {!! $errors->first('Escolaridad', '<span class=errores>:message</span>') !!}
                     </div>

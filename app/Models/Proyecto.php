@@ -27,12 +27,12 @@ class Proyecto extends Model
 
     public function foda(){
 
-        return $this->belongsTo(Foda::class);
+        return $this->hasOne('App\Models\Foda','proyecto_id','id');
     }
 
     public function ideanegocio(){
 
-        return $this->belongsTo(Ideanegocio::class);
+        return $this->hasOne('App\Models\Ideanegocio','proyecto_id','id');
     }
 
 

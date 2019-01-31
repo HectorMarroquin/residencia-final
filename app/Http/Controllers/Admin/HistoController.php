@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Proyecto;
+use App\Models\Ideanegocio;
 use Barryvdh\DomPDF\Facade as PDF;
 
 class HistoController extends Controller
@@ -37,11 +38,11 @@ class HistoController extends Controller
      */
     public function create()
     {
-        $proyectos = Proyecto::all();
+        $ideas = Ideanegocio::all();
 
-         $pdf = PDF::loadView('pdf.proyectos', compact('proyectos'));
+         $pdf = PDF::loadView('pdf.proyectos', compact('ideas'));
 
-         return $pdf->download('proyecto.pdf');
+         return $pdf->download('proyectos.pdf');
 
         
         

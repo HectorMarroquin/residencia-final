@@ -31,29 +31,28 @@
     <table class="table table-bordered table-sm">
         <thead class="cabecera" style="text-center">
           <tr>
-              <th scope="col">Numeroo</th>
-              <th scope="col">Proyecto</th>
-              <th scope="col">Empresa</th>
+              <th scope="col">Numero de Proyecto</th>
+              <th scope="col">Nombre de Proyecto</th>
+              <th scope="col">Nombre de la Empresa</th>
+              <th scope="col">Tipo de Sector</th>
               <th scope="col">Telefono</th>
-              <th scope="col">Correo</th>
+              <th scope="col">Dirección</th>
               <th scope="col">Nombre del Director</th>
-              <th scope="col">Razon social</th> 
-              <th scope="col">Descripcion</th>
-              <th scope="col">Organizacion</th> 
+              <th scope="col">Descripción</th> 
           </tr>
       </thead>
       <tbody>
-        @forelse ($proyectos as $proyecto)
+        @forelse ($ideas as $idea)
         <tr>
-            <td>{{ $proyecto->id}}</td>
-            <td>{{ $proyecto->NombreProd }}</td>
-            <td>{{ $proyecto->Actividad }}</td>
-            <td>{{ $proyecto->Telefonoemp }}</td>
-            <td>{{ $proyecto->CorreoEmp }}</td>
-            <td>{{ $proyecto->NombreDirector }}</td>
-            <td>{{ $proyecto->Razonsocial }}</td>
-            <td>{{ $proyecto->Descripcion }}</td>
-            <td>{{ $proyecto->Organizacion }}</td>
+            <td>{{ $idea->proyecto->id}}</td>
+            <td>{{ $idea->proyecto->NombreProd}}</td>
+            <td>{{ $idea->proyecto->Organizacion}}</td>
+            <td>{{ $idea->proyecto->Actividad}}</td>
+            <td>{{ $idea->proyecto->Telefonoemp}}</td>
+            <td>{{ $idea->nombreasentamiento}}</td>
+            <td>{{ $idea->proyecto->NombreDirector}}</td>
+            <td>{{ $idea->proyecto->Descripcion}}</td>
+        
         </tr>
         @empty
         <td colspan="8" style="text-align: center;"><h4>No Hay Emprendedores Registrados</h4></td>
