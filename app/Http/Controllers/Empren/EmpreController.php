@@ -47,8 +47,7 @@ class EmpreController extends Controller
         $empre = Emprendedor::where('user_id', $id)->first();
         $empres = Emprendedor::where('user_id', $id)->value('id');
         $colaboradores = Colaborador::where('emprendedor_id', $empres)->get();
-        //dd($colaboradores);
-    
+        
         return view ('Emprendedor.Editarempren', compact('empre', 'colaboradores'));
     }
 

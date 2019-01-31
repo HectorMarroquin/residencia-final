@@ -1,1 +1,9 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	@include('Asesor.pdf.AltaEmpre')
+</body>
+</html>

@@ -92,14 +92,13 @@ class ProyectoRegisController extends Controller
 
     	
         if ($request->hasFile('croquis')) {
-            $file = $request->file('croquis');
-            $name = time().$file->getClientOriginalName();
-            $file->move(public_path().'/croquis/', $name);
+            $cro = time().request()->croquis->getClientOriginalName();
+            $archivoss = request()->croquis->storeAs('croquis',$cro);
         }
 
         $idea = new Ideanegocio;
         $idea->definicion = $request->input('definicion');
-        $idea->croquis = $name;
+        $idea->croquis = $cro;
         $idea->tipodomicilio = $request->input('tipodomicilio');
         $idea->tipoasentamiento = $request->input('tipoasentamiento');
         $idea->tipoasenotro = $request->input('tipoasenotro');

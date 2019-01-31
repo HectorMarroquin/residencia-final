@@ -144,27 +144,25 @@
                         
                             </td>
 
-                            <td>
-                                 <label>Estado:</label>
-                            </td>
-
-                            <td>
-                                  <input type="text" name="Ciudad" class="form-control infoemprendedor" value="{{ old('Ciudad') }}">
-                                  {!! $errors->first('Ciudad', '<span class=errores>:message</span>') !!}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                             
-
-                            <td>
+                             <td>
                                 <label>Municipio:</label>
                             </td>
 
                             <td>
                                 <input type="text" name="Municipio" class="form-control infoemprendedor" value="{{ old('Municipio') }}">
                                    {!! $errors->first('Municipio', '<span class=errores>:message</span>') !!}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                              <td>
+                                 <label>Estado:</label>
+                            </td>
+
+                            <td>
+                                  <input type="text" name="Ciudad" class="form-control infoemprendedor" value="{{ old('Ciudad') }}">
+                                  {!! $errors->first('Ciudad', '<span class=errores>:message</span>') !!}
                             </td>
 
                             <td>
@@ -437,19 +435,6 @@
                                 <input type="submit" value="Guardar" class="btn btn-outline-primary">
                             </td>
                             @endif
-
-                            <td>
-                                <div class="container">
-                                    <div class="row justify-content-md-center">
-                                        <div class="col-4 mb-5">
-                                            <a href="{{ route('Registro.index') }}">
-                                                <span class="btn btn-outline-primary">Descargar</span> 
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                               
-                            </td>
                         </tr>
                     </table>
                  
