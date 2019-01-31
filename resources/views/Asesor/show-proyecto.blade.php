@@ -240,7 +240,7 @@
 
                 </div>
 
-                 <div class="col-12 col-md-8">
+                <div class="col-12 col-md-8">
                    <table class="table table-bordered table-hover table-reponsive">
                       <thead class="table-info">
                          <th>Entregas</th>
@@ -254,8 +254,7 @@
                                   <td>
                                     <div class="row justify-content-center">
                                       <div class="col text-center">
-                                          <a type="button" id="{{ $file->id }}" class="btn btn-dark" href="{{ route('projects.edit', $file->id) }}">
-                                          <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                                          <a type="button" id="{{ $file->id }}" class="fas fa-file-download" style="font-size: 35px;" href="{{ route('projects.edit', $file->id) }}"></a> 
                                             <p>Entrega Numero {{ $file->NumeroEntrega }} de 3</p>
                                   </td>                      
                                       </div>
@@ -274,7 +273,7 @@
                                             <div class="col text-center">
                                               <a type="button" class="btn btn-success" onclick="validar({{ $file->id }})">
                                                 <i class=""> Aprobar Fase</i></a>
-                                              <a type="button" class="btn btn-danger" href="{{ route('projectFases', $file->id)  }}">
+                                              <a type="button" class="btn btn-danger" onclick="validar2({{ $file->id }})">
                                                           <i class=""> No aprobar Fase</i></a>   
                                  
                                             </div>
@@ -282,9 +281,17 @@
                                           @endempty
 
                                            @isset($file->Comentario)
+                                            @if($file->Comentario=='Aprobado')
                                             <div class="alert alert-success text-center">
-                                             <strong>Existo!</strong> Fase Aprobada.
+                                             <strong>Exito!</strong> Fase Aprobada.
                                           </div>
+                                          @elseif($file->Comentario=='No Aprobado')
+                                              <div class="alert alert-danger text-center">
+                                             <strong>No Cumplio!</strong> Fase No Aprobada.
+                                          </div>
+                                          @else 
+
+                                          @endif
                                           @endisset 
                                            
                             
@@ -319,8 +326,8 @@
                                      
                                       <div class="row justify-content-center">
                                         <div class="col text-center">
-                                          <a type="button" class="btn btn-dark" href="{{ route('Archivo.edit', $file->id) }}">
-                                          <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                                          <a type="button" class="btn" href="{{ route('downloadFile', $file->id) }}">
+                                          <i class="fas fa-file-download" style="font-size: 35px;"></i></a>
                                             <p>Revision enviada para la entrega {{ $file->NumeroEntrega }} de 3</p>
                                                       
                                        </div>
@@ -340,7 +347,7 @@
 
                 
                   
-                </div> 
+                </div>
             </div>
             
         </div>
@@ -369,7 +376,8 @@
 
                 </div>
 
-                 <div class="col-12 col-md-8">
+                 
+                <div class="col-12 col-md-8">
                    <table class="table table-bordered table-hover table-reponsive">
                       <thead class="table-info">
                          <th>Entregas</th>
@@ -383,8 +391,7 @@
                                   <td>
                                     <div class="row justify-content-center">
                                       <div class="col text-center">
-                                          <a type="button" id="{{ $file->id }}" class="btn btn-dark" href="{{ route('projects.edit', $file->id) }}">
-                                          <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                                          <a type="button" id="{{ $file->id }}" class="fas fa-file-download" style="font-size: 35px;" href="{{ route('projects.edit', $file->id) }}"></a> 
                                             <p>Entrega Numero {{ $file->NumeroEntrega }} de 3</p>
                                   </td>                      
                                       </div>
@@ -403,7 +410,7 @@
                                             <div class="col text-center">
                                               <a type="button" class="btn btn-success" onclick="validar({{ $file->id }})">
                                                 <i class=""> Aprobar Fase</i></a>
-                                              <a type="button" class="btn btn-danger" href="{{ route('projectFases', $file->id)  }}">
+                                              <a type="button" class="btn btn-danger" onclick="validar2({{ $file->id }})">
                                                           <i class=""> No aprobar Fase</i></a>   
                                  
                                             </div>
@@ -411,9 +418,17 @@
                                           @endempty
 
                                            @isset($file->Comentario)
+                                            @if($file->Comentario=='Aprobado')
                                             <div class="alert alert-success text-center">
-                                             <strong>Existo!</strong> Fase Aprobada.
+                                             <strong>Exito!</strong> Fase Aprobada.
                                           </div>
+                                          @elseif($file->Comentario=='No Aprobado')
+                                              <div class="alert alert-danger text-center">
+                                             <strong>No Cumplio!</strong> Fase No Aprobada.
+                                          </div>
+                                          @else 
+
+                                          @endif
                                           @endisset 
                                            
                             
@@ -448,8 +463,8 @@
                                      
                                       <div class="row justify-content-center">
                                         <div class="col text-center">
-                                          <a type="button" class="btn btn-dark" href="{{ route('Archivo.edit', $file->id) }}">
-                                          <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                                          <a type="button" class="btn" href="{{ route('downloadFile', $file->id) }}">
+                                          <i class="fas fa-file-download" style="font-size: 35px;"></i></a>
                                             <p>Revision enviada para la entrega {{ $file->NumeroEntrega }} de 3</p>
                                                       
                                        </div>
@@ -497,7 +512,8 @@
 
                 </div>
 
-                 <div class="col-12 col-md-8">
+                 
+                <div class="col-12 col-md-8">
                    <table class="table table-bordered table-hover table-reponsive">
                       <thead class="table-info">
                          <th>Entregas</th>
@@ -511,8 +527,7 @@
                                   <td>
                                     <div class="row justify-content-center">
                                       <div class="col text-center">
-                                          <a type="button" id="{{ $file->id }}" class="btn btn-dark" href="{{ route('projects.edit', $file->id) }}">
-                                          <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                                          <a type="button" id="{{ $file->id }}" class="fas fa-file-download" style="font-size: 35px;" href="{{ route('projects.edit', $file->id) }}"></a> 
                                             <p>Entrega Numero {{ $file->NumeroEntrega }} de 3</p>
                                   </td>                      
                                       </div>
@@ -531,7 +546,7 @@
                                             <div class="col text-center">
                                               <a type="button" class="btn btn-success" onclick="validar({{ $file->id }})">
                                                 <i class=""> Aprobar Fase</i></a>
-                                              <a type="button" class="btn btn-danger" href="{{ route('projectFases', $file->id)  }}">
+                                              <a type="button" class="btn btn-danger" onclick="validar2({{ $file->id }})">
                                                           <i class=""> No aprobar Fase</i></a>   
                                  
                                             </div>
@@ -539,9 +554,17 @@
                                           @endempty
 
                                            @isset($file->Comentario)
+                                            @if($file->Comentario=='Aprobado')
                                             <div class="alert alert-success text-center">
-                                             <strong>Existo!</strong> Fase Aprobada.
+                                             <strong>Exito!</strong> Fase Aprobada.
                                           </div>
+                                          @elseif($file->Comentario=='No Aprobado')
+                                              <div class="alert alert-danger text-center">
+                                             <strong>No Cumplio!</strong> Fase No Aprobada.
+                                          </div>
+                                          @else 
+
+                                          @endif
                                           @endisset 
                                            
                             
@@ -576,8 +599,8 @@
                                      
                                       <div class="row justify-content-center">
                                         <div class="col text-center">
-                                          <a type="button" class="btn btn-dark" href="{{ route('Archivo.edit', $file->id) }}">
-                                          <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                                          <a type="button" class="btn" href="{{ route('downloadFile', $file->id) }}">
+                                          <i class="fas fa-file-download" style="font-size: 35px;"></i></a>
                                             <p>Revision enviada para la entrega {{ $file->NumeroEntrega }} de 3</p>
                                                       
                                        </div>
@@ -597,7 +620,7 @@
 
                 
                   
-                </div>  
+                </div> 
             </div>
             
          </div>
@@ -625,7 +648,8 @@
 
                 </div>
 
-                 <div class="col-12 col-md-8">
+                 
+                <div class="col-12 col-md-8">
                    <table class="table table-bordered table-hover table-reponsive">
                       <thead class="table-info">
                          <th>Entregas</th>
@@ -639,8 +663,7 @@
                                   <td>
                                     <div class="row justify-content-center">
                                       <div class="col text-center">
-                                          <a type="button" id="{{ $file->id }}" class="btn btn-dark" href="{{ route('projects.edit', $file->id) }}">
-                                          <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                                          <a type="button" id="{{ $file->id }}" class="fas fa-file-download" style="font-size: 35px;" href="{{ route('projects.edit', $file->id) }}"></a> 
                                             <p>Entrega Numero {{ $file->NumeroEntrega }} de 3</p>
                                   </td>                      
                                       </div>
@@ -657,9 +680,9 @@
                                             <div class="row justify-content-center">
                           
                                             <div class="col text-center">
-                                              <a type="button" class="btn btn-success" onclick="validar({{ $file->id }})">
+                                              <a type="button" class="btn btn-success" onclick="validarFinal({{ $file->id }})">
                                                 <i class=""> Aprobar Fase</i></a>
-                                              <a type="button" class="btn btn-danger" href="{{ route('projectFases', $file->id)  }}">
+                                              <a type="button" class="btn btn-danger" onclick="validar2({{ $file->id }})">
                                                           <i class=""> No aprobar Fase</i></a>   
                                  
                                             </div>
@@ -667,9 +690,17 @@
                                           @endempty
 
                                            @isset($file->Comentario)
+                                            @if($file->Comentario=='Aprobado')
                                             <div class="alert alert-success text-center">
-                                             <strong>Existo!</strong> Fase Aprobada.
+                                             <strong>Exito!</strong> Fase Aprobada.
                                           </div>
+                                          @elseif($file->Comentario=='No Aprobado')
+                                              <div class="alert alert-danger text-center">
+                                             <strong>No Cumplio!</strong> Fase No Aprobada.
+                                          </div>
+                                          @else 
+
+                                          @endif
                                           @endisset 
                                            
                             
@@ -704,8 +735,8 @@
                                      
                                       <div class="row justify-content-center">
                                         <div class="col text-center">
-                                          <a type="button" class="btn btn-dark" href="{{ route('Archivo.edit', $file->id) }}">
-                                          <i class="fas fa-file-download"> Descargar Archivo</i></a>
+                                          <a type="button" class="btn" href="{{ route('downloadFile', $file->id) }}">
+                                          <i class="fas fa-file-download" style="font-size: 35px;"></i></a>
                                             <p>Revision enviada para la entrega {{ $file->NumeroEntrega }} de 3</p>
                                                       
                                        </div>
@@ -725,7 +756,7 @@
 
                 
                   
-                </div> 
+                </div>
             </div>
             
          </div>
@@ -738,6 +769,32 @@
 
 <script type="text/javascript">
 
+    function validarFinal(id){
+    var valor = id;
+
+      Swal.fire({
+        title: 'Esta Seguro?',
+        text: "Al Aprobar Esta Fase, El proyecto Habrá Concluido con Exito!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Aprobarlo!'
+      }).then((result) => {
+        if (result.value) {
+
+          var url = '{{ route('projectFaseFinal', ":id")  }}';
+           url = url.replace(':id',valor);
+          window.location.href= url ;
+          Swal.fire(
+            'Aprobado!',
+            'La fase y el proyecto han sido Aprobados',
+            'success'
+          )
+        }
+      })
+}
+
   function validar(id){
     var valor = id;
 
@@ -748,7 +805,7 @@
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Si, Aprobarlo!'
       }).then((result) => {
         if (result.value) {
 

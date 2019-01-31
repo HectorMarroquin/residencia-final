@@ -1,16 +1,16 @@
 @extends('administrador')
  
 @section('admin')
-	
+	<h3 class="text-center">Asignar asesores</h3>
 <div class="container-fluid">
    <form action="{{ route('asignaciones.store') }}" method="post">
 		{{ csrf_field() }}
 	<div class="table-responsive-md">	
 		
-		<table class="table table-hover table-bordered">
+		<table class="table table-hover table-bordered text-center">
     		<thead class="thead-light">
 			    <tr>
-				      <th scope="col">Emprendedor</th>
+				      <th scope="col">Nombre</th>
 				      <th scope="col">Apellidos</th>
 				      <th scope="col">Proyectos</th>
 				      <th scope="col">Asesores</th>

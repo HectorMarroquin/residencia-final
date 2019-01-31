@@ -10,6 +10,6 @@ class Foda extends Model
 
     public function proyecto(){
 
-        return $this->hasOne(Proyecto::class);
+        return $this->belongsTo('App\Models\Proyecto');
     }
 }

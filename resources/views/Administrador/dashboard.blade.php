@@ -3,7 +3,7 @@
  @section('admin')
 
 	<div class="espacio"></div>
- 	<div class="container">
+ 	<div class="container" id="mifuente">
  		
  		<div class="row">
 
@@ -17,7 +17,7 @@
 				
 					<img src="{{ asset('img/logo.jpg') }}" class="rounded" alt="Cinque Terre" width="100" height="100"> 
  			</div>
- 			<div class="col-sm--2">
+ 			<div class="col-sm-2">
 
 				
 					<img src="{{ asset('img/TecNM.png') }}" class="rounded" alt="Cinque Terre" width="150" height="100"> 
@@ -33,7 +33,7 @@
  					<li class="list-group-item list-group-item-primary">Preincubadora para planes de negocio</li>
  					<li class="list-group-item">Esta plataforma esta en su version Beta</li>
  					<li class="list-group-item list-group-item-danger">Favor de leer sus instrucciones para su uso correcto</li>
- 					<li class="list-group-item">Si hay algun error favor de reportar con ittg.vinc'@'gmail.com</li>
+ 					<li class="list-group-item">Si hay algun error favor de reportar con ittg.vinc&#64;gmail.com</li>
  				</ul>
  			</div>
  			<div class="col-sm-4">

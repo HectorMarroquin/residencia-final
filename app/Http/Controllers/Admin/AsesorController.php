@@ -75,7 +75,6 @@ class AsesorController extends Controller
 
          return redirect()->route('asesores.index');
         
-
     }
 
     /**
@@ -125,7 +124,7 @@ class AsesorController extends Controller
         $usuario = array('email'=>$user->email,'password'=>$user->password,'name'=>$user->name); 
 
         Mail::send('email.plantillasesor',['msg'=>$usuario], function($u) use($usuario){
-            $u->to($usuario['email'], $usuario['name'])->subject('Tu Actualizació fue completado');
+            $u->to($usuario['email'], $usuario['name'])->subject('Tu Actualización fue completado');
         });
 
         $user->password=bcrypt($request->Contraseña);

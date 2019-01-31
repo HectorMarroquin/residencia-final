@@ -30,7 +30,7 @@
 					  			<td>{{ $user->proyecto->NombreProd }}</td>	
 		
 			  			<td>
-			  				<a type="button" class="btn btn-info" href="{{ route('projects.show', $user->proyecto->id) }}"><i class="fas fa-eye"> Consultar Avances</i></a>							
+			  				<a type="button" class="btn btn-info" href="{{ route('projects.show', encrypt($user->proyecto->id)) }}"><i class="fas fa-eye"> Consultar Avances</i></a>							
 			  			</td>
 
 			  			<td>
