@@ -209,9 +209,7 @@
                             <td colspan="2">
                                 <H4>Competencia</H4>
                             </td>
-                              <td colspan="2"> 
-                                <button disabled="yes" class="btn btn-outline-primary">Agregar</button>
-                            </td>
+                             
                         </tr>
 
                         <tr style=" text-align:center;">
@@ -228,21 +226,21 @@
                             </td>
                         </tr>
 
-                        <tr>
-                             <td>
-                                 <input type="text" type="text" name="nombrecompe" class="form-control infoemprendedor">
-                            </td>
-
-                            <td colspan="2">
-                                 <input type="text" type="text" name="giro" class="form-control infoemprendedor">
-                            </td>
-
-                            <td>
-                                 <input type="text" type="text" name="direccioncompe" class="form-control infoemprendedor">
-                            </td>
+                       
+                                @forelse($proyecto->ideaNegocio->cpotenciales as $colaborador)
+          
+                                <tr><td><input disabled="yes" type="text" class="form-control infoemprendedor" value="{{$colaborador->Nombre}}"> </td>
+                                  <td colspan="2"><input disabled="yes" type="text" class="form-control infoemprendedor" value="{{$colaborador->Giro}}"> </td>
+                                  <td><input disabled="yes" type="text" class="form-control infoemprendedor" value="{{$colaborador->Descripcion}}"> </td> </tr>
+                                       
+                                       
+                                         @empty
+                                      <td colspan="6" style="text-align: center;"><h4>No Hay Colaboradores Registrados</h4></td>
+                                      @endforelse
+                                 
                             
-                        </tr>
-
+                            
+                       
                     </tbody>
                 </table>
 
@@ -252,9 +250,7 @@
                             <td colspan="2">
                                 <H4>Clientes Potenciales</H4>
                             </td>
-                              <td colspan="2"> 
-                                <button type="button" class="btn btn-outline-primary" id="client-pot">Agregar</button>
-                            </td>
+                              
                         </tr>
 
                         <tr style=" text-align:center;">
@@ -271,20 +267,16 @@
                             </td>
                         </tr>
 
-                        <tr>
-                             <td>
-                                 <input type="text" type="text" name="nombreclien" class="form-control infoemprendedor">
-                            </td>
-
-                            <td colspan="2">
-                                 <input type="text" type="text" name="giroclien" class="form-control infoemprendedor">
-                            </td>
-
-                            <td>
-                                 <input type="text" type="text" name="direccionclien" class="form-control infoemprendedor">
-                            </td>
-                            
-                        </tr>
+                       @forelse($proyecto->ideaNegocio->competencias as $competencia)
+          
+                                <tr><td><input disabled="yes" type="text" class="form-control infoemprendedor" value="{{$competencia->Nombre}}"> </td>
+                                  <td colspan="2"><input disabled="yes" type="text" class="form-control infoemprendedor" value="{{$competencia->Giro}}"> </td>
+                                  <td><input disabled="yes" type="text" class="form-control infoemprendedor" value="{{$competencia->Descripcion}}"> </td> </tr>
+                                       
+                                       
+                                         @empty
+                                      <td colspan="6" style="text-align: center;"><h4>No Hay Colaboradores Registrados</h4></td>
+                                      @endforelse
                     </tbody>
                 </table>
 
@@ -430,23 +422,7 @@
                                   
                                 </div>
                             </td>
-                        </tr>
-
-                       <!--  <tr>
-                             <td>
-                                <label>Croquis de la localizacion del predio:</label>
-                            </td>
-
-                            <td colspan="4">
-                                <div class="form-group">
-                                    <label for="">Documento</label>
-                                        <input type="text" type="file" name="croquis" class="form-control">
-                                       
-                                </div> 
-                            </td>
-
-                        
-                        </tr> -->                       
+                        </tr>                     
 
                     </tbody>
                 </table>
