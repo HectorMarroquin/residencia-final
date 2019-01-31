@@ -28,6 +28,7 @@
                         <li><p><b>Perfil: </b> Aqui encuentras toda la informacion relevante a tu perfil</p></li>
                         <li><p><b>Consultar Proyectos:</b> Podras ver los proyectos que estas asesorando, consultar los avances de entrega y ver los datos con los cuales se dio de alta el emprendedor que desarroya el proyecto.<p></p></li>
                         <li><p><b>Chat: </b> Esta es la mensajeria instantanea de la plataforma web, te puedes comunicar con cualquier usuario registrado.</p></li> 
+                        <li><p><b>Historial de Proyectos: </b>En esta vista podra ver los proyectos que estan siendo cursado, los que se han aprobado y los que no fueron aprobados.</p></li> 
                       </ul>
 
                   </div>
