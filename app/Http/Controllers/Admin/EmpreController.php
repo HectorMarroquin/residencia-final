@@ -54,25 +54,9 @@ class EmpreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
-
-        if($request->ajax()){
-
-            $emprendedor = Emprendedor::findOrFail($id);
-            $user = User::where('id', $emprendedor->user_id)->first();
-            $user->delete();
-            $asesor_total = Emprendedor::all()->count();
-            
-            return response()->json([
-
-                'message' => $emprendedor->Nombre . ' fue eliminado'
-
-            ]);
-        }
-       
-        
-       
+ 
     }
 
     /**

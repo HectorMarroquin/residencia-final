@@ -18,13 +18,30 @@
        tbody td {
            display: block;
            text-align:center;
+           font-size: 12px;
        }
        tbody td:before {
            content: attr(data-th);
            display: block;
            text-align:center;
+           font-size: 12px;
        }
 }
 
+@media screen and (max-width: 600px) {
+
+   #mifuente{
+
+    text-align: center;
+    font-size: 10px;
+    
+   }
+   #h3{
+       font-size: 20px;
+     text-align: center;
+   }
+   
+   
+}
 
 

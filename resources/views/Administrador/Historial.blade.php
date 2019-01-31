@@ -65,7 +65,17 @@
             <td>{{ $proyecto->Actividad }}</td>
             <td>{{ $proyecto->Telefonoemp }}</td>
             <td>{{ $proyecto->CorreoEmp }}</td>
-            <td><span class="badge badge-pill badge-success">{{ $proyecto->Estado }}</span></td>
+            <td>
+              @if($proyecto->Estado=='Cursando')
+              <span class="badge badge-pill badge-primary">{{ $proyecto->Estado }}</span>
+              @elseif($proyecto->Estado=='Aprobado')
+              <span class="badge badge-pill badge-success">{{ $proyecto->Estado }}</span>
+              @elseif($proyecto->Estado=='No Aprobado')
+              <span class="badge badge-pill badge-danger">{{ $proyecto->Estado }}</span>
+              @else
+              <span class="badge badge-pill badge-warning">{{ $proyecto->Estado }}</span>
+              @endif
+            </td>
             <td>
               
              

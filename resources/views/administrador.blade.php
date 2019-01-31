@@ -19,7 +19,7 @@
             <h6 class="dropdown-header">Opciones:</h6>
             <a class="dropdown-item" href="{{ route('asesores.create')}}">Registrar Asesor</a>
             <a class="dropdown-item" href="{{ route('asesores.index') }}">Consultar Asesor</a>
-            <a class="dropdown-item"href="{{ route('asignaciones.index')  }}">Asigar Asesor</a>           
+            <a class="dropdown-item"href="{{ route('asignaciones.index')  }}">Asignar Asesor</a>           
           </div>
         </li>
 

@@ -74,7 +74,7 @@ class ProyectoSeeder extends Seeder
         	'Organizacion' => 'Carrillo',
         	'Cual' => '',
         	// 'asesor_id' => $asesorId,
-        	'emprendedor_id' => $empre2,
+        	'emprendedor_id' => $empre1,
 		]);
 		
 		Proyecto::create([
@@ -91,7 +91,7 @@ class ProyectoSeeder extends Seeder
         	'Organizacion' => 'Carrillo',
         	'Cual' => '',
         	// 'asesor_id' => $asesorId,
-        	'emprendedor_id' => $empre2,
+        	'emprendedor_id' => $empre1,
         ]);
         // factory(Proyecto::class, 20)->create([
         //     'TelefonoEmp' => '9876543212',
