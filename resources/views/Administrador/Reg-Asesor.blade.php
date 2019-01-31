@@ -6,7 +6,7 @@
 	 <form class="needs-validation" method="POST" action="{{ route('asesores.store') }}" novalidate>
 		{{ csrf_field() }}
 		<div class="row justify-content-center">
-				<div class="col borde1 p-3"><h3>Registro de Asesor</h3></div>
+				<div class="col borde1 p-3"><h3 id="h3">Registro de Asesor</h3></div>
 			</div>
 			
 			<div class="form-row justify-content-center">

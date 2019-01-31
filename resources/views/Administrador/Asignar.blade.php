@@ -1,7 +1,7 @@
 @extends('administrador')
  
 @section('admin')
-	
+	<h3 class="text-center">Asignar asesores</h3>
 <div class="container-fluid">
    <form action="{{ route('asignaciones.store') }}" method="post">
 		{{ csrf_field() }}
