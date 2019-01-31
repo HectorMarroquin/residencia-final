@@ -11,6 +11,7 @@ use App\Models\Proyecto;
 use App\Models\Asignacion;
 use App\Models\Asesor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\Controller;
 
 class ListEntregaController extends Controller
@@ -66,6 +67,7 @@ class ListEntregaController extends Controller
      */
     public function show($id)
     {
+        $id = Crypt::decrypt($id);
         $proyecto = Proyecto::findOrFail($id);
         $view = view('pdf.proyecto', compact('proyecto'));
         $pdf = \App::make('dompdf.wrapper');

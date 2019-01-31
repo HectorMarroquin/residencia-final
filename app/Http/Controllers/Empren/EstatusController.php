@@ -11,6 +11,7 @@ use DB;
 use App\User;
 use Storage;
 use Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -62,6 +63,7 @@ class EstatusController extends Controller
      */
     public function show($id)
     {
+        $id = Crypt::decrypt($id);
         $proyectos = Proyecto::findOrFail($id);
         $id = Auth()->user()->id;
         $empre = Emprendedor::where('user_id', $id)->value('id');
@@ -82,6 +84,7 @@ class EstatusController extends Controller
      */
     public function edit($id)
     {
+        $id = Crypt::decrypt($id);
         $archivoss =Avance::findOrFail($id);
         $name=$archivoss->Comentario;
         return Storage::download("files/$name");

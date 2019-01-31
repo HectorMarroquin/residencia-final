@@ -84,7 +84,7 @@
                   @forelse($archivos as $archivo)
                   @if ($archivo->fase_id === 1)
                   @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===1)))
-                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit', $archivo->id ) }}">
+                        <a type="button" class="btn btn-primary" href="{{ route('Estado.edit',  Crypt::encrypt($archivo->id )) }}">
                         <i class="fas fa-file-download"> Descargar Archivo</i></a>
                   @endif 
                   @endif 

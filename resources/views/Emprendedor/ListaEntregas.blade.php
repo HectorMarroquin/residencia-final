@@ -19,6 +19,7 @@
                             <th scope="col">Entregas</th>
                             <th scope="col">Retroalimentacion</th>
                             <th scope="col">Descargas</th>
+                            <th></th>
                         </tr>
                     </thead>
 
@@ -37,14 +38,14 @@
 
                                     @if($proyecto->Asignacion)
                                 <td style="text-align: center;">
-                                    <a href="{{ route('Entregas.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-chalkboard-teacher"></i></a>
+                                    <a href="{{ route('Entregas.show', Crypt::encrypt($proyecto->id))}}" class="btn btn-primary"><i class="fas fa-chalkboard-teacher"></i></a>
                                 </td> 
 
                                 <td style="text-align: center;">
-                                    <a href="{{ route('Estado.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-file-signature"></i></a>
+                                    <a href="{{ route('Estado.show', Crypt::encrypt($proyecto->id)) }}" class="btn btn-primary"><i class="fas fa-file-signature"></i></a>
                                 </td>
                                 <td style="text-align: center;">
-                                    <a href="{{ route('Lista.show', $proyecto->id) }}" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+                                    <a href="{{ route('Lista.show', Crypt::encrypt($proyecto->id)) }}" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
                                 </td>
                                     @else
                                     <td colspan="6" style="text-align: center;">
