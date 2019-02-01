@@ -1,6 +1,5 @@
 	var i = 0; 
 	var fila;
-
 	$(document).ready(function(){	
 		$("#btnNuevointegrante").click(function(){
 		i += 1;
@@ -16,9 +15,7 @@
 			  )
 		}
 	});
-
-	
-
+		
 });
 
 	$(document).ready(function(){
