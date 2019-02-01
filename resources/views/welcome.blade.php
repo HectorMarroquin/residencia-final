@@ -320,12 +320,6 @@
 
    
     <script src="{{ asset('js/app.js') }}"></script>
-  
-    <!-- Contact form JavaScript -->
-    <script src="{{asset('js/jqBootstrapValidation.js')}}"></script>
-    <script src="{{asset('js/contact_me.js')}}"></script>
-
-    <!-- Custom scripts for this template -->
     <script src="{{asset('js/agency.js')}}"></script>
 
   </body>

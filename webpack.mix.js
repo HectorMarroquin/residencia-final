@@ -17,6 +17,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
 
 mix.styles([
-   'public/css/EstilosAdministrador.css',
-   'public/css/EstilosHome.css',
+   'public/css/responsive.css',
+   'public/css/sb-admin.css',
 ], 'public/css/all.css');

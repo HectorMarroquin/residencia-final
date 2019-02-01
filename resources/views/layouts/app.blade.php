@@ -10,19 +10,11 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('app/js/sb-admin.min.js') }}" defer></script>
-
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
   
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <link href="{{ asset('css/sb-admin.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/EstilosAdministrador.css')}}">
-    <link href="{{ asset('css/responsive.css')}}">
+    <link href="{{ asset('css/all.css')}}" rel="stylesheet" >
   
 </head>
 <body>
@@ -80,14 +72,14 @@
             @yield('content')
         </main>
     </div>
-
-<script src="{{ asset('bootstrap/js/jquery-3.2.1.slim.min.js')}}"></script>
-<script src="{{ asset('js/Emprendedorbarraopciones.js')}}"></script>
-<script src="{{ asset('js/Agregarcolumnas.js')}}">s</script>
-<script src="{{ asset('js/muestratipodepersonas.js')}}"></script>
-<script src="{{ asset('js/Agregarcolumnasempre.js')}}"></script>
-<script src="{{ asset('js/Agregarcolumnascompe.js')}}"></script>
-<script src="{{ asset('js/eliminarasesor.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/sb-admin.min.js') }}" ></script>
+    <script src="{{ asset('js/Emprendedorbarraopciones.js')}}"></script>
+    <script src="{{ asset('js/Agregarcolumnas.js')}}">s</script>
+    <script src="{{ asset('js/muestratipodepersonas.js')}}"></script>
+    <script src="{{ asset('js/Agregarcolumnasempre.js')}}"></script>
+    <script src="{{ asset('js/Agregarcolumnascompe.js')}}"></script>
+    <script src="{{ asset('js/delete.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </body>
 </html>
