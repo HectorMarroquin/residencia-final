@@ -27,7 +27,7 @@ class HistoController extends Controller
         //$proyectos = Proyecto::paginate(5);
         $proyectos = Proyecto::Nombre($request->Nombre)->paginate(5);
 
-        return view('Administrador.Historial', compact('proyectos'));
+        return view('Administrador.historial', compact('proyectos'));
     }
 
     

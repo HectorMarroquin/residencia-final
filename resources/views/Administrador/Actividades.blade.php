@@ -88,8 +88,8 @@
 												<button type="button" class="btn btn-primary " style="float: right;" data-toggle="modal" data-target="#Update{{$actividad->id}}"><i class="fas fa-pen-square"></i></button>
 												<button type="button" class="btn btn-danger" style="float: right;" data-toggle="modal" data-target="#Delete{{$actividad->id}}"><i class="fas fa-trash-alt"></i></button>
 												<hr>
-												@include('Administrador.EditarAct')
-												@include('Administrador.EliminarAct')	
+												@include('Administrador.editarAct')
+												@include('Administrador.eliminarAct')	
 												@endforeach
 								
 							</td>
