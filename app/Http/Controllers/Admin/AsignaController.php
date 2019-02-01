@@ -89,9 +89,7 @@ class AsignaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $proyecto = Proyecto::findOrFail($id);
-        // $proyecto->update($request->all());
-        // return redirect()->route('emprendedor.index');
+        
     }
 
     /**
