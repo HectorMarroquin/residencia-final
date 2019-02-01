@@ -55,7 +55,7 @@ class ArchivosController extends Controller
      */
     public function store(Request $request)
     {
-         if ($request->hasFile('documento')) {
+          /*if ($request->hasFile('documento')) {
             $file = $request->file('documento');
             $name = time().$file->getClientOriginalName();
             $file->move(public_path().'/Revisiones/', $name);
@@ -66,7 +66,7 @@ class ArchivosController extends Controller
             $avance->proyecto_id = $request->input('proyecto');
             $avance->fase_id = $request->input('fase');
             $avance->save();
-            return redirect()->route('Archivo.index');
+            return redirect()->route('Archivo.index'); */
             
     }
 
@@ -95,11 +95,10 @@ class ArchivosController extends Controller
      */
     public function edit($id)
     {
-        $avance = Avance::findOrFail($id);
-        $name=$avance->Comentario;
-        $doc=public_path('Revisiones')."/".$name; 
-
-        return response()->download($doc); 
+        $id = Crypt::decrypt($id);
+        $archi =Avance::findOrFail($id);
+        $name=$archi->Comentario;
+        return Storage::download("files/$name");
     }
 
     /**

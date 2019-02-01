@@ -17,6 +17,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\EnviarDocValidation;
 use App\Http\Requests\EnviarDoc2Validation;
 use App\Http\Requests\EnviarDoc3Validation;
+use Illuminate\Support\Facades\Crypt;
 
 class EnvioController extends Controller
 {
@@ -94,9 +95,10 @@ class EnvioController extends Controller
 	{
 		$id = Auth()->user()->id;
         $empre = Emprendedor::where('user_id', $id)->value('id');
-        
-		$proyectos = Proyecto::findOrFail($pro);
-		$fase = Fase::findOrFail($fase);
+        $proy =  Crypt::decrypt($pro);
+		$proyectos = Proyecto::findOrFail($proy);
+        $fass =  Crypt::decrypt($fase);
+		$fase = Fase::findOrFail($fass);
         $idpro = $proyectos->id;
         $idfase = $fase->id;
         $avance = Avance::where('NumeroEntrega', '=', 1)->where('proyecto_id', $idpro)->where('fase_id', $idfase)->value('id');

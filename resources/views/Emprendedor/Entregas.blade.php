@@ -51,7 +51,7 @@
                                         </tr>
                                         
                                         <tr>
-                                            <td><a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a></td>
+<td><a href="{{ route('Enviar.show',['pro' => Crypt::encrypt($proyectos->id), 'fase' =>  Crypt::encrypt($fase->id)]) }}" class="btn btn-primary">Enviar</a></td>
                                         </tr>
                                     </tbody>
                                 </table>

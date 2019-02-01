@@ -75,9 +75,6 @@
     <script src="{{ asset('js/app.js') }}" ></script>
     <script src="{{ asset('js/sb-admin.min.js') }}" ></script>
     <script src="{{ asset('js/Agregarcolumnas.js')}}">s</script>
-    <script src="{{ asset('js/muestratipodepersonas.js')}}"></script>
-    <script src="{{ asset('js/Agregarcolumnasempre.js')}}"></script>
-    <script src="{{ asset('js/Agregarcolumnascompe.js')}}"></script>
     <script src="{{ asset('js/delete.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </body>
