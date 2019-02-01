@@ -17,16 +17,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> --}}
-
-    <!-- Styles -->
+  
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('app/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{asset('app/css/sb-admin.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/EstilosAdministrador.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/RegistroEmprendedor.css')}}">
 
-    
+    <link href="{{ asset('css/sb-admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/EstilosAdministrador.css')}}">
+    <link href="{{ asset('css/responsive.css')}}">
+  
 </head>
 <body>
     <div id="app">
@@ -74,48 +71,11 @@
                                     </div>
                             </li>
                          @endguest
-                      <!--   <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <span class="badge badge-danger">9+</span>
-                            </a>
-          
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                        </li>-->
-                        
-                        <!-- Left Side Of Navbar -->
-                             
                          
                         </ul>
-                    </div>
-                
+                  </div>                
             </nav>
-
-           
-    <!-- Logout Modal-->
-    <!--<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>-->
-    
+ 
         <main class="">
             @yield('content')
         </main>

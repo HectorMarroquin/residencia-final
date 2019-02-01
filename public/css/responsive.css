@@ -1,4 +1,25 @@
+/* body {
+  overflow-x: hidden;
 
+} */
+
+.borde{ 
+    width: 65%;
+    border-radius: 5px;
+    border: 1px solid  #a1a09f;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+  
+  }
+  .borde1{
+    background-color:rgba(161, 160, 159 ,0.5);   
+  }
+  
+  .errores {
+    color: red;
+    font-size: 12px;
+  }
+  
 @media screen and (max-width: 600px) {
        table {
            width:100%;
