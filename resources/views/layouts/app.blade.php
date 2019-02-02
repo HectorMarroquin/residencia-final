@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
   
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/all.css')}}" rel="stylesheet" >
+    <link href="{{ asset('css/estilos.css')}}" rel="stylesheet" >
   
 </head>
 <body>
@@ -74,8 +74,7 @@
     </div>
     <script src="{{ asset('js/app.js') }}" ></script>
     <script src="{{ asset('js/sb-admin.min.js') }}" ></script>
-    <script src="{{ asset('js/Agregarcolumnas.js')}}">s</script>
-    <script src="{{ asset('js/delete.js')}}"></script>
+    <script src="{{ asset('js/funcionalidad.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </body>
 </html>

@@ -45,7 +45,6 @@ Route::resource('Colaborador', 'Empren\ColaboradorController');
 
 
 /*Hector*/
-
 Route::get('/dashboard','Admin\AdminController@Admin')->name('HomeAdmin');
 Route::resource('actividades', 'Admin\ActiController')->except(['create', 'edit']);
 Route::resource('asesores','Admin\AsesorController'); 

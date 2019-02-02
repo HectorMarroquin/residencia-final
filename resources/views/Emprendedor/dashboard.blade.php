@@ -10,7 +10,7 @@
 	 				<tr>
 	 					<td class="col-2">
 	 						<div>
-	 							<img src="{{ asset('imagenes/logo.jpg') }}" class="rounded" alt="Cinque Terre" width="100" height="100"> 
+	 							<img src="{{ asset('img/logo.jpg') }}" class="rounded" alt="Cinque Terre" width="100" height="100"> 
 	 						</div>
 	 					</td>
 
@@ -22,7 +22,7 @@
 
 	 					<td class="col-2">
 	 						<div>
-	 							<img src="{{ asset('imagenes/TecNM.png') }}" class="rounded" alt="Cinque Terre" width="150" height="100"> 
+	 							<img src="{{ asset('img/TecNM.png') }}" class="rounded" alt="Cinque Terre" width="150" height="100"> 
 	 						</div>
 	 					</td>
 	 				<tr>
