@@ -24,7 +24,9 @@
 
 						   @endforeach
 						 </select>
+						
 					</div>
+					{!! $errors->first('fase_id', '<span class=errores>:message</span>') !!}
    				</div>
    				
    				<div class="col-xs-4">
@@ -32,8 +34,10 @@
 					    <div class="input-group-prepend">
 					       <span class="input-group-text">Actividad</span>
 					    </div>
-					    <input type="text" name="Nombre" class="form-control">
-				  </div>
+							<input type="text" name="Nombre" class="form-control">
+							
+					</div>
+					{!! $errors->first('Nombre', '<span class=errores>:message</span>') !!}
    				</div>
 
    				<div class="col-xs-5">

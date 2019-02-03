@@ -89,25 +89,24 @@ $(document).ready(function(){
 
 
     
-    $('.btn-dele').click(function(e){
+    $('.btn-asignar').click(function(e){
         
         var row = $(this).parents('tr');
         var form = $(this).parents('form');
         var url = form.attr('action');
         Swal.fire({
-            title: '¿Estas Seguro?',
-            text: "No podras revertir esto!",
+            title: 'Asignar asesor',
+            text: "¿Estas Seguro? No podras revertir esto!",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             cancelButtonText: 'Cancelar!',
-            confirmButtonText: 'Eliminarlo!'
+            confirmButtonText: 'Asignarlo!'
           }).then((result) => {
             if (result.value) {
              
                 $.post(url, form.serialize(), function(result){
-                    row.fadeOut();
                     Swal.fire({
                         position: 'top-end',
                         type: 'success',
