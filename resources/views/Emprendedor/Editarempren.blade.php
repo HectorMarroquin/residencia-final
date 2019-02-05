@@ -11,6 +11,10 @@
                 @if (session()->has('agregar'))
                     <div class="alert alert-success">{{ session('agregar')}}</div>
                 @endif
+                @if (session()->has('no'))
+                    <div class="alert alert-danger">{{ session('no')}}</div>
+                @endif
+                
                 <form method="POST" action="{{ route('Emprendedor.update', $empre->id)}}">
                     {!! method_field('PUT') !!}
                     {{ csrf_field() }}
@@ -21,7 +25,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <label>Nombre:</label>
+                                <label>Nombre *</label>
                             </td>
 
                             <td colspan="3">
@@ -34,7 +38,7 @@
 
                         <tr>
                              <td>
-                                 <label>Apellido Paterno:</label>
+                                 <label>Apellido Paterno *</label>
                             </td>
 
                             <td>
@@ -44,7 +48,7 @@
                        
 
                             <td>
-                                <label>Apellido Materno</label>
+                                <label>Apellido Materno *</label>
                             </td>
 
                             <td>
@@ -56,7 +60,7 @@
 
                         <tr>
                             <td>
-                                 <label>Fecha de Nacimiento:</label>
+                                 <label>Fecha de Nacimiento *</label>
                             </td>
 
                             <td>
@@ -65,7 +69,7 @@
                             </td>
 
                             <td>
-                                <label>Edad:</label>
+                                <label>Edad *</label>
                             </td>
 
                             <td>
@@ -79,7 +83,7 @@
                              <td colspan="1">
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        Sexo:
+                                        Sexo *
                                     </label>
                                 </div>
                             </td>
@@ -98,7 +102,7 @@
 
                         <tr>
                             <td colspan="1">
-                                <label>Estado Civil:</label>
+                                <label>Estado Civil *</label>
                             </td>
 
                             <td colspan="3">
@@ -119,7 +123,7 @@
 
                         <tr>
                             <td>
-                                <label>Direccion:</label>
+                                <label>Direccion *</label>
                             </td>
 
                             <td>
@@ -128,7 +132,7 @@
                             </td>
 
                             <td>
-                                 <label>Numero Exterior:</label>
+                                 <label>Numero Exterior *</label>
                             </td>
 
                             <td>
@@ -142,7 +146,7 @@
 
                         <tr>
                              <td>
-                                <label>Numero Interior:</label>
+                                <label>Numero Interior</label>
                             </td>
 
                             <td>
@@ -150,7 +154,7 @@
                             </td>
 
                              <td>
-                                <label>Municipio:</label>
+                                <label>Municipio *</label>
                             </td>
 
                             <td>
@@ -162,7 +166,7 @@
 
                         <tr>
                                <td>
-                                 <label>Estado:</label>
+                                 <label>Estado *</label>
                             </td>
 
                             <td>
@@ -172,7 +176,7 @@
 
                            
                             <td>
-                                <label>Colonia:</label>
+                                <label>Colonia *</label>
                             </td>
 
                             <td>
@@ -184,7 +188,7 @@
 
                         <tr>
                             <td colspan="1">
-                                <label>Codigo Postal:</label>
+                                <label>Codigo Postal *</label>
                             </td>
 
                             <td colspan="3">
@@ -195,7 +199,7 @@
 
                         <tr>
                             <td>
-                                <label>Telefono Celular:</label>
+                                <label>Telefono Celular</label>
                             </td>
 
                             <td>
@@ -203,7 +207,7 @@
                             </td>
 
                             <td>
-                                 <label>Telefono de Casa:</label>
+                                 <label>Telefono de Casa</label>
                             </td>
 
                             <td>
@@ -213,7 +217,7 @@
 
                         <tr>
                             <td colspan="1">
-                                <label>Telefono de Oficina:</label>
+                                <label>Telefono de Oficina</label>
                             </td>
 
                             <td colspan="3">
@@ -224,7 +228,7 @@
 
                         <tr>
                             <td>
-                                <label>Correo Eletronico:</label>
+                                <label>Correo Eletronico *</label>
                             </td>
 
                             <td>
@@ -238,7 +242,7 @@
 
                         <tr>
                             <td colspan="1">
-                                <label>Escolaridad</label>
+                                <label>Escolaridad *</label>
                             </td>
 
                             <td colspan="3">
@@ -260,7 +264,7 @@
 
                          <tr>
                             <td>
-                                <label>CURP:</label>
+                                <label>CURP *</label>
                             </td>
 
                             <td>
@@ -269,7 +273,7 @@
                             </td>
 
                             <td>
-                                <label>INE:</label>
+                                <label>INE *</label>
                             </td>
 
                             <td>
@@ -280,7 +284,7 @@
 
                         <tr>
                             <td>
-                                <label>Tipo de empresa</label>
+                                <label>Tipo de empresa *</label>
                             </td>
 
                             <td>
@@ -310,7 +314,7 @@
                         </tr>
                         <tr>
                             <td colspan="1">
-                                <label>Tipo de Persona:</label>
+                                <label>Tipo de Persona *</label>
                             </td>
 
                             <td colspan="3">
@@ -324,13 +328,6 @@
                                 </div>
                             </td> 
                         </tr>
-
-                        <tr  style=" text-align:center;">
-                            <td colspan="4">
-                                    <input type="submit" value="Guardar" class="btn btn-outline-primary">
-                            </td>
-                        </tr>
-
                     </tbody>
                 </table>
                 
@@ -345,7 +342,7 @@
 
                             <tr>
                                 <td>
-                                    <label>RFC:</label>
+                                    <label>RFC*</label>
                                 </td>
 
                                 <td>
@@ -367,7 +364,7 @@
                             
                             <tr>
                                 <td>
-                                    <label>Razon Social:</label>
+                                    <label>Razon Social *</label>
                                 </td>
                                 
                                 <td>
@@ -375,7 +372,7 @@
                                 </td>
 
                                 <td>
-                                    <label>RFC:</label>
+                                    <label>RFC *</label>
                                 </td>
 
                                 <td>
@@ -386,16 +383,67 @@
 
                             <tr>
                                 <td colspan="1">
-                                    <label>Objecto Social</label>
+                                    <label>Objecto Social *</label>
                                 </td>
 
                                 <td colspan="3">
                                     <input type="text" name="ObjetoSocial" class="form-control infoemprendedor col-sm-5" value="{{$empre->ObjetoSocial}}">
                                 </td>
-                            </tr>                    
+                            </tr> 
+
+
                             </tbody>
+
                         </table>
-                        </form>
+                    </div>
+                    <table class="table">
+                    <tr  style=" text-align:center;">
+                            <td colspan="4">
+                                    <input type="submit" value="Editar Emprendedor" class="btn btn-outline-primary">
+                            </td>
+                        </tr>
+                        </table>
+
+                         </form>
+                    </div>
+                    <form method="POST" action="{{ route('Archivo.update', $empre->id)}}">
+                           {!! method_field('PUT') !!}
+                    {{ csrf_field() }}
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <div class="alert alert-success">
+                                    <p>
+                                    La contraseña que se actualizara es la del usuario y sera con la nueva contraseña que se iniciara sesion. 
+                                    No es necesario actualizar si no lo deseas.  
+                                    </p>
+                                </div>
+                            </td>
+                        <tr>
+
+                        <td>
+                            <div class="form-row justify-content-md-center mt-4">
+                        <div class="form-group col-md-5">
+                  <label for="inputContra1">Contraseña</label>
+                  <input type="password" name="Contraseña" class="form-control" id="inputContra1">
+                  {!! $errors->first('Contraseña', '<span class=errores>:message</span>') !!}
+                    </div>
+            <div class="form-group col-md-5">
+                  <label for="inputContra2">Confirmar Contraseña</label>
+                  <input type="password" name="Contraseña1" class="form-control" id="inputContra2">
+                  {!! $errors->first('Contraseña1', '<span class=errores>:message</span>') !!}
+            </div>
+          </div>
+                 </td>
+                        <tr  style=" text-align:center;">
+                            <td colspan="4">
+                                    <input type="submit" value="Editar Usuario" class="btn btn-outline-primary">
+                            </td>
+                        </tr>
+                        
+                    </table>
+                  
+           </form>
                     </div>
                     <table  class="table" id="integrantes">
                         <thead>

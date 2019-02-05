@@ -17,6 +17,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\EnviarDocValidation;
 use App\Http\Requests\EnviarDoc2Validation;
 use App\Http\Requests\EnviarDoc3Validation;
+use App\Http\Requests\EditUsuarioValidation;
 use Illuminate\Support\Facades\Crypt;
 
 class EnvioController extends Controller
@@ -33,14 +34,6 @@ class EnvioController extends Controller
         $empre = Emprendedor::where('user_id', $id)->first();
         return view ('Emprendedor/dashboard', compact('empre'));
     }
-
-
-     public function create()
-    {
-       
-    }
-
-
 
      public function store(EnviarDocValidation $request)
     {
@@ -116,19 +109,5 @@ class EnvioController extends Controller
         $names=$avance->Comentario;
         return Storage::download("files/$names");
     }
-
-
-	public function update(Request $request, $id)
-    {
-        //
-    }
-
-     public function destroy($id)
-    {
-        //
-    }
-
-
-
 
 }

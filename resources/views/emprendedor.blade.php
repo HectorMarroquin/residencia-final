@@ -21,7 +21,8 @@
          <li class="nav-item">
           <a class="nav-link" href="{{ route('Emprendedor.create')}}">
             <i class="fas fa-users"></i>
-            <span>Editar Emprendedor</span></a>
+            <span>Editar Emprendedor</span>
+          </a>
         </li>
          @endif
          
