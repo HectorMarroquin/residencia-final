@@ -38,7 +38,13 @@
         <div><span style="font-weight:bold;">Actividad: </span> {{ $proyecto->Actividad }}</div>
         <div><span style="font-weight:bold;">Descripcion: </span> {{ $proyecto->Descripcion }}</div>
         <div><span style="font-weight:bold;">Nombre del director: </span>{{ $proyecto->NombreDirector }}</div>
-        <div><span style="font-weight:bold;">Organizacion: </span> {{ $proyecto->Organizacion }}</div>
+        <div><span style="font-weight:bold;">Organizacion: </span>
+             @if ($proyecto->Organizacion === "Si")
+             {{ $proyecto->Cual }} 
+             @elseif($proyecto->Organizacion === "No")
+             No tiene
+            @endif
+        </div>
         <div><span style="font-weight:bold;">RFC: </span>{{ $proyecto->RFC }}</div>
         <div><span style="font-weight:bold;">Razon social: </span>{{ $proyecto->Razonsocial }}</div>
         <div><span style="font-weight:bold;">Telefono de la empresa: </span>{{ $proyecto->Telefonoemp }}</div>
@@ -53,7 +59,7 @@
         <div><span style="font-weight:bold;">Ciudad: </span>{{ $proyecto->Emprendedor->Ciudad }}</div>
         <div><span style="font-weight:bold;">Municipio: </span>{{ $proyecto->Emprendedor->Municipio }}</div>
         <div><span style="font-weight:bold;">CP: </span>{{ $proyecto->Emprendedor->CodigoPostal }}</div>
-        <div><span style="font-weight:bold;">Direccion: </span>{{ $proyecto->Emprendedor->Direccion }}</div>
+        <div><span style="font-weight:bold;">Numero Exterior: </span>{{ $proyecto->Emprendedor->NumeroExterior }}</div>
         <div><span style="font-weight:bold;">Fecha de Nacimiento: </span>{{ $proyecto->Emprendedor->FechaNaci }}</div>
         <div><span style="font-weight:bold;">Edad: </span>{{ $proyecto->Emprendedor->Edad }}</div>
         <div><span style="font-weight:bold;">Sexo: </span>{{ $proyecto->Emprendedor->Sexo }}</div>

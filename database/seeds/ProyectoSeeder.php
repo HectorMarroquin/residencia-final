@@ -33,7 +33,7 @@ class ProyectoSeeder extends Seeder
         	'Descripcion' => 'La empresa se encuentra inspirada en las terminales de transporte que se encuentran en la avenida central, por lo cual se decidio adoptar la idea de un transporte de comida, que se encarga de llevar preparado diferentes tipos de guisos como son el pastor, res y cochito, los cuales se usaran para los tacos suaves y fritos',
         	'Organizacion' => 'Si',
         	'Cual' => 'Camara de la industria',
-        	'Estado'=> 'Iniciado',
+        	'Estado'=> 'Cursando',
         	'emprendedor_id' => $empre1,
 		]);
 		
@@ -50,7 +50,7 @@ class ProyectoSeeder extends Seeder
         	'Descripcion' => 'Papeleria Hexagon se dedica a la venta de articulos escolares, papeleria, servicio de fotocopiado, engargolados e impresiones en mayoreo y menudeo. Manejamos productos escolares desde kinder hasta universidad y una extensa variedad de articulos de oficina, para que le cliente, encuentre siempre lo que busca en la papeleria',
         	'Organizacion' => 'Si',
         	'Cual' => 'Camara de la industria',
-        	'Estado'=> 'Iniciado',
+        	'Estado'=> 'Cursando',
         	'emprendedor_id' => $empre1,
         ]);
 

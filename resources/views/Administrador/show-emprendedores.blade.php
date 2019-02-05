@@ -43,7 +43,7 @@
 									</select>
 							</td>
 				      <td>{{ $emprendedor->TelefonoCel}}</td>
-				      <td>{{ $emprendedor->RFC}}</td>
+				      <td>{{ $emprendedor->RFC}} {{ $emprendedor->RFCM}}</td>
 				      <td>{{ $emprendedor->CURP }}</td>
 			      	<td>
 						<form style="display: inline;" method="POST" action="{{ route('emprendedores.destroy', $emprendedor->id) }}">

@@ -40,8 +40,8 @@ class AsesorValidacion extends FormRequest
             'FechaNacimiento' => 'required|date',
             'EstadoCivil' => 'required',
             'Sexo' => 'required',
-            'Correo' => 'required|email|unique:asesores,Correo,'.$this->route('asesore')
-            // 'Contraseña' => 'required',
+            'Correo' => 'required|email|unique:asesores,Correo,'.$this->route('asesore'),
+            'Contraseña' => 'required'
         ];
     }
 

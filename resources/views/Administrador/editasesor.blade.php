@@ -7,8 +7,11 @@
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
                 <div class="row justify-content-center">
-				<div class="col borde1 p-3"><h3>Actualizar a {{ $asesor->Nombre }}</h3></div>
-			</div>
+				<div class="col borde1 p-3"><h3 id="cab1">Actualizar a {{ $asesor->Nombre }}</h3></div>
+                  </div>
+                  @if (session()->has('incorrect'))
+			<div class="alert alert-danger text-center mt-2">{{ session('incorrect')}}</div>
+			@endif
                 <div class="form-row justify-content-center">
                     <div class="form-group col-10">
                           <label for="inputName1">Nombre Completo</label>
