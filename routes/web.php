@@ -66,6 +66,8 @@ Route::get('/historial-projects','Asesor\homeController@historial')->name('histo
 Route::get('/downloadFile/{id}','Asesor\homeController@downloadFile')->name('downloadFile');
 
 Route::get('/projectFaseFinal/{id}','Asesor\homeController@updateFinal')->name('projectFaseFinal');
+
+Route::get('/projectCroquis/{id}','Asesor\homeController@croquis')->name('projectCroquis');
 //eaz
 
 

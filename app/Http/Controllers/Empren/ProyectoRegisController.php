@@ -97,6 +97,10 @@ class ProyectoRegisController extends Controller
             $file->move(public_path().'/croquis/', $name);
             //$cro = time().request()->croquis->getClientOriginalName();
             //$archivoss = request()->croquis->storeAs('croquis',$cro);
+
+            //$cro = time().request()->croquis->getClientOriginalName();
+           // $archivoss = request()->croquis->storeAs('croquis',$cro);
+
         }
 
         $idea = new Ideanegocio;

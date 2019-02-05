@@ -91,11 +91,27 @@ class homeController extends Controller
 
 }
   public function downloadFile($id){
-       $avance = Avance::findOrFail($id);
+
+       $avance = Avance::where('proyecto_id',$id);
        $name=$avance->Comentario;
-      return Storage::download("files/$name");
-      // $doc=public_path('Revisiones')."/".$name; 
-      // return response()->download($name); 
+     // return Storage::download("files/$name");
+       $doc=public_path('Revisiones')."/".$name; 
+       return response()->download($name); 
   }
+
+      
+    public function croquis($id)// metodo para descargar
+    {
+       
+        $archivo=Ideanegocio::findOrFail($id);
+        $file_rute=$archivo->croquis;
+        $ruta=public_path('Revisiones')."/".$file_rute; 
+
+     
+       // return Storage::download("croquis/$file_rute");
+
+        return response()->download($file_rute); 
+        
+    }
 
 }
