@@ -17,7 +17,7 @@ class Proyecto extends Model
 
     public function asignacion(){
 
-        return $this->hasOne(Asignacion::class);
+        return $this->hasOne('App\Models\Asignacion','proyecto_id','id');
     }
 
     public function emprendedor(){

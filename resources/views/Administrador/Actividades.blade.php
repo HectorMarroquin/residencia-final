@@ -24,7 +24,9 @@
 
 						   @endforeach
 						 </select>
+						
 					</div>
+					{!! $errors->first('fase_id', '<span class=errores>:message</span>') !!}
    				</div>
    				
    				<div class="col-xs-4">
@@ -32,8 +34,10 @@
 					    <div class="input-group-prepend">
 					       <span class="input-group-text">Actividad</span>
 					    </div>
-					    <input type="text" name="Nombre" class="form-control">
-				  </div>
+							<input type="text" name="Nombre" class="form-control">
+							
+					</div>
+					{!! $errors->first('Nombre', '<span class=errores>:message</span>') !!}
    				</div>
 
    				<div class="col-xs-5">
@@ -88,8 +92,8 @@
 												<button type="button" class="btn btn-primary " style="float: right;" data-toggle="modal" data-target="#Update{{$actividad->id}}"><i class="fas fa-pen-square"></i></button>
 												<button type="button" class="btn btn-danger" style="float: right;" data-toggle="modal" data-target="#Delete{{$actividad->id}}"><i class="fas fa-trash-alt"></i></button>
 												<hr>
-												@include('Administrador.EditarAct')
-												@include('Administrador.EliminarAct')	
+												@include('Administrador.editarAct')
+												@include('Administrador.eliminarAct')	
 												@endforeach
 								
 							</td>

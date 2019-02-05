@@ -19,4 +19,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
 mix.styles([
    'public/css/responsive.css',
    'public/css/sb-admin.css',
-], 'public/css/all.css');
+], 'public/css/estilos.css');
+
+mix.scripts([
+   'public/js/delete.js',
+   'public/js/Agregarcolumnas.js',
+], 'public/js/funcionalidad.js');

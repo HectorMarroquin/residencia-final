@@ -100,7 +100,7 @@ class AsesorController extends Controller
     {
         $asesor = Asesor::findOrFail($id);
 
-        return view('Administrador.shows', compact('asesor'));
+        return view('Administrador.editasesor', compact('asesor'));
     }
 
     /**

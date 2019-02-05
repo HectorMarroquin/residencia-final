@@ -41,14 +41,12 @@ Route::resource('Colaborador', 'Empren\ColaboradorController');
 
 
 /*Hector*/
-
 Route::get('/dashboard','Admin\AdminController@Admin')->name('HomeAdmin');
-Route::resource('actividades','Admin\ActiController');
+Route::resource('actividades', 'Admin\ActiController')->except(['create', 'edit']);
 Route::resource('asesores','Admin\AsesorController'); 
-Route::resource('asignaciones','Admin\AsignaController'); 
-Route::resource('emprendedores','Admin\EmpreController'); 
-Route::resource('historial','Admin\HistoController'); 
-
+Route::resource('asignaciones','Admin\AsignaController')->except(['create', 'edit','show','update','destroy']);
+Route::resource('emprendedores','Admin\EmpreController')->except(['create', 'store','show','edit','update']);
+Route::resource('historial','Admin\HistoController')->except(['store', 'update']);
 /*Hector*/
 
 
