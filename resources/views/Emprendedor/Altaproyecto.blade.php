@@ -14,7 +14,7 @@
                     <tbody>
                         <tr>
                             <td colspan="1">
-                                <label>Sector de actividad en la que se desarrolla:</label>
+                                <label>Sector de actividad en la que se desarrolla *</label>
                             </td>
 
                             <td colspan="3">
@@ -33,7 +33,7 @@
 
                         <tr>
                             <td>
-                                 <label>Razon Social:</label>
+                                 <label>Razon Social *</label>
                             </td>
 
                             <td>
@@ -42,7 +42,7 @@
                             </td>
 
                             <td>
-                                <label>RFC:</label>
+                                <label>RFC *</label>
                             </td>
 
                             <td>
@@ -54,7 +54,7 @@
 
                         <tr>
                              <td>
-                                <label>Nombre del Director de la Empresa:</label>
+                                <label>Nombre del Director de la Empresa *</label>
                             </td>
 
                             <td>
@@ -63,7 +63,7 @@
                             </td>
 
                             <td>
-                                 <label>Telefono de la Empresa:</label>
+                                 <label>Telefono de la Empresa *</label>
                             </td>
 
                             <td>
@@ -74,7 +74,7 @@
 
                         <tr>
                             <td colspan="1">
-                                <label>Correo Eletronico</label>
+                                <label>Correo Eletronico *</label>
                             </td>
 
                             <td colspan="3">
@@ -87,7 +87,7 @@
                              <td>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        Propuesta de Negocio es:
+                                        Propuesta de Negocio es *
                                     </label>
                                 </div>
                             </td>
@@ -115,7 +115,7 @@
 
                         <tr>
                             <td colspan="1">
-                                <label>Nombre del Producto ó Servicio:</label>
+                                <label>Nombre del Producto ó Servicio *</label>
                             </td>
 
                             <td colspan="3">
@@ -127,7 +127,7 @@
                         <tr>
                             <td colspan="4">
                                 <div class="form-group">
-                                    <label for="comment">Describe en que consiste su propuesta (100 palabras)</label>
+                                    <label for="comment">Describe en que consiste su propuesta (100 palabras) *</label>
                                     <textarea class="form-control" rows="3" name="Descripcion"value="{{ old('Descripcion') }}"></textarea>
                                     {!! $errors->first('Descripcion', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -136,7 +136,7 @@
 
                          <tr>
                             <td>
-                                <label>Pertenece alguna organizacion:</label>
+                                <label>Pertenece alguna organizacion *</label>
                             </td>
 
                             <td>
@@ -173,7 +173,7 @@
                         <tr>
                             <td colspan="2">
                                 <div class="form-group">
-                                    <label for="comment">Describe tus Fortalezas</label>
+                                    <label for="comment">Describe tus Fortalezas *</label>
                                     <textarea class="form-control" rows="3" name="Fortaleza"  value="{{ old('Fortaleza') }}"></textarea>
                                     {!! $errors->first('Fortaleza', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -181,7 +181,7 @@
                         
                             <td colspan="2">
                                 <div class="form-group">
-                                    <label for="comment">Describe tus Oportunidades</label>
+                                    <label for="comment">Describe tus Oportunidades *</label>
                                     <textarea class="form-control" rows="3" name="Oportunidades" value="{{ old('Oportunidades') }}">
                                     </textarea>
                                     {!! $errors->first('Oportunidades', '<span class=errores>:message</span>') !!}
@@ -192,7 +192,7 @@
                          <tr>
                             <td colspan="2">
                                 <div class="form-group">
-                                    <label for="comment">Describe tus Debilidades</label>
+                                    <label for="comment">Describe tus Debilidades *</label>
                                     <textarea class="form-control" rows="3" name="Debilidades" value="{{ old('Debilidades') }}">             
                                      </textarea>
                                     {!! $errors->first('Debilidades', '<span class=errores>:message</span>') !!}
@@ -201,7 +201,7 @@
                         
                             <td colspan="2">
                                 <div class="form-group">
-                                    <label for="comment">Describe tus Amenazas</label>
+                                    <label for="comment">Describe tus Amenazas *</label>
                                     <textarea class="form-control" rows="3" name="Amenazas" value="{{ old('Amenazas') }}">
                                         
                                     </textarea>
@@ -225,7 +225,7 @@
                         <tr>
                             <td colspan="4">
                                 <div class="form-group">
-                                    <label for="comment">Defina su Producto ó Servicio</label>
+                                    <label for="comment">Defina su Producto ó Servicio *</label>
                                     <textarea class="form-control" rows="3" name="definicion"  value="{{ old('definicion') }}">   
                                     </textarea>
                                     {!! $errors->first('definicion', '<span class=errores>:message</span>') !!}
@@ -332,7 +332,7 @@
 
                         <tr>
                             <td >
-                              <label>Tipo de Domicilio</label>
+                              <label>Tipo de Domicilio *</label>
                             </td>
 
                             <td colspan="3">
@@ -351,7 +351,7 @@
 
                         <tr>
                             <td >
-                              <label>Tipo de Asentamiento</label>
+                              <label>Tipo de Asentamiento *</label>
                             </td>
 
                             <td>
@@ -381,7 +381,7 @@
 
                         <tr>
                             <td >
-                              <label>Nombre del Asentamiento</label>
+                              <label>Nombre del Asentamiento *</label>
                             </td>
 
                             <td colspan="3">
@@ -392,7 +392,7 @@
 
                         <tr>
                             <td>
-                                <label>Numero Exterior:</label>
+                                <label>Numero Exterior *</label>
                             </td>
 
                             <td>
@@ -401,7 +401,7 @@
                             </td>
 
                             <td>
-                                 <label>Numero Interior:</label>
+                                 <label>Numero Interior</label>
                             </td>
 
                             <td>
@@ -414,7 +414,7 @@
 
                         <tr>
                              <td>
-                                <label>Localidad:</label>
+                                <label>Localidad *</label>
                             </td>
 
                             <td>
@@ -423,7 +423,7 @@
                             </td>
 
                             <td>
-                                <label>Municipio:</label>
+                                <label>Municipio *</label>
                             </td>
 
                             <td>
@@ -435,7 +435,7 @@
 
                         <tr>
                              <td>
-                                <label>Estado:</label>
+                                <label>Estado *</label>
                             </td>
 
                             <td>
@@ -444,7 +444,7 @@
                             </td>
 
                             <td>
-                                <label>Codigo Postal:</label>
+                                <label>Codigo Postal *</label>
                             </td>
 
                             <td>
@@ -456,7 +456,7 @@
 
                         <tr>
                              <td>
-                                <label>Superficie del Predio:</label>
+                                <label>Superficie del Predio *</label>
                             </td>
 
                             <td>
@@ -468,7 +468,7 @@
                         <tr>
                             <td colspan="4">
                                 <div class="form-group">
-                                    <label for="comment">Referencias:</label>
+                                    <label for="comment">Referencias *</label>
                                     <textarea class="form-control" rows="3" name="refencia" value="{{ old('refencia') }}">
                                     </textarea>
                                     {!! $errors->first('refencia', '<span class=errores>:message</span>') !!}
@@ -478,7 +478,7 @@
 
                          <tr>
                              <td>
-                                <label>Croquis de la localizacion del predio:</label>
+                                <label>Croquis de la localizacion del predio <br>(enviar en formato pdf)*</label>
                             </td>
 
                             <td colspan="4">

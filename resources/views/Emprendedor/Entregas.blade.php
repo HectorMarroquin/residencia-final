@@ -1,8 +1,6 @@
 @extends('emprendedor')
 
 @section('empren')
-
-<br>
 <br>
         <div id="page-content-wrapper" class="form-group" >
                <div class="container-fluid">
@@ -51,7 +49,7 @@
                                         </tr>
                                         
                                         <tr>
-<td><a href="{{ route('Enviar.show',['pro' => Crypt::encrypt($proyectos->id), 'fase' =>  Crypt::encrypt($fase->id)]) }}" class="btn btn-primary">Enviar</a></td>
+                                        <td><a href="{{ route('Enviar.show',['pro' => Crypt::encrypt($proyectos->id), 'fase' =>  Crypt::encrypt($fase->id)]) }}" class="btn btn-primary">Enviar</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -104,10 +102,10 @@
                                             <td>
                                                 @forelse($avances as $avance)
                                               @if($avance->Comentario === 'Aprobado')
-                                                <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
+                                                <a href="{{ route('Enviar.show',['pro' => Crypt::encrypt($proyectos->id), 'fase' =>  Crypt::encrypt($fase->id)]) }}" class="btn btn-primary">Enviar</a>
                                                 @endif                             
                                                 @empty
-                                                  <div class="alert alert-success"><p>debes aprobar la primera fase</p></div>
+                                                  <div class="alert alert-success"><p>Debes aprobar la primera fase</p></div>
                                                 @endforelse  
 
                                             </td>
@@ -162,10 +160,10 @@
                                             <td>
                                                  @forelse($avancess as $avance)
                                               @if($avance->Comentario === 'Aprobado')
-                                                <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
+                                                <a href="{{ route('Enviar.show',['pro' => Crypt::encrypt($proyectos->id), 'fase' =>  Crypt::encrypt($fase->id)]) }}" class="btn btn-primary">Enviar</a>
                                                  @endif                             
                                                 @empty
-                                                <div class="alert alert-success"><p>debes aprobar la segunda fase</p>
+                                                <div class="alert alert-success"><p>Debes aprobar la segunda fase</p>
                                                 </div>
                                                 @endforelse  
 
@@ -220,11 +218,11 @@
                                             <td>
                                                 @forelse($avancesss as $avancess)
                                               @if($avancess->Comentario === 'Aprobado')
-                                                <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
+                                                <a href="{{ route('Enviar.show',['pro' => Crypt::encrypt($proyectos->id), 'fase' =>  Crypt::encrypt($fase->id)]) }}" class="btn btn-primary">Enviar</a>
                                                 @endif                             
                                                 @empty
                                                  <div class="alert alert-success"> 
-                                                  <p>debes aprobar la tercera fase.</p>
+                                                  <p>Debes aprobar la tercera fase.</p>
                                                 </div>
                                                 
                                                 @endforelse  
@@ -280,11 +278,11 @@
                                             <td>
                                                 @forelse($avancessss as $avancesss)
                                               @if($avancesss->Comentario === 'Aprobado')
-                                                <a href="{{ route('Enviar.show',['pro' => $proyectos->id, 'fase' =>  $fase->id]) }}" class="btn btn-primary">Enviar</a>
+                                                <a href="{{ route('Enviar.show',['pro' => Crypt::encrypt($proyectos->id), 'fase' =>  Crypt::encrypt($fase->id)]) }}" class="btn btn-primary">Enviar</a>
                                                  @endif                             
                                                 @empty
                                                 <div class="alert alert-success"> 
-                                                  <p>debes aprobar la cuarta fase</p>
+                                                  <p>Debes aprobar la cuarta fase</p>
                                                 </div>
                                                 @endforelse 
                                             </td>

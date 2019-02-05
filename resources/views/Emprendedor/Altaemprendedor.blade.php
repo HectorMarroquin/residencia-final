@@ -15,7 +15,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <label>Nombre:</label>
+                                <label>Nombre *</label>
                             </td>
 
                             <td colspan="3">
@@ -28,7 +28,7 @@
 
                         <tr>
                              <td>
-                                 <label>Apellido Paterno:</label>
+                                 <label>Apellido Paterno *</label>
                             </td>
 
                             <td>
@@ -38,7 +38,7 @@
                             </td>
 
                             <td>
-                                <label>Apellido Materno</label>
+                                <label>Apellido Materno *</label>
                             </td>
 
                             <td>
@@ -50,7 +50,7 @@
 
                         <tr>
                             <td>
-                                 <label>Fecha de Nacimiento:</label>
+                                 <label>Fecha de Nacimiento *</label>
                             </td>
 
                             <td>
@@ -59,7 +59,7 @@
                             </td>
 
                             <td>
-                                <label>Edad:</label>
+                                <label>Edad *</label>
                             </td>
 
                             <td>
@@ -73,7 +73,7 @@
                              <td colspan="1">
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        Sexo:
+                                        Sexo *
                                     </label>
                                 </div>
                             </td>
@@ -92,7 +92,7 @@
 
                         <tr>
                             <td colspan="1">
-                                <label>Estado Civil:</label>
+                                <label>Estado Civil *</label>
                             </td>
 
                             <td colspan="3">
@@ -113,7 +113,7 @@
 
                         <tr>
                             <td>
-                                <label>Direccion:</label>
+                                <label>Direccion *</label>
                             </td>
 
                             <td>
@@ -122,7 +122,7 @@
                             </td>
 
                             <td>
-                                 <label>Numero Exterior:</label>
+                                 <label>Numero Exterior *</label>
                             </td>
 
                             <td>
@@ -136,7 +136,7 @@
 
                         <tr>
                              <td>
-                                <label>Numero Interior:</label>
+                                <label>Numero Interior</label>
                             </td>
 
                             <td>
@@ -145,7 +145,7 @@
                             </td>
 
                              <td>
-                                <label>Municipio:</label>
+                                <label>Municipio *</label>
                             </td>
 
                             <td>
@@ -157,7 +157,7 @@
 
                         <tr>
                               <td>
-                                 <label>Estado:</label>
+                                 <label>Estado *</label>
                             </td>
 
                             <td>
@@ -166,7 +166,7 @@
                             </td>
 
                             <td>
-                                <label>Colonia:</label>
+                                <label>Colonia *</label>
                             </td>
 
                             <td>
@@ -178,7 +178,7 @@
 
                         <tr>
                             <td colspan="1">
-                                <label>Codigo Postal:</label>
+                                <label>Codigo Postal *</label>
                             </td>
 
                             <td colspan="3">
@@ -189,7 +189,7 @@
 
                         <tr>
                             <td>
-                                <label>Telefono Celular:</label>
+                                <label>Telefono Celular</label>
                             </td>
 
                             <td>
@@ -198,7 +198,7 @@
                             </td>
 
                             <td>
-                                 <label>Telefono de Casa:</label>
+                                 <label>Telefono de Casa</label>
                             </td>
 
                             <td>
@@ -209,7 +209,7 @@
 
                         <tr>
                             <td colspan="1">
-                                <label>Telefono de Oficina:</label>
+                                <label>Telefono de Oficina</label>
                             </td>
 
                             <td colspan="3">
@@ -220,7 +220,7 @@
 
                         <tr>
                             <td>
-                                <label>Correo Eletronico:</label>
+                                <label>Correo Eletronico *</label>
                             </td>
 
                             <td>
@@ -231,7 +231,7 @@
 
                         <tr>
                             <td colspan="1">
-                                <label>Escolaridad</label>
+                                <label>Escolaridad *</label>
                             </td>
 
                             <td colspan="3">
@@ -253,7 +253,7 @@
 
                          <tr>
                             <td>
-                                <label>CURP:</label>
+                                <label>CURP *</label>
                             </td>
 
                             <td>
@@ -262,7 +262,7 @@
                             </td>
 
                             <td>
-                                <label>INE:</label>
+                                <label>INE *</label>
                             </td>
 
                             <td>
@@ -273,7 +273,7 @@
 
                         <tr>
                             <td>
-                                <label>Tipo de empresa</label>
+                                <label>Tipo de empresa *</label>
                             </td>
 
                             <td>
@@ -303,7 +303,7 @@
                         </tr>
                         <tr>
                             <td colspan="1">
-                                <label>Tipo de Persona:</label>
+                                <label>Tipo de Persona *</label>
                             </td>
 
                             <td colspan="3">
@@ -334,7 +334,7 @@
 
                             <tr>
                                 <td>
-                                    <label>RFC:</label>
+                                    <label>RFC *</label>
                                 </td>
 
                                 <td>
@@ -350,13 +350,13 @@
                         <tbody>
                             <tr>
                                 <td colspan="4">
-                                    <h4>Persona Moral</h4>
+                                    <h4>Persona Moral *</h4>
                                 </td>
                             </tr>
                             
                             <tr>
                                 <td>
-                                    <label>Razon Social:</label>
+                                    <label>Razon Social *</label>
                                 </td>
                                 
                                 <td>
@@ -364,7 +364,7 @@
                                 </td>
 
                                 <td>
-                                    <label>RFC:</label>
+                                    <label>RFC *</label>
                                 </td>
 
                                 <td>
@@ -375,7 +375,7 @@
 
                             <tr>
                                 <td colspan="1">
-                                    <label>Objecto Social</label>
+                                    <label>Objecto Social *</label>
                                 </td>
 
                                 <td colspan="3">

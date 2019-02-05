@@ -16,6 +16,7 @@ use App\Models\Colaborador;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EmprenValidation;
+use Illuminate\Support\Facades\Hash;
 
 
 class EmpreController extends Controller
@@ -94,8 +95,10 @@ class EmpreController extends Controller
     public function update(EmprenValidation $request, $id)
     {
         $emprendedores = Emprendedor::findOrFail($id);
-        $emprendedores->update($request->all());
-        return back()->with('aceptar', 'Emprendedor Actualizado');  
+        $emprendedores->update($request->all()); 
+        return back()->with('aceptar', 'Emprendedor Actualizado'); 
+        
+          
     }
 
     /**

@@ -13,6 +13,7 @@ use App\Models\Asesor;
 use App\Models\Fase;
 use App\Models\Avance;
 use Illuminate\Http\Request;
+use App\Http\Requests\EditUsuarioValidation;
 use App\Http\Controllers\Controller;
 
 
@@ -108,9 +109,19 @@ class ArchivosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditUsuarioValidation $request, $id)
     {
-        //
+        $emprendedores = Emprendedor::findOrFail($id);
+        $user = User::where('id', $emprendedores->user_id)->first();
+    if ($request->Contraseña === $request->Contraseña1)
+    {
+        $user->password=bcrypt($request->Contraseña);
+        $user->update();       
+    } else {
+        return back()->with('no', 'Contraseñas No Coinciden');
+    }
+        return back()->with('agregar', 'Contraseña Actualizada'); 
+        
     }
 
     /**
