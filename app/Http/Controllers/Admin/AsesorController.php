@@ -49,7 +49,7 @@ class AsesorController extends Controller
      */
     public function store(AsesorValidacion $request)
     {
-        
+        if($request->Contraseña === $request->Contraseña1){
         $asesor = $request->all();
         $role = Role::where('name','asesor')->first();
         
@@ -70,10 +70,16 @@ class AsesorController extends Controller
          $users->roles()->attach($role); 
         
          $id = $users->id;
+         $pw = $users->password;
          $asesor['user_id'] = $id;
+         $asesor['Contraseña'] = $pw;
          Asesor::create($asesor);
 
          return redirect()->route('asesores.index');
+        }else{
+
+            return back()->with('no','contraseñas no coinciden');
+        }
         
     }
 
@@ -100,7 +106,7 @@ class AsesorController extends Controller
     {
         $asesor = Asesor::findOrFail($id);
 
-        return view('Administrador.shows', compact('asesor'));
+        return view('Administrador.editasesor', compact('asesor'));
     }
 
     /**
@@ -112,8 +118,7 @@ class AsesorController extends Controller
      */
     public function update(AsesorValidacion $request, $id)
     {   
-        $nombre = $request->input('Nombre');
-
+        if($request->Contraseña === $request->Contraseña1){
         $asesor = Asesor::findOrFail($id);
         $user = User::where('id', $asesor->user_id)->first();
       
@@ -124,16 +129,23 @@ class AsesorController extends Controller
         $usuario = array('email'=>$user->email,'password'=>$user->password,'name'=>$user->name); 
 
         Mail::send('email.plantillasesor',['msg'=>$usuario], function($u) use($usuario){
-            $u->to($usuario['email'], $usuario['name'])->subject('Tu Actualización fue completado');
+            $u->to($usuario['email'], $usuario['name'])->subject('Tu Actualización fue completada');
         });
 
         $user->password=bcrypt($request->Contraseña);
+
         $user->update();
-        $asesor->update($request->all());
+
+        $data = $request->all();
+        $data['Contraseña'] = bcrypt($request->input['Contraseña']);
+        $asesor->update($data);
 
         return redirect()->route('asesores.index');
 
+        }else{
 
+            return back()->with('incorrect','contraseñas no coinciden');
+        }
         
     }
 
@@ -149,9 +161,8 @@ class AsesorController extends Controller
 
             $asesor = Asesor::findOrFail($id);
             $user = User::where('id', $asesor->user_id)->first();
-            $user->delete();
-            $asesor_total = Asesor::all()->count();
-            
+            $user->delete();// si borro al padre muere el hijo(asesor)
+          
             return response()->json([
 
                 'message' => $asesor->Nombre . ' fue eliminado'

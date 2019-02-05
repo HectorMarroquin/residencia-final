@@ -13,12 +13,9 @@ class AsignacionSeeder extends Seeder
      */
     public function run()
     {
-        $asesor1 = Asesor::where('Nombre','Aldo Fabian')->value('id');
-        $asesor2 = Asesor::where('Nombre','Wilder Adan')->value('id');
-        $proyecto1 = Proyecto::where('Actividad','Sector Extractivo')->value('id');
-        $proyecto2 = Proyecto::where('Actividad','Sector Agronomico')->value('id');
-        $proyecto3 = Proyecto::where('Actividad','Sector Industrial')->value('id');
-        $proyecto4 = Proyecto::where('Actividad','Sector Agricola')->value('id');
+        $asesor1 = Asesor::where('Nombre','Esdras De Jesus')->value('id');
+        $proyecto1 = Proyecto::where('RazonSocial','Food Movile')->value('id');
+        $proyecto2 = Proyecto::where('RazonSocial','Hexagon')->value('id');
 
         Asignacion::create([
             
@@ -31,21 +28,6 @@ class AsignacionSeeder extends Seeder
             
             'asesor_id' => $asesor1,
             'proyecto_id' => $proyecto2,
-
-
-        ]);
-
-        Asignacion::create([
-            
-            'asesor_id' => $asesor2,
-            'proyecto_id' => $proyecto3,
-
-
-        ]);
-        Asignacion::create([
-            
-            'asesor_id' => $asesor2,
-            'proyecto_id' => $proyecto4,
 
 
         ]);

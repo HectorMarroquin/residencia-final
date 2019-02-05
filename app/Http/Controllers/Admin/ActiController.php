@@ -44,7 +44,11 @@ class ActiController extends Controller
      */
     public function store(Request $request)
     {
-         //return $request->all();
+        $request->validate([
+            'fase_id' => 'required',
+            'Nombre' => 'required',
+        ]);
+
         Actividad::create($request->all());
         return redirect()->route('actividades.index');
     }

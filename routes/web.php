@@ -19,15 +19,11 @@ Route::get('/', function () {
 Route::get('/Home', ['as' => 'Empren-home', 'uses' => 'Empren\EmprendedorController@Home']);
 /* Rutas Para el controlador de enviar */ 
 Route::get('Enviar', 'Empren\EnvioController@index')->name('Enviar.index');
-Route::get('Enviar/create', 'Empren\EnvioController@create')->name('Enviar.create');
 Route::post('Enviar', 'Empren\EnvioController@store')->name('Enviar.store');
 Route::post('Enviars', 'Empren\EnvioController@entregados')->name('Enviar.entregados');
 Route::post('Enviarss', 'Empren\EnvioController@entregatres')->name('Enviar.entregatres');
 Route::get('Enviar/{pro}/{fase}', 'Empren\EnvioController@show')->name('Enviar.show');
 Route::get('Enviar/{id}/edit', 'Empren\EnvioController@edit')->name('Enviar.edit');
-Route::put('Enviar/{id}', 'Empren\EnvioController@update')->name('Enviar.update');
-Route::delete('Enviar/{id}', 'Empren\EnvioController@destroy')->name('Enviar.destroy');
-Route::get('/Observaciones', 'Empren\EmprendedorController@Obervacion')->name('Emprend-observa'); 
 
 /* valida la peticiones de registro de emprendedores */ 
 Route::post('registro', 'Empren\EmprendedorController@Validar' ); 
@@ -45,14 +41,12 @@ Route::resource('Colaborador', 'Empren\ColaboradorController');
 
 
 /*Hector*/
-
 Route::get('/dashboard','Admin\AdminController@Admin')->name('HomeAdmin');
-Route::resource('actividades','Admin\ActiController');
+Route::resource('actividades', 'Admin\ActiController')->except(['create', 'edit']);
 Route::resource('asesores','Admin\AsesorController'); 
-Route::resource('asignaciones','Admin\AsignaController'); 
-Route::resource('emprendedores','Admin\EmpreController'); 
-Route::resource('historial','Admin\HistoController'); 
-
+Route::resource('asignaciones','Admin\AsignaController')->except(['create', 'edit','show','update','destroy']);
+Route::resource('emprendedores','Admin\EmpreController')->except(['create', 'store','show','edit','update']);
+Route::resource('historial','Admin\HistoController')->except(['store', 'update']);
 /*Hector*/
 
 

@@ -94,9 +94,9 @@ class homeController extends Controller
 
        $avance = Avance::where('proyecto_id',$id);
        $name=$avance->Comentario;
-      return Storage::download("files/$name");
-      // $doc=public_path('Revisiones')."/".$name; 
-      // return response()->download($name); 
+     // return Storage::download("files/$name");
+       $doc=public_path('Revisiones')."/".$name; 
+       return response()->download($name); 
   }
 
       
@@ -105,12 +105,12 @@ class homeController extends Controller
        
         $archivo=Ideanegocio::findOrFail($id);
         $file_rute=$archivo->croquis;
-        //$ruta=public_path('Revisiones')."/".$file_rute; 
+        $ruta=public_path('Revisiones')."/".$file_rute; 
 
      
-        return Storage::download("croquis/$file_rute");
+       // return Storage::download("croquis/$file_rute");
 
-        //return response()->download($file_rute); 
+        return response()->download($file_rute); 
         
     }
 

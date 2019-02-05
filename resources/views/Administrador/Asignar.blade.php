@@ -28,7 +28,9 @@
 							<select name="proyecto_id" class="custom-select">
 								<option disabled="disabled" selected>Proyectos</option>
 									@foreach ($emprendedor->proyectos as $proyecto)
-										<option value="{{$proyecto->id}}">{{ $proyecto->NombreProd }}</option>
+										@empty($proyecto->asignacion)
+											<option value="{{$proyecto->id}}">{{ $proyecto->NombreProd }}</option>
+										@endempty
 									@endforeach
 							</select>
 							{!! $errors->first('proyecto_id', '<span class=errores>:message</span>') !!}
@@ -42,9 +44,8 @@
 								</select> 
 							</td>
 					  <td>
-							
-							<button type="submit" class="btn btn-success"><i class="fas fa-check-square"></i></button>
-							
+						<a href=# class="btn-asignar"><i class="fas fa-check-circle" style="font-size: 35px; color: green;"></i></a>
+						
 					 </td>
 				</tr>
 				@empty

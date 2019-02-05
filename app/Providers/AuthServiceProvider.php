@@ -2,11 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Proyecto;
-use App\Models\Colaborador;
-use App\Models\Emprendedor;
-use App\Models\Fase;
-use App\Models\Avance;
+
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -18,9 +14,13 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
+<<<<<<< HEAD
         //'App\Model' => 'App\Policies\ModelPolicy',
        // Proyecto::class => ProyectoPolicy::class, 
         
+=======
+        'App\Model\User' => 'App\Policies\UserPolicy', 
+>>>>>>> 13b32540bac11f4bfe874c2726046490c3aaba6a
     ];
 
     /**

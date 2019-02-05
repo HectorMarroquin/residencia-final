@@ -52,7 +52,7 @@
 							 
 			  			</td>
 			  		</tr>
-					@include('Administrador.Eliminar')
+					{{-- @include('Administrador.eliminar') --}}
 					{{-- @include('Administrador.Editar') --}}
 			  	@empty
 					<td colspan="6" style="text-align: center;"><h4>No Hay Asesores Registrados</h4></td>

@@ -10,7 +10,9 @@ use App\Models\Revision;
 use DB;
 use App\User;
 use Storage;
+use Illuminate\Support\Str;
 use Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -62,14 +64,13 @@ class EstatusController extends Controller
      */
     public function show($id)
     {
+        $id = Crypt::decrypt($id);
         $proyectos = Proyecto::findOrFail($id);
         $id = Auth()->user()->id;
         $empre = Emprendedor::where('user_id', $id)->value('id');
         $idpro = $proyectos->id;
-        
         $archivos = Avance::where('proyecto_id', $idpro)->get(); 
-        
-        //dd($archivos);
+    
          
         return view ('Emprendedor.ListaEstatus', compact('proyectos', 'empre', 'archivos'));
     }
@@ -82,11 +83,10 @@ class EstatusController extends Controller
      */
     public function edit($id)
     {
+        $id = Crypt::decrypt($id);
         $archivoss =Avance::findOrFail($id);
         $name=$archivoss->Comentario;
-        return Storage::download("files/$name");
-
-        //return response()->download($ruta);
+        return Storage::download("files/$name",Str::ascii($name) );
     }
 
     /**

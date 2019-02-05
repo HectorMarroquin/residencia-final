@@ -47,15 +47,20 @@ class AsignaController extends Controller
      */
     public function store(AsignacionValidation $request)
     {   
-         $id = $request->input('proyecto_id');
+         if($request->ajax()){
 
-         $asignacion = Asignacion::create($request->all());
-           
-         $proyecto = Proyecto::where('id', $id)->first();
-         $proyecto->Estado = 'Cursando';
-         $proyecto->update();
+            $id = $request->input('proyecto_id');
 
-         return redirect()->route('asesores.index');
+            $asignacion = Asignacion::create($request->all());
+              
+            $proyecto = Proyecto::where('id', $id)->first();
+            $proyecto->Estado = 'Cursando';
+            $proyecto->update();
+            
+            return response()->json([
+
+            ]);
+        }
     }
 
     /**
@@ -89,9 +94,7 @@ class AsignaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $proyecto = Proyecto::findOrFail($id);
-        // $proyecto->update($request->all());
-        // return redirect()->route('emprendedor.index');
+        
     }
 
     /**

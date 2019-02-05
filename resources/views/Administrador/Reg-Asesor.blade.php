@@ -8,7 +8,9 @@
 		<div class="row justify-content-center">
 				<div class="col borde1 p-3"><h3 id="h3">Registro de Asesor</h3></div>
 			</div>
-			
+			@if (session()->has('no'))
+			<div class="alert alert-danger text-center mt-2">{{ session('no')}}</div>
+			@endif
 			<div class="form-row justify-content-center">
 			    <div class="form-group col-10">
 				      <label for="inputName1">Nombre Completo</label>
@@ -129,7 +131,7 @@
 		  <div class="form-row justify-content-md-center">
 			    <div class="form-group col-md-5">
 				      <label for="inputTel">Telefono</label>
-					  <input type="text" name="Telefono" class="form-control" id="inputTel" value="{{ old('Telefono') }}">
+					  <input type="text" name="Telefono" class="form-control" id="inputTel" value="{{ old('Telefono') }}" placeholder="Minimo 10 Caracteres">
 					  {!! $errors->first('Telefono', '<span class=errores>:message</span>') !!}
 			    </div>
 			    <div class="form-group col-md-5">
@@ -179,7 +181,7 @@
 		    </div>
 		    <div class="form-group col-md-5">
 			      <label for="inputContra2">Confirmar Contraseña</label>
-				  <input type="password" class="form-control" id="inputContra2">
+				  <input type="password" name="Contraseña1" class="form-control" id="inputContra2">
 				  {!! $errors->first('Contraseña', '<span class=errores>:message</span>') !!}
 		    </div>
 		  </div>

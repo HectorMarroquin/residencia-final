@@ -7,6 +7,7 @@ use App\Models\Fase;
 use App\Models\Avance;
 use App\Models\Proyecto;
 use App\Models\Emprendedor;
+use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\Controller;
 
 class EntregasController extends Controller
@@ -57,6 +58,7 @@ class EntregasController extends Controller
      */
     public function show($id)
     {
+        $id =  Crypt::decrypt($id);
         $proyectos = Proyecto::findOrFail($id);
         $fases = Fase::all();
         $id = Auth()->user()->id;
