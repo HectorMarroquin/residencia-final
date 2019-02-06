@@ -46,7 +46,7 @@
         <tr>
             <td>{{ $idea->proyecto->id}}</td>
             <td>{{ $idea->proyecto->NombreProd}}</td>
-            <td>{{ $idea->proyecto->Organizacion}}</td>
+            <td>{{ $idea->proyecto->Cual}}</td>
             <td>{{ $idea->proyecto->Actividad}}</td>
             <td>{{ $idea->proyecto->Telefonoemp}}</td>
             <td>{{ $idea->nombreasentamiento}}</td>
