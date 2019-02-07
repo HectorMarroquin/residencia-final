@@ -19,7 +19,7 @@ class HistoController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        //$this->middleware('roles:administrador');
+        $this->middleware('roles:administrador');
     }
     
     public function index(Request $request)
@@ -72,7 +72,7 @@ class HistoController extends Controller
         $view = view('pdf.proyecto', compact('proyecto'));
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
-        return $pdf->stream('proyecto');
+        return $pdf->stream('proyecto.pdf');
     }
 
     /**

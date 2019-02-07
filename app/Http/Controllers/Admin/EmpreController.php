@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Emprendedor;
 use App\User;
+use Barryvdh\DomPDF\Facade as PDF;
+
 class EmpreController extends Controller
 {
     /**
@@ -16,7 +18,7 @@ class EmpreController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        //$this->middleware('roles:administrador');
+        $this->middleware('roles:administrador');
     }
     
     public function index(Request $request)
@@ -34,7 +36,12 @@ class EmpreController extends Controller
      */
     public function create()
     {
-        //
+        $emprendedores = Emprendedor::all();
+
+        $pdf = PDF::loadView('pdf.emprendedores', compact('emprendedores'));
+
+        return $pdf->download('emprendedores.pdf');
+
     }
 
     /**
@@ -56,7 +63,12 @@ class EmpreController extends Controller
      */
     public function show($id)
     {
- 
+        $emprendedor = Emprendedor::findOrFail($id);
+
+        $view = view('pdf.onlyemprendedor', compact('emprendedor'));
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('emprendedor.pdf');
     }
 
     /**

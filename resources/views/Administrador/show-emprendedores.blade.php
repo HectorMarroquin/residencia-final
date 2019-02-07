@@ -52,6 +52,9 @@
 							<a href=# class="btn-delet"><i class="fas fa-trash-alt" style="font-size: 35px; color: red;"></i></a>
 						
 						</form>
+						<a href="{{ route('emprendedores.show', $emprendedor->id) }}">
+								<i class="fas fa-file-download" style="font-size: 35px;"></i>
+							</a>
 					  </td>
 			    </tr>
 	
@@ -63,9 +66,22 @@
 			</table>
 			{!! $emprendedores->links("pagination::bootstrap-4") !!}
 		</div>
+
 	</div>
 	
-
+	<div class="container">
+		<div class="row justify-content-md-center">
+		  <div class="col-4 mb-5">
+			  
+			<a href="{{ route('emprendedores.create')}}">
+				<span class="text-primary h5">Descargar Todos Los Emprendedores</span> 
+			</a>
+			  
+			</div>
+		 
+		</div>
+	  </div>
+	
 
 </div>
 @endsection

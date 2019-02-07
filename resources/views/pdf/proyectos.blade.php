@@ -32,8 +32,8 @@
         <thead class="cabecera" style="text-center">
           <tr>
               <th scope="col">Numero de Proyecto</th>
-              <th scope="col">Nombre de Proyecto</th>
-              <th scope="col">Nombre de la Empresa</th>
+              <th scope="col">Razon Social</th>
+              <th scope="col">Nombre Producto o Servicio</th>
               <th scope="col">Tipo de Sector</th>
               <th scope="col">Telefono</th>
               <th scope="col">Dirección</th>
@@ -45,8 +45,8 @@
         @forelse ($ideas as $idea)
         <tr>
             <td>{{ $idea->proyecto->id}}</td>
+            <td>{{ $idea->proyecto->Razonsocial}}</td>
             <td>{{ $idea->proyecto->NombreProd}}</td>
-            <td>{{ $idea->proyecto->Organizacion}}</td>
             <td>{{ $idea->proyecto->Actividad}}</td>
             <td>{{ $idea->proyecto->Telefonoemp}}</td>
             <td>{{ $idea->nombreasentamiento}}</td>
@@ -59,5 +59,6 @@
         @endforelse
           
        </tbody>
-    </table></body>
+    </table>
+</body>
 </html>

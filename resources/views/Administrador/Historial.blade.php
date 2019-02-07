@@ -100,13 +100,11 @@
         <div class="col-4 mb-5">
             
             <a href="{{ route('historial.create')}}">
-                <span class="text-danger h5">Descargar proyectos en PDF</span> 
+                <span class="text-danger h5">Descargar Todos Los Proyectos</span> 
             </a>
             
           </div>
        
-       
-          
       </div>
     </div>
   </div>
