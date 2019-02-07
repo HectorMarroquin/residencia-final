@@ -49,7 +49,7 @@
 								<a href=# class="btn-delete"><i class="fas fa-trash-alt" style="font-size: 35px; color: red;"></i></a>
 							
 							</form>
-							 
+							
 			  			</td>
 			  		</tr>
 					{{-- @include('Administrador.eliminar') --}}
@@ -69,7 +69,20 @@
 			    	<div class="row justify-content-center">
 							{!! $asesores->links("pagination::bootstrap-4") !!}
 						</div>
-	  </div>		
+		</div>
+
+		<div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-4 mb-5">
+            
+            <a href="{{ route('downloadasesor')}}">
+                <span class="text-primary h5">Descargar Todos Los Asesores</span> 
+            </a>
+            
+          </div>
+       
+      </div>
+    </div>
    </div>
 </div>
 

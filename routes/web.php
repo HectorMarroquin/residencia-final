@@ -42,10 +42,11 @@ Route::resource('Colaborador', 'Empren\ColaboradorController');
 
 /*Hector*/
 Route::get('/dashboard','Admin\AdminController@Admin')->name('HomeAdmin');
+Route::get('/download','Admin\AdminController@downloadAsesor')->name('downloadasesor');
 Route::resource('actividades', 'Admin\ActiController')->except(['create', 'edit']);
 Route::resource('asesores','Admin\AsesorController'); 
 Route::resource('asignaciones','Admin\AsignaController')->except(['create', 'edit','show','update','destroy']);
-Route::resource('emprendedores','Admin\EmpreController')->except(['create', 'store','show','edit','update']);
+Route::resource('emprendedores','Admin\EmpreController')->except(['store','edit','update']);
 Route::resource('historial','Admin\HistoController')->except(['store', 'update']);
 /*Hector*/
 

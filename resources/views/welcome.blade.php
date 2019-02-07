@@ -51,7 +51,7 @@
       <div class="container">
         <div class="intro-text">
           <div class="intro-lead-in">Bienvenido a nuestro sitio!</div>
-          <div class="intro-heading text-uppercase">Pre-incubación de Planes de Negocio</div>
+          <div class="intro-heading text-uppercase">Preincubación de Planes de Negocio</div>
           <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Cuentame mas</a>
         </div>
       </div>
