@@ -1,5 +1,4 @@
 @extends('emprendedor')
-
 @section('empren')
         <div id="page-content-wrapper" class="container-fluid form-group" >
                <br>
@@ -414,8 +413,9 @@
                             <td>
                                 <div class="alert alert-success">
                                     <p>
-                                    La contraseña que se actualizara es la del usuario y sera con la nueva contraseña que se iniciara sesion. 
+                                   La contraseña que se actualizara es la del usuario y será con la nueva contraseña que se iniciara sesión. 
                                     No es necesario actualizar si no lo deseas.  
+
                                     </p>
                                 </div>
                             </td>

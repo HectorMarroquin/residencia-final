@@ -35,7 +35,6 @@
                                 <input type="text" name="ApellidoP" class="form-control infoemprendedor" value="{{ old('ApellidoP') }}">
                                 {!! $errors->first('ApellidoP', '<span class=errores>:message</span>') !!}
                             </td>
-                            </td>
 
                             <td>
                                 <label>Apellido Materno *</label>

@@ -24,7 +24,7 @@
                                         <option value="Sector Extractivo" {{old('Actividad') == 'Sector Extractivo' ? 'selected' : ''}}>Sector Extractivo</option>
                                         <option value="Sector Servicio ó Orientado a Negocio" {{old('Actividad') == 'Sector Servicio ó Orientado a Negocio' ? 'selected' : ''}}>Sector Servicio ó Orientado a Negocio</option>
                                         <option value="Sector Transformación" {{old('Actividad') == 'Sector Transformación' ? 'selected' : ''}}>Sector Transformación</option>
-                                        <option value="Sector Servicio ó Orientado a Cosumudores" {{old('Actividad') == 'Sector Servicio ó Orientado a Cosumudores' ? 'selected' : ''}}>Sector Servicio ó Orientado a Cosumidores</option>
+                                        <option value="Sector Servicio ó Orientado a Cosumudores" {{old('Actividad') == 'Sector Servicio ó Orientado a Cosumudores' ? 'selected' : ''}}>Sector Servicio ó Orientado a Consumidores</option>
                                     </select>
                                     {!! $errors->first('Actividad', '<span class=errores>:message</span>') !!}
                                 </div>
