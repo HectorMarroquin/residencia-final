@@ -10,7 +10,8 @@ use App\Models\Asignacion;
 use App\Models\Proyecto;
 use App\Models\Colaborador;
 use App\Models\Avance;
-
+use Storage;
+use Illuminate\Support\Str;
 use DB;
 use Barryvdh\DomPDF\Facade as PDF;
 
@@ -93,12 +94,15 @@ class ProjectController extends Controller
        
         $archivo=Avance::findOrFail($id);
         $file_rute=$archivo->Documento;
-        $ruta=public_path('Revisiones')."/".$file_rute; 
+       // $ruta=public_path('Revisiones')."/".$file_rute; 
 
+       
+      
+       //return Storage::download("files/$name",Str::ascii($name) ); 
      
-       // return Storage::download("files/$file_rute");
+        return Storage::download("files/$file_rute",Str::ascii($file_rute) );
 
-        return response()->download($file_rute); 
+       // return response()->download($file_rute); 
         
     }
 
@@ -113,19 +117,19 @@ class ProjectController extends Controller
     {
             if ($request->hasFile('file')) {
             
-             //$file =time().request()->file->getClientOriginalName();     
-            // $ruta=request()->file->storeAs('files',$file );
+            $file =time().request()->file->getClientOriginalName();     
+            $ruta=request()->file->storeAs('files',$file );
             
-            $file = $request->file('file');  
-            $name =time().$file->getClientOriginalName();     
+          //  $file = $request->file('file');  
+           // $name =time().$file->getClientOriginalName();     
 
              
            
-            $files->move(public_path().'/Revisiones/', $name);
+          //  $files->move(public_path().'/Revisiones/', $name);
 
             $avance=Avance::findOrFail($id);
 
-            $avance->Comentario=$name;
+            $avance->Comentario=$file;
 
             $avance->update();    
 

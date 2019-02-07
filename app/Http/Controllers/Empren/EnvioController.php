@@ -38,17 +38,17 @@ class EnvioController extends Controller
      public function store(EnviarDocValidation $request)
     {
          if ($request->hasFile('documento1')) {
-            $file = $request->file('documento1');
-            $name = time().$file->getClientOriginalName();
-            $file->move(public_path().'/Revisiones/', $name);
-            //$file = time().request()->documento1->getClientOriginalName();
-            //$archivo = request()->documento1->storeAs('files',$file);
+            // $file = $request->file('documento1');
+            // $name = time().$file->getClientOriginalName();
+            // $file->move(public_path().'/Revisiones/', $name);
+            $file = time().request()->documento1->getClientOriginalName();
+            $archivo = request()->documento1->storeAs('files',$file);
         
         }
             $avance = new Avance;
             $avance->NumeroEntrega = $request->input('numeroentrega');
-            $avance->Documento = $name;
-            //$avance->Documento = $file;
+            // $avance->Documento = $name;
+            $avance->Documento = $file;
             $avance->proyecto_id = $request->input('proyecto');
             $avance->fase_id = $request->input('fase');
             $avance->save();
@@ -58,17 +58,17 @@ class EnvioController extends Controller
     public function entregados(EnviarDoc2Validation $request)
     {
     	  if ($request->hasFile('documento2')) {
-            $files = $request->file('documento2');
-            $names = time().$files->getClientOriginalName();
-            $files->move(public_path().'/Revisiones/', $names);
-            //$files = time().request()->documento2->getClientOriginalName();
-            //$archivo = request()->documento2->storeAs('files',$files);
+            // $files = $request->file('documento2');
+            // $names = time().$files->getClientOriginalName();
+            // $files->move(public_path().'/Revisiones/', $names);
+            $files = time().request()->documento2->getClientOriginalName();
+            $archivo = request()->documento2->storeAs('files',$files);
 
         }
             $avance = new Avance;
             $avance->NumeroEntrega = $request->input('numeroentrega2');
-            $avance->Documento = $names;
-            //$avance->Documento = $files;
+            // $avance->Documento = $names;
+            $avance->Documento = $files;
             $avance->proyecto_id = $request->input('proyecto2');
             $avance->fase_id = $request->input('fase2');
             $avance->save();
@@ -78,16 +78,16 @@ class EnvioController extends Controller
     public function entregatres(EnviarDoc3Validation $request)
     {
     	 if ($request->hasFile('documento3')) {
-            $filess = $request->file('documento3');
-            $namess = time().$filess->getClientOriginalName();
-            $filess->move(public_path().'/Revisiones/', $namess);
-            //$filess = time().request()->documento3->getClientOriginalName();
-            //$archivo = request()->documento3->storeAs('files',$filess);           
+            // $filess = $request->file('documento3');
+            // $namess = time().$filess->getClientOriginalName();
+            // $filess->move(public_path().'/Revisiones/', $namess);
+            $filess = time().request()->documento3->getClientOriginalName();
+            $archivo = request()->documento3->storeAs('files',$filess);           
         }
             $avance = new Avance;
             $avance->NumeroEntrega = $request->input('numeroentrega3');
-            $avance->Documento = $namess;
-            //$avance->Documento = $filess;
+            // $avance->Documento = $namess;
+            $avance->Documento = $filess;
             $avance->proyecto_id = $request->input('proyecto3');
             $avance->fase_id = $request->input('fase3');
             $avance->save();
@@ -118,14 +118,14 @@ class EnvioController extends Controller
 	public function edit($id)
     {
         $avance = Avance::findOrFail($id);
-        $name=$avance->Comentario;
-        $doc=public_path('Revisiones')."/".$name; 
+        // $name=$avance->Comentario;
+        // $doc=public_path('Revisiones')."/".$name; 
 
-        return response()->download($doc); 
+        // return response()->download($doc); 
 
-        //$avance = Avance::findOrFail($id);
-        //$names=$avance->Comentario;
-        //return Storage::download("files/$names");
+        $avance = Avance::findOrFail($id);
+        $names=$avance->Comentario;
+        return Storage::download("files/$names");
     }
 
 }
