@@ -61,8 +61,8 @@
             
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">Retroalimentacion 1</th>
-                    <th scope="col">Retroalimentacion 2</th>
+                    <th scope="col">Primera Retroalimentación</th>
+                    <th scope="col">Segunda Retroalimentación</th>
                     <th scope="col">Estado</th>
 
                 </tr>
@@ -95,7 +95,7 @@
                     @endif 
                      @endif 
                      @empty
-                  
+                  <p>No tienes ninguna archivo por el momento</p>
                   @endforelse    
                 </td>
 
@@ -156,8 +156,8 @@
             
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">Retroalimentacion 1</th>
-                    <th scope="col">Retroalimentacion 2</th>
+                    <th scope="col">Primera Retroalimentación</th>
+                    <th scope="col">Segunda Retroalimentación</th>
                     <th scope="col">Estado</th>
 
                 </tr>
@@ -177,7 +177,6 @@
                   @endif 
                   @endif 
                   @empty
-                    <td style="text-align: center;"><h4>En Proceso</h4></td>
                   @endforelse    
                 </td>
 
@@ -190,7 +189,6 @@
                     @endif 
                      @endif 
                      @empty
-                    <td style="text-align: center;"><h4>En Proceso</h4></td>
                   @endforelse    
                 </td>
 
@@ -206,7 +204,6 @@
                         @endif
                       @endif
                     @empty
-                      <td style="text-align: center;"><h4>En Proceso</h4></td>
                     @endforelse    
                 </td>
                 
@@ -251,9 +248,9 @@
             
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">Retroalimentacion 1</th>
-                    <th scope="col">Retroalimentacion 2</th>
-                    <th scope="col">Estado</th>
+                  <th scope="col">Primera Retroalimentación</th>
+                  <th scope="col">Segunda Retroalimentación</th>
+                  <th scope="col">Estado</th>
 
                 </tr>
             </thead>
@@ -272,7 +269,7 @@
                   @endif 
                   @endif 
                   @empty
-                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                   
                   @endforelse    
                 </td>
 
@@ -285,7 +282,7 @@
                     @endif 
                      @endif 
                      @empty
-                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                
                   @endforelse    
                 </td>
 
@@ -301,7 +298,7 @@
                         @endif
                       @endif
                     @empty
-                      <td style="text-align: center;"><h4>En Proceso</h4></td>
+                    
                     @endforelse    
                 </td>
                 
@@ -345,9 +342,9 @@
             
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">Retroalimentacion 1</th>
-                    <th scope="col">Retroalimentacion 2</th>
-                    <th scope="col">Estado</th>
+                  <th scope="col">Primera Retroalimentación</th>
+                  <th scope="col">Segunda Retroalimentación</th>
+                  <th scope="col">Estado</th>
 
                 </tr>
             </thead>
@@ -366,7 +363,7 @@
                   @endif 
                   @endif 
                   @empty
-                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                 
                   @endforelse    
                 </td>
 
@@ -379,7 +376,7 @@
                     @endif 
                      @endif 
                      @empty
-                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                 
                   @endforelse    
                 </td>
 
@@ -395,7 +392,7 @@
                         @endif
                       @endif
                     @empty
-                      <td style="text-align: center;"><h4>En Proceso</h4></td>
+                     
                     @endforelse    
                 </td>
                 
@@ -440,9 +437,9 @@
             
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">Retroalimentacion 1</th>
-                    <th scope="col">Retroalimentacion 2</th>
-                    <th scope="col">Estado</th>
+                  <th scope="col">Primera Retroalimentación</th>
+                  <th scope="col">Segunda Retroalimentación</th>
+                  <th scope="col">Estado</th>
 
                 </tr>
             </thead>
@@ -461,7 +458,7 @@
                   @endif 
                   @endif 
                   @empty
-                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                  
                   @endforelse    
                 </td>
 
@@ -474,7 +471,7 @@
                     @endif 
                      @endif 
                      @empty
-                    <td style="text-align: center;"><h4>En Proceso</h4></td>
+                    
                   @endforelse    
                 </td>
 
@@ -490,7 +487,7 @@
                         @endif
                       @endif
                     @empty
-                      <td style="text-align: center;"><h4>En Proceso</h4></td>
+                     
                     @endforelse    
                 </td>
                 

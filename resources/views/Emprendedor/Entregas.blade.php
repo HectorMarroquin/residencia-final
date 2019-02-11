@@ -40,7 +40,12 @@
                                                 <ol>
                                                      @foreach ($fase->actividades as $actividad)
                                                       @if($actividad->fase_id === 1)
-                                                    <li>{{ $actividad->Nombre }}</li>
+                                                    <li>
+                                                      {{ $actividad->Nombre }}
+                                                    </li>
+
+                                                   <i>
+                                                     {{ $actividad->Descripcion}}</i>
                                                     @endif
                                                      @endforeach
                                                 </ol>
@@ -91,6 +96,8 @@
                                                      @foreach ($fase->actividades as $actividad)
                                                       @if($actividad->fase_id === 2)
                                                     <li>{{ $actividad->Nombre }}</li>
+                                                    <i>
+                                                     {{ $actividad->Descripcion}}</i>
                                                     @endif
                                                      @endforeach
                                                 </ol>
@@ -148,6 +155,8 @@
                                                      @foreach ($fase->actividades as $actividad)
                                                       @if($actividad->fase_id === 3)
                                                     <li>{{ $actividad->Nombre }}</li>
+                                                     <i>
+                                                     {{ $actividad->Descripcion}}</i>
                                                     @endif
                                                      @endforeach
                                                 </ol>
@@ -207,6 +216,8 @@
                                                      @foreach ($fase->actividades as $actividad)
                                                       @if($actividad->fase_id === 4)
                                                     <li>{{ $actividad->Nombre }}</li>
+                                                    <i>
+                                                     {{ $actividad->Descripcion}}</i>
                                                     @endif
                                                      @endforeach
                                                 </ol>
@@ -267,6 +278,8 @@
                                                      @foreach ($fase->actividades as $actividad)
                                                       @if($actividad->fase_id === 5)
                                                     <li>{{ $actividad->Nombre }}</li>
+                                                     <i>
+                                                     {{ $actividad->Descripcion}}</i>
                                                     @endif
                                                      @endforeach
                                                 </ol>

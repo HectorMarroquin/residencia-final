@@ -514,7 +514,7 @@
                     </table>
             
 
-                
+                <!--
                     <table class="table">
                         <tr style=" text-align:center;">  
                             <td>
@@ -530,6 +530,7 @@
                             </td>
                         </tr>
                     </table>
+                -->
             </div>
         </div>
 

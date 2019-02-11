@@ -72,7 +72,7 @@ class ListEntregaController extends Controller
         $view = view('pdf.proyecto', compact('proyecto'));
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
-        return $pdf->stream('proyecto');
+        return $pdf->stream('proyecto.pdf');
     }
 
     /**
