@@ -45,7 +45,6 @@ class HistoController extends Controller
          return $pdf->download('proyectos.pdf');
 
         
-        
     }
 
     /**

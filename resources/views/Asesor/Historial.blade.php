@@ -59,7 +59,7 @@
             <td>
                
         
-                <a href="{{ route('historial.show', $user->proyecto->id) }}">
+                <a href="{{ route('historialProject', $user->proyecto->id) }}">
                     <i class="fas fa-file-download" style="font-size: 35px;"></i>
                 </a>
             </td>
@@ -75,8 +75,8 @@
       <div class="row justify-content-md-center">
         <div class="col-4 mb-5">
             
-            <a href="{{ route('historial.create')}}">
-                <span class="text-danger h5">Descargar proyectos en PDF</span> 
+            <a href="{{ route('historialProjects',$asesor->id)}}">
+                <span class="text-danger h5">Descargar Todos los Proyectos en PDF</span> 
             </a>
             
           </div>
