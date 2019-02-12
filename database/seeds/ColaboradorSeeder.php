@@ -13,7 +13,7 @@ class ColaboradorSeeder extends Seeder
      */
     public function run()
     {
-        
+        /*
  		$emprendedor = DB::table('emprendedores')->where('Nombre','Vanessa Jennifer')->value('id');
         
          Colaborador::create([ 
@@ -54,6 +54,6 @@ class ColaboradorSeeder extends Seeder
         // 	'ApellidoMC' => 'Selvas',
         // 	'CURPC' => 'SASJ940123RC066N5CJ9',
         // 	'emprendedor_id' => $colaboradores_Id,
-        // ]);
+        // ]); */
     }
 }

@@ -13,6 +13,7 @@ class CompetenciaSeeder extends Seeder
      */
     public function run()
     {
+        /*
         $ideanegocio_Id = DB::table('ideanegocios')->where('codigopostal','28904')->value('id');  
         $ideanegocio_Id1 = DB::table('ideanegocios')->where('codigopostal','29000')->value('id'); 
 
@@ -65,6 +66,6 @@ class CompetenciaSeeder extends Seeder
             'Giro' => 'Comercio al por menor y mayor de articulos de papeleria y libreria escolar',
             'Descripcion' => 'Av. 3 sur oriente, 748, Asamblea de barrio san roque, C.P 29000 Tuxtla Gutierrez',
             'ideanegocio_id' => $ideanegocio_Id1,
-        ]);
+        ]); */
     }
 }

@@ -13,6 +13,7 @@ class AsesorSeeder extends Seeder
      */
     public function run()
     {
+        /*
         
             $users1 = User::where('name','Aida Guillermina')->value('id');
             $user2 = User::where('name','Esdras De Jesus')->value('id');
@@ -62,7 +63,7 @@ class AsesorSeeder extends Seeder
         ]);
 
         // factory(Asesor::class, 25)->create();
-
+*/
 
 
     }

@@ -10,7 +10,7 @@ class IdeanegocioSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    { /*
 		 $proyectoId1 = DB::table('proyectos')->where('RazonSocial','Food Movile')->value('id'); 
 		 $proyectoId2 = DB::table('proyectos')->where('RazonSocial','Hexagon')->value('id'); 
 		 
@@ -50,6 +50,6 @@ class IdeanegocioSeeder extends Seeder
         	'proyecto_id' => $proyectoId2,
 		]);
 		
-	
+	*/
     }
 }

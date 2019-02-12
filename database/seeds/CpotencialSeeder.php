@@ -13,7 +13,8 @@ class CpotencialSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    { 
+        /*
          $ideanegocio_Id = DB::table('ideanegocios')->where('codigopostal','28904')->value('id');  
          $ideanegocio_Id1 = DB::table('ideanegocios')->where('codigopostal','29000')->value('id');  
 
@@ -43,6 +44,6 @@ class CpotencialSeeder extends Seeder
             'Giro' => 'Facultad de medicina',
             'Descripcion' => '3 poniente, entre 12 y 13 sur , Barrio San Francisco, Tuxtla Gutierrez',
             'ideanegocio_id' => $ideanegocio_Id1,
-        ]);
+        ]); */
     }
 }

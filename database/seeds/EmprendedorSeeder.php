@@ -12,7 +12,7 @@ class EmprendedorSeeder extends Seeder
      */
     public function run()
     {
-
+        /*
         $user1 = User::where('name','Vanessa Jennifer')->value('id');
   
         Emprendedor::create([
@@ -48,6 +48,6 @@ class EmprendedorSeeder extends Seeder
         ]);
 
         // factory(Emprendedor::class, 20)->create();
-  
+  */
     }
 }

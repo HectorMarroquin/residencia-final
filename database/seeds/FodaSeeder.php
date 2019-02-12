@@ -10,7 +10,7 @@ class FodaSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    { /*
     	$proyecto_Id1 = DB::table('proyectos')->where('RazonSocial','Food Movile')->value('id'); 
         $proyecto_Id2 = DB::table('proyectos')->where('RazonSocial','Hexagon')->value('id'); 
        
@@ -28,6 +28,6 @@ class FodaSeeder extends Seeder
         	'Debilidades' => 'No somos reconocidos en la zona, Poca capacitacion inicial del personal, Falta de seguridad interna de la empresa, Somos nuevos en el mercado',
         	'Amenazas' => 'Baja en la demanda de productos de papeleria en temporadas vacacionales, Competencia a establecerse cerca de la ubicacion, Fluctuacion de la economia de nuestros principales consumidores, Cambios en las politicas de gobierno',
         	'proyecto_id' => $proyecto_Id2,
-        ]);
+        ]); */
     }
 }

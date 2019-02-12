@@ -36,6 +36,7 @@ class EmprenValidation extends FormRequest
             'Colonia' => 'required',
             'Ciudad' => 'required',
             'Municipio' => 'required',
+            'Correo' => 'required|email|unique:emprendedores,Correo,',
             'CodigoPostal' => 'required|numeric',  
             'Escolaridad' => 'required',
             'CURP' => 'required|min:18|max:18',

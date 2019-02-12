@@ -81,8 +81,8 @@
                                <div class="form-group ">
                                     <select class="form-control col-sm-5" id="" name="Sexo" value="">
                                         <option value="">Seleccione una Opcion</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Femenino">Femenino</option> 
+                                        <option value="Masculino" {{old('Sexo') == 'Masculino' ? 'selected' : ''}}>Masculino</option>
+                                        <option value="Femenino" {{old('Sexo') == 'Femenino' ? 'selected' : ''}}>Femenino</option> 
                                     </select>
                                      {!! $errors->first('Sexo', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -98,12 +98,12 @@
                                   <div class="form-group ">
                                     <select class="form-control col-sm-5" id="" name="EstadoCivil" value="">
                                         <option value="">Seleccione una Opcion</option>
-                                        <option value="Soltero(a)">Soltero(a)</option>
-                                        <option value="Casado(a)">Casado(a)</option>
-                                        <option value="Divorsiado(a)">Divorsiado(a)</option>
-                                        <option value="Viudo(a)">Viudo(a)</option>
-                                        <option value="Unión libre">Unión libre</option>
-                                        <option value="Separado(a)">Separado(a)</option>
+                                        <option value="Soltero(a)" {{old('EstadoCivil') == 'Soltero(a)' ? 'selected' : ''}}>Soltero(a)</option>
+                                        <option value="Casado(a)" {{old('EstadoCivil') == 'Casado(a)' ? 'selected' : ''}}>Casado(a)</option>
+                                        <option value="Divorsiado(a)" {{old('EstadoCivil') == 'Divorsiado(a)' ? 'selected' : ''}}>Divorsiado(a)</option>
+                                        <option value="Viudo(a)" {{old('EstadoCivil') == 'Viudo(a)' ? 'selected' : ''}}>Viudo(a)</option>
+                                        <option value="Unión libre" {{old('EstadoCivil') == 'Unión libre' ? 'selected' : ''}}>Unión libre</option>
+                                        <option value="Separado(a)" {{old('EstadoCivil') == 'Separado(a)' ? 'selected' : ''}}>Separado(a)</option>
                                     </select>
                                      {!! $errors->first('EstadoCivil', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -237,13 +237,13 @@
                                 <div class="form-group ">
                                     <select class="form-control col-sm-5" name="Escolaridad" value="" >
                                         <option value="">Selecciona una escolaridad</option>
-                                        <option value="Primaria">Primaria</option>
-                                        <option value="Secundaria">Secundaria</option>
-                                        <option value="Preparatoria/Bachillerato">Preparatoria/Bachillerato</option>
-                                        <option value="Carrera Tecnica">Carrera Tecnica</option>
-                                        <option value="Licenciatura">Licenciatura</option>
-                                        <option value="Maestria">Maestria</option>
-                                        <option value="Doctorado">Doctorado</option>
+                                        <option value="Primaria" {{old('Escolaridad') == 'Primaria' ? 'selected' : ''}}>Primaria</option>
+                                        <option value="Secundaria" {{old('Escolaridad') == 'Secundaria' ? 'selected' : ''}}>Secundaria</option>
+                                        <option value="Preparatoria/Bachillerato" {{old('Escolaridad') == 'Preparatoria/Bachillerato' ? 'selected' : ''}}>Preparatoria/Bachillerato</option>
+                                        <option value="Carrera Tecnica" {{old('Escolaridad') == 'Carrera Tecnica' ? 'selected' : ''}}>Carrera Tecnica</option>
+                                        <option value="Licenciatura" {{old('Escolaridad') == 'Licenciatura' ? 'selected' : ''}}>Licenciatura</option>
+                                        <option value="Maestria" {{old('Escolaridad') == 'Maestria' ? 'selected' : ''}}>Maestria</option>
+                                        <option value="Doctorado" {{old('Escolaridad') == 'Doctorado' ? 'selected' : ''}}>Doctorado</option>
                                     </select>
                                 </div>
                                   {!! $errors->first('Escolaridad', '<span class=errores>:message</span>') !!}
@@ -279,13 +279,13 @@
                                 <div class="form-group">
                                     <select class="form-control" name="TipoEmpresa" value="">
                                         <option value="">Selecciona una opcion</option>
-                                        <option value="Sociedad en nombre colectivo">Sociedad en nombre colectivo</option>
-                                        <option value="Sociedad en comandita simple">Sociedad en comandita simple</option>
-                                        <option value="Sociedad en comandita por acciones">Sociedad en comandita por acciones</option>
-                                        <option value="Sociedad en responsabilidad limitada">Sociedad en responsabilidad limitada</option>
-                                        <option value="Sociedad anonima">Sociedad anonima</option>
-                                        <option value="Sociedad coorporativa">Sociedad coorporativa</option>
-                                        <option value="Sociedad civil">Sociedad civil</option>
+                                        <option value="Sociedad en nombre colectivo" {{old('TipoEmpresa') == 'Sociedad en nombre colectivo' ? 'selected' : ''}}>Sociedad en nombre colectivo</option>
+                                        <option value="Sociedad en comandita simple" {{old('TipoEmpresa') == 'Sociedad en comandita simple' ? 'selected' : ''}}>Sociedad en comandita simple</option>
+                                        <option value="Sociedad en comandita por acciones" {{old('TipoEmpresa') == 'Sociedad en comandita por acciones' ? 'selected' : ''}}>Sociedad en comandita por acciones</option>
+                                        <option value="Sociedad en responsabilidad limitada" {{old('TipoEmpresa') == 'Sociedad en responsabilidad limitada' ? 'selected' : ''}}>Sociedad en responsabilidad limitada</option>
+                                        <option value="Sociedad anonima" {{old('TipoEmpresa') == 'Sociedad anonima' ? 'selected' : ''}}>Sociedad anonima</option>
+                                        <option value="Sociedad coorporativa" {{old('TipoEmpresa') == 'Sociedad coorporativa' ? 'selected' : ''}}>Sociedad coorporativa</option>
+                                        <option value="Sociedad civil" {{old('TipoEmpresa') == 'Sociedad civil' ? 'selected' : ''}}>Sociedad civil</option>
                                     </select>
                                 </div>
                                 {!! $errors->first('TipoEmpresa', '<span class=errores>:message</span>') !!}
@@ -388,21 +388,22 @@
                         </table>
                     </div>
 
-                    <table  class="table" id="integrantes">
-                        <thead>
+                    <table  class="table">
+                        <tbody>
                             <tr style=" text-align:center;">
                                 <td colspan="2">
                                     <h3>Ingrese Colaboradores</h3>
                                 </td>
-                                <td colspan="1"> 
+                                <td colspan="2"> 
                                     <button type="button" class="btn btn-outline-primary" id="btnNuevointegrante">Agregar</button>
                                 </td>
 
-                                <td colspan="1"> 
-                                    <button type="button" class="btn btn-outline-primary" id="btnEliminarintegrante">Eliminar</button>
-                                </td>
+                    
                             </tr>
-                      
+                            </tbody>
+                    </table>
+                    <table  class="table" id="integrantes">
+                      <thead>
                             <tr style=" text-align:center;">
         
                                 <th>
@@ -422,6 +423,10 @@
                                 </th>
                             </tr>
                         </thead>
+                        <tbody>
+                            
+                        </tbody>
+
 
                     </table>
             

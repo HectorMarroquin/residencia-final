@@ -16,7 +16,7 @@ class ProyectoSeeder extends Seeder
      */
     public function run()
     {           
-
+/*
            
           	$empre1 = Emprendedor::where('Nombre','Vanessa Jennifer')->value('id');
 
@@ -59,6 +59,7 @@ class ProyectoSeeder extends Seeder
 		// 	'TelefonoEmp' => '9876543212',
 		// 	'Estado' => 'Iniciado',
         //     'emprendedor_id' => $empre1,
-        // ]);
+        // ]); 
+        */
     }
 }
