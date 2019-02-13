@@ -19,35 +19,16 @@ class UsersTableSeeder extends Seeder
 
             $admin = new User();
             $admin->name = "Aida Guillermina";
-            $admin->email = "acossio_m@yahoo.com.mx";
+            $admin->email = "ittg.vinc@gmail.com";
             $admin->password = bcrypt('acossio1');
             $admin->save();
             $admin->roles()->attach($role_admin); 
 
-            /*
-            $admin = new User();
-            $admin->name = "Vanessa Jennifer";
-            $admin->email = "vanessa@gmail.com";
-            $admin->password = bcrypt('123123');
-            $admin->save();
-            $admin->roles()->attach($role_empre); 
-
-            $admin = new User();
-            $admin->name = "Esdras De Jesus";
-            $admin->email = "Exdraz_Lpz@outlook.com";
-            $admin->password = bcrypt('123123');
-            $admin->save();
-            $admin->roles()->attach($role_asesor); 
-
-
             $admin = new User();
             $admin->name = "Aida Guillermina";
             $admin->email = "acossio_m@yahoo.com.mx";
-            $admin->password = bcrypt('123123');
+            $admin->password = bcrypt('acossio1');
             $admin->save();
-            $admin->roles()->attach($role_asesor);
-            */
-      
-
+            $admin->roles()->attach($role_asesor); 
     }
 }

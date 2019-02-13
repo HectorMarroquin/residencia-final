@@ -35,7 +35,7 @@ class EnvioController extends Controller
         return view ('Emprendedor/dashboard', compact('empre'));
     }
 
-     public function store(EnviarDocValidation $request)
+     public function store(Request $request)
     {
          if ($request->hasFile('documento1')) {
             // $file = $request->file('documento1');
@@ -55,7 +55,7 @@ class EnvioController extends Controller
             return back()->with('infor1', 'Entrega Uno Realizada');  
     }
 
-    public function entregados(EnviarDoc2Validation $request)
+    public function entregados(Request $request)
     {
     	  if ($request->hasFile('documento2')) {
             // $files = $request->file('documento2');
@@ -75,7 +75,7 @@ class EnvioController extends Controller
              return back()->with('infor2', 'Entrega Dos Realizada');
     }
 
-    public function entregatres(EnviarDoc3Validation $request)
+    public function entregatres(Request $request)
     {
     	 if ($request->hasFile('documento3')) {
             // $filess = $request->file('documento3');

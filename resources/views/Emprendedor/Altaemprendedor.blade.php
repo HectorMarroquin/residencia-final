@@ -307,7 +307,7 @@
 
                             <td colspan="3">
                                   <div class="form-group ">
-                                    <select class="form-control col-sm-5" id="TipoPersona" name="TipoPersona" value="">
+                                    <select class="form-control col-sm-5" id="TipoPersona" name="TipoPersona">
                                         <option>Selecciona una opcion</option>
                                         <option value="1">Persona Fisica</option>
                                         <option value="2">Persona Moral</option>

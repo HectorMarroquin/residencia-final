@@ -31,6 +31,7 @@ class ProyectoValidacion extends FormRequest
             'Telefonoemp'=> 'required|numeric|min:7',
             'CorreoEmp'=> 'required|email',
             'NombreProd'=> 'required',
+            'Propuesta' => 'required',
             'Descripcion'=> 'required',
             'Organizacion'=> 'required',
             'Fortaleza'=> 'required',
@@ -47,6 +48,7 @@ class ProyectoValidacion extends FormRequest
             'codigopostal'=> 'required|numeric',
             'superficie'=> 'required',
             'refencia'=> 'required',
+            'tipoasentamiento' => 'required',
             'croquis'=> 'required|mimes:pdf',
         ];
     }
@@ -58,6 +60,8 @@ class ProyectoValidacion extends FormRequest
             'Actividad' => 'Sector de actividad en la que se desarrolla',
             'Razonsocial' => 'apellido Razon Social',
             'RFC' => 'RFC',
+            'tipoasentamiento' => 'Tipo de asentamiento',
+            'Propuesta' => 'Propuesta de negocio', 
             'NombreDirector' => 'Nombre del Director',
             'Telefonoemp' => 'Telefono de la Empresa',
             'CorreoEmp' => 'Correo Eletronico de la Empresa',

@@ -128,7 +128,7 @@
                             <td colspan="4">
                                 <div class="form-group">
                                     <label for="comment">Describe en que consiste su propuesta (100 palabras) *</label>
-                                    <textarea class="form-control" rows="3" name="Descripcion"value="{{ old('Descripcion') }}"></textarea>
+                                    <textarea class="form-control" rows="3" name="Descripcion">{{ old('Descripcion') }}</textarea>
                                     {!! $errors->first('Descripcion', '<span class=errores>:message</span>') !!}
                                 </div>
                             </td>
@@ -174,7 +174,7 @@
                             <td colspan="2">
                                 <div class="form-group">
                                     <label for="comment">Describe tus Fortalezas *</label>
-                                    <textarea class="form-control" rows="3" name="Fortaleza"  value="{{ old('Fortaleza') }}"></textarea>
+                                    <textarea class="form-control" rows="3" name="Fortaleza">{{ old('Fortaleza') }}</textarea>
                                     {!! $errors->first('Fortaleza', '<span class=errores>:message</span>') !!}
                                 </div>
                             </td>
@@ -182,8 +182,7 @@
                             <td colspan="2">
                                 <div class="form-group">
                                     <label for="comment">Describe tus Oportunidades *</label>
-                                    <textarea class="form-control" rows="3" name="Oportunidades" value="{{ old('Oportunidades') }}">
-                                    </textarea>
+                                    <textarea class="form-control" rows="3" name="Oportunidades">{{ old('Oportunidades') }}</textarea>
                                     {!! $errors->first('Oportunidades', '<span class=errores>:message</span>') !!}
                                 </div>
                             </td>
@@ -193,8 +192,7 @@
                             <td colspan="2">
                                 <div class="form-group">
                                     <label for="comment">Describe tus Debilidades *</label>
-                                    <textarea class="form-control" rows="3" name="Debilidades" value="{{ old('Debilidades') }}">             
-                                     </textarea>
+                                    <textarea class="form-control" rows="3" name="Debilidades">{{ old('Debilidades') }}</textarea>
                                     {!! $errors->first('Debilidades', '<span class=errores>:message</span>') !!}
                                 </div>
                             </td>
@@ -202,8 +200,7 @@
                             <td colspan="2">
                                 <div class="form-group">
                                     <label for="comment">Describe tus Amenazas *</label>
-                                    <textarea class="form-control" rows="3" name="Amenazas" value="{{ old('Amenazas') }}">
-                                        
+                                    <textarea class="form-control" rows="3" name="Amenazas">{{ old('Amenazas') }}
                                     </textarea>
                                     {!! $errors->first('Amenazas', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -226,7 +223,7 @@
                             <td colspan="4">
                                 <div class="form-group">
                                     <label for="comment">Defina su Producto ó Servicio *</label>
-                                    <textarea class="form-control" rows="3" name="definicion"  value="{{ old('definicion') }}">   
+                                    <textarea class="form-control" rows="3" name="definicion">{{ old('definicion') }}
                                     </textarea>
                                     {!! $errors->first('definicion', '<span class=errores>:message</span>') !!}
                                 </div>
@@ -469,7 +466,7 @@
                             <td colspan="4">
                                 <div class="form-group">
                                     <label for="comment">Referencias *</label>
-                                    <textarea class="form-control" rows="3" name="refencia" value="{{ old('refencia') }}">
+                                    <textarea class="form-control" rows="3" name="refencia" >{{ old('refencia') }}
                                     </textarea>
                                     {!! $errors->first('refencia', '<span class=errores>:message</span>') !!}
                                 </div>

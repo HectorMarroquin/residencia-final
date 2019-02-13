@@ -15,12 +15,12 @@ class CreateCpotencialesTable extends Migration
     {
         Schema::create('cpotenciales', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Nombre');
-            $table->string('Giro');
-            $table->text('Descripcion');
+            $table->string('Nombre')->nullable();
+            $table->string('Giro')->nullable();
+            $table->text('Descripcion')->nullable();
 
-            $table->unsignedInteger('ideanegocio_id');
-            $table->foreign('ideanegocio_id')->references('id')->on('ideanegocios')->onDelete('cascade');;
+            $table->unsignedInteger('ideanegocio_id')->nullable();
+            $table->foreign('ideanegocio_id')->references('id')->on('ideanegocios')->onDelete('cascade')->nullable();
 
             $table->timestamps();
         });

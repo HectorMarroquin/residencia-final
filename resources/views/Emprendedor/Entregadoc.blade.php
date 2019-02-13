@@ -37,7 +37,7 @@
                              <form class="form-group" method="post" action="{{ route('Enviar.store')}}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                             <h3>Entrega 1</h3>
-                                <p>Subir un archivo Word con las actividades solicitas en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
+                                <p>Subir un archivo Word con las actividades solicitas en la fase en curso. Recuerda que solo puedes subier el archvio word solo una vez</p>
                                         <table class="table table-bordered">
                                             <thead class="thead-light">
                                                 <tr>
@@ -76,7 +76,7 @@
                                                         @if (empty($avance))
                                                         <div class="form-group">
                                                             <label for="">Documento</label>
-                                                            <input type="file" name="documento1" class="form-control">
+                                                            <input type="file" for="fileEnvio" name="documento1" class="form-control" id="fileEnvio" onchange="validarExt()">
                                                             {!! $errors->first('documento1', '<span class=errores>:message</span>') !!}
                                                         </div>
                                                         
@@ -94,7 +94,7 @@
 
                         <div id="menu1" class="container tab-pane fade"><br>
                             <h3>Entrega 2</h3>
-                                <p>Subir un archivo Word con las actividades solicitas en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
+                                <p>Subir un archivo Word con las actividades solicitas en la fase en curso. Recuerda que solo puedes subier el archvio word solo una vez</p>
                                 @if (session()->has('infor2'))
                                 <div class="alert alert-success">{{ session('infor2')}}</div>
                                 @endif
@@ -141,7 +141,7 @@
                                                         @elseif (!empty($avance))
                                                         <div class="form-group">
                                                             <label for="">Documento</label>
-                                                            <input type="file" name="documento2" class="form-control">
+                                                            <input type="file" for="fileEnvio" name="documento2" class="form-control" id="fileEnvio" onchange="validarExt()">
                                                              {!! $errors->first('documento2', '<span class=errores>:message</span>') !!}
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
@@ -157,7 +157,7 @@
                         </div>
                         <div id="menu2" class="container tab-pane fade"><br>
                            <h3>Entrega 3</h3>
-                                <p>Subir un archivo Word con las actividades solicitas en la fase en curso. Recuerda que solo puedes subier el pdf solo una vez</p>
+                                <p>Subir un archivo Word con las actividades solicitas en la fase en curso. Recuerda que solo puedes subier el archvio word solo una vez</p>
                                 @if (session()->has('infor3'))
                                 <div class="alert alert-success">{{ session('infor3')}}</div>
                                  @endif
@@ -206,7 +206,7 @@
                                                         @elseif ( (!empty($avance)) && (!empty($avancedos)) )
                                                         <div class="form-group">
                                                             <label for="">Documento</label>
-                                                            <input type="file" name="documento3" class="form-control">
+                                                            <input type="file"  for="fileEnvio" name="documento3" class="form-control" id="fileEnvio" onchange="validarExt()">
                                                              {!! $errors->first('documento3', '<span class=errores>:message</span>') !!}
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
@@ -225,4 +225,28 @@
                 </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+  function validarExt() {
+    var archivoInput = document.getElementById('fileEnvio');
+    var archivoRuta = archivoInput.value;
+    var extPermitidas = /(.docx|.DOCX|.doc|.DOC|.Docx)$/i;
+
+      if (!extPermitidas.exec(archivoRuta))
+      {
+
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text:'Elije una extencion de Word (.Docx)',
+
+          })
+
+       // alert('Elije una extencion de Word (.Docx)')
+        archivoInput.value='';
+        return false;
+      }
+  }
+
+</script>
 @endsection
