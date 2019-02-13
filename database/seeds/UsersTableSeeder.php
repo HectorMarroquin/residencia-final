@@ -24,11 +24,12 @@ class UsersTableSeeder extends Seeder
             $admin->save();
             $admin->roles()->attach($role_admin); 
 
+            /*
             $admin = new User();
             $admin->name = "Aida Guillermina";
             $admin->email = "acossio_m@yahoo.com.mx";
             $admin->password = bcrypt('acossio1');
             $admin->save();
-            $admin->roles()->attach($role_asesor); 
+            $admin->roles()->attach($role_asesor); */
     }
 }
