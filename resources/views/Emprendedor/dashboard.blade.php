@@ -44,6 +44,7 @@
 					<div class="row justify-content-around">
 						<div class="list-group list-group-flush">
 							<ul>
+								<li class="list-group-item list-group-item-danger">Se recomienda utilizar navegadores Chrome o mozilla y no utilizar internet explorer por compatibilidad con el sistema.</li>
 								<li class="list-group-item list-group-item-info">1. Los campos que contengan el * son obligatorios.</li>
 								<li class="list-group-item list-group-item-info">2. Debe darte de alta como un empendedor para que puedas ver las demas opciones.</li>
 								<li class="list-group-item list-group-item-info">3. Debes de darle de alta a un proyecto.</li>
