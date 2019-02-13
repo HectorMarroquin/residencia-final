@@ -196,7 +196,11 @@
                     @forelse($archivos as $archivo)
                       @if ($archivo->fase_id === 2)
                         @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
-                          <p> {{$archivo->Comentario}} </p>
+                        @if($archivo->Comentario ==='Aprobado')
+                           <span class="badge badge-pill badge-success">{{$archivo->Comentario}} </span>
+                           @else
+                           <h5><span class="badge badge-danger">{{$archivo->Comentario}} </span></h5>
+                          @endif
                         @endif
                         @if( (empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
                           <p> En espera </p>
@@ -290,7 +294,11 @@
                     @forelse($archivos as $archivo)
                       @if ($archivo->fase_id === 3)
                         @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
-                          <p> {{$archivo->Comentario}} </p>
+                          @if($archivo->Comentario ==='Aprobado')
+                           <span class="badge badge-pill badge-success">{{$archivo->Comentario}} </span>
+                           @else
+                           <h5><span class="badge badge-danger">{{$archivo->Comentario}} </span></h5>
+                          @endif
                         @endif
                         @if( (empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
                           <p> En espera </p>
@@ -384,7 +392,11 @@
                     @forelse($archivos as $archivo)
                       @if ($archivo->fase_id === 4)
                         @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
-                          <p> {{$archivo->Comentario}} </p>
+                          @if($archivo->Comentario ==='Aprobado')
+                           <span class="badge badge-pill badge-success">{{$archivo->Comentario}} </span>
+                           @else
+                           <h5><span class="badge badge-danger">{{$archivo->Comentario}} </span></h5>
+                          @endif
                         @endif
                         @if( (empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
                           <p> En espera </p>
@@ -479,7 +491,11 @@
                     @forelse($archivos as $archivo)
                       @if ($archivo->fase_id === 5)
                         @if( (!empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
-                          <p> {{$archivo->Comentario}} </p>
+                          @if($archivo->Comentario ==='Aprobado')
+                           <span class="badge badge-pill badge-success">{{$archivo->Comentario}} </span>
+                           @else
+                           <h5><span class="badge badge-danger">{{$archivo->Comentario}} </span></h5>
+                          @endif
                         @endif
                         @if( (empty($archivo->Comentario) && ($archivo->NumeroEntrega===3)))
                           <p> En espera </p>
