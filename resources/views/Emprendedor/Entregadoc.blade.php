@@ -31,8 +31,18 @@
                             @if (session()->has('infor2'))
                                 <div class="alert alert-success">{{ session('infor2')}}</div>
                                  @endif
-                              @if (session()->has('infor3'))
+                            @if (session()->has('infor3'))
                                 <div class="alert alert-success">{{ session('infor3')}}</div>
+                                 @endif
+                            @if (session()->has('error'))
+                                <div class="alert alert-danger">{{ session('error')}}</div>
+                                 @endif
+                            @if (session()->has('error1'))
+                                <div class="alert alert-danger">{{ session('error1')}}</div>
+                                 @endif
+                                 
+                             @if (session()->has('error2'))
+                                <div class="alert alert-danger">{{ session('error2')}}</div>
                                  @endif
                              <form class="form-group" method="post" action="{{ route('Enviar.store')}}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
@@ -75,9 +85,9 @@
                                                     <td colspan="4">
                                                         @if (empty($avance))
                                                         <div class="form-group">
-                                                            <label for="">Documento</label>
-                                                            <input type="file" for="fileEnvio" name="documento1" class="form-control" id="fileEnvio" onchange="validarExt()">
-                                                            {!! $errors->first('documento1', '<span class=errores>:message</span>') !!}
+                                                            <label for="fileEnvio">Documento</label>
+                                                        <input type="file" name="documento1" class="form-control" id="fileEnvio" onchange="validarExt()">
+                                                        {!! $errors->first('documento1', '<span class=errores>:message</span>') !!}
                                                         </div>
                                                         
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
@@ -140,8 +150,8 @@
                                                         </div>
                                                         @elseif (!empty($avance))
                                                         <div class="form-group">
-                                                            <label for="">Documento</label>
-                                                            <input type="file" for="fileEnvio" name="documento2" class="form-control" id="fileEnvio" onchange="validarExt()">
+                                                            <label for="fileEnvio">Documento</label>
+                                                            <input type="file"  name="documento2" class="form-control" id="fileEnvio" onchange="validarExt()">
                                                              {!! $errors->first('documento2', '<span class=errores>:message</span>') !!}
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
@@ -205,8 +215,8 @@
                                                        
                                                         @elseif ( (!empty($avance)) && (!empty($avancedos)) )
                                                         <div class="form-group">
-                                                            <label for="">Documento</label>
-                                                            <input type="file"  for="fileEnvio" name="documento3" class="form-control" id="fileEnvio" onchange="validarExt()">
+                                                            <label for="fileEnvio">Documento</label>
+                                                            <input type="file" name="documento3" class="form-control" id="fileEnvio" onchange="validarExt()">
                                                              {!! $errors->first('documento3', '<span class=errores>:message</span>') !!}
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
@@ -227,7 +237,7 @@
     </div>
 
     <script type="text/javascript">
-  function validarExt() {
+    function validarExt() {
     var archivoInput = document.getElementById('fileEnvio');
     var archivoRuta = archivoInput.value;
     var extPermitidas = /(.docx|.DOCX|.doc|.DOC|.Docx)$/i;

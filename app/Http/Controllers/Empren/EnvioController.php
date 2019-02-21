@@ -37,62 +37,66 @@ class EnvioController extends Controller
 
      public function store(Request $request)
     {
-         if ($request->hasFile('documento1')) {
-            // $file = $request->file('documento1');
-            // $name = time().$file->getClientOriginalName();
-            // $file->move(public_path().'/Revisiones/', $name);
-            $file = time().request()->documento1->getClientOriginalName();
-            $archivo = request()->documento1->storeAs('files',$file);
-        
+        if ($request->hasFile('documento1')) {
+        $file = time().request()->documento1->getClientOriginalName();
+        $archivo = request()->documento1->storeAs('files',$file);
+        $avance = new Avance;
+        $avance->NumeroEntrega = $request->input('numeroentrega');
+        $avance->Documento = $file;
+        $avance->proyecto_id = $request->input('proyecto');
+        $avance->fase_id = $request->input('fase');
+        $avance->save();
+        return back()->with('infor1', 'Entrega Uno Realizada'); 
         }
-            $avance = new Avance;
-            $avance->NumeroEntrega = $request->input('numeroentrega');
-            // $avance->Documento = $name;
-            $avance->Documento = $file;
-            $avance->proyecto_id = $request->input('proyecto');
-            $avance->fase_id = $request->input('fase');
-            $avance->save();
-            return back()->with('infor1', 'Entrega Uno Realizada');  
+        else{
+        return back()->with('error', 'error al tratar de subir el archivo  en entrega uno'); 
+        }
+
+         
+            
     }
 
     public function entregados(Request $request)
     {
-    	  if ($request->hasFile('documento2')) {
-            // $files = $request->file('documento2');
-            // $names = time().$files->getClientOriginalName();
-            // $files->move(public_path().'/Revisiones/', $names);
+    	if ($request->hasFile('documento2')) {
             $files = time().request()->documento2->getClientOriginalName();
             $archivo = request()->documento2->storeAs('files',$files);
-
+             $avance = new Avance;
+        $avance->NumeroEntrega = $request->input('numeroentrega2');
+        $avance->Documento = $files;
+        $avance->proyecto_id = $request->input('proyecto2');
+        $avance->fase_id = $request->input('fase2');
+        $avance->save();
+        return back()->with('infor2', 'Entrega Dos Realizada');
         }
-            $avance = new Avance;
-            $avance->NumeroEntrega = $request->input('numeroentrega2');
-            // $avance->Documento = $names;
-            $avance->Documento = $files;
-            $avance->proyecto_id = $request->input('proyecto2');
-            $avance->fase_id = $request->input('fase2');
-            $avance->save();
-             return back()->with('infor2', 'Entrega Dos Realizada');
+        else {
+            return back()->with('error1', 'error al tratar de subir el archivo en entrega dos');
+        }
+       
+           
+           
     }
 
     public function entregatres(Request $request)
     {
-    	 if ($request->hasFile('documento3')) {
-            // $filess = $request->file('documento3');
-            // $namess = time().$filess->getClientOriginalName();
-            // $filess->move(public_path().'/Revisiones/', $namess);
-            $filess = time().request()->documento3->getClientOriginalName();
-            $archivo = request()->documento3->storeAs('files',$filess);           
+    	if ($request->hasFile('documento3')) {
+        $filess = time().request()->documento3->getClientOriginalName();
+        $archivo = request()->documento3->storeAs('files',$filess);
+        $avance = new Avance;
+        $avance->NumeroEntrega = $request->input('numeroentrega3');
+        $avance->Documento = $filess;
+        $avance->proyecto_id = $request->input('proyecto3');
+        $avance->fase_id = $request->input('fase3');
+        $avance->save();    
+        return back()->with('infor3', 'Entrega tres Realizada');  
         }
-            $avance = new Avance;
-            $avance->NumeroEntrega = $request->input('numeroentrega3');
-            // $avance->Documento = $namess;
-            $avance->Documento = $filess;
-            $avance->proyecto_id = $request->input('proyecto3');
-            $avance->fase_id = $request->input('fase3');
-            $avance->save();
+         else {
+            return back()->with('error2', 'error al tratar de subir el archivo en entrega tres');
+        }
+         
+           
 
-            return back()->with('infor3', 'Entrega tres Realizada');
+           
     }
 
 
