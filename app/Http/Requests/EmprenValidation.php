@@ -40,7 +40,7 @@ class EmprenValidation extends FormRequest
             'CodigoPostal' => 'required|numeric',
             'TelefonoCel' => 'required',  
             'Escolaridad' => 'required',
-            'CURP' => 'required|min:18|max:18|unique:CURP',
+            'CURP' => 'required|min:18|max:18',
             'INE' => 'required',
             'TipoEmpresa' =>  'required',
             'TipoPersona' =>  'required',
@@ -70,6 +70,7 @@ class EmprenValidation extends FormRequest
             'INE' => 'INE',
             'TipoEmpresa' => 'tipo de empresa',
             'TipoPersona' => 'tipo de persona',
+            'TelefonoCel' => 'telefono celuler',
     ];
 }
 }
