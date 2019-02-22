@@ -21,7 +21,7 @@ mix.styles([
    'public/css/sb-admin.css',
 ], 'public/css/estilos.css');
 
-mix.scripts([
+mix.babel([
    'public/js/delete.js',
    'public/js/Agregarcolumnas.js',
 ], 'public/js/funcionalidad.js');

@@ -24,7 +24,7 @@ class EmpreController extends Controller
     public function index(Request $request)
     {   
         
-        $emprendedores = Emprendedor::Nombre($request->Nombre)->paginate(5);
+        $emprendedores = Emprendedor::Nombre($request->Nombre)->orderBy('id','DESC')->paginate(5);
 
         return view('Administrador.show-emprendedores',compact('emprendedores'));
     }
