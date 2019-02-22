@@ -24,7 +24,7 @@ class AsignaController extends Controller
     
     public function index()
     {
-        $emprendedores = Emprendedor::paginate(5);
+        $emprendedores = Emprendedor::orderBy('id','DESC')->paginate(5);
         $asesores = Asesor::with('asignaciones')->get();
         return view('Administrador.asignar', compact('emprendedores','asesores'));
     }

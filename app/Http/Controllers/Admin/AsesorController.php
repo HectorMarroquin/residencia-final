@@ -27,7 +27,7 @@ class AsesorController extends Controller
     
     public function index(Request $request)
     {   
-        $asesores = Asesor::Nombre($request->Nombre)->paginate(5);
+        $asesores = Asesor::Nombre($request->Nombre)->orderBy('id','DESC')->paginate(5);
         return view('Administrador.show-asesores', compact('asesores'));
     }
 

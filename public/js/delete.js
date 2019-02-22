@@ -46,7 +46,7 @@ $(document).ready(function(){
 
 
 
-    $('.btn-delet').click(function(e){
+    $('.btn-delete1').click(function(e){
         
         var row = $(this).parents('tr');
         var form = $(this).parents('form');
