@@ -198,11 +198,12 @@
 
                         <tr>
                             <td>
-                                <label>Telefono Celular</label>
+                                <label>Telefono Celular *</label>
                             </td>
 
                             <td>
                                  <input type="text" name="TelefonoCel" class="form-control infoemprendedor" value="{{$empre->TelefonoCel}}">
+                                 {!! $errors->first('TelefonoCel', '<span class=errores>:message</span>') !!}
                             </td>
 
                             <td>

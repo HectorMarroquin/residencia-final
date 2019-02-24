@@ -84,6 +84,11 @@
         </div>
        
     </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            {!! $proyectos->links("pagination::bootstrap-4") !!}
+        </div>
+    </div>
 </div>
 
 @endsection

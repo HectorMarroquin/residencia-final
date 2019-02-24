@@ -32,7 +32,7 @@ class ListEntregaController extends Controller
     {
         $id = Auth()->user()->id;
         $empreId = Emprendedor::where('user_id', $id)->value('id');
-        $proyectos = Proyecto::where('emprendedor_id', $empreId)->get();    
+        $proyectos = Proyecto::where('emprendedor_id', $empreId)->paginate(5);    
         
         $empre = Emprendedor::where('user_id', $id)->value('id');
         return view ('Emprendedor.ListaEntregas', compact('proyectos' ,'empre'));
