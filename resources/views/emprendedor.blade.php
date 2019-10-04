@@ -35,7 +35,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Registra tus Proyectos:</h6>
-            <a class="dropdown-item" href="{{ route('AlProyecto.create') }}">Alta de Proyectos</a>
+            <a class="dropdown-item" href="{{ route('AlProyecto.create') }}">Alta de Proyecto</a>
           </div>
         </li>
 
